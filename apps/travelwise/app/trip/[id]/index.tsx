@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 
 import { TripProgress } from '@/components/TripCard';
+import { TripHighlights } from '@/components/TripHighlights';
 import { TripScaffold } from '@/components/TripScaffold';
 import { archiveTrip, deleteTrip, duplicateTrip, unarchiveTrip } from '@/features/trips/actions';
 import { effectiveStatus, preparationProgress, tripTiming } from '@/features/trips/status';
@@ -73,6 +74,8 @@ export default function TripOverviewScreen() {
               <Stat icon="walk-outline" value={fmt.number(summary?.activities ?? 0)} label={t('common.activities', { count: summary?.activities ?? 0 })} tone="success" />
               <Stat icon="ticket-outline" value={fmt.number(summary?.bookings ?? 0)} label={t('common.bookings', { count: summary?.bookings ?? 0 })} tone="warning" />
             </Row>
+
+            <TripHighlights tripId={trip.id} today={today} />
 
             <Card>
               <TripProgress progress={summary ? preparationProgress(summary) : null} />

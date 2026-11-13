@@ -14,7 +14,7 @@ Dernière mise à jour : 2026-11-13.
 | Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 En cours — moteur, contenu, DB, services faits ; écrans en cours | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
 | CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
-| TravelWise | `apps/travelwise` | `com.mobileappsfactory.travelwise` | travel-local | hybrid (sub ×3 + banner/interstitial/rewarded) — Phase 6 | en, fr, es | development | 🟡 Phase 2 (fondation) terminée — branche `feat/travelwise` | ✅ | [travelwise.md](../tracking/travelwise.md) |
+| TravelWise | `apps/travelwise` | `com.mobileappsfactory.travelwise` | travel-local | hybrid (sub ×3 + banner/interstitial/rewarded) — Phase 6 | en, fr, es | development | 🟡 Phases 2–3 terminées (fondation, itinéraire, réservations, bagages) — branche `feat/travelwise` | ✅ | [travelwise.md](../tracking/travelwise.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).

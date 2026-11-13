@@ -70,10 +70,16 @@ Local SQLite database `travelwise.db` (expo-sqlite), schema in
   without photos, budget, packing lists, checklists, weather notes) with progress reset and
   optional date shifting. Bookings, expenses, journal, documents and files are never copied.
 
-## Repositories (Phase 2)
+## Repositories
 
 - `trips`: create / update / get / list / routes / count / archive / unarchive / remove /
   fileUris / duplicate / summaries, with typed validation errors (`TripValidationError.code`).
 - `settings`: key/value settings.
+- `itinerary` (Phase 3): listDays (activities sorted by local time, untimed last), syncDaysWithTrip (one day per date,
+  destination chosen by date range), addDay / updateDay / deleteDay, activity CRUD, duplicate, status, reorder / shift,
+  moveActivity (keeps the local time), applyTemplate (content/itineraryTemplates.ts).
+- `bookings` (Phase 3): CRUD with typed validation, chronological list (undated last), upcoming (non-cancelled).
+- `packing` (Phase 3): trip lists, built-in templates (content/packingCatalog.ts, names copied in the user language),
+  personal templates (`is_template = 1`, no trip, survive trip deletion), items CRUD, packed toggle, reset.
 
 Later phases add one repository per feature (itinerary, bookings, expenses…) on the same schema.

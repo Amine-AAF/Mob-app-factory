@@ -10,6 +10,7 @@ import { brand } from '@/config/brand';
 import { TripValidationError, type TripInput } from '@/database/repositories/trips';
 import { initI18n } from '@/i18n';
 import type { Trip } from '@/types/models';
+import { clock } from '@/utils/clock';
 
 let i18n: I18n;
 beforeAll(async () => {
@@ -81,14 +82,23 @@ describe('TripCard', () => {
 });
 
 describe('TripForm', () => {
+  beforeEach(() => clock.set(() => new Date('2026-10-01T10:00:00.000Z')));
+  afterEach(() => clock.set(null));
+
   it('submits normalised input', async () => {
     const onSubmit = jest.fn(async (_: TripInput) => undefined);
     const onDone = jest.fn();
     await wrap(<TripForm defaultCurrency="EUR" submitLabel="Create" onSubmit={onSubmit} onDone={onDone} />);
     await fireEvent.changeText(screen.getByTestId('trip-name'), 'Weekend in Rome');
     await fireEvent.changeText(screen.getByTestId('trip-city-0'), 'Rome');
-    await fireEvent.changeText(screen.getByTestId('trip-start'), '2026-10-09');
-    await fireEvent.changeText(screen.getByTestId('trip-end'), '2026-10-11');
+    // Dates are picked in the calendar (opens on the current month, frozen to October 2026).
+    await fireEvent.press(screen.getByTestId('trip-start'));
+    await fireEvent.press(screen.getByTestId('trip-start-day-2026-10-09'));
+    await fireEvent.press(screen.getByTestId('trip-end'));
+    // Days before the departure are disabled in the return-date calendar.
+    expect(screen.getByTestId('trip-end-day-2026-10-08')).toBeDisabled();
+    await fireEvent.press(screen.getByTestId('trip-end-day-2026-10-11'));
+    expect(screen.getByLabelText(/Departure: .*Oct 9, 2026/)).toBeTruthy();
     await fireEvent.changeText(screen.getByTestId('trip-budget'), '450,50');
     await fireEvent.press(screen.getByTestId('trip-type-weekend'));
     await fireEvent.press(screen.getByTestId('trip-submit'));

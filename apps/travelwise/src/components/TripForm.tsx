@@ -9,6 +9,7 @@ import { recordError } from '@/services/analytics';
 import { fromMinor, parseAmount } from '@/utils/money';
 
 import { ChoiceChips } from './Choice';
+import { DateField } from './DateField';
 import { TextField } from './TextField';
 
 interface DestinationDraft {
@@ -135,10 +136,10 @@ export function TripForm({
             {destinations.length > 1 ? (
               <Row gap={2} style={{ alignItems: 'flex-start' }}>
                 <Stack gap={0} style={{ flex: 1 }}>
-                  <TextField label={t('tripForm.startDate')} placeholder={t('tripForm.datePlaceholder')} keyboardType="numbers-and-punctuation" value={d.startDate} onChangeText={(v) => patchDest(i, { startDate: v })} />
+                  <DateField label={t('tripForm.startDate')} value={d.startDate || null} min={startDate || null} max={endDate || null} optional onChange={(v) => patchDest(i, { startDate: v ?? '' })} />
                 </Stack>
                 <Stack gap={0} style={{ flex: 1 }}>
-                  <TextField label={t('tripForm.endDate')} placeholder={t('tripForm.datePlaceholder')} keyboardType="numbers-and-punctuation" value={d.endDate} onChangeText={(v) => patchDest(i, { endDate: v })} />
+                  <DateField label={t('tripForm.endDate')} value={d.endDate || null} min={d.startDate || startDate || null} max={endDate || null} optional onChange={(v) => patchDest(i, { endDate: v ?? '' })} />
                 </Stack>
               </Row>
             ) : null}
@@ -159,10 +160,10 @@ export function TripForm({
         <Text variant="heading">{t('tripForm.dates')}</Text>
         <Row gap={2} style={{ alignItems: 'flex-start' }}>
           <Stack gap={0} style={{ flex: 1 }}>
-            <TextField label={t('tripForm.startDate')} placeholder={t('tripForm.datePlaceholder')} keyboardType="numbers-and-punctuation" value={startDate} onChangeText={setStartDate} testID="trip-start" />
+            <DateField label={t('tripForm.startDate')} value={startDate || null} optional onChange={(v) => setStartDate(v ?? '')} testID="trip-start" />
           </Stack>
           <Stack gap={0} style={{ flex: 1 }}>
-            <TextField label={t('tripForm.endDate')} placeholder={t('tripForm.datePlaceholder')} keyboardType="numbers-and-punctuation" value={endDate} onChangeText={setEndDate} testID="trip-end" />
+            <DateField label={t('tripForm.endDate')} value={endDate || null} min={startDate || null} optional onChange={(v) => setEndDate(v ?? '')} testID="trip-end" />
           </Stack>
         </Row>
         {errorForPrefix('trip') ? (

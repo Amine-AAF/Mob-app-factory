@@ -1,6 +1,9 @@
 import { migrate, wipeTables, type SqlDatabase } from '@factory/storage';
 
 import { USER_TABLES, migrations } from './migrations';
+import { createBookingRepository } from './repositories/bookings';
+import { createItineraryRepository } from './repositories/itinerary';
+import { createPackingRepository } from './repositories/packing';
 import { createSettingsRepository } from './repositories/settings';
 import { createTripRepository } from './repositories/trips';
 
@@ -10,6 +13,9 @@ export interface Repositories {
   db: SqlDatabase;
   trips: ReturnType<typeof createTripRepository>;
   settings: ReturnType<typeof createSettingsRepository>;
+  itinerary: ReturnType<typeof createItineraryRepository>;
+  bookings: ReturnType<typeof createBookingRepository>;
+  packing: ReturnType<typeof createPackingRepository>;
 }
 
 /** Migrates and wires repositories. Pure: works with expo-sqlite or the sql.js test adapter. */
@@ -21,7 +27,14 @@ export async function initDatabase(db: SqlDatabase): Promise<Repositories> {
 }
 
 export function createRepositories(db: SqlDatabase): Repositories {
-  return { db, trips: createTripRepository(db), settings: createSettingsRepository(db) };
+  return {
+    db,
+    trips: createTripRepository(db),
+    settings: createSettingsRepository(db),
+    itinerary: createItineraryRepository(db),
+    bookings: createBookingRepository(db),
+    packing: createPackingRepository(db),
+  };
 }
 
 /** Deletes every row of every user table (used by "Delete all my data"). Files are removed by the caller. */

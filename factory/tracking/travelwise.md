@@ -27,14 +27,35 @@ Phase 2 — Fondation :
 - Analytics : catalogue typé d'événements anonymes, aucun provider en production.
 - Docs : `docs/data-model.md`, `docs/security.md` (limites explicites : fichiers non chiffrés par l'app).
 
+Phase 3 — MVP (itinéraire, réservations, bagages) :
+- Itinerary Builder : un jour par date du voyage (création depuis les dates, idempotente), jour rattaché à la ville
+  qui couvre la date (jour d'arrivée = nouvelle ville), jours hors dates conservés et signalés, jour supplémentaire,
+  édition du jour (titre, ville, description, notes, budget estimé), suppression (activités en cascade).
+- Timeline visuelle par jour (`DayTimeline` + `ActivityCard`) : tri par heure locale, activités sans horaire en fin,
+  marquer fait/prévu, monter/descendre, mention « heures locales » par destination.
+- Activités : création, modification, duplication, suppression, statut planned/completed/skipped, catégories, durée
+  calculée (y compris après minuit), prix + devise, adresse, lien http(s) validé, déplacement vers un autre jour/une
+  autre ville sans modifier l'heure locale.
+- 7 modèles d'itinéraire (weekend, 3 jours, 7 jours, road trip 10 jours, famille, business, plage) : trames neutres
+  sans lieux ni horaires réels, adaptées à toute durée (premier jour / jours du milieu en cycle / dernier jour),
+  appliquées dans la langue de l'utilisateur, ne remplacent jamais un titre existant.
+- Reservations Organizer : 9 types, saisie manuelle uniquement (avertissement « non vérifié »), réservations
+  incomplètes acceptées et signalées, référence stockée telle que saisie, affichage chronologique groupé par date,
+  heure d'arrivée « plus tôt » acceptée (fuseaux), rappel de ne jamais saisir de données bancaires.
+- Packing Lists : catalogue original de 101 éléments en/fr/es dans 7 catégories, 6 modèles (weekend, business,
+  plage, hiver, famille, international ; 15+ éléments chacun), listes vides, quantité/priorité/notes, cocher/décocher,
+  progression « Packing progress: 75% », tout décocher, renommer, supprimer, modèles personnels réutilisables.
+- Overview du voyage : programme du jour, prochaines activités, réservations à venir (données réelles uniquement).
+- Sélecteur de date calendrier en JS pur (`DateField`, sans dépendance native), champ d'heure normalisé (`TimeField`).
+
 ## Fonctionnalités en cours
 
 - —
 
 ## Fonctionnalités restantes
 
-- Phase 3 : Itinerary Builder (jours, timeline, activités, réorganisation, déplacement entre jours/villes, modèles),
-  Reservations Organizer, Packing Lists (≥ 80 éléments originaux + modèles), sélecteur de date natif.
+- Phase 3 (reste) : réorganisation par glisser-déposer (aujourd'hui : boutons monter/descendre), lier une activité à un lieu
+  (Phase 5, table `places`), pièce jointe de réservation (Phase 5, documents).
 - Phase 4 : budget par catégorie, dépenses (filtre/tri/répartition), dépenses partagées + remboursements suggérés,
   convertisseur manuel (taux saisi, daté, source) + interface `RateProvider` future.
 - Phase 5 : documents (expo-document-picker + Photo Picker, copie privée, verrou biométrique facultatif),
@@ -47,8 +68,9 @@ Phase 2 — Fondation :
 
 ## Bugs connus
 
-- Saisie des dates en texte `AAAA-MM-JJ` (pas encore de sélecteur natif) : validée mais peu ergonomique.
-- Sections Itinerary/Bookings/Budget/Checklist/Journal du voyage et onglet Places : écrans « bientôt disponible ».
+- Sections Budget et Journal du voyage, onglet Places et tâches avant départ : écrans « bientôt disponible ».
+- Le sélecteur de date ouvre le mois courant ou la date minimale : pas de saisie clavier directe d'une date lointaine
+  (navigation mois par mois).
 
 ## Dépendances spécifiques
 
@@ -78,6 +100,16 @@ Phase 2 — Fondation :
 - `pnpm registry:check` : ✅ travelwise valide (les 5 erreurs restantes concernent filepilot/calcwise, dont les fichiers de
   langue ne sont pas encore commités sur `main` ; hors périmètre).
 - Non fait : bundle Android (`expo export`), build EAS, test sur appareil.
+2026-11-13 (Phase 3) :
+- `tsc --noEmit` ✅ · ESLint `apps/travelwise` ✅ 0 problème · `jest --ci` ✅ 6 suites, 104/104 tests.
+  - `phase3.test.ts` : jours multi-villes, jours hors dates conservés, voyage sur deux années, jour en double refusé,
+    suppression de jour en cascade, tri timeline avec activités sans horaire, validations, durée après minuit, horaires
+    modifiés sans conversion, réordonner/monter/dupliquer/statut/supprimer, déplacement vers une autre ville en gardant
+    l'heure, modèles (toutes durées, langue, titre existant conservé), réservations (incomplètes, 9 validations, ordre
+    chronologique, à venir sans annulées, mise à jour/suppression), catalogue ≥ 80 éléments uniques traduits,
+    listes depuis modèle, progression, modèles personnels, résumé de préparation.
+  - `phase3.ui.test.tsx` : ActivityCard (clair/sombre, sans horaire), BookingCard (référence, incomplète), PackingItems,
+    grille calendrier (semaine dimanche/lundi, février bissextile) ; `ui.test.tsx` : TripForm via le calendrier.
 - Note : machine très chargée (plusieurs sessions) → `testTimeout: 30000` et un rendu de préchauffage dans `ui.test.tsx`.
 
 ## Préparation à la publication
