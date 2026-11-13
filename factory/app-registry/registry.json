@@ -52,6 +52,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "travelwise",
+      "path": "apps/travelwise",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }
