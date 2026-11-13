@@ -1,6 +1,6 @@
 import { Icon, IconButton, Row, Text, useTheme } from '@factory/design-system';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ComponentRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable, ScrollView, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -30,7 +30,7 @@ export default function CalculatorScreen() {
   const [state, setState] = useState<CalcState>(INITIAL_STATE);
   const [lastExpression, setLastExpression] = useState<string | null>(null);
   const [second, setSecond] = useState(false);
-  const scroller = useRef<ScrollView>(null);
+  const scroller = useRef<ComponentRef<typeof ScrollView>>(null);
   const params = useLocalSearchParams<{ load?: string; mode?: string }>();
 
   useFocusEffect(
@@ -39,14 +39,21 @@ export default function CalculatorScreen() {
     }, [mode]),
   );
 
-  // Values sent from History ("Use in calculator") or the Home shortcuts.
-  useEffect(() => {
-    if (params.mode === 'standard' || params.mode === 'scientific') setPref({ calculatorMode: params.mode });
+  // A value sent from History ("Use in calculator") is applied once, during render
+  // (React's "adjust state on prop change" pattern), then the route param is cleared.
+  const [handledLoad, setHandledLoad] = useState<string | undefined>(undefined);
+  if (params.load !== handledLoad) {
+    setHandledLoad(params.load);
     if (params.load && /^-?\d+(\.\d+)?(E[+-]?\d+)?$/.test(params.load)) {
       const value = params.load;
       setState((s) => loadValue(s, value));
       setLastExpression(null);
     }
+  }
+
+  // Mode chosen from Home/Tools shortcuts; route params are then cleared.
+  useEffect(() => {
+    if (params.mode === 'standard' || params.mode === 'scientific') setPref({ calculatorMode: params.mode });
     if (params.load || params.mode) router.setParams({ load: undefined, mode: undefined });
   }, [params.load, params.mode, setPref]);
 

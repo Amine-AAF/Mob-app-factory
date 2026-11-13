@@ -1,4 +1,4 @@
-import Decimal from 'decimal.js';
+import { Decimal } from 'decimal.js';
 
 /**
  * Arbitrary-precision decimal arithmetic for every CalcWise computation.
@@ -18,6 +18,8 @@ export const Dec = Decimal.clone({
   maxE: 9e15,
   minE: -9e15,
 });
+// Intentional value/type pair: `Dec` is both the configured constructor and its instance type.
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 export type Dec = Decimal;
 
 export const ZERO = new Dec(0);

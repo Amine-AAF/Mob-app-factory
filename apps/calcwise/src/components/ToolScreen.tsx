@@ -1,8 +1,8 @@
 import { IconButton, Screen, Text, useTheme } from '@factory/design-system';
-import { Stack } from 'expo-router';
+import { router, Stack } from 'expo-router';
 import { type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
-import { KeyboardAvoidingView, Platform } from 'react-native';
+import { Alert, KeyboardAvoidingView, Platform } from 'react-native';
 
 import { LIMITS, type ToolId } from '@/constants/tools';
 import { repos } from '@/database';
@@ -14,7 +14,7 @@ import { isPremiumNow, useSession } from '@/store/session';
  * Layout shared by every tool: native header with the tool name and a favorite toggle,
  * keyboard-aware scrolling. Tool screens never contain ads.
  */
-export function ToolScreen({ tool, children, onLimit }: { tool: ToolId; children: ReactNode; onLimit?: () => void }) {
+export function ToolScreen({ tool, children }: { tool: ToolId; children: ReactNode }) {
   const { t } = useTranslation();
   const theme = useTheme();
   const { data: favorites, reload } = useAsync(() => repos().favorites.list(), []);
@@ -23,7 +23,12 @@ export function ToolScreen({ tool, children, onLimit }: { tool: ToolId; children
   const toggle = async () => {
     try {
       const outcome = await repos().favorites.toggle(tool, { max: isPremiumNow() ? null : LIMITS.freeFavorites });
-      if (outcome === 'limit') onLimit?.();
+      if (outcome === 'limit') {
+        Alert.alert(t('favorites.limitTitle'), t('favorites.limitReached', { count: LIMITS.freeFavorites }), [
+          { text: t('common.notNow'), style: 'cancel' },
+          { text: t('premium.unlockCta'), onPress: () => router.push({ pathname: '/paywall', params: { source: 'favorites_limit' } }) },
+        ]);
+      }
       reload();
       useSession.getState().bump();
     } catch (e) {
