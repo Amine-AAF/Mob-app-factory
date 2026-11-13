@@ -52,6 +52,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "mealwise",
+      "path": "apps/mealwise",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }
