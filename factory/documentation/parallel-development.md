@@ -20,18 +20,42 @@ Une session ne lit le code d'une autre app que **comme référence** (copier un 
 
 ## 2. Isolation : une branche (ou un worktree) par app
 
-Le dépôt n'a encore **aucun commit** : tout est non suivi, et plusieurs sessions écrivent dans le même
-répertoire de travail. C'est le principal risque d'écrasement. Organisation cible :
+Dépôt : `https://github.com/Amine-AAF/Mob-app-factory` (commit initial `f7a0ebd` du 2026-11-13, snapshot
+de toutes les apps telles qu'elles étaient à ce moment).
 
-1. Un commit initial sur `main` (état de référence : DevSpeak terminé + squelettes existants).
-2. Une branche par app : `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` — idéalement chacune dans
-   son propre `git worktree` (`../maf-logic-quest`, etc.) pour que les sessions n'écrivent jamais dans le
-   même dossier.
-3. Une branche `chore/shared-<sujet>` pour toute modification d'un package partagé (§3).
-4. Fusion vers `main` par merge request, app par app. Les conflits possibles se limitent alors à
-   `registry.json` (une ligne par app) et `pnpm-lock.yaml` (à régénérer, voir §5).
+| Branche | Rôle |
+| --- | --- |
+| `main` | Intégration. On n'y développe pas directement ; DevSpeak y vit (stable). |
+| `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` | Une branche par app (créées et poussées) |
+| `feat/<id>` | Toute nouvelle app |
+| `chore/shared-<sujet>` | Toute modification d'un package/fichier partagé (§3) |
 
-Tant que le commit initial n'est pas fait, chaque session doit se limiter strictement à sa zone (§1).
+### Passer une session sur sa branche (une seule fois)
+
+Chaque session travaille dans **son propre worktree**, jamais dans le dossier principal :
+
+```bash
+# depuis C:\Projets\Mob-app-Factory
+git worktree add ../maf-logic-quest feat/logic-quest
+# recopier le travail non commité de l'app depuis le dossier principal, puis :
+cd ../maf-logic-quest && pnpm install
+git add apps/logic-quest factory/tracking/logic-quest.md
+git commit -m "feat(logic-quest): …" && git push
+```
+
+Une fois l'app recopiée et commitée dans son worktree, le dossier principal remet ces fichiers à l'état de
+`main` (`git checkout -- apps/logic-quest && git clean -fd apps/logic-quest`) — **uniquement après avoir
+vérifié que le worktree contient bien tout**.
+
+### Fusion
+
+Pull request par app vers `main`, après `pnpm validate` vert. Avant d'ouvrir la PR : `git merge origin/main`
+dans la branche de l'app. Conflits attendus : `registry.json` (garder les deux lignes) et `pnpm-lock.yaml`
+(prendre celui de `main` puis `pnpm install`, voir §5).
+
+Accès réseau sur ce poste : le `~/.gitconfig` pointe `http.sslCAInfo` vers un fichier inexistant
+(`C:/path/to/cdgcapital-ca.crt`). En attendant de le corriger, utiliser
+`git -c http.sslBackend=schannel -c http.sslcainfo= push|pull|fetch …`.
 
 ## 3. Protocole de modification d'un package partagé
 

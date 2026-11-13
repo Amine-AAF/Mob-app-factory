@@ -13,7 +13,7 @@ Dernière mise à jour : 2026-11-13.
 | DevSpeak | `apps/devspeak` | `com.devspeak.app` ⚠ placeholder | education | hybrid (sub + banner/rewarded) | en, fr, es | development | ✅ Terminée (code) — reste config externe + tests sur appareil | ✅ | [devspeak.md](../tracking/devspeak.md) |
 | Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 En cours — moteur, contenu, DB, services faits ; écrans en cours | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
-| CalcWise | `apps/calcwise` (à créer) | non défini | — | — | — | — | ⬜ Non démarrée | ❌ | [calcwise.md](../tracking/calcwise.md) |
+| CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
@@ -138,4 +138,5 @@ Une ligne par modification en cours d'un package ou fichier partagé. Supprimer 
 
 | Date | Zone | Changement | Apps impactées | Validation |
 | --- | --- | --- | --- | --- |
+| 2026-11-13 | dépôt | Commit initial `f7a0ebd`, push GitHub, branches `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` | toutes | — |
 | 2026-11-13 | `factory/documentation`, `factory/tracking` | Ajout portfolio.md, parallel-development.md, fichiers de suivi | aucune (docs) | — |
