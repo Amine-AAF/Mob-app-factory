@@ -54,7 +54,12 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 
 ## Tests réalisés
 
-Voir la section mise à jour à chaque session (commande, date, résultat).
+| Date | Commande | Résultat |
+| --- | --- | --- |
+| 2026-11-13 | `npx tsc --noEmit` (apps/interviewready) | ✅ 0 erreur |
+| 2026-11-13 | `npx eslint apps/interviewready` | ✅ 0 problème |
+| 2026-11-13 | `npx jest` (apps/interviewready) | ✅ 34/34 (i18n, base de données, règles de validation du contenu, taxonomie, offline) |
+| 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication
 
