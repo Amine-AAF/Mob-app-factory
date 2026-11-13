@@ -1,0 +1,51 @@
+{
+  "id": "booknest",
+  "name": "BookNest",
+  "storeName": "BookNest - Reading Tracker",
+  "slug": "booknest",
+  "scheme": "booknest",
+  "packageId": "com.mobileappsfactory.booknest",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "books",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de"],
+  "brand": { "primary": "#8A3B2E", "accent": "#C8923A", "splashBackground": "#1C1310" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "booknest_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "booknest_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "booknest_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 3 }
+  },
+  "features": {
+    "library": true,
+    "covers": true,
+    "readingTracker": true,
+    "readingSessions": true,
+    "goals": true,
+    "quotes": true,
+    "journal": true,
+    "reviews": true,
+    "discover": true,
+    "wishlist": true,
+    "collections": true,
+    "audiobooks": true,
+    "statistics": true,
+    "calendar": true,
+    "reminders": true,
+    "csvImport": true,
+    "backupRestore": true,
+    "externalCatalogs": false
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
