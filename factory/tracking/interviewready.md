@@ -24,13 +24,13 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
 
 ## Fonctionnalités en cours
 
-- Bibliothèque de questions (lots par catégorie, EN/FR/ES complets) : 170/500 questions validées.
+- Bibliothèque de questions (lots par catégorie, EN/FR/ES complets) : 270/500 questions validées.
   Méthode : rédaction EN + core, traduction FR/ES par sous-agents selon `src/content/CONTENT_BRIEF.md`,
   puis validation automatique (`src/__tests__/content.test.ts`).
 
 ## Fonctionnalités restantes
 
-- Phase 3 contenu : Java (50), Frontend (50), Databases (40), DevOps (45), AI & Data (45), Job-specific (60),
+- Phase 3 contenu : Databases (40), DevOps (45), AI & Data (45), Job-specific (60),
   HR & Salary (40) ; 150+ quiz ; parcours métiers.
 - Phase 3 MVP : onboarding, dashboard, question du jour, exploration, recherche/filtres, favoris, notes.
 - Phase 4 : Mock Interview, Answer Builder, flashcards, quiz, learning paths.
@@ -45,7 +45,9 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
 | General (`gen`) | 40 (28 gratuites, 12 Premium) | 0 |
 | Behavioral (`beh`, STAR, 8 par compétence) | 80 (57 / 23) | 0 |
 | Software Development (`sw`) | 50 (33 / 17) | 0 |
-| **Total** | **170 (118 / 52)**, chacune en EN/FR/ES | **0** |
+| Java & Spring Boot (`java`, Java 17/21, Spring Boot 3) | 50 (33 / 17) | 0 |
+| Frontend (`fe`, JS/TS/React/React Native/CSS/perf) | 50 (35 / 15) | 0 |
+| **Total** | **270 (186 / 84)**, chacune en EN/FR/ES | **0** |
 
 ## Bugs connus
 
@@ -68,6 +70,7 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-13 | `npx eslint apps/interviewready` | ✅ 0 problème |
 | 2026-11-13 | `npx jest` (apps/interviewready) | ✅ 34/34 (i18n, base de données, règles de validation du contenu, taxonomie, offline) |
 | 2026-11-13 | Lot contenu 1 : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (170 questions × 3 langues validées) |
+| 2026-11-13 | Lot contenu 2 (Java, Frontend) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (270 questions × 3 langues validées) |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication
