@@ -14,6 +14,7 @@ Dernière mise à jour : 2026-11-13.
 | Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 En cours — moteur, contenu, DB, services faits ; écrans en cours | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
 | CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
+| SafeVault | `apps/safevault` | `com.safevault.app` ⚠ placeholder | tools | subscription (sans pub) | en, fr, es | development | 🟡 Code complet + tests verts — module natif à valider sur appareil, audit indépendant requis | ✅ | [safevault.md](../tracking/safevault.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
