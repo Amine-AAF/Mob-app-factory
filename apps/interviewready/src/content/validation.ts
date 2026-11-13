@@ -31,7 +31,11 @@ export interface ContentIssue {
   message: string;
 }
 
-const PLACEHOLDER = /\b(todo|tbd|lorem|ipsum|xxx|fixme|placeholder)\b|\[\s*(insert|à compléter|completar)/i;
+/**
+ * Draft markers. TODO/TBD/FIXME are matched in capitals only: "todo" is an
+ * ordinary Spanish word ("all", "everything") and must not be flagged.
+ */
+const hasPlaceholder = (s: string): boolean => /\b(TODO|TBD|FIXME|XXX)\b/.test(s) || /\b(lorem|ipsum)\b|\[\s*(insert|à compléter|completar)/i.test(s);
 
 /** Allowed question kinds per category. */
 const KINDS_BY_CATEGORY: Record<CategoryId, QuestionKind[]> = {
@@ -79,7 +83,7 @@ function checkStrings(issues: ContentIssue[], id: string, locale: ContentLocale,
   }
   values.forEach((v, i) => {
     if (typeof v !== 'string' || v.trim().length < 8) issues.push({ id, locale, message: `${field}[${i}] is empty or too short` });
-    else if (PLACEHOLDER.test(v)) issues.push({ id, locale, message: `${field}[${i}] contains placeholder text` });
+    else if (hasPlaceholder(v)) issues.push({ id, locale, message: `${field}[${i}] contains placeholder text` });
   });
 }
 
@@ -125,7 +129,7 @@ export function validateQuestionText(core: QuestionCore, text: QuestionText | un
     const v = text[field];
     if (typeof v !== 'string' || v.trim().length === 0) add(`${field} is empty`);
     else if (v.trim().length < min) add(`${field} too short for ${core.difficulty} (${v.trim().length} < ${min})`);
-    else if (PLACEHOLDER.test(v)) add(`${field} contains placeholder text`);
+    else if (hasPlaceholder(v)) add(`${field} contains placeholder text`);
   }
   if (text.example !== undefined && text.example.trim().length < 20) add('example is too short (omit it instead)');
   checkStrings(issues, core.id, locale, 'tips', text.tips, 2);
@@ -194,7 +198,7 @@ export function validateQuizText(core: QuizCore, text: QuizText | undefined, loc
   const add = (message: string) => issues.push({ id: core.id, locale, message });
   if (!text.prompt || text.prompt.trim().length < 12) add('prompt is empty or too short');
   if (!text.explanation || text.explanation.trim().length < 40) add('explanation is empty or too short');
-  if (PLACEHOLDER.test(text.prompt) || PLACEHOLDER.test(text.explanation)) add('placeholder text');
+  if (hasPlaceholder(text.prompt) || hasPlaceholder(text.explanation)) add('placeholder text');
   if (core.type === 'mcq') {
     const opts = text.options ?? [];
     if (opts.length < 3 || opts.length > 4) add('MCQ needs 3 or 4 options');

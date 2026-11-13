@@ -97,6 +97,12 @@ describe('content validation rules', () => {
     expect(messages).toContain('explanation contains placeholder text');
   });
 
+  it('does not flag ordinary words such as Spanish "todo" as placeholders', () => {
+    const p = fixture();
+    p.text.es['gen-001']!.explanation = 'Una estructura clara ayuda a resumir todo tu recorrido en menos de dos minutos y enlazarlo con el puesto.';
+    expect(validateQuestionPacks([p])).toEqual([]);
+  });
+
   it('validates quizzes: options, answer index, related question', () => {
     const quiz: QuizPack = {
       core: [{ id: 'q-gen-001', type: 'mcq', category: 'general', topic: 'introduction', difficulty: 'beginner', correctIndex: 5, relatedQuestionId: 'gen-404', premium: false }],
@@ -156,7 +162,8 @@ describe('offline-first', () => {
       fs.readdirSync(dir, { withFileTypes: true }).forEach((e) => {
         const p = path.join(dir, e.name);
         if (e.isDirectory()) {
-          if (e.name !== '__tests__') walk(p);
+          // Content data is text shown to users (it may contain code samples such as fetch(url)).
+          if (e.name !== '__tests__' && e.name !== 'data') walk(p);
         } else if (/\.tsx?$/.test(e.name) && /\b(fetch|XMLHttpRequest|axios)\s*\(/.test(fs.readFileSync(p, 'utf8'))) offenders.push(p);
       });
     roots.forEach(walk);

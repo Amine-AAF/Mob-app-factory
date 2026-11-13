@@ -1,5 +1,9 @@
 import type { QuestionPack, QuizPack } from '@/types/content';
 
+import { pack as behavioral } from './behavioral';
+import { pack as general } from './general';
+import { pack as software } from './software';
+
 /**
  * Registry of content packs. Each pack lives in its own folder:
  *   data/<category>/core.ts  language-neutral records
@@ -7,7 +11,8 @@ import type { QuestionPack, QuizPack } from '@/types/content';
  *   data/<category>/fr.ts    French text
  *   data/<category>/es.ts    Spanish text
  * Add a pack here once its validation passes (src/__tests__/content.test.ts).
+ * Writing and translation rules: src/content/CONTENT_BRIEF.md.
  */
-export const questionPacks: QuestionPack[] = [];
+export const questionPacks: QuestionPack[] = [general, behavioral, software];
 
 export const quizPacks: QuizPack[] = [];
