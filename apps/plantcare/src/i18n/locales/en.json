@@ -1,0 +1,466 @@
+{
+  "tabs": { "home": "Home", "plants": "My Plants", "calendar": "Calendar", "library": "Library", "profile": "Profile" },
+  "common": {
+    "add": "Add", "and": "and", "back": "Back", "cancel": "Cancel", "clear": "Clear", "close": "Close", "continue": "Continue",
+    "date": "Date", "daysShort": "days", "decrease": "Decrease", "delete": "Delete", "deleteConfirm": "Delete this entry?",
+    "edit": "Edit", "error": "Something went wrong", "increase": "Increase", "more": "More", "notes": "Notes", "notSet": "Not set",
+    "optional": "optional", "save": "Save", "saveFailed": "We couldn't save your changes. Please try again.", "seeMore": "See more"
+  },
+  "dates": { "today": "Today", "tomorrow": "Tomorrow", "yesterday": "Yesterday" },
+  "validation": { "required": "This field is required.", "number": "Please enter a valid number." },
+  "ads": { "label": "Advertisement" },
+
+  "onboarding": {
+    "welcomeTitle": "Welcome to PlantCare",
+    "welcomeBody": "Your personal companion for houseplants, balconies and gardens.",
+    "points": {
+      "collection": "Build your plant collection with photos",
+      "reminders": "Get gentle reminders for watering and care",
+      "journal": "Keep a journal and follow growth over time",
+      "offline": "Works offline. Your data stays on your phone."
+    },
+    "climateTitle": "Where do you garden?",
+    "climateBody": "Seasons are not the same everywhere. This adapts seasonal checklists to your region. You can change it later.",
+    "remindersTitle": "Care reminders",
+    "remindersBody": "PlantCare can remind you when a plant needs care. At most one notification per day, grouping all plants.",
+    "enableReminders": "Enable reminders",
+    "remindersHint": "You can choose the time and turn reminders off per plant or type of care.",
+    "privacyNote": "No account needed. Your plants, notes and photos are stored only on this device.",
+    "start": "Start"
+  },
+
+  "climate": {
+    "north": "Northern hemisphere", "northHint": "Spring from March to May (Europe, North America, most of Asia…)",
+    "south": "Southern hemisphere", "southHint": "Spring from September to November (Australia, South America, southern Africa…)",
+    "tropical": "Tropical climate", "tropicalHint": "No temperate seasons are assumed; pick the checklist you need",
+    "none": "Indoor only / no seasons", "noneHint": "Seasonal checklists stay available but nothing is automatic"
+  },
+  "seasons": { "spring": "Spring", "summer": "Summer", "autumn": "Autumn", "winter": "Winter" },
+
+  "home": {
+    "morning": "Good morning", "afternoon": "Good afternoon", "evening": "Good evening",
+    "noPlantsYet": "Add your first plant to get started.",
+    "allGood": "All your plants are cared for today.",
+    "tasksToday_one": "{{count}} care task for today.",
+    "tasksToday_other": "{{count}} care tasks for today.",
+    "emptyTitle": "Your green space starts here",
+    "emptyBody": "Add a plant from scratch or pick one from the library of plant sheets.",
+    "browseLibrary": "Browse the library",
+    "statPlants": "Plants", "statToday": "To do", "statOverdue": "Overdue",
+    "careToday": "Care today", "seeCalendar": "Calendar", "nothingDue": "Nothing to do right now. Enjoy your plants!",
+    "comingUp": "Coming up this week", "needsAttention": "Needs attention", "shortcuts": "Shortcuts"
+  },
+
+  "plants": {
+    "title": "My Plants", "add": "Add a plant", "edit": "Edit plant",
+    "freeCounter": "{{count}} of {{max}} plants in the free version",
+    "searchPlaceholder": "Search by name…", "filters": "Filters", "sortBy": "Sort by",
+    "sort": { "name": "Name", "date": "Date added", "next_care": "Next care" },
+    "favorites": "Favourites", "favorite": "Add to favourites", "unfavorite": "Remove from favourites",
+    "emptyTitle": "No plants yet", "emptyBody": "Add your first plant to plan its care.", "noResults": "No plant matches your search.",
+    "fromLibrary": "Pre-filled from the library sheet “{{name}}”. You can change anything.",
+    "noLocation": "No location", "notFound": "This plant no longer exists.", "deleted": "Deleted plant",
+    "duplicate": "Duplicate", "copySuffix": "(copy)",
+    "deleteTitle": "Delete this plant?", "deleteBody": "{{plant}} and all its history, journal entries and photos will be permanently deleted.",
+    "fields": {
+      "nickname": "Name", "commonName": "Common name", "scientificName": "Scientific name", "category": "Category", "photo": "Photo",
+      "acquiredOn": "Acquired on", "plantedOn": "Planted on", "location": "Location", "description": "Description", "notes": "Personal notes"
+    }
+  },
+  "categories": {
+    "indoor": "Indoor plants", "outdoor": "Outdoor plants", "succulent": "Succulents", "cactus": "Cacti", "flower": "Flowers",
+    "herb": "Herbs", "vegetable": "Vegetables", "tree": "Trees", "tropical": "Tropical plants", "other": "Other"
+  },
+
+  "plantDetail": {
+    "schedule": "Care schedule", "noSchedule": "No care planned yet. Add watering or other tasks to get reminders.",
+    "editHint": "Tap “More” on a task to postpone, skip or edit it.",
+    "records": "Records", "libraryInfo": "From the library", "about": "About"
+  },
+
+  "tasks": {
+    "add": "Add a task", "edit": "Edit task", "delete": "Delete task", "deleteTitle": "Delete this task?", "deleteBody": "Its past history is kept.",
+    "type": "Type of care", "recurring": "Repeat", "frequency": "Repeat every", "nextDate": "Next date", "date": "Date", "priority": "Priority",
+    "reminders": "Reminders for this task", "remindersHint": "Turn off to never be notified about this task.",
+    "everyDays_one": "Every day", "everyDays_other": "Every {{count}} days",
+    "oneOff": "One-off", "notPlanned": "Not planned", "overdue": "overdue",
+    "inDays_one": "In {{count}} day", "inDays_other": "In {{count}} days",
+    "daysLate_one": "{{count}} day late", "daysLate_other": "{{count}} days late",
+    "more": "More", "postpone1": "Postpone 1 day", "postpone3": "Postpone 3 days", "skip": "Skip this time",
+    "markDoneA11y": "Mark {{task}} as done for {{plant}}"
+  },
+  "taskTypes": {
+    "watering": "Watering", "fertilizing": "Fertilizing", "pruning": "Pruning", "repotting": "Repotting", "leaf_cleaning": "Leaf cleaning",
+    "pest_check": "Pest check", "rotation": "Pot rotation", "seasonal": "Seasonal care", "health_check": "Health check"
+  },
+  "priority": { "low": "Low", "normal": "Normal", "high": "High" },
+  "history": { "actions": { "done": "Done", "skipped": "Skipped", "postponed": "Postponed" } },
+
+  "watering": {
+    "setupTitle": "Plan watering", "setupHint": "You confirm each watering yourself; the schedule moves with you.",
+    "frequency": "Water every", "firstDate": "First watering", "amount": "Indicative amount",
+    "noUniversalRule": "There is no universal rule: needs change with the season, the pot, the substrate and the room. Check the soil before watering and adjust the frequency.",
+    "waterNow": "Watered", "logTitle": "Log a watering", "logBody": "Confirm that you watered {{plant}} today?", "confirm": "Yes, watered",
+    "lastOn": "Last watered on {{date}}", "never": "No watering recorded yet",
+    "addSchedule": "Add a watering schedule", "history": "Watering history", "noHistory": "No watering recorded yet.",
+    "deleteTitle": "Delete this watering?", "total": "Waterings", "averageGap": "Average interval",
+    "averageHint": "The average is calculated from your own waterings and can help you adjust the frequency.",
+    "skippedCount_one": "{{count}} watering skipped.", "skippedCount_other": "{{count}} waterings skipped."
+  },
+
+  "calendar": {
+    "title": "Calendar",
+    "modes": { "today": "Today", "week": "Week", "month": "Month", "done": "Completed" },
+    "overdue_one": "Overdue ({{count}})", "overdue_other": "Overdue ({{count}})",
+    "today": "Today", "nothingToday": "Nothing planned today", "nothingTodayBody": "Your plants are on schedule.",
+    "previousMonth": "Previous month", "nextMonth": "Next month", "previousWeek": "Previous week", "nextWeek": "Next week",
+    "tasksCount_zero": "No task", "tasksCount_one": "{{count}} task", "tasksCount_other": "{{count}} tasks",
+    "nothingPlanned": "Nothing planned this day.",
+    "projectionNote": "Future dates are projected from each task's frequency and move when you complete a task early or late.",
+    "noHistory": "No care completed in the last 30 days."
+  },
+
+  "library": {
+    "title": "Plant Library", "subtitle_one": "{{count}} plant sheet", "subtitle_other": "{{count}} plant sheets",
+    "searchPlaceholder": "Search in English, French, Spanish or Latin…", "noResults": "No plant sheet matches.", "notFound": "This sheet doesn't exist.",
+    "filters": {
+      "indoor": "Indoor", "outdoor": "Outdoor", "low_light": "Low light", "medium_light": "Medium light", "bright_light": "Bright light",
+      "easy_care": "Easy care", "pet_safe": "Pet safe", "flowering": "Flowering", "succulents": "Succulents", "herbs": "Herbs"
+    },
+    "petSafeNote": "Only plants listed as non-toxic to cats and dogs by the ASPCA are shown. Plants with unverified status are excluded.",
+    "addToMyPlants": "Add to my plants", "showMore_one": "Show {{count}} more sheet", "showMore_other": "Show {{count}} more sheets",
+    "light": "Light", "water": "Water needs", "soil": "Soil", "temperature": "Indicative temperature", "humidity": "Humidity",
+    "bloom": "Flowering", "origin": "Origin", "family": "Botanical family", "synonyms": "Also known as",
+    "bloomAllYear": "Can flower all year round", "bloomNone": "Grown mainly for its foliage",
+    "careNotes": "Good to know",
+    "tips": {
+      "checkSoil": "Check the soil with your finger before watering rather than following a fixed calendar.",
+      "adjust": "Indications are general: adapt to your climate, pot size, substrate and exposure.",
+      "hemisphere": "Flowering seasons are given for temperate climates and shift with your region."
+    },
+    "sourcesNote": "Sheets compiled from horticultural references (RHS, Missouri Botanical Garden, ASPCA, Kew POWO). Indicative information, not a substitute for local advice.",
+    "desc": {
+      "intro": "{{name}} belongs to the {{family}} family and is listed here among {{category}}.",
+      "origin": "It is native to {{origin}}.",
+      "cultivated": "It is a cultivated plant or hybrid with no single wild origin.",
+      "placement": { "indoor": "It is mostly grown indoors.", "outdoor": "It is mostly grown outdoors.", "both": "It can be grown indoors or outdoors depending on the climate." },
+      "difficulty": { "easy": "It is considered easy to care for.", "moderate": "It needs some regular attention.", "demanding": "It is considered demanding and suits experienced growers." }
+    }
+  },
+  "light": { "low": "Low light", "medium": "Medium light / partial shade", "bright": "Bright, indirect light", "direct": "Direct sun / full sun" },
+  "water": { "low": "Low", "moderate": "Moderate", "high": "High" },
+  "waterHint": {
+    "low": "let the soil dry out well between waterings",
+    "moderate": "water when the top few centimetres of soil are dry",
+    "high": "keep the soil lightly moist, never waterlogged"
+  },
+  "humidity": { "low": "Low (dry air tolerated)", "medium": "Medium", "high": "High" },
+  "difficulty": { "easy": "Easy", "moderate": "Moderate", "demanding": "Demanding" },
+  "placement": { "indoor": "Indoor", "outdoor": "Outdoor", "both": "Indoor & outdoor" },
+  "soilTypes": {
+    "universal": "Universal potting mix", "well_draining": "Well-draining mix", "cactus": "Cactus & succulent mix", "aroid": "Chunky aroid mix",
+    "orchid": "Orchid bark", "rich": "Rich, moisture-retentive mix", "acidic": "Acidic (ericaceous) soil", "loam": "Garden loam",
+    "sandy": "Sandy, gritty soil", "none": "No soil (water culture or mounted)"
+  },
+  "regions": {
+    "mexico": "Mexico", "c_america": "Central America", "s_america": "South America", "caribbean": "the Caribbean", "n_america": "North America",
+    "trop_africa": "tropical Africa", "e_africa": "East Africa", "s_africa": "southern Africa", "madagascar": "Madagascar", "macaronesia": "the Canary Islands",
+    "mediterranean": "the Mediterranean region", "europe": "Europe", "w_asia": "Western Asia", "c_asia": "Central Asia", "s_asia": "South Asia",
+    "se_asia": "Southeast Asia", "china": "China", "japan": "Japan", "e_asia": "East Asia", "arabia": "the Arabian Peninsula",
+    "australia": "Australia", "pacific": "the Pacific Islands", "cultivated": "Cultivated origin"
+  },
+  "pets": {
+    "toxic": "Toxic to pets", "toxicBody": "Listed as toxic to cats and/or dogs by the ASPCA. Keep out of reach of pets. If a pet has eaten some, contact a veterinarian.",
+    "non_toxic": "Non-toxic to cats and dogs", "non_toxicBody": "Listed as non-toxic by the ASPCA. Eating any plant can still cause mild digestive upset.",
+    "unknown": "Pet safety not verified", "unknownBody": "We could not verify this plant's status on a reliable list. Treat it with caution around pets.",
+    "toxicShort": "Toxic to pets", "safeShort": "Pet safe"
+  },
+
+  "growth": {
+    "title": "Growth", "add": "Add a measurement",
+    "views": { "log": "Log", "gallery": "Gallery", "compare": "Compare" },
+    "chartTitle": "Height ({{unit}})", "chartNeedsTwo": "The chart appears once you have recorded at least two heights.",
+    "chartSummary": "{{count}} measurements, from {{first}} to {{last}} {{unit}}",
+    "empty": "No growth record yet", "emptyBody": "Measure your plant regularly to follow its evolution.",
+    "leaves_one": "{{count}} leaf", "leaves_other": "{{count}} leaves",
+    "deleteTitle": "Delete this record?", "freeLimit": "Free version: up to {{max}} records per plant.",
+    "noPhotos": "No photos yet.", "compareNeedsTwo": "Add at least two photos to compare.", "pickPhotos": "Choose the photos",
+    "height": "Height", "leafCount": "Number of leaves", "condition": "General condition", "photo": "Photo",
+    "measureHint": "Enter what you measured yourself. PlantCare never estimates sizes from photos."
+  },
+  "condition": { "thriving": "Thriving", "good": "Good", "fair": "Fair", "poor": "Poor" },
+
+  "journal": {
+    "title": "Journal", "add": "Add a note", "kind": "Type", "entryTitle": "Title", "body": "What did you observe?", "photo": "Photo",
+    "count_zero": "No entries", "count_one": "{{count}} entry", "count_other": "{{count}} entries",
+    "empty": "Your journal is empty", "emptyBody": "Note new leaves, flowers, changes or treatments to build your plant's story.",
+    "emptyError": "Write something or add a photo.", "deleteTitle": "Delete this entry?"
+  },
+  "journalKinds": {
+    "observation": "Observation", "change": "Visible change", "new_leaf": "New leaf", "flowering": "Flowering", "repotting": "Repotting",
+    "problem": "Problem", "treatment": "Treatment", "comment": "Comment"
+  },
+
+  "health": {
+    "title": "Plant health", "report": "Report a problem", "category": "What do you see?", "description": "Describe the problem",
+    "observedOn": "Observed on", "observedOnDate": "Observed on {{date}}", "photo": "Photo", "photos": "Photos",
+    "possibleCauses": "Possible causes",
+    "disclaimer": "PlantCare does not diagnose diseases. The same symptom can have several causes: observe the whole plant and its conditions, and ask a nursery or a local expert if in doubt.",
+    "empty": "No problem recorded. Great!", "actions": "Actions taken", "noActions": "No action recorded yet.",
+    "newAction": "New action", "newActionPlaceholder": "e.g. Moved away from the window", "addAction": "Add the action",
+    "resolvedOn": "Resolved on {{date}}", "deleteTitle": "Delete this health record?",
+    "openCount_one": "{{count}} open problem", "openCount_other": "{{count}} open problems",
+    "actionsCount_zero": "no action", "actionsCount_one": "{{count}} action", "actionsCount_other": "{{count}} actions"
+  },
+  "healthCategories": {
+    "yellow_leaves": "Yellow leaves", "brown_leaves": "Brown leaves", "wilting": "Wilting", "root_problems": "Root problems",
+    "pests": "Pests", "fungal": "Fungal problems", "growth": "Growth problems", "other": "Other"
+  },
+  "healthStatus": { "open": "Open", "improving": "Improving", "resolved": "Resolved" },
+  "healthGuide": {
+    "title": "Plant problems guide",
+    "disclaimerTitle": "Informative guide, not a diagnosis",
+    "disclaimer": "One symptom can have several causes, sometimes combined. Use these leads to observe your plant, change one thing at a time, and ask a professional if the problem persists.",
+    "possibleCauses": "Possible causes", "whatToCheck": "What to check",
+    "sources": "Based on general guidance from the Royal Horticultural Society and university extension services.",
+    "causes": {
+      "overwatering": { "title": "Too much water", "body": "Soil that stays wet deprives roots of air. Often lower leaves yellow first and the soil smells musty." },
+      "underwatering": { "title": "Not enough water", "body": "Dry, shrinking soil and limp, crispy leaves. Water thoroughly, then adjust the frequency." },
+      "natural_ageing": { "title": "Natural ageing", "body": "The oldest, lowest leaves yellow and drop from time to time. If only one leaf at a time is affected, it is usually normal." },
+      "low_light": { "title": "Not enough light", "body": "Pale leaves, long stretched stems and slow growth. Move the plant gradually to a brighter spot." },
+      "nutrient_deficiency": { "title": "Nutrient deficiency", "body": "Can cause uniform yellowing or slow growth, especially after a long time without repotting or feeding. Follow the fertilizer label." },
+      "sudden_change": { "title": "Sudden change", "body": "A move, draught or temperature change can make a plant drop or yellow some leaves while it adapts." },
+      "low_humidity": { "title": "Dry air", "body": "Brown, crispy leaf tips are common near heaters or in dry climates for humidity-loving plants." },
+      "sunburn": { "title": "Sunburn", "body": "Pale or brown patches on the side facing the sun, often after moving a plant into direct sun too quickly." },
+      "salt_buildup": { "title": "Mineral or fertilizer build-up", "body": "White crust on the soil and brown leaf edges. Flush the soil with plenty of water and avoid over-fertilizing." },
+      "cold_damage": { "title": "Cold damage", "body": "Dark, soft or translucent patches after exposure to cold or frost." },
+      "root_rot": { "title": "Root rot", "body": "Brown, mushy, bad-smelling roots, usually from waterlogged soil. The plant may wilt even when the soil is wet." },
+      "heat_stress": { "title": "Heat stress", "body": "Leaves droop in the hottest hours and may recover in the evening. Provide shade and check moisture." },
+      "transplant_shock": { "title": "Transplant shock", "body": "Temporary wilting after repotting or planting out. Keep conditions stable while the roots settle." },
+      "pot_bound": { "title": "Pot too small", "body": "Roots circling or coming out of the drainage holes, water running straight through. Repot when the season allows." },
+      "poor_drainage": { "title": "Poor drainage", "body": "A pot without holes or a compact substrate keeps water around the roots." },
+      "spider_mites": { "title": "Spider mites", "body": "Tiny dots on leaves, fine webbing and dull, speckled foliage, more frequent in dry air." },
+      "mealybugs": { "title": "Mealybugs", "body": "White, cottony clusters in leaf joints and under leaves." },
+      "scale": { "title": "Scale insects", "body": "Small brown bumps on stems and leaf veins, sometimes with sticky residue." },
+      "aphids": { "title": "Aphids", "body": "Small green, black or white insects on young shoots and buds." },
+      "fungus_gnats": { "title": "Fungus gnats", "body": "Small black flies around the soil, linked to soil that stays moist." },
+      "thrips": { "title": "Thrips", "body": "Silvery streaks and tiny black dots on leaves." },
+      "powdery_mildew": { "title": "Powdery mildew", "body": "White, powdery coating on leaves, favoured by poor air flow." },
+      "leaf_spot": { "title": "Leaf spots", "body": "Brown or black spots, sometimes with a yellow halo. Can be fungal or bacterial, or caused by water on leaves." },
+      "grey_mould": { "title": "Grey mould", "body": "Fuzzy grey growth on soft tissues or flowers in cool, damp conditions." },
+      "dormancy": { "title": "Seasonal rest", "body": "Many plants grow little in winter or during dry seasons. This is normal." },
+      "many_factors": { "title": "Many possible factors", "body": "Note what you observe, recent changes and conditions in the journal: it will help you or an expert find the cause." }
+    },
+    "checks": {
+      "soil_moisture": "Feel the soil a few centimetres deep: is it soggy, damp or bone dry?",
+      "drainage": "Does the pot have drainage holes? Is water left standing in the saucer?",
+      "which_leaves": "Which leaves are affected: old lower leaves or new growth?",
+      "recent_changes": "Did anything change recently: place, season, watering, repotting?",
+      "light_exposure": "How much light does the plant get, and did it change?",
+      "heat_sources": "Is the plant near a heater, air conditioning or a draught?",
+      "water_quality": "Is the water very hard, or has the plant been fertilized a lot?",
+      "roots": "Gently remove the pot: are the roots firm and light, or brown and soft?",
+      "temperature": "Was the plant exposed to heat or cold?",
+      "pot_size": "Do roots fill the pot entirely?",
+      "leaf_undersides": "Inspect the undersides of leaves and stem joints with good light.",
+      "isolate": "Isolate the plant from the others while you investigate.",
+      "neighbours": "Check neighbouring plants for the same signs.",
+      "air_flow": "Is the air moving enough around the plant?",
+      "wet_leaves": "Do leaves stay wet for long after watering?",
+      "remove_affected": "Remove badly affected leaves with clean tools.",
+      "season": "Is it a resting season for this plant in your climate?",
+      "ask_expert": "If in doubt, ask a garden centre, a nursery or a local horticultural service."
+    }
+  },
+
+  "soil": {
+    "title": "Fertilizer & soil", "fertilizer": "Fertilizer", "substrate": "Substrate & pot",
+    "dosageWarning": "PlantCare never suggests a dose: always follow the manufacturer's instructions and your plant's needs.",
+    "planFeeding": "Plan regular feeding", "scheduled_one": "Feeding planned every day.", "scheduled_other": "Feeding planned every {{count}} days.",
+    "noFertilizer": "No fertilizer recorded.", "noSoil": "No substrate recorded.",
+    "addFertilizer": "Record a feeding", "addSoil": "Record a repotting", "fertilizerType": "Type", "brand": "Brand",
+    "composition": "Composition", "compositionPlaceholder": "e.g. NPK 3-1-2", "appliedOn": "Applied on", "quantity": "Quantity applied",
+    "quantityPlaceholder": "As written on the label", "substrateType": "Substrate", "potSize": "Pot diameter", "repottedOn": "Repotted on", "current": "current"
+  },
+  "fertilizerTypes": { "liquid": "Liquid", "granular": "Granules", "slow_release": "Slow release", "organic": "Organic", "foliar": "Foliar", "other": "Other" },
+  "substrates": {
+    "universal": "Universal potting mix", "cactus_mix": "Cactus mix", "orchid_bark": "Orchid bark", "peat_free": "Peat-free compost", "aroid_mix": "Aroid mix",
+    "ericaceous": "Ericaceous compost", "loam": "Loam-based compost", "semi_hydro": "Semi-hydro (clay pebbles…)", "other": "Other"
+  },
+
+  "garden": {
+    "title": "Garden organizer", "subtitle": "Organize your plants by room, balcony or garden area.", "add": "Add a space", "edit": "Edit space",
+    "empty": "No space yet", "emptyBody": "Create spaces like “Living room” or “Balcony” to group your plants and their care.",
+    "freeLimit": "Free version: up to {{max}} spaces.",
+    "plantsCount_zero": "No plant", "plantsCount_one": "{{count}} plant", "plantsCount_other": "{{count}} plants",
+    "unassigned_one": "{{count}} plant without a space.", "unassigned_other": "{{count}} plants without a space.",
+    "type": "Type of space", "name": "Name", "photo": "Photo", "notFound": "This space no longer exists.",
+    "zoneCare": "Care in this space", "noCare": "No care planned in the next 7 days.",
+    "plantsHere_one": "{{count}} plant here", "plantsHere_other": "{{count}} plants here",
+    "deleteTitle": "Delete this space?", "deleteBody": "Its plants are kept; they will simply have no space."
+  },
+  "locationTypes": {
+    "living_room": "Living room", "balcony": "Balcony", "terrace": "Terrace", "garden": "Garden", "greenhouse": "Greenhouse",
+    "office": "Office", "kitchen": "Kitchen", "bedroom": "Bedroom", "custom": "Custom"
+  },
+
+  "wishlist": {
+    "title": "Wishlist", "add": "Add a wish", "edit": "Edit wish", "empty": "Nothing here", "emptyBody": "Note the plants you dream of, with price and where to find them.",
+    "name": "Plant name", "price": "Estimated price", "priceShort": "≈ {{price}}", "store": "Shop or supplier", "status": "Status",
+    "linkSpecies": "Link to the library sheet: {{name}}", "openSheet": "Open the library sheet", "addToCollection": "Add it to my plants",
+    "deleteTitle": "Delete this wish?"
+  },
+  "wishlistStatus": { "wishlist": "Wishlist", "purchased": "Purchased", "cancelled": "Cancelled" },
+
+  "seasonal": {
+    "title": "Seasonal care", "currentCard": "{{season}} checklist", "cardBody": "Seasonal tasks adapted to your climate.",
+    "detected": "Current season: {{season}} ({{climate}}).",
+    "noSeasons": "Your climate profile has no temperate seasons: choose the checklist that fits your conditions.",
+    "changeClimate": "Change climate profile", "progress": "{{done}} of {{total}} done this season",
+    "addItem": "Add your own item", "history": "Seasons history", "noHistory": "No completed season yet.",
+    "itemsDone_one": "{{count}} item done", "itemsDone_other": "{{count}} items done", "removeTitle": "Remove this item?",
+    "items": {
+      "spring_repot_check": "Check which plants need repotting",
+      "spring_resume_feeding": "Resume feeding growing plants (follow labels)",
+      "spring_inspect_pests": "Inspect leaves for pests as growth restarts",
+      "spring_clean_pots": "Clean pots, saucers and tools",
+      "spring_prune_dead": "Remove dead or damaged stems",
+      "spring_harden_off": "Gradually acclimatize plants before moving them outside",
+      "summer_check_water_often": "Check soil moisture more often in hot weather",
+      "summer_shade_hot_hours": "Protect sensitive plants from the strongest sun",
+      "summer_humidity": "Watch humidity for tropical plants",
+      "summer_deadhead": "Remove faded flowers",
+      "summer_holiday_plan": "Plan watering during holidays",
+      "summer_pests": "Watch for spider mites and aphids",
+      "autumn_bring_inside": "Bring frost-tender plants inside before cold nights",
+      "autumn_reduce_feeding": "Reduce or stop feeding as growth slows",
+      "autumn_collect_seeds": "Collect seeds from the garden",
+      "autumn_clean_leaves": "Clear fallen leaves around plants",
+      "autumn_protect_frost": "Prepare frost protection for outdoor pots",
+      "autumn_plant_bulbs": "Plant spring-flowering bulbs",
+      "winter_reduce_water": "Water less: most plants grow slowly",
+      "winter_away_from_heaters": "Keep plants away from heaters and cold draughts",
+      "winter_max_light": "Move plants closer to the light",
+      "winter_check_drafts": "Check windows for cold draughts",
+      "winter_plan_garden": "Plan next season's garden",
+      "winter_dust_leaves": "Dust large leaves to help them get light"
+    }
+  },
+
+  "stats": {
+    "title": "Statistics", "plants": "Plants", "waterings30": "Waterings (30 days)", "tasks30": "Other care (30 days)", "attention": "Need attention",
+    "byCategory": "Plants by category", "regularity": "Care regularity (30 days)",
+    "regularityHint": "Share of care done versus skipped, postponed or more than one day late.",
+    "monthlyCare": "Care per month", "collectionGrowth": "Collection size",
+    "streak_zero": "No care streak yet", "streak_one": "{{count}} day of care in a row", "streak_other": "{{count}} days of care in a row",
+    "streakBody": "Keep going — your plants thank you!", "streakZero": "Complete a task today to start a streak."
+  },
+
+  "premium": {
+    "title": "PlantCare Premium", "teaser": "Unlimited plants, full library, photo journal, advanced statistics and no ads.",
+    "active": "Premium is active", "activeBody": "Thank you for supporting PlantCare!", "badge": "Premium", "discover": "Discover Premium",
+    "historyTitle": "Full history", "historyBody_one": "{{count}} older record is kept and visible with Premium.", "historyBody_other": "{{count}} older records are kept and visible with Premium.",
+    "compareTitle": "Photo comparison", "compareBody": "Compare two photos side by side to see how your plant has grown.",
+    "libraryTitle": "Full library", "libraryBody": "This sheet is part of the full library available with Premium.",
+    "photoJournalTitle": "Photo journal", "photoJournalBody": "Add photos to your journal entries with Premium. Text entries are always free.",
+    "seasonalTitle": "Custom seasonal templates", "seasonalBody": "Add your own seasonal tasks and keep a history of every season.",
+    "statsTitle": "Advanced statistics", "statsBody": "See monthly trends, care regularity and the evolution of your collection.",
+    "pdfTitle": "PDF export", "pdfBody": "Export a care report of all your plants as a PDF."
+  },
+  "paywall": {
+    "title": "Grow further with Premium", "subtitle": "Everything you need to care for a large collection.",
+    "benefits": {
+      "plants": "Unlimited plants (free version: {{free}})", "library": "Full library of {{count}} plant sheets", "history": "Complete care history",
+      "growth": "Detailed growth tracking", "photoJournal": "Photo journal and photo comparison", "stats": "Advanced statistics",
+      "garden": "Unlimited garden spaces", "seasonal": "Custom seasonal templates", "pdf": "PDF care report", "noAds": "No ads"
+    },
+    "periods": { "monthly": "Monthly", "annual": "Annual", "lifetime": "Lifetime", "unknown": "Plan" },
+    "perMonth": "{{price}} / month", "perYear": "{{price}} / year", "once": "{{price}} once",
+    "save": "Save {{percent}}%", "freeTrial": "Free trial", "subscribe": "Continue", "restore": "Restore purchases",
+    "success": "Welcome to Premium!", "cancelled": "Purchase cancelled.", "pending": "Your purchase is pending confirmation.",
+    "unavailable": "The store is unavailable right now. Please try again later.",
+    "notConfigured": "Purchases are not available in this version of the app.",
+    "restored": "Your purchases have been restored.", "nothingToRestore": "No purchase to restore.",
+    "activeUntil": "Active until {{date}}", "manage": "Manage subscription",
+    "legal": "Subscriptions renew automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel anytime in Google Play.",
+    "terms": "Terms", "privacy": "Privacy"
+  },
+
+  "profile": {
+    "title": "Profile", "myGarden": "My garden",
+    "locationsCount_zero": "No space", "locationsCount_one": "{{count}} space", "locationsCount_other": "{{count}} spaces",
+    "wishlistCount_zero": "Empty", "wishlistCount_one": "{{count}} wish", "wishlistCount_other": "{{count}} wishes",
+    "plantsCount_zero": "No plant", "plantsCount_one": "{{count}} plant", "plantsCount_other": "{{count}} plants",
+    "footer": "PlantCare · Your data stays on this device"
+  },
+  "settings": {
+    "title": "Settings", "preferences": "Preferences", "preferencesHint": "Language, theme, units, climate", "language": "Language",
+    "theme": "Theme", "themes": { "system": "System", "light": "Light", "dark": "Dark" },
+    "units": "Units", "unitSystems": { "metric": "Metric (cm, ml)", "imperial": "Imperial (in, fl oz)" }, "climate": "Climate profile",
+    "notifications": "Reminders", "data": "Data & backup", "dataHint": "Export, restore, delete", "privacy": "Privacy"
+  },
+  "notifSettings": {
+    "forPlant": "Reminders · {{plant}}", "permissionTitle": "Notifications are off",
+    "permissionBody": "Allow notifications to receive care reminders. The app works normally without them.",
+    "allow": "Allow notifications", "openSettings": "Open system settings",
+    "enabled": "Care reminders", "enabledHint": "One daily summary at most, only on days with care to do.",
+    "hour": "Reminder hour", "minute": "Minutes",
+    "antiSpam": "Overdue care is reminded once, never repeatedly. Reminders are planned two weeks ahead and updated each time you complete a task.",
+    "byType": "By type of care", "plantHint": "These switches apply only to this plant.", "test": "Send a test notification"
+  },
+  "notifications": {
+    "channel": "Care reminders", "title": "Plant care today", "overdueTitle": "Some plants are waiting for you",
+    "single": {
+      "watering": "Time to check {{plant}}'s soil and water if needed.", "fertilizing": "{{plant}}: feeding planned today.",
+      "pruning": "{{plant}}: pruning planned today.", "repotting": "{{plant}}: repotting planned today.",
+      "leaf_cleaning": "{{plant}}: time to clean the leaves.", "pest_check": "{{plant}}: check for pests today.",
+      "rotation": "{{plant}}: rotate the pot for even growth.", "seasonal": "{{plant}}: seasonal care planned today.",
+      "health_check": "{{plant}}: take a moment to check its health."
+    },
+    "multi_one": "{{count}} care task: {{plants}}", "multi_other": "{{count}} care tasks: {{plants}}",
+    "test": "Reminders are working. 🌿"
+  },
+  "photos": {
+    "gallery": "Gallery", "camera": "Take photo", "remove": "Remove",
+    "privacy": "Photos are saved privately in the app and never sent anywhere.",
+    "deniedTitle": "Camera access refused", "deniedBody": "You can still choose a photo from your gallery, or allow the camera in the system settings.",
+    "error": "The photo could not be saved."
+  },
+  "data": {
+    "intro": "Your data belongs to you. Export it, move it to a new phone or erase it at any time.",
+    "backup": "Backup", "backupBody": "Export a backup file (JSON) and keep it where you want: email, drive, computer.",
+    "export": "Export a backup", "restore": "Restore a backup", "shareTitle": "PlantCare export",
+    "photosNote": "Photos are not included in the backup file: they stay on this phone.",
+    "restoreTitle": "Restore a backup?", "restoreBody": "Your current plants and records will be replaced by the content of the backup file.",
+    "restoreConfirm": "Restore", "restoreDone": "Backup restored", "restoreDoneBody_one": "{{count}} record restored.", "restoreDoneBody_other": "{{count}} records restored.",
+    "exportFailed": "The export could not be created.", "noShareApp": "No app is available to share the file.",
+    "errors": {
+      "invalid_json": "This file is not a valid backup.", "invalid_format": "This file is not a PlantCare backup.",
+      "wrong_app": "This backup comes from another app.", "newer_schema": "This backup comes from a newer version of PlantCare. Update the app first."
+    },
+    "pdf": "PDF report", "pdfBody": "A printable report of your plants, their care schedule and last waterings.", "exportPdf": "Export PDF",
+    "danger": "Delete", "deleteHint": "Erase all plants, records, photos and settings from this phone. This cannot be undone.",
+    "deleteAll": "Delete all my data", "deleteTitle": "Delete everything?",
+    "deleteBody": "All plants, history, journal, photos and spaces will be permanently erased. Your Premium subscription is not affected.",
+    "deleteConfirm": "Delete everything"
+  },
+  "privacy": {
+    "points": {
+      "local": "Your plants, notes and history are stored only on this device (offline).",
+      "photos": "Photos are kept in the app's private storage and are never uploaded or analysed.",
+      "noAccount": "No account and no server: nothing to sign up for.",
+      "permissions": "Minimal permissions: notifications (optional) and the camera only when you take a photo.",
+      "export": "You can export or delete all your data at any time."
+    },
+    "analytics": "Share anonymous usage statistics", "analyticsHint": "Off by default. Never includes plant names, notes or photos.",
+    "adsChoices": "Manage ad privacy choices",
+    "ads": "The free version shows discreet ads, never while you record an observation or complete a care task. Premium removes them.",
+    "policy": "Privacy policy"
+  },
+  "report": {
+    "title": "PlantCare — care report", "generatedOn_one": "Generated on {{date}} · {{count}} plant", "generatedOn_other": "Generated on {{date}} · {{count}} plants",
+    "lastWatered": "Last watered", "waterings_one": "{{count}} watering recorded", "waterings_other": "{{count}} waterings recorded",
+    "task": "Care", "frequency": "Frequency", "next": "Next",
+    "footer": "Indicative care plan created by the user. Adapt it to your plants' real needs."
+  }
+}

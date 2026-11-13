@@ -1,0 +1,99 @@
+import { resolveAdUnits, shouldShowBanner } from '@factory/monetization';
+import Constants from 'expo-constants';
+
+import manifest from '../../app.manifest.json';
+
+import { recordError } from './analytics';
+
+/**
+ * AdMob orchestration with Google UMP consent.
+ * - Development & preview builds always use Google's test ad units.
+ * - Production ad unit IDs come from EXPO_PUBLIC_ADMOB_* (protected CI variables).
+ * - Ads are requested only after consent information is gathered and only if `canRequestAds`.
+ */
+const variant = (Constants.expoConfig?.extra?.variant as string | undefined) ?? 'development';
+
+export const adUnits = resolveAdUnits({
+  isDev: variant !== 'production',
+  production: {
+    banner: process.env.EXPO_PUBLIC_ADMOB_BANNER_ID,
+    rewarded: process.env.EXPO_PUBLIC_ADMOB_REWARDED_ID,
+  },
+});
+
+let state: { initialized: boolean; canRequestAds: boolean; privacyOptionsRequired: boolean } = {
+  initialized: false,
+  canRequestAds: false,
+  privacyOptionsRequired: false,
+};
+const listeners = new Set<() => void>();
+
+export function adsState() {
+  return state;
+}
+
+export function onAdsStateChange(fn: () => void): () => void {
+  listeners.add(fn);
+  return () => listeners.delete(fn);
+}
+
+function setState(patch: Partial<typeof state>) {
+  state = { ...state, ...patch };
+  listeners.forEach((l) => l());
+}
+
+type MobileAdsModule = typeof import('react-native-google-mobile-ads');
+
+function sdk(): MobileAdsModule | null {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require('react-native-google-mobile-ads') as MobileAdsModule;
+  } catch {
+    return null; // e.g. running in Expo Go, where the native module is absent.
+  }
+}
+
+/** Gathers UMP consent (shows the form only where legally required) then initialises the SDK. */
+export async function initAds(): Promise<void> {
+  if (state.initialized) return;
+  const ads = sdk();
+  if (!ads) return;
+  try {
+    const consent = await ads.AdsConsent.gatherConsent();
+    const canRequestAds = consent.canRequestAds;
+    setState({
+      canRequestAds,
+      privacyOptionsRequired: consent.privacyOptionsRequirementStatus === ads.AdsConsentPrivacyOptionsRequirementStatus.REQUIRED,
+    });
+    if (canRequestAds) {
+      await ads.default().initialize();
+      setState({ initialized: true });
+    }
+  } catch (e) {
+    recordError(e, 'ads_init');
+  }
+}
+
+/** Lets EEA/UK users change their consent choice at any time (Settings > Privacy). */
+export async function showPrivacyOptions(): Promise<void> {
+  const ads = sdk();
+  if (!ads) return;
+  try {
+    await ads.AdsConsent.showPrivacyOptionsForm();
+    const info = await ads.AdsConsent.getConsentInfo();
+    setState({ canRequestAds: info.canRequestAds });
+  } catch (e) {
+    recordError(e, 'ads_privacy_options');
+  }
+}
+
+export function bannerAllowed(input: { isPremium: boolean; sessionCount: number; screenAllowsAds: boolean }): boolean {
+  if (!adUnits.banner) return false;
+  return shouldShowBanner({
+    ...input,
+    consentObtained: state.initialized && state.canRequestAds,
+    graceSessions: manifest.monetization.ads?.graceSessions ?? 0,
+  });
+}
+
+export { sdk as adsSdk };
