@@ -1,46 +1,57 @@
 # FilePilot — suivi
 
-Dossier : `apps/filepilot` · Package id : non défini · Statut manifest : — · Dernière mise à jour : 2026-11-13
-(état initial relevé de l'extérieur — **à compléter par la session FilePilot**)
+Dossier : `apps/filepilot` · Package id : `com.filepilot.app` (provisoire) · Statut manifest : `development` · Dernière mise à jour : 2026-11-13
+Détail complet : [apps/filepilot/docs/status.md](../../apps/filepilot/docs/status.md).
 
 ## Fonctionnalités terminées
 
-- `package.json` (dépendances déclarées) ; scaffolding en cours (`app.config.ts`, manifest, `eas.json`, `src/`)
+- Tableau de bord (recherche d'outils, quota, opérations récentes, entrée Premium), onboarding, réglages, confidentialité
+- Images : compression (qualité, taille cible Premium, lot Premium), redimensionnement (préréglages, %, personnalisé, ratio), conversion JPEG/PNG/WebP réelle
+- PDF : fusion (réordonnancement), division (plages, chaque page, toutes les N pages), extraction de pages, image → PDF, PDF → images (module natif `PdfRenderer`)
+- Moteur de traitement (`src/services/`) : détection par contenu, en-têtes image (dimensions, alpha, EXIF), limites mémoire, dossiers temporaires par tâche, nettoyage, pas d'écrasement, reprise après interruption
+- Historique SQLite (métadonnées seulement), partage (FileProvider), « Enregistrer sur l'appareil » (SAF)
+- i18n en/fr/es, thèmes clair/sombre, AdMob (UMP, IDs de test en dev), RevenueCat, analytics anonymes opt-in
+- Paquet Play (`store/` : fiches en/fr/es, Data Safety, classification, politique de confidentialité, icône, bannière)
 
 ## Fonctionnalités en cours
 
-- Scaffolding de l'app
+- Aucune (en attente de vérification sur appareil)
 
 ## Fonctionnalités restantes
 
-- Définir le produit (périmètre, audience, modèle économique), package id, locales
-- Manifest + entrée dans `factory/app-registry/registry.json` (ajouter **uniquement** sa ligne)
-- Écrans, logique, i18n, tests, assets, `store/`
+- Compression PDF : volontairement non proposée (pas de méthode locale vérifiable)
+- HEIC/GIF/BMP/TIFF et PDF protégés par mot de passe : non pris en charge
+- Ajout de `filepilot` aux matrices `.gitlab-ci.yml` + règle de tag `filepilot-vX.Y.Z` : à faire via `chore/shared-*` (protocole §3)
 
 ## Bugs connus
 
-- Au relevé (2026-11-13), `tsc --noEmit` et `jest` échouaient faute de fichiers source (scaffolding incomplet).
+- Aucun connu. Code natif Kotlin (`modules/filepilot-native`) non compilé ici (pas de SDK Android).
 
 ## Dépendances spécifiques
 
-expo-document-picker, expo-file-system, expo-image-manipulator, expo-sharing, expo-sqlite,
-@react-native-community/slider, react-native-google-mobile-ads, react-native-purchases, zustand, zod.
-Packages prévus : app-config, app-core, design-system, localization, monetization, storage, analytics, testing.
-
-Attention Data Safety : accès aux fichiers utilisateur → déclarer précisément (pas de
-`MANAGE_EXTERNAL_STORAGE` sauf justification Play ; préférer le sélecteur de documents / SAF).
+expo-document-picker, expo-image-manipulator, @react-native-community/slider, pdf-lib 1.17.1 (MIT, non maintenu — repli : `@cantoo/pdf-lib`),
+react-hook-form + @hookform/resolvers ; tests : jpeg-js, pngjs. Évaluation : `apps/filepilot/docs/file-processing.md`.
+Aucun package partagé modifié.
 
 ## Tests réalisés
 
 | Date | Commande | Résultat |
 | --- | --- | --- |
-| 2026-11-13 | `tsc --noEmit` | ❌ (pas de sources) |
+| 2026-11-13 | `tsc --noEmit` | ✅ |
+| 2026-11-13 | `eslint apps/filepilot` | ✅ 0 problème |
+| 2026-11-13 | `jest` | ✅ 117/117 (7 suites) |
+| 2026-11-13 | `expo-doctor` | ✅ 20/20 |
+| 2026-11-13 | `expo export --platform android` | ✅ bundle Hermes 5,5 Mo |
+| 2026-11-13 | `expo prebuild` | ✅ module local autolinké, permissions stockage/média retirées |
 
 ## Préparation à la publication
 
-- [ ] Tout reste à faire.
+- [x] Manifest, entrée registre, assets, fiches store, Data Safety, classification, politique (modèle)
+- [x] targetSdk 36 (exigence Play depuis le 31/08/2026)
+- [ ] Package id définitif, projet EAS, AdMob, produits Play + RevenueCat, URLs légales
+- [ ] Build sur appareil + checklist QA (`docs/status.md`), captures d'écran réelles
 
 ## Candidats à la mutualisation
 
-FilePilot sera la 3ᵉ app avec pubs + abonnements : bon moment pour remonter `ads.ts` / `monetization.ts`
-dans `@factory/monetization` — **en coordination**, via le protocole partagé, pas en parallèle d'une autre session.
+- `services/ads.ts` (bannière + récompensée + interstitiel), `hooks/useRewardedAd.ts`, `services/monetization.ts` : 3ᵉ copie du même schéma → remonter dans `@factory/monetization` via le protocole partagé.
+- `FileStore`/`Workspace` et `ProcessingView` si une autre app manipule des fichiers (ex. imagecraft).

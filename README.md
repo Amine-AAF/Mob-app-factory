@@ -8,6 +8,10 @@ An English-learning app for software developers: workplace English, technical En
 IT interview preparation, a tech dictionary with spaced-repetition flashcards, speaking
 practice, daily challenges and gamified progress. Works fully offline, no account.
 
+**App #3: [FilePilot](apps/filepilot)** — *All Your File Tools. One Simple App.* Privacy-first image
+compression/resizing/conversion and PDF merge/split/extract, image↔PDF, processed entirely on the device.
+Status: [apps/filepilot/docs/status.md](apps/filepilot/docs/status.md).
+
 ## Repository layout
 
 ```
