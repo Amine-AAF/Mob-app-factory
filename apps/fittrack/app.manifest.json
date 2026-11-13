@@ -1,0 +1,49 @@
+{
+  "id": "fittrack",
+  "name": "FitTrack",
+  "storeName": "FitTrack - Workout Planner",
+  "slug": "fittrack",
+  "scheme": "fittrack",
+  "packageId": "com.mobileappsfactory.fittrack",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "health-fitness",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de"],
+  "brand": { "primary": "#C8381A", "accent": "#22C1EE", "splashBackground": "#141012" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "fittrack_premium_monthly", "period": "monthly", "indicativePriceUsd": 3.99 },
+        { "productId": "fittrack_premium_annual", "period": "annual", "indicativePriceUsd": 19.99 },
+        { "productId": "fittrack_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 34.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "interstitial"], "graceSessions": 3 }
+  },
+  "features": {
+    "exerciseLibrary": true,
+    "workoutBuilder": true,
+    "planner": true,
+    "activeWorkout": true,
+    "performanceTracker": true,
+    "bodyProgress": true,
+    "progressPhotos": true,
+    "cardioTracker": true,
+    "timers": true,
+    "templates": true,
+    "goalsChallenges": true,
+    "statistics": true,
+    "reminders": true,
+    "backupRestore": true,
+    "gps": false,
+    "healthConnect": false
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
