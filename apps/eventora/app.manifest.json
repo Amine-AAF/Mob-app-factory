@@ -1,0 +1,52 @@
+{
+  "id": "eventora",
+  "name": "Eventora",
+  "storeName": "Eventora: Event Planner",
+  "slug": "eventora",
+  "scheme": "eventora",
+  "packageId": "com.mobileappsfactory.eventora",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "productivity",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt", "ar"],
+  "brand": { "primary": "#7A3E6B", "accent": "#C9A24B", "splashBackground": "#1C1020" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "eventora_premium_monthly", "period": "monthly", "indicativePriceUsd": 3.99 },
+        { "productId": "eventora_premium_annual", "period": "annual", "indicativePriceUsd": 19.99 },
+        { "productId": "eventora_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 34.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 2 }
+  },
+  "features": {
+    "dashboard": true,
+    "events": true,
+    "guests": true,
+    "csvImport": true,
+    "rsvp": true,
+    "invitations": true,
+    "invitationImageExport": false,
+    "budget": true,
+    "tasks": true,
+    "timeline": true,
+    "seating": true,
+    "vendors": true,
+    "gifts": true,
+    "templates": true,
+    "reports": true,
+    "localNotifications": true,
+    "backupRestore": true,
+    "onlineRsvp": false,
+    "contactsImport": false
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

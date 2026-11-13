@@ -1,0 +1,437 @@
+{
+  "tabs": { "home": "Inicio", "events": "Mis eventos", "guests": "Invitados", "tasks": "Tareas", "settings": "Ajustes" },
+  "common": {
+    "all": "Todos", "back": "Atrás", "cancel": "Cancelar", "close": "Cerrar", "confirm": "Confirmar", "continue": "Continuar", "delete": "Eliminar",
+    "deleteTitle": "¿Eliminar «{{what}}»?", "deleteBody": "Esta acción no se puede deshacer.", "edit": "Editar", "more": "Más", "noResults": "Sin resultados.",
+    "notNow": "Ahora no", "off": "Desactivado", "on": "Activado", "pickDate": "Elegir una fecha", "pickTime": "Elegir una hora", "remove": "Quitar", "save": "Guardar",
+    "saved": "Guardado", "search": "Buscar", "seeAll": "Ver todo", "done": "Listo", "choose": "Elegir"
+  },
+  "calendar": { "previous": "Mes anterior", "next": "Mes siguiente", "today": "Hoy", "inDays_one": "En {{count}} día", "inDays_other": "En {{count}} días", "hour": "Hora", "minute": "Minutos" },
+  "ads": { "label": "Publicidad" },
+  "onboarding": {
+    "title": "Todos tus eventos en un solo lugar",
+    "subtitle": "Bodas, cumpleaños, conferencias, cenas familiares: Eventora reúne invitados, presupuesto, tareas y programa.",
+    "features": {
+      "plan": "Eventos con panel propio y plantillas",
+      "guests": "Lista de invitados, familias, acompañantes y confirmaciones",
+      "invite": "Invitaciones elegantes para compartir desde tu teléfono",
+      "budget": "Presupuesto, gastos y proveedores, con varias monedas",
+      "seating": "Distribución de mesas, programa e informes"
+    },
+    "start": "Empezar",
+    "prefsTitle": "Tus preferencias",
+    "privacyTitle": "Tus datos se quedan contigo",
+    "privacy": {
+      "local": "Todo se guarda en este teléfono. Sin cuenta, sin servidor.",
+      "noAccount": "Funciona sin conexión. No se envía nada automáticamente.",
+      "share": "Tú decides qué compartir, mediante el menú de compartir de Android.",
+      "contacts": "Eventora nunca lee tu agenda de contactos."
+    },
+    "remindersBody": "Los recordatorios te ayudan con plazos, pagos y confirmaciones. Nunca muestran nombres ni datos de contacto de tus invitados. Puedes cambiarlo cuando quieras.",
+    "enableReminders": "Activar recordatorios",
+    "later": "Quizás más tarde"
+  },
+  "home": {
+    "greeting": "Tus eventos",
+    "emptyTitle": "Organicemos algo",
+    "emptyBody": "Crea tu primer evento o empieza con una de las 20 plantillas de organización.",
+    "nextEvent": "Próximo evento",
+    "kpi": {
+      "upcoming": "Próximos eventos", "preparing": "En preparación", "guests": "Invitados (eventos activos)", "confirmed": "Confirmados · personas esperadas",
+      "tasks": "Tareas pendientes", "tasksOverdue_one": "{{count}} tarea atrasada", "tasksOverdue_other": "{{count}} tareas atrasadas", "progress": "Preparación global"
+    },
+    "budgetUsed": "Presupuesto utilizado",
+    "urgent": "Tareas urgentes",
+    "deadlines": "Próximos plazos",
+    "otherEvents": "También se acercan",
+    "finished": "Terminados recientemente",
+    "privacyFooter": "Guardado solo en este dispositivo"
+  },
+  "events": {
+    "title": "Mis eventos", "new": "Nuevo", "create": "Crear evento", "edit": "Editar evento",
+    "filter": { "active": "Activos", "past": "Pasados", "cancelled": "Cancelados", "all": "Todos" },
+    "searchPlaceholder": "Nombre o lugar",
+    "emptyTitle": "No hay eventos aquí", "emptyBody": "Crea un evento o elige una plantilla para obtener una lista de tareas lista para usar.",
+    "guestLine_one": "{{count}} invitado · {{confirmed}} confirmados", "guestLine_other": "{{count}} invitados · {{confirmed}} confirmados",
+    "notFound": "Este evento ya no existe.",
+    "fromTemplate": "Plantilla: {{name}}", "templateWillAdd": "Se añadirán {{tasks}} tareas, {{activities}} actividades del programa y categorías de presupuesto. Todo sigue siendo editable.",
+    "useTemplate": "Empezar con una plantilla",
+    "duplicate": "Duplicar", "duplicateBody": "Copiar la configuración (categorías de presupuesto, tareas, programa, mesas, proveedores, invitación). Los invitados son opcionales.",
+    "duplicateConfig": "Solo la configuración", "duplicateWithGuests": "Con la lista de invitados", "copyWord": "copia",
+    "deleteBody": "El evento y todos sus invitados, tareas, gastos, programa y distribución de mesas se eliminarán de este teléfono.",
+    "suggestStatus": "¿Marcar como «{{status}}»?", "suggestStatusTap": "Toca para actualizar el estado."
+  },
+  "event": {
+    "name": "Nombre del evento", "namePlaceholder": "p. ej. Boda de Lea y Sam", "type": "Tipo", "theme": "Tema", "cover": "Imagen de portada",
+    "addCover": "Añadir portada", "changeCover": "Cambiar portada", "removeCover": "Quitar portada", "description": "Descripción",
+    "startDate": "Fecha", "startTime": "Hora de inicio", "endDate": "Fecha de fin (opcional)", "endTime": "Hora de fin",
+    "timezone": "Zona horaria", "timezoneHint": "Los horarios se mantienen en la zona horaria del evento, aunque viajes.",
+    "venue": "Lugar", "address": "Dirección", "expectedGuests": "Asistentes previstos", "budget": "Presupuesto inicial", "currency": "Moneda",
+    "notes": "Notas", "status": "Estado",
+    "inDays_one": "En {{count}} día", "inDays_other": "En {{count}} días", "today": "¡Hoy!", "daysAgo_one": "Hace {{count}} día", "daysAgo_other": "Hace {{count}} días",
+    "kpi": { "attendance": "Esperados / previstos", "confirmedPending": "Confirmados · pendientes", "tasksDone": "Tareas hechas" },
+    "preparation": "Avance de la preparación", "manage": "Gestionar"
+  },
+  "eventTypes": {
+    "wedding": "Boda", "birthday": "Cumpleaños", "engagement": "Compromiso", "anniversary": "Aniversario", "baby_shower": "Baby shower",
+    "graduation": "Graduación", "dinner_party": "Cena", "family_gathering": "Reunión familiar", "corporate_event": "Evento corporativo",
+    "conference": "Conferencia", "workshop": "Taller", "business_meeting": "Reunión de negocios", "holiday_party": "Fiesta navideña", "custom": "Evento personalizado"
+  },
+  "eventStatus": { "draft": "Borrador", "planning": "En organización", "confirmed": "Confirmado", "in_progress": "En curso", "completed": "Terminado", "cancelled": "Cancelado" },
+  "themes": { "wedding": "Boda", "birthday": "Cumpleaños", "corporate": "Empresa", "family": "Familia", "celebration": "Celebración" },
+  "modules": {
+    "guests": "Invitados", "guestsValue_one": "{{count}} entrada · {{people}} personas", "guestsValue_other": "{{count}} entradas · {{people}} personas",
+    "rsvp": "Confirmaciones", "rsvpValue_one": "{{count}} pendiente", "rsvpValue_other": "{{count}} pendientes",
+    "invitations": "Invitaciones", "invitationsValue_one": "{{count}} diseño", "invitationsValue_other": "{{count}} diseños", "create": "Crear",
+    "budget": "Presupuesto", "tasks": "Tareas", "tasksValue_one": "{{count}} pendiente", "tasksValue_other": "{{count}} pendientes",
+    "timeline": "Programa", "timelineValue_one": "{{count}} actividad", "timelineValue_other": "{{count}} actividades",
+    "timelineOverlaps_one": "{{count}} solapamiento", "timelineOverlaps_other": "{{count}} solapamientos",
+    "seating": "Mesas", "seatingValue": "{{seated}} sentados · {{unseated}} por ubicar",
+    "vendors": "Proveedores", "vendorsValue_one": "{{count}} proveedor", "vendorsValue_other": "{{count}} proveedores",
+    "gifts": "Regalos", "giftsValue_one": "{{count}} por agradecer", "giftsValue_other": "{{count}} por agradecer",
+    "reports": "Informes", "reportsValue": "PDF, CSV, copia de seguridad"
+  },
+  "guests": {
+    "title": "Invitados", "add": "Añadir invitado", "edit": "Editar invitado", "delete": "Eliminar invitado", "import": "Importar CSV", "groups": "Grupos",
+    "entries": "Entradas", "filters": "Filtros", "allGroups": "Todos los grupos", "noGroup": "Sin grupo", "withChildren": "Solo con niños",
+    "sort": "Ordenar", "sortBy": { "name": "Nombre", "status": "Estado", "recent": "Añadidos recientemente" },
+    "searchPlaceholder": "Nombre, correo, teléfono, nota", "showing_one": "{{count}} de {{total}}", "showing_other": "{{count}} de {{total}}",
+    "emptyTitle": "Aún no hay invitados", "emptyBody": "Añade invitados uno a uno o importa un archivo CSV desde una hoja de cálculo.",
+    "noEventTitle": "Aún no hay eventos", "noEventBody": "Crea un evento para empezar tu lista de invitados.",
+    "saveAndAdd": "Guardar y añadir otro", "freeLimit": "{{count}} / {{limit}} invitados en el plan gratuito",
+    "duplicates": {
+      "title": "Posible duplicado", "found_one": "{{count}} posible duplicado", "found_other": "{{count}} posibles duplicados",
+      "tap": "Toca para revisar y fusionar.", "mergeBody": "«{{a}}» y «{{b}}» parecen la misma persona. ¿Fusionarlos en una sola entrada?",
+      "merge": "Fusionar", "open": "Abrir", "possible": "Puede que este invitado ya esté en la lista",
+      "reason": { "name": "mismo nombre", "email": "mismo correo", "phone": "mismo teléfono" }
+    }
+  },
+  "guest": {
+    "name": "Nombre", "firstName": "Nombre", "lastName": "Apellidos", "category": "Categoría", "group": "Grupo / familia",
+    "plusOnes": "Acompañantes adultos", "plusOnesHint": "Pareja o amigos que vienen con este invitado", "children": "Niños que asisten",
+    "childrenHint": "Niños que vienen con este invitado", "isChild": "Este invitado es un niño", "partyTotal_one": "{{count}} persona en total",
+    "partyTotal_other": "{{count}} personas en total", "party": "Personas", "partyOf_one": "{{count}} persona", "partyOf_other": "{{count}} personas",
+    "child": "niño", "hasDietary": "dieta especial", "rsvp": "Confirmación", "private": "Datos privados",
+    "privateHint": "Los datos de contacto, la dieta y las notas se quedan en este teléfono. Nunca aparecen en las notificaciones y solo se incluyen en las exportaciones si tú lo eliges.",
+    "phone": "Teléfono", "email": "Correo", "dietary": "Preferencias alimentarias", "dietaryPlaceholder": "p. ej. vegetariano, alergia a frutos secos", "notes": "Notas", "unnamed": "Invitado sin nombre"
+  },
+  "guestCategory": { "family": "Familia", "friend": "Amigo", "colleague": "Compañero", "partner": "Socio", "vip": "VIP", "other": "Otro" },
+  "groupKind": { "family": "Familia", "friends": "Amigos", "colleagues": "Compañeros", "other": "Otro" },
+  "groups": {
+    "newName": "Nuevo grupo", "rename": "Renombrar grupo", "placeholder": "p. ej. Familia Martín", "create": "Crear grupo",
+    "emptyTitle": "Sin grupos", "emptyBody": "Los grupos mantienen juntas a familias y hogares, también en la distribución de mesas.",
+    "members_one": "{{count}} entrada", "members_other": "{{count}} entradas", "people": "{{adults}} adultos, {{children}} niños",
+    "deleteBody": "Los invitados de este grupo se conservan, sin grupo."
+  },
+  "rsvp": {
+    "title": "Seguimiento de confirmaciones", "not_invited": "No invitado", "invited": "Invitado", "confirmed": "Confirmado", "declined": "No asistirá", "maybe": "Quizás", "no_response": "Sin respuesta",
+    "changeTitle": "Cambiar confirmación", "respondedOn": "Fecha de respuesta", "note": "Nota de confirmación", "history": "Historial de confirmaciones",
+    "stats": {
+      "contacted": "Invitados", "confirmed": "Confirmados", "declined": "No asistirán", "pending": "Pendientes", "expected": "Personas esperadas",
+      "companions": "Acompañantes", "breakdown": "{{adults}} adultos · {{children}} niños · {{rate}} respondieron"
+    },
+    "manualNote": "Registra las respuestas que recibas por teléfono, mensaje o en persona. Eventora no recoge respuestas automáticamente.",
+    "markInvited_one": "Marcar {{count}} como invitado", "markInvited_other": "Marcar {{count}} como invitados", "markInvitedTitle": "Marcar como invitados",
+    "markInvitedBody_one": "{{count}} invitado se marcará como invitado.", "markInvitedBody_other": "{{count}} invitados se marcarán como invitados.",
+    "export": "Exportar", "allAnswered": "Todos han respondido 🎉", "awaiting": "Esperando respuesta",
+    "listTitle_one": "{{count}} invitado", "listTitle_other": "{{count}} invitados"
+  },
+  "rsvpSource": { "manual": "manual", "phone": "teléfono", "message": "mensaje", "in_person": "en persona", "import": "importación", "online": "en línea" },
+  "import": {
+    "privacyTitle": "Se lee solo en tu teléfono", "privacyBody": "El archivo se lee localmente y nunca se envía. No se accede a tu agenda de contactos.",
+    "howTo": "Exporta tu lista desde una hoja de cálculo en CSV (coma o punto y coma). Columnas reconocidas: nombre, apellido, teléfono, correo, grupo, categoría, acompañantes, niños, dieta, notas, confirmación — en español, inglés o francés.",
+    "pick": "Elegir un archivo CSV", "template": "Obtener una plantilla", "readError": "No se pudo leer el archivo.", "tooLarge": "El archivo supera los 5 MB.",
+    "unrecognizedTitle": "Columnas no reconocidas", "unrecognizedBody": "La primera fila debe contener los nombres de las columnas, con al menos una columna de nombre.",
+    "summary": "{{valid}} filas válidas de {{total}}.", "duplicates_one": "{{count}} fila coincide con un invitado existente.", "duplicates_other": "{{count}} filas coinciden con invitados existentes.",
+    "skipDuplicates": "Omitir posibles duplicados", "issues_one": "{{count}} problema", "issues_other": "{{count}} problemas", "issueLine": "Fila {{row}}: {{issue}}",
+    "issue": { "missingName": "sin nombre (omitida)", "invalidEmail": "correo no válido (eliminado)", "invalidCount": "número de acompañantes o niños no válido (omitida)", "unknownRsvp": "confirmación desconocida (puesta en No invitado)", "tooLong": "un valor es demasiado largo (omitida)" },
+    "preview": "Vista previa", "andMore_one": "y {{count}} más", "andMore_other": "y {{count}} más",
+    "importN_one": "Importar {{count}} invitado", "importN_other": "Importar {{count}} invitados", "done_one": "{{count}} invitado importado.", "done_other": "{{count}} invitados importados."
+  },
+  "invitation": {
+    "defaultMessage": "Nos encantaría celebrarlo contigo.", "defaultRsvp": "Por favor, confirma tu asistencia antes de la fecha",
+    "templates_one": "{{count}} diseño", "templates_other": "{{count}} diseños", "text": "Texto", "title": "Título", "hosts": "Organizado por",
+    "hostsPlaceholder": "p. ej. Lea y Sam", "message": "Mensaje", "rsvpLine": "Línea de confirmación", "showDate": "Mostrar la fecha", "showTime": "Mostrar la hora",
+    "showVenue": "Mostrar el lugar", "style": "Estilo", "font": "Tipografía", "layout": "Diseño", "background": "Fondo", "foreground": "Color del texto",
+    "accent": "Acento", "addImage": "Imagen de fondo", "changeImage": "Cambiar imagen", "removeImage": "Quitar imagen",
+    "fonts": { "serif": "Clásica", "sans": "Moderna", "script": "Manuscrita", "condensed": "Condensada", "mono": "Máquina de escribir" },
+    "layouts": { "centered": "Centrado", "framed": "Enmarcado", "banner": "Banda", "minimal": "Minimalista", "split": "Barra lateral" },
+    "shareText": "Compartir texto", "sharePdf": "Compartir PDF", "shareTitle": "Compartir invitación", "copyText": "Copiar texto", "copied": "Texto de la invitación copiado",
+    "premiumTemplate": "Diseño Premium", "premiumTemplateBody": "Puedes previsualizarlo; para compartirlo necesitas Premium.",
+    "imageExportNote": "La exportación como imagen aún no está disponible: comparte el PDF o el texto.",
+    "manualSendNote": "Tú eliges la aplicación (WhatsApp, correo, SMS…) y envías la invitación. Las respuestas se registran en el seguimiento de confirmaciones."
+  },
+  "invitationTemplates": {
+    "ivory_classic": "Marfil clásico", "blush_romance": "Romance rosado", "emerald_gold": "Esmeralda y oro", "midnight_vow": "Promesa de medianoche",
+    "botanical": "Botánico", "confetti_pop": "Confeti", "neon_night": "Noche neón", "balloon_sky": "Cielo de globos", "golden_age": "Edad de oro",
+    "sunshine": "Sol", "corporate_slate": "Pizarra", "executive_navy": "Azul marino", "summit": "Cumbre", "tech_grid": "Cuadrícula tech",
+    "family_table": "Mesa familiar", "soft_lullaby": "Dulce nana", "mint_baby": "Menta", "harvest": "Cosecha", "champagne": "Champán",
+    "winter_glow": "Brillo invernal", "fiesta": "Fiesta", "graduate": "Graduado", "minimal_white": "Blanco minimal", "garden_party": "Fiesta en el jardín"
+  },
+  "budget": {
+    "initial": "Presupuesto inicial", "estimated": "Estimado", "spent": "Gastado", "remaining": "Restante", "committed": "Comprometido",
+    "unpaid": "Pendiente de pago: {{amount}}", "noInitial": "Define un presupuesto inicial en los ajustes del evento para seguir el saldo.",
+    "overBudget": "Presupuesto superado en {{amount}}.", "otherCurrencies": "Otras monedas",
+    "unconvertedNote": "No incluido en los totales (sin tipo de cambio): {{amounts}}. Añade un tipo de cambio al gasto para convertirlo.",
+    "byCategory": "Por categoría", "noCategories": "Aún no hay gastos.", "evolution": "Evolución de los gastos", "envelopes": "Previsto por categoría",
+    "category": "Categoría", "planned": "Previsto", "setEnvelope": "Definir importe", "expenses": "Gastos", "addExpense": "Añadir gasto",
+    "noExpenses": "Aún no hay gastos", "noExpensesBody": "Añade presupuestos y pagos para seguir tu presupuesto.", "notConverted": "no convertido"
+  },
+  "budgetCategory": {
+    "venue": "Lugar", "catering": "Catering", "decoration": "Decoración", "photography": "Fotografía", "music": "Música",
+    "entertainment": "Animación", "invitations": "Invitaciones", "transportation": "Transporte", "accommodation": "Alojamiento",
+    "flowers": "Flores", "clothing": "Vestuario", "gifts": "Regalos", "other": "Otros"
+  },
+  "payment": { "unpaid": "Sin pagar", "deposit": "Anticipo pagado", "paid": "Pagado" },
+  "expense": {
+    "title": "Descripción", "edit": "Editar gasto", "delete": "Eliminar gasto", "vendor": "Proveedor", "noVendor": "Sin proveedor",
+    "estimated": "Importe estimado", "actual": "Importe real", "currency": "Moneda", "fxRate": "Tipo de cambio",
+    "fxRateHint": "1 {{from}} = ? {{to}} (déjalo vacío para excluirlo de los totales)",
+    "foreignNote": "Este gasto está en {{from}}. No se sumará a tus totales en {{to}} sin un tipo de cambio.",
+    "status": "Pago", "due": "Vencimiento del pago", "dueOn": "vence {{date}}", "paidOn": "Pagado el", "notes": "Notas", "receipt": "Factura o comprobante",
+    "receiptHint": "Adjunta una foto o un PDF. Se guarda de forma privada en la aplicación.", "attachReceipt": "Adjuntar", "replaceReceipt": "Reemplazar", "openReceipt": "Abrir PDF"
+  },
+  "tasks": {
+    "title": "Tareas", "add": "Añadir tarea", "edit": "Editar tarea", "delete": "Eliminar tarea", "allEvents": "Todos los eventos",
+    "progress": "Preparación", "progressLine": "{{done}} de {{total}} hechas ({{percent}})",
+    "view": { "list": "Lista", "calendar": "Calendario" },
+    "bucket": { "overdue": "Atrasadas", "today": "Hoy", "week": "Próximos 7 días", "later": "Más adelante", "undated": "Sin fecha", "done": "Hechas" },
+    "overdue": "Atrasada", "nothingThatDay": "Nada previsto ese día.", "showDone_one": "Mostrar {{count}} tarea hecha", "showDone_other": "Mostrar {{count}} tareas hechas",
+    "hideDone": "Ocultar tareas hechas", "emptyTitle": "Sin tareas", "emptyBody": "Añade tareas o crea un evento con una plantilla para obtener una lista.",
+    "noEventBody": "Crea un evento para organizar sus tareas."
+  },
+  "task": {
+    "title": "Tarea", "titlePlaceholder": "p. ej. Reservar el lugar", "status": "Estado", "due": "Fecha límite", "priority": "Prioridad", "category": "Categoría",
+    "assignee": "Responsable (opcional)", "assigneePlaceholder": "¿Quién se encarga?", "vendor": "Proveedor relacionado", "description": "Descripción", "notes": "Notas"
+  },
+  "taskStatus": { "todo": "Pendiente", "in_progress": "En curso", "completed": "Hecha", "cancelled": "Cancelada" },
+  "priority": { "low": "Baja", "medium": "Media", "high": "Alta" },
+  "taskCategory": { "venue": "Lugar", "guests": "Invitados", "vendors": "Proveedores", "decoration": "Decoración", "food": "Comida y bebida", "logistics": "Logística", "program": "Programa", "admin": "Gestión y pagos", "other": "Otros" },
+  "timeline": {
+    "add": "Añadir actividad", "edit": "Editar actividad", "delete": "Eliminar actividad", "activity": "Actividad", "start": "Inicio", "end": "Fin",
+    "when": "Horario", "location": "Lugar", "owner": "Responsable", "description": "Descripción", "nextDay": "día siguiente", "overlap": "solapamiento",
+    "startsNextDay": "Empieza después de medianoche", "startsNextDayHint": "Para actividades de la noche siguiente (p. ej. 01:00).",
+    "endsNextDay": "Termina después de medianoche.", "conflict": "Se solapa con", "minutes_one": "{{count}} min", "minutes_other": "{{count}} min",
+    "freeTime": "{{minutes}} min libres", "moveUp": "Adelantar", "moveDown": "Retrasar",
+    "overlapsFound_one": "{{count}} solapamiento en el programa", "overlapsFound_other": "{{count}} solapamientos en el programa",
+    "overlapLine": "{{a}} y {{b}} se solapan {{minutes}} min",
+    "emptyTitle": "Aún no hay programa", "emptyBody": "Añade llegada, ceremonia, cena, discursos… Se admiten actividades después de medianoche.",
+    "shiftTitle": "Desplazar el programa", "shiftBody": "Adelanta o retrasa todas las actividades.", "shareText": "Compartir como texto",
+    "zoneNote": "Horarios en la zona horaria del evento ({{zone}})."
+  },
+  "seating": {
+    "tables": "Mesas", "table": "Mesa", "seated": "Sentados", "unseated": "Por ubicar", "overloaded": "Mesas sobrecargadas",
+    "addTable": "Añadir mesa", "auto": "Ubicación automática", "autoTitle": "Ubicar automáticamente", "autoBody_one": "Se ubicará {{count}} invitado, manteniendo juntas a las familias.",
+    "autoBody_other": "Se ubicarán {{count}} invitados, manteniendo juntas a las familias.", "autoNone": "Ningún invitado cabe en los asientos libres.",
+    "clear": "Vaciar distribución", "allSeats": "todas las asignaciones de asiento", "defaultName": "Mesa {{n}}", "tableName": "Nombre de la mesa", "shape": "Forma", "seats": "Asientos",
+    "unseatedList": "Invitados por ubicar", "everyoneSeated": "Todos tienen asiento.", "tapTable": "Toca una mesa para sentar a {{name}}",
+    "groupHint": "Usa el icono de personas en una mesa para sentar a todo el grupo «{{group}}».", "plan": "Distribución",
+    "emptyTitle": "Aún no hay mesas", "emptyBody": "Añade mesas redondas, rectangulares o presidenciales y luego ubica a tus invitados.",
+    "free_one": "{{count}} asiento libre", "free_other": "{{count}} asientos libres", "over_one": "{{count}} asiento de más", "over_other": "{{count}} asientos de más",
+    "fullTitle": "No hay asientos suficientes", "fullBody": "Esta mesa tiene {{free}} asiento(s) libre(s) y este grupo necesita {{needed}}.", "placeAnyway": "Ubicar de todos modos",
+    "placeGroup": "Sentar a todo el grupo", "move": "Mover a otra mesa", "unseat": "Quitar de la mesa",
+    "deleteTableBody": "Los invitados de esta mesa vuelven a la lista por ubicar.",
+    "overloadedNote_one": "{{count}} mesa tiene más invitados que asientos.", "overloadedNote_other": "{{count}} mesas tienen más invitados que asientos.",
+    "notEnoughSeats": "Faltan {{missing}} asientos para todas las personas esperadas.", "freeLimit": "Plan gratuito: hasta {{limit}} mesas redondas o rectangulares."
+  },
+  "tableShape": { "round": "Redonda", "rect": "Rectangular", "head": "Mesa presidencial", "custom": "Personalizada" },
+  "vendors": {
+    "add": "Añadir proveedor", "edit": "Editar proveedor", "delete": "Eliminar proveedor", "committed": "Comprometido (seleccionados y contratados)", "none": "Aún no hay proveedores",
+    "emptyTitle": "Sin proveedores", "emptyBody": "Sigue catering, fotógrafos, lugares, DJ… con presupuestos y estado.",
+    "meeting": "cita {{date}}", "advance": "Pasar a «{{status}}»", "freeLimit": "Plan gratuito: hasta {{limit}} proveedores por evento.",
+    "deleteBody": "Los gastos y tareas vinculados se conservan, sin el proveedor."
+  },
+  "vendor": {
+    "name": "Nombre", "category": "Categoría", "status": "Estado", "contactSection": "Contacto", "contact": "Persona de contacto", "phone": "Teléfono", "email": "Correo",
+    "website": "Sitio web", "address": "Dirección", "call": "Llamar", "emailAction": "Correo", "openSite": "Sitio web", "quoteSection": "Presupuesto",
+    "quote": "Detalles del presupuesto", "quotePlaceholder": "Qué incluye, condiciones…", "amount": "Importe", "meeting": "Próxima cita",
+    "meetingDate": "Fecha", "meetingTime": "Hora", "notes": "Notas", "linked": "Gastos, tareas y contratos", "nothingLinked": "Aún no hay nada vinculado.",
+    "addExpense": "Añadir gasto", "addTask": "Añadir tarea", "addContract": "Adjuntar contrato", "contractTitle": "Contrato {{n}}", "fileAttached": "Archivo adjunto"
+  },
+  "vendorCategory": { "caterer": "Catering", "photographer": "Fotógrafo", "venue": "Lugar", "florist": "Florista", "decorator": "Decorador", "dj": "DJ", "musician": "Músico", "transport": "Transporte", "other": "Otro" },
+  "vendorStatus": { "to_contact": "Por contactar", "contacted": "Contactado", "quoted": "Presupuestado", "selected": "Seleccionado", "contracted": "Contratado", "cancelled": "Cancelado" },
+  "gifts": {
+    "add": "Añadir regalo", "edit": "Editar regalo", "delete": "Eliminar", "gifts": "Regalos", "contributions": "Aportaciones", "contributionTotal": "Aportaciones recibidas",
+    "toThank": "Por agradecer", "thankedCount": "Agradecidos", "noPayments": "Eventora solo guarda un registro: no se realiza ni recibe ningún pago a través de la aplicación.",
+    "filter": { "all": "Todos", "toThank": "Por agradecer", "gift": "Regalos", "contribution": "Aportaciones" },
+    "emptyTitle": "No hay regalos registrados", "emptyBody": "Anota regalos y aportaciones para seguir los agradecimientos."
+  },
+  "gift": {
+    "kind": "Tipo", "kinds": { "gift": "Regalo", "contribution": "Aportación" }, "fromGuest": "De un invitado", "noGuest": "No está en la lista",
+    "contributor": "De parte de", "from": "De", "description": "Descripción", "amount": "Importe", "received": "Recibido el", "thanked": "Agradecimiento enviado", "notes": "Notas"
+  },
+  "templates": {
+    "title": "Plantillas", "browse": "Ver plantillas", "subtitle": "{{count}} planes listos con lista de tareas, programa y reparto del presupuesto. Todo sigue siendo editable.",
+    "contents": "{{tasks}} tareas · {{activities}} actividades · {{categories}} categorías de presupuesto", "mine": "Mis plantillas",
+    "mineEmpty": "Guarda cualquier evento como plantilla desde su menú (Premium).", "saveAs": "Guardar como plantilla", "saved": "Plantilla guardada",
+    "items": {
+      "wedding_planning": { "name": "Organización de boda", "desc": "Desde el save the date hasta los agradecimientos, con el programa completo del gran día." },
+      "birthday_party": { "name": "Fiesta de cumpleaños", "desc": "Una fiesta nocturna con cena, tarta y baile." },
+      "kids_birthday": { "name": "Cumpleaños infantil", "desc": "Juegos, animación, tarta y detalles para los niños." },
+      "engagement_party": { "name": "Fiesta de compromiso", "desc": "Brindis, cena y discursos con familia y amigos cercanos." },
+      "baby_shower": { "name": "Baby shower", "desc": "Juegos, dulces y regalos, con lista de nacimiento." },
+      "graduation_party": { "name": "Fiesta de graduación", "desc": "Celebra el título con discursos y un rincón de fotos." },
+      "corporate_conference": { "name": "Conferencia corporativa", "desc": "Ponentes, inscripciones, sesiones, pausas y networking." },
+      "business_workshop": { "name": "Taller profesional", "desc": "Una jornada práctica con materiales y valoraciones." },
+      "family_dinner": { "name": "Cena familiar", "desc": "Una cena tranquila en casa: menú, compras, mesa." },
+      "anniversary": { "name": "Aniversario", "desc": "Cena, discursos y música para una fecha especial." },
+      "garden_party": { "name": "Fiesta en el jardín", "desc": "Una tarde al aire libre con plan B por si llueve." },
+      "networking_event": { "name": "Evento de networking", "desc": "Acogida, breve ponencia y networking." },
+      "product_launch": { "name": "Lanzamiento de producto", "desc": "Dossier de prensa, demo, keynote e invitados." },
+      "holiday_party": { "name": "Fiesta navideña", "desc": "Cena festiva, regalos y baile." },
+      "dinner_party": { "name": "Cena con amigos", "desc": "Una cena elegante para pocos invitados." },
+      "family_reunion": { "name": "Gran reunión familiar", "desc": "Un día completo juntos, con alojamiento y transporte." },
+      "business_meeting": { "name": "Reunión de negocios", "desc": "Orden del día, sala y equipo." },
+      "retirement_party": { "name": "Fiesta de jubilación", "desc": "Discursos, regalo y cena para un compañero." },
+      "team_offsite": { "name": "Jornada de equipo", "desc": "Talleres, actividades y cena, con desplazamientos." },
+      "custom_event": { "name": "Evento personalizado", "desc": "Una base sencilla para adaptar a cualquier ocasión." }
+    }
+  },
+  "taskLibrary": {
+    "setBudget": "Fijar el presupuesto global", "bookVenue": "Reservar el lugar", "guestList": "Preparar la lista de invitados", "officiant": "Confirmar al oficiante",
+    "saveTheDate": "Enviar los save the date", "chooseCaterer": "Elegir el catering", "bookPhotographer": "Reservar el fotógrafo", "bookMusic": "Reservar música / DJ",
+    "giftRegistry": "Crear la lista de regalos", "honeymoon": "Planificar la luna de miel", "sponsorOutreach": "Contactar patrocinadores", "chooseFlorist": "Elegir la floristería",
+    "weddingRings": "Encargar los anillos", "bookAccommodation": "Reservar alojamiento para invitados", "bookSpeakers": "Confirmar ponentes", "permits": "Obtener permisos y seguro",
+    "marriageLicense": "Preparar los trámites de la boda", "registration": "Abrir las inscripciones", "sendInvitations": "Enviar las invitaciones", "chooseOutfit": "Elegir la ropa",
+    "agenda": "Cerrar el orden del día", "orderCake": "Encargar la tarta", "planMenu": "Planificar el menú", "arrangeTransport": "Organizar el transporte", "avEquipment": "Reservar sonido y audiovisuales",
+    "pressKit": "Preparar el dossier de prensa", "giftIdeas": "Elegir un regalo", "themeDecor": "Elegir el tema y la decoración", "photoBooth": "Montar un rincón de fotos",
+    "followUpRsvp": "Recordar a quien no ha confirmado", "confirmVendors": "Confirmar todos los proveedores", "prepareDecorations": "Preparar la decoración", "finalizeProgram": "Cerrar el programa",
+    "playlist": "Preparar la playlist", "partyFavors": "Preparar los detalles", "weatherPlan": "Prever un plan por mal tiempo", "workshopMaterials": "Preparar los materiales del taller",
+    "buySupplies": "Comprar el material", "seatingPlan": "Hacer la distribución de mesas", "dietaryCheck": "Revisar las dietas especiales", "checkGuestList": "Revisar la lista final de invitados",
+    "confirmHeadcount": "Confirmar el número de comensales al catering", "prepareSpeeches": "Preparar los discursos", "badges": "Imprimir las acreditaciones", "finalPayments": "Hacer los pagos finales",
+    "groceries": "Hacer la compra", "cleanHome": "Preparar el lugar", "feedbackSurvey": "Enviar una encuesta de satisfacción", "thankYouNotes": "Enviar los agradecimientos"
+  },
+  "timelineLibrary": {
+    "guestArrival": "Llegada de invitados", "welcomeDrinks": "Cóctel de bienvenida", "ceremony": "Ceremonia", "photos": "Fotos", "cocktail": "Cóctel", "dinner": "Cena",
+    "speeches": "Discursos", "firstDance": "Primer baile", "entertainment": "Animación", "cakeCutting": "Corte de la tarta", "dancing": "Baile", "closing": "Cierre",
+    "registration": "Acreditación", "keynote": "Ponencia principal", "coffeeBreak": "Pausa café", "session": "Sesión", "lunch": "Almuerzo", "panel": "Mesa redonda",
+    "networking": "Networking", "workshopIntro": "Introducción", "handsOn": "Sesión práctica", "wrapUp": "Conclusiones", "games": "Juegos", "giftsOpening": "Apertura de regalos",
+    "toast": "Brindis", "aperitif": "Aperitivo", "dessert": "Postre", "demo": "Demostración"
+  },
+  "reports": {
+    "export": "Exportar", "csv": "Exportar CSV", "empty": "Aún no hay nada que mostrar.", "footer": "Generado por Eventora el {{date}}",
+    "includeContacts": "Incluir datos de contacto", "includeContactsHint": "Teléfonos, correos y dietas se excluyen salvo que actives esta opción.",
+    "contactsWarning": "Las exportaciones contendrán datos personales de tus invitados. Compártelas solo con quien las necesite.",
+    "backupHint": "Una copia de seguridad JSON de todos tus eventos, gratuita, para guardar o pasar a otro teléfono.",
+    "kinds": { "guests": "Lista de invitados", "rsvp": "Estadísticas de confirmación", "budget": "Presupuesto", "expenses": "Gastos", "timeline": "Programa", "vendors": "Proveedores", "seating": "Distribución de mesas", "gifts": "Regalos y aportaciones", "tasks": "Tareas", "final": "Resumen final" },
+    "desc": {
+      "guests": "Todos los invitados con grupo, estado y número de personas", "rsvp": "Respuestas, personas esperadas y quién falta por responder", "budget": "Totales y reparto por categoría",
+      "expenses": "Cada gasto con estado y proveedor", "timeline": "El programa hora a hora", "vendors": "Proveedores, estado e importes",
+      "seating": "Las mesas y quién se sienta en cada una", "gifts": "Regalos, aportaciones y agradecimientos", "tasks": "Lista de tareas con fechas límite", "final": "Invitados, presupuesto, tareas, programa y proveedores en un solo documento"
+    }
+  },
+  "share": {
+    "privacyTitle": "Datos personales", "privacyBody": "Esta lista contiene los nombres de tus invitados. Compártela solo con quien la necesite.",
+    "privacyBodyContacts": "Esta lista contiene los nombres Y los datos de contacto de tus invitados. Compártela solo con personas de confianza.",
+    "continue": "Compartir", "failed": "No se puede compartir en este momento."
+  },
+  "premium": {
+    "cta": "Ver Premium",
+    "features": {
+      "unlimitedEvents": { "title": "Eventos ilimitados", "body": "Organiza todos los eventos que quieras a la vez." },
+      "moreGuests": { "title": "Listas grandes", "body": "Supera los 150 invitados por evento." },
+      "premiumInvitations": { "title": "Invitaciones Premium", "body": "Desbloquea todos los diseños de invitación." },
+      "advancedSeating": { "title": "Mesas avanzadas", "body": "Mesas ilimitadas, mesas presidenciales y disposiciones personalizadas." },
+      "pdfExport": { "title": "Exportación PDF", "body": "Informes PDF profesionales para imprimir o compartir." },
+      "csvExport": { "title": "Exportación CSV", "body": "Abre tus listas en cualquier hoja de cálculo." },
+      "advancedBudget": { "title": "Presupuesto avanzado", "body": "Gráficos por categoría y evolución de los gastos." },
+      "vendors": { "title": "Gestión de proveedores", "body": "Sigue cada proveedor, presupuesto y contrato." },
+      "premiumTemplates": { "title": "Todas las plantillas", "body": "Desbloquea todas las plantillas de organización." },
+      "customTemplates": { "title": "Tus propias plantillas", "body": "Guarda cualquier evento como plantilla reutilizable." },
+      "advancedReports": { "title": "Informes avanzados", "body": "Resumen final, presupuesto, mesas y proveedores en PDF y CSV." },
+      "noAds": { "title": "Sin anuncios", "body": "Organiza sin publicidad." }
+    },
+    "limitReached": {
+      "unlimitedEvents": "El plan gratuito incluye {{limit}} eventos activos. Termina o cancela uno, o pásate a Premium.",
+      "moreGuests": "El plan gratuito incluye hasta {{limit}} invitados por evento.",
+      "premiumInvitations": "Este diseño forma parte de Premium.", "advancedSeating": "El plan gratuito incluye hasta {{limit}} mesas redondas o rectangulares.",
+      "pdfExport": "La exportación PDF forma parte de Premium.", "csvExport": "La exportación CSV forma parte de Premium.", "advancedBudget": "Esta vista forma parte de Premium.",
+      "vendors": "El plan gratuito incluye hasta {{limit}} proveedores por evento.", "premiumTemplates": "Esta plantilla forma parte de Premium.",
+      "customTemplates": "Guardar plantillas forma parte de Premium.", "advancedReports": "Los informes forman parte de Premium.", "noAds": "Elimina los anuncios con Premium."
+    }
+  },
+  "paywall": {
+    "title": "Eventora Premium", "subtitle": "Todo lo que necesitas para los grandes días y las agendas apretadas.",
+    "benefits": {
+      "events": "Eventos ilimitados", "guests": "Invitados ilimitados y gestión avanzada", "invitations": "{{count}} diseños de invitación Premium",
+      "seating": "Mesas avanzadas (mesas presidenciales, mesas ilimitadas)", "exports": "Exportación PDF y CSV e informes avanzados", "budget": "Gráficos de presupuesto avanzados",
+      "vendors": "Gestión completa de proveedores", "templates": "{{count}} plantillas adicionales y tus propias plantillas", "noAds": "Sin anuncios"
+    },
+    "plans": { "monthly": "Mensual", "annual": "Anual", "lifetime": "De por vida", "unknown": "Plan" },
+    "perMonth": "{{price}} / mes", "perYear": "{{price}} / año", "once": "{{price}} pago único", "save": "Ahorra un {{percent}} %", "freeTrial": "Prueba gratuita",
+    "subscribe": "Continuar", "restore": "Restaurar compras", "manage": "Gestionar la suscripción", "active": "Premium está activo",
+    "activeUntil": "Se renueva o termina el {{date}}", "success": "¡Bienvenido a Premium!", "cancelled": "Compra cancelada.", "pending": "Tu compra está pendiente.",
+    "unavailable": "La tienda no está disponible en este momento. Inténtalo más tarde.", "notConfigured": "Las compras no están disponibles en esta versión.",
+    "restored": "Compras restauradas.", "nothingToRestore": "No hay compras que restaurar.",
+    "legal": "Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 h antes del final del periodo. Gestiona o cancela cuando quieras en Google Play. Google Play muestra los precios en tu moneda.",
+    "terms": "Condiciones", "privacy": "Privacidad"
+  },
+  "settings": {
+    "title": "Ajustes", "goPremium": "Pásate a Premium", "premiumPitch": "Eventos ilimitados, exportaciones, mesas avanzadas, sin anuncios.", "premiumActive": "Premium",
+    "premiumThanks": "Gracias por apoyar Eventora.", "appearance": "Apariencia", "language": "Idioma", "theme": "Tema",
+    "themes": { "system": "Sistema", "light": "Claro", "dark": "Oscuro" }, "colors": "Colores",
+    "palette": { "plum": "Ciruela", "rose": "Rosa", "ocean": "Océano", "forest": "Bosque", "indigo": "Índigo", "graphite": "Grafito" },
+    "defaultCurrency": "Moneda predeterminada", "general": "General", "notifications": "Notificaciones", "data": "Copia de seguridad y datos",
+    "dataHint": "Exportar, restaurar, eliminar", "privacy": "Privacidad", "offline": "Funciona sin conexión", "backup": "Copia de seguridad", "exportJson": "Exportar una copia JSON"
+  },
+  "notifications": {
+    "channelName": "Recordatorios de eventos",
+    "taskDue": { "title": "Tarea para hoy", "titleNamed": "{{event}}: tarea para hoy", "body": "Abre Eventora para ver lo pendiente." },
+    "deadlineSoon": { "title": "Se acerca un plazo importante", "titleNamed": "{{event}}: plazo cercano", "body_one": "Una tarea prioritaria vence en {{count}} día.", "body_other": "Una tarea prioritaria vence en {{count}} días." },
+    "eventUpcoming": { "title": "Tu evento se acerca", "titleNamed": "{{event}} se acerca", "body_one": "Falta {{count}} día. Revisa los últimos detalles.", "body_other": "Faltan {{count}} días. Revisa los últimos detalles." },
+    "rsvpFollowup": { "title": "Algunos invitados no han respondido", "titleNamed": "{{event}}: faltan confirmaciones", "body_one": "{{count}} invitado aún no ha respondido.", "body_other": "{{count}} invitados aún no han respondido." },
+    "paymentDue": { "title": "Pago próximo", "titleNamed": "{{event}}: pago próximo", "body": "Se acerca el vencimiento de un pago a un proveedor." },
+    "vendorMeeting": { "title": "Cita con proveedor", "titleNamed": "{{event}}: cita con proveedor", "body": "Tienes una cita con un proveedor próximamente." },
+    "test": { "title": "Los recordatorios de Eventora están activos", "body": "Así se verán tus recordatorios." }
+  },
+  "notificationsSettings": {
+    "master": "Recordatorios", "showNames": "Mostrar el nombre de los eventos", "showNamesHint": "Desactivado por defecto: las notificaciones se ven en la pantalla de bloqueo.",
+    "privacy": "Los recordatorios nunca muestran nombres de invitados, datos de contacto, dietas ni importes.",
+    "deniedTitle": "Notificaciones bloqueadas", "deniedBody": "Permite las notificaciones de Eventora en los ajustes de Android para recibir recordatorios.", "openSettings": "Abrir ajustes",
+    "leadDays": "Días antes", "hour": "Hora del día", "oneHourBefore": "1 hora antes de la cita", "dayBefore": "Mejor el día anterior",
+    "test": "Enviar una notificación de prueba", "testSent": "Aparecerá una notificación de prueba en unos segundos.",
+    "kinds": {
+      "task_due": { "title": "Recordatorios de tareas", "hint": "El día de vencimiento de cada tarea" },
+      "deadline_soon": { "title": "Plazos cercanos", "hint": "Antes de las tareas prioritarias" },
+      "event_upcoming": { "title": "Evento próximo", "hint": "Antes de cada evento" },
+      "rsvp_followup": { "title": "Seguimiento de confirmaciones", "hint": "Cuando hay invitados sin responder" },
+      "payment_due": { "title": "Pagos", "hint": "Antes del vencimiento de un gasto" },
+      "vendor_meeting": { "title": "Citas con proveedores", "hint": "Antes de cada cita" }
+    }
+  },
+  "privacy": {
+    "title": "Privacidad", "intro": "Eventora está diseñado para mantener privados tus eventos y los datos de tus invitados.",
+    "sections": {
+      "storage": { "title": "Guardado en tu teléfono", "body": "Eventos, invitados, presupuestos, archivos e imágenes se guardan solo en este dispositivo, en el almacenamiento privado de la aplicación. No hay servidor de Eventora." },
+      "account": { "title": "Sin cuenta", "body": "Sin registro ni inicio de sesión. No se recopila nada sobre ti para usar la aplicación." },
+      "guests": { "title": "Los datos de tus invitados", "body": "Los nombres, datos de contacto y preferencias alimentarias que introduces se quedan en este teléfono. Nunca se envían a anunciantes ni a herramientas de análisis y nunca aparecen en las notificaciones." },
+      "contacts": { "title": "Contactos", "body": "Eventora no solicita acceso a tu agenda. Los invitados se añaden a mano o desde un archivo CSV que tú eliges." },
+      "sharing": { "title": "Compartir", "body": "Invitaciones, listas e informes solo salen de la aplicación cuando los compartes con el menú de Android. Eventora te avisa antes de compartir listas con datos personales." },
+      "notifications": { "title": "Notificaciones", "body": "Los recordatorios se programan en tu teléfono. No incluyen nombres de invitados, contactos ni importes." },
+      "ads": { "title": "Publicidad (versión gratuita)", "body": "La versión gratuita muestra un banner solo en pantallas de navegación (nunca en las de invitados, invitaciones o mesas). Google AdMob puede tratar identificadores del dispositivo según tus opciones de consentimiento. Nunca se comparten datos de invitados." },
+      "analytics": { "title": "Estadísticas", "body": "Desactivadas por defecto. Si las activas, solo se cuentan eventos de uso anónimos — nunca nombres, contactos, importes ni textos." },
+      "purchases": { "title": "Compras", "body": "Las suscripciones las gestiona Google Play. Eventora solo sabe si Premium está activo." },
+      "rights": { "title": "Tú tienes el control", "body": "Exporta una copia completa o elimina todos los datos cuando quieras en Ajustes → Copia de seguridad y datos. Desinstalar la aplicación también lo borra todo." }
+    },
+    "analyticsToggle": "Compartir estadísticas de uso anónimas", "analyticsHint": "Ayuda a mejorar Eventora. Sin datos personales.",
+    "adChoices": "Opciones de privacidad publicitaria", "fullPolicy": "Política de privacidad completa"
+  },
+  "data": {
+    "localTitle": "Tus datos están en este teléfono", "localBody": "Haz copias periódicas, por ejemplo antes de cambiar de teléfono. Las imágenes y documentos no se incluyen en el archivo de copia.",
+    "backupBody": "Crea un archivo JSON con todos tus eventos, invitados, presupuestos y ajustes, para guardarlo donde quieras.", "restore": "Restaurar una copia",
+    "restoreTitle": "¿Restaurar una copia?", "restoreBody": "Todos los eventos actuales se reemplazarán por el contenido de la copia.", "restoreConfirm": "Elegir archivo y restaurar",
+    "restored_one": "{{count}} registro restaurado.", "restored_other": "{{count}} registros restaurados.", "restoreFailed": "No se pudo restaurar la copia.",
+    "errors": { "invalid_json": "Este archivo no es un JSON válido.", "invalid_format": "Este archivo no es una copia de Eventora.", "wrong_app": "Esta copia pertenece a otra aplicación.", "newer_schema": "Esta copia procede de una versión más reciente de Eventora. Actualiza primero la aplicación." },
+    "deleteTitle": "Eliminar todos mis datos", "deleteHint": "Borra todos los eventos, invitados, archivos y ajustes de este teléfono. Tu suscripción de Google Play no se ve afectada.",
+    "deleteBody": "Todo se borrará de forma permanente de este teléfono. Exporta antes una copia si quieres conservarla.", "deleteConfirm": "Eliminar todo"
+  },
+  "errors": {
+    "saveFailed": "No se pudo guardar. Inténtalo de nuevo.",
+    "event": { "name": "Introduce un nombre.", "nameTooLong": "El nombre es demasiado largo.", "startDate": "Elige una fecha válida.", "startTime": "Hora no válida.", "endDate": "Fecha de fin no válida.", "endTime": "Hora de fin no válida.", "timezone": "Zona horaria desconocida.", "endBeforeStart": "La fecha de fin es anterior a la de inicio.", "expectedGuests": "Introduce un número de asistentes.", "budget": "Introduce un importe válido.", "currency": "Elige una moneda." },
+    "guest": { "name": "Introduce un nombre o apellido.", "email": "Este correo no parece válido.", "plusOnes": "Número no válido.", "children": "Número no válido." },
+    "expense": { "title": "Añade una descripción.", "amount": "Introduce un importe válido.", "currency": "Elige una moneda.", "fxRate": "Introduce un tipo positivo." },
+    "vendor": { "name": "Introduce un nombre.", "email": "Este correo no parece válido.", "website": "Esta dirección no parece válida.", "amount": "Introduce un importe válido." },
+    "gift": { "contributor": "¿De parte de quién?", "description": "Describe el regalo.", "amount": "Introduce un importe.", "currency": "Elige una moneda." },
+    "task": { "title": "Introduce un título." }
+  }
+}
