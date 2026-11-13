@@ -1,5 +1,7 @@
 # DevSpeak 1.0 — implementation status
 
+> Logic Quest (app #2) has its own status table in [apps/logic-quest/README.md](../../apps/logic-quest/README.md#status-2026-11-13).
+
 Last updated: 2026-11-13. Legend: ✅ implemented and automatically tested · 🟡 implemented, needs
 on-device verification · 🔑 implemented, needs external account/configuration · ⬜ not done.
 

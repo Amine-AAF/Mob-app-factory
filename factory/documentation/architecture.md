@@ -29,6 +29,19 @@
 Packages are **source-only** (`main: src/index.ts`): Metro, Jest and TypeScript consume them
 directly. No build step, no publishing.
 
+## Logic Quest (app #2)
+
+Reuses `app-core` (dates, streaks, XP curve), `storage` (migrations, backup), `localization` (two
+namespaces: `translation` UI + `content` puzzle templates), `analytics`, `monetization`, `notifications`,
+`design-system` and `testing`. Its own code: a pure game engine (`apps/logic-quest/src/engine`), content
+specs whose answers are computed/solved by the engine, and an `xp_ledger` table whose primary key makes
+duplicate rewards impossible. See [apps/logic-quest/README.md](../../apps/logic-quest/README.md).
+
+Shared changes made for it (backward compatible, DevSpeak untouched): `@factory/monetization` gained
+`resolveInterstitialUnit`, `shouldShowInterstitial` (frequency-capped, natural breaks only) and an optional
+`activeEntitlements` field (secondary products such as a one-time ad removal); the brand-asset script
+accepts a per-app `brand/mark.mjs`; CI runs app jobs as a matrix and selects the app from release tags.
+
 ## DevSpeak data flow
 
 ```

@@ -3,6 +3,10 @@
 A pnpm monorepo for building and operating a portfolio of offline-first Android apps
 (Expo + React Native + TypeScript strict) on shared, reusable foundations.
 
+**Second app: [Logic Quest](apps/logic-quest)** — *Train Your Brain. Challenge Your Logic.* An original puzzle game:
+number sequences, visual patterns, logical deduction and memory, a date-seeded daily challenge and timed modes,
+with every answer computed by the engine or proven unique by a solver. Offline, EN/FR/ES, no account.
+
 **First app: [DevSpeak](apps/devspeak)** — *Learn English. Speak Tech. Grow Your Career.*
 An English-learning app for software developers: workplace English, technical English,
 IT interview preparation, a tech dictionary with spaced-repetition flashcards, speaking
@@ -12,6 +16,7 @@ practice, daily challenges and gamified progress. Works fully offline, no accoun
 
 ```
 apps/
+  logic-quest/              Second product: puzzle game (src/engine = pure game engine)
   devspeak/                 First product (Expo SDK 58, Expo Router)
     app/                    Screens (file-based routing)
     src/content/            Original learning content (typed data + zod validation)
@@ -80,3 +85,4 @@ what is tested, and what still needs external accounts (Play Console, AdMob, Rev
 - [CI/CD & builds](factory/documentation/ci-cd.md)
 - [Release checklist (Google Play)](factory/documentation/release-checklist.md)
 - [DevSpeak store package](apps/devspeak/store/README.md)
+- [Logic Quest overview & status](apps/logic-quest/README.md) · [store package](apps/logic-quest/store/README.md)
