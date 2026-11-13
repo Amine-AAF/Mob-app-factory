@@ -1,0 +1,44 @@
+{
+  "id": "safevault",
+  "name": "SafeVault",
+  "storeName": "SafeVault: Password Manager",
+  "slug": "safevault",
+  "scheme": "safevault",
+  "packageId": "com.safevault.app",
+  "version": "0.1.0",
+  "versionCode": 1,
+  "category": "tools",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": [],
+  "brand": { "primary": "#2B59C3", "accent": "#14B8A6", "splashBackground": "#0B1220" },
+  "monetization": {
+    "model": "subscription",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "safevault_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "safevault_premium_annual", "period": "annual", "indicativePriceUsd": 19.99 },
+        { "productId": "safevault_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 39.99 }
+      ]
+    }
+  },
+  "features": {
+    "vault": true,
+    "logins": true,
+    "secureNotes": true,
+    "cards": true,
+    "identities": true,
+    "passwordGenerator": true,
+    "securityAudit": true,
+    "encryptedBackup": true,
+    "biometricUnlock": true,
+    "ads": false,
+    "analytics": false,
+    "notifications": false
+  },
+  "build": { "minSdkVersion": 26, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

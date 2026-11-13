@@ -52,6 +52,17 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "safevault",
+      "path": "apps/safevault",
+      "owner": "TO_ASSIGN",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US"
+        ]
+      }
     }
   ]
 }
