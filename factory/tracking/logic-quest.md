@@ -1,60 +1,73 @@
 # Logic Quest — suivi
 
 Dossier : `apps/logic-quest` · Package id : `com.logicquest.app` (placeholder) · Statut manifest : `development`
-· Dernière mise à jour : 2026-11-13 (état initial relevé de l'extérieur — **à compléter par la session Logic Quest**)
+· Dernière mise à jour : 2026-11-13 (session Logic Quest). Détail et critères d'acceptation : [apps/logic-quest/README.md](../../apps/logic-quest/README.md).
 
 ## Fonctionnalités terminées
 
-- Manifest, `app.config.ts`, `eas.json`, `.env.example`, entrée au registre
-- Moteur : RNG déterministe, générateurs, suites numériques, motifs, déduction (solveurs), mémoire,
-  scoring, progression, succès, défi quotidien, sessions
-- Contenu : suites, motifs, déduction (dont jeu généré), mémoire, quotidien ; contenu traduit EN/FR/ES
-- Base SQLite (migrations, repositories contenu/progression)
-- Services : boot, pubs, analytics, monétisation, rappels, backup, feedback, jeu, quotidien
+- Manifest, `app.config.ts` (variantes dev/preview/prod), `eas.json`, `.env.example`, entrée au registre
+- Moteur pur TS (`src/engine`) : suites (21 familles), motifs (lignes, matrices 3×3, analogies, symétries),
+  déduction (classements, grilles, logique propositionnelle, menteurs/sincères, cadenas, problèmes) avec
+  solveurs, mémoire (4 mécaniques), XP/niveaux/rangs, sessions (chrono en pause pendant les explications),
+  progression et accès Premium, succès, défi quotidien généré (30 modèles × graine de la date)
+- Contenu : 320 défis (100/80/80/60) + 30 modèles quotidiens — réponses calculées ou prouvées uniques,
+  aucun doublon, contrôle d'ambiguïté ; textes EN/FR/ES générés depuis des modèles
+- SQLite : migrations, seed versionné, `xp_ledger` (clé primaire = pas de double récompense), stats,
+  quotidien, portefeuille d'indices, export/import/suppression
+- Écrans : onboarding, Accueil, Jouer, Stats (avancées = Premium), Succès, réglage de mode, jeu + résultats,
+  quotidien, paywall, réglages (langue, thème, accessibilité, rappel, confidentialité, données)
+- Monétisation : abonnements + « retirer les pubs » (entitlement `no_ads`), bannière, rewarded (indices),
+  interstitiel plafonné aux pauses naturelles, consentement UMP
+- Assets de marque (`brand/mark.mjs`), dossier `store/` complet, CI matricielle + tag `logic-quest-vX.Y.Z`
 
 ## Fonctionnalités en cours
 
-- Écrans : onglets (accueil, jouer, stats, succès), `game`, `daily`, `mode/`, `paywall`, `settings/`, onboarding
-- Composants de jeu (`board`, `ChallengeView`, `MemoryPlay`, `inputs`, `ui`)
+- Aucune.
 
 ## Fonctionnalités restantes
 
-- Assets de marque (`assets/images` vide) → `pnpm brand-assets apps/logic-quest`
-- Dossier `store/` (fiches, Data Safety, classification, visuels)
-- Tests de composants / navigation (comme DevSpeak)
-- Intégration CI (aujourd'hui seule DevSpeak est testée en intégration)
+- Test sur appareil (pas de SDK Android sur ce poste) : lancement, haptique, UMP, pubs, Play Billing,
+  notifications, TalkBack, longueur des libellés FR/ES sur petits écrans
+- Captures d'écran (plan dans `store/screenshots.md`)
+- Relecture éditoriale FR/ES par des locuteurs natifs
 
-## Bugs connus (relevés le 2026-11-13, travail en cours)
+## Bugs connus
 
-- `src/__tests__/i18n.test.ts` : 3–4 tests en échec — clés utilisées dans `daily.tsx` absentes des locales
-  (`daily.failedTitle`, `daily.failedBody`, …)
-- ESLint : 4 erreurs / 3 avertissements — `react-hooks/set-state-in-effect` dans `src/hooks/index.ts:64`,
-  erreurs dans `app/game.tsx`, `src/components/MemoryPlay.tsx` ; avertissement dans `content/data/deduction-generated.ts`
+- Aucun connu. Les erreurs ESLint et i18n relevées plus tôt dans la journée sont corrigées.
 
 ## Dépendances spécifiques
 
-À compléter par la session. Packages utilisés : app-config, app-core, design-system, localization, storage,
-analytics, monetization (dont `src/revenuecat`), notifications, testing.
+Mêmes versions que DevSpeak (SDK 58). Aucune dépendance native nouvelle (pas de `react-native-svg` :
+les formes sont dessinées avec Ionicons + Views). Packages : app-config, app-core, design-system,
+localization, storage, analytics, monetization (dont `src/revenuecat`), notifications, testing.
 
 ## Tests réalisés
 
 | Date | Commande | Résultat |
 | --- | --- | --- |
-| 2026-11-13 | `jest --ci` | 🟡 4 suites (3 ✅, i18n ❌), 78–79/82 |
+| 2026-11-13 | `pnpm --filter logic-quest test` | ✅ 98/98 (moteur, contenu, SQLite, i18n, UI, monétisation, hors ligne) |
 | 2026-11-13 | `tsc --noEmit` | ✅ |
-| 2026-11-13 | ESLint | ❌ 4 erreurs |
-| 2026-11-13 | `pnpm registry:check` | ✅ |
+| 2026-11-13 | ESLint (devspeak, logic-quest, packages, factory) | ✅ 0 problème |
+| 2026-11-13 | `pnpm --filter devspeak test` (non-régression) | ✅ 126/126 |
+| 2026-11-13 | `pnpm -r --filter "./packages/**" test` | ✅ 59/59 (monetization 12) |
+| 2026-11-13 | `pnpm registry:check` | ✅ devspeak + logic-quest (problèmes restants : filepilot, calcwise) |
+| 2026-11-13 | `npx expo export --platform android` | ✅ bundle Hermes 4,2 Mo |
+| 2026-11-13 | `npx expo-doctor` | ✅ 20/20 |
+| 2026-11-13 | Défi quotidien sur 365 jours | ✅ tous valides, aucun repli |
 
 ## Préparation à la publication
 
-- [ ] Package id définitif
-- [ ] Assets, `store/`, captures
+- [ ] Package id définitif (domaine possédé)
+- [x] Assets, `store/` (fiches EN/FR/ES, Data Safety, classification, politique, plan de captures)
+- [ ] Captures depuis un build preview
 - [ ] Produits Play : `logicquest_premium_monthly`, `logicquest_premium_annual`, `logicquest_remove_ads`
-- [ ] AdMob (bannière, rewarded, interstitiel), RevenueCat, EAS
-- [ ] Job CI + règle de tag `^logic-quest-v\d+\.\d+\.\d+$`
+- [ ] AdMob (bannière, rewarded, interstitiel), RevenueCat (`premium`, `no_ads`), EAS — variables CI scope `production/logic-quest`
+- [x] Job CI + règle de tag `^logic-quest-v\d+\.\d+\.\d+$`
 - [ ] Tests appareil
+- ⚠ Titre suggéré « Logic Quest - Brain & Logic Games » = 33 caractères (> 30) : « Logic Quest - Brain & Logic » retenu
 
 ## Candidats à la mutualisation
 
 `services/clock.ts` (identique à DevSpeak), `services/reminders.ts`, `services/boot.ts` (quasi identiques),
-`services/ads.ts`, `services/monetization.ts`. `engine/rng.ts` pourrait servir à d'autres jeux.
+`services/ads.ts`, `services/monetization.ts`, hooks `useRewardedAd`/`useAsync`, composant `AdBanner`.
+`engine/rng.ts` et les solveurs de `engine/deduction` pourraient servir à d'autres jeux.
