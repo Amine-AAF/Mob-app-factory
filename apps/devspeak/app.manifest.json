@@ -1,0 +1,40 @@
+{
+  "id": "devspeak",
+  "name": "DevSpeak",
+  "storeName": "DevSpeak: English for Devs",
+  "slug": "devspeak",
+  "scheme": "devspeak",
+  "packageId": "com.devspeak.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "education",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt", "ar"],
+  "brand": { "primary": "#5B4BF5", "accent": "#2EE6A8", "splashBackground": "#0A0D18" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "devspeak_premium_monthly", "period": "monthly", "indicativePriceUsd": 3.99 },
+        { "productId": "devspeak_premium_annual", "period": "annual", "indicativePriceUsd": 19.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded"], "graceSessions": 2 }
+  },
+  "features": {
+    "workplaceEnglish": true,
+    "technicalEnglish": true,
+    "interviewPrep": true,
+    "vocabulary": true,
+    "speakingPractice": true,
+    "dailyChallenge": true,
+    "notifications": true,
+    "backupRestore": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

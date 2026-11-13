@@ -1,0 +1,57 @@
+{
+  "$comment": "Central index of factory apps. Each entry points at the app's own manifest (single source of truth). Validate with: pnpm registry:check",
+  "apps": [
+    {
+      "id": "devspeak",
+      "path": "apps/devspeak",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
+    },
+    {
+      "id": "logic-quest",
+      "path": "apps/logic-quest",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
+    },
+    {
+      "id": "filepilot",
+      "path": "apps/filepilot",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
+    },
+    {
+      "id": "calcwise",
+      "path": "apps/calcwise",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
+    }
+  ]
+}

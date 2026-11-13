@@ -1,0 +1,10 @@
+{
+  "name": "@factory/notifications",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local reminder scheduling on top of expo-notifications.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" },
+  "peerDependencies": { "expo-notifications": "*" }
+}

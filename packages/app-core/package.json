@@ -1,0 +1,9 @@
+{
+  "name": "@factory/app-core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Framework-agnostic utilities: dates, streaks, XP/levels, spaced repetition, ids.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" }
+}

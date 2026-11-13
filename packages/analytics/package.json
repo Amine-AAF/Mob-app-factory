@@ -1,0 +1,9 @@
+{
+  "name": "@factory/analytics",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Provider-agnostic, consent-aware anonymous analytics facade (console, Firebase adapters).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" }
+}

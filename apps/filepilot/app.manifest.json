@@ -1,0 +1,44 @@
+{
+  "id": "filepilot",
+  "name": "FilePilot",
+  "storeName": "FilePilot - Image & PDF Tools",
+  "slug": "filepilot",
+  "scheme": "filepilot",
+  "packageId": "com.filepilot.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "tools",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de", "ar"],
+  "brand": { "primary": "#1D5BD8", "accent": "#FF6B4A", "splashBackground": "#0A1022" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "filepilot_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "filepilot_premium_annual", "period": "annual", "indicativePriceUsd": 14.99 },
+        { "productId": "filepilot_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded", "interstitial"], "graceSessions": 1 }
+  },
+  "features": {
+    "imageCompressor": true,
+    "imageResizer": true,
+    "imageConverter": true,
+    "pdfMerge": true,
+    "pdfSplit": true,
+    "pdfExtractPages": true,
+    "pdfCompression": false,
+    "imageToPdf": true,
+    "pdfToImages": true,
+    "operationHistory": true,
+    "batchCompression": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

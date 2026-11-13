@@ -1,0 +1,10 @@
+{
+  "name": "@factory/app-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Typed application manifest shared by every factory app (identity, languages, monetization, features, release).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" },
+  "dependencies": { "zod": "^4.6.7" }
+}

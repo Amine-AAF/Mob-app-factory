@@ -1,0 +1,42 @@
+{
+  "id": "logic-quest",
+  "name": "Logic Quest",
+  "storeName": "Logic Quest - Brain & Logic",
+  "slug": "logic-quest",
+  "scheme": "logicquest",
+  "packageId": "com.logicquest.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "games-puzzle",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de", "ar"],
+  "brand": { "primary": "#0F766E", "accent": "#F2B33D", "splashBackground": "#0B1214" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "logicquest_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "logicquest_premium_annual", "period": "annual", "indicativePriceUsd": 14.99 },
+        { "productId": "logicquest_remove_ads", "period": "lifetime", "indicativePriceUsd": 3.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded", "interstitial"], "graceSessions": 2 }
+  },
+  "features": {
+    "numberSequences": true,
+    "patternRecognition": true,
+    "logicalDeduction": true,
+    "memoryChallenge": true,
+    "dailyChallenge": true,
+    "timedChallenge": true,
+    "mixedMode": true,
+    "notifications": true,
+    "backupRestore": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

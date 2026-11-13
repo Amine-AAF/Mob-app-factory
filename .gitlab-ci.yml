@@ -1,0 +1,174 @@
+# Mobile Apps Factory — GitLab CI/CD
+#
+# Secrets live in GitLab > Settings > CI/CD > Variables (protected + masked), never in Git:
+#   EXPO_TOKEN                          EAS access token (robot user)
+#   EAS_PROJECT_ID                      per-app EAS project id
+#   ADMOB_ANDROID_APP_ID                production AdMob app id        (protected)
+#   EXPO_PUBLIC_ADMOB_BANNER_ID         production banner unit id      (protected)
+#   EXPO_PUBLIC_ADMOB_REWARDED_ID       production rewarded unit id    (protected)
+#   EXPO_PUBLIC_ADMOB_INTERSTITIAL_ID   production interstitial unit id (protected, apps that use it)
+#   EXPO_PUBLIC_REVENUECAT_ANDROID_KEY  RevenueCat public SDK key       (protected)
+#   EXPO_PUBLIC_PRIVACY_URL / EXPO_PUBLIC_TERMS_URL                    (protected)
+# Play upload credentials are stored in EAS (eas credentials), not in GitLab.
+#
+# Multi-app: each app has its own IDs. Define the variables above with the GitLab
+# environment scope "production/<app-id>" (e.g. production/logic-quest); build jobs run
+# in that environment, so each app only receives its own values.
+# Release tags select the app: <app-id>-vX.Y.Z (e.g. logic-quest-v1.0.0).
+
+workflow:
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+default:
+  image: node:24.12.0-bookworm
+  interruptible: true
+
+variables:
+  PNPM_VERSION: "10.34.9"
+  PNPM_STORE_DIR: "$CI_PROJECT_DIR/.pnpm-store"
+  APP: devspeak  # default for single-app jobs; matrix jobs below override it
+
+stages: [install, verify, test, build, release]
+
+.pnpm: &pnpm
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@${PNPM_VERSION} --activate
+    - pnpm config set store-dir "$PNPM_STORE_DIR"
+  cache:
+    key: { files: [pnpm-lock.yaml] }
+    paths: [.pnpm-store]
+    policy: pull
+
+install:
+  <<: *pnpm
+  stage: install
+  cache:
+    key: { files: [pnpm-lock.yaml] }
+    paths: [.pnpm-store]
+    policy: pull-push
+  script:
+    - pnpm install --frozen-lockfile
+  artifacts:
+    paths: [node_modules, apps/*/node_modules, packages/*/node_modules]
+    expire_in: 1 day
+
+typecheck:
+  <<: *pnpm
+  stage: verify
+  needs: [install]
+  script:
+    - pnpm typecheck
+
+lint:
+  <<: *pnpm
+  stage: verify
+  needs: [install]
+  script:
+    - pnpm lint
+
+registry:
+  <<: *pnpm
+  stage: verify
+  needs: [install]
+  script:
+    - pnpm registry:check
+
+unit-tests:
+  <<: *pnpm
+  stage: test
+  needs: [install]
+  script:
+    - pnpm -r --filter "./packages/**" run test -- --ci
+
+integration-tests:
+  <<: *pnpm
+  stage: test
+  needs: [install]
+  parallel:
+    matrix:
+      - APP: [devspeak, logic-quest]
+  script:
+    # SQLite (sql.js), content validation, localization, navigation and component tests.
+    - pnpm --filter $APP run test:ci
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+  artifacts:
+    when: always
+    paths: [apps/$APP/coverage]
+    expire_in: 1 week
+
+bundle-validation:
+  <<: *pnpm
+  stage: build
+  needs: [typecheck, lint, unit-tests, integration-tests]
+  parallel:
+    matrix:
+      - APP: [devspeak, logic-quest]
+  script:
+    # Proves the JS bundle compiles for Android without native tooling.
+    - cd apps/$APP && npx expo export --platform android --output-dir dist
+    - npx expo config --type public > /dev/null
+
+.eas: &eas
+  <<: *pnpm
+  stage: build
+  needs: [bundle-validation]
+  script:
+    - npx --yes eas-cli@27 build --platform android --profile $EAS_PROFILE --non-interactive $EAS_WAIT_FLAG
+  rules:
+    - if: $EXPO_TOKEN == null
+      when: never
+
+android-development:
+  <<: *eas
+  variables: { EAS_PROFILE: development, EAS_WAIT_FLAG: "--no-wait" }
+  parallel:
+    matrix:
+      - APP: [devspeak, logic-quest]
+  before_script:
+    - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+    - cd apps/$APP
+  rules:
+    - if: $EXPO_TOKEN == null
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+      allow_failure: true
+
+# Release tags pick the app: devspeak-vX.Y.Z or logic-quest-vX.Y.Z (protected tags only).
+# rules:variables sets APP before the job is created, so the environment-scoped
+# production variables of that app (scope "production/<app>") are the ones injected.
+.release-rules: &release-rules
+  - if: $EXPO_TOKEN == null
+    when: never
+  - if: $CI_COMMIT_TAG =~ /^devspeak-v\d+\.\d+\.\d+$/
+    variables: { APP: devspeak }
+  - if: $CI_COMMIT_TAG =~ /^logic-quest-v\d+\.\d+\.\d+$/
+    variables: { APP: logic-quest }
+
+android-production-aab:
+  <<: *eas
+  variables: { EAS_PROFILE: production, EAS_WAIT_FLAG: "" }  # waits so the submit job gets this build
+  environment: { name: production/$APP, action: prepare }
+  before_script:
+    - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+    - cd apps/$APP
+  rules: *release-rules
+
+submit-play-internal:
+  <<: *pnpm
+  stage: release
+  needs: [android-production-aab]
+  # Human approval is mandatory: a maintainer must click "Run" in a protected environment.
+  when: manual
+  allow_failure: false
+  environment: { name: play-store/internal/$APP }
+  before_script:
+    - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+    - cd apps/$APP
+  script:
+    - npx --yes eas-cli@27 submit --platform android --profile production --latest --non-interactive
+  rules: *release-rules

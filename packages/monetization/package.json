@@ -1,0 +1,11 @@
+{
+  "name": "@factory/monetization",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Entitlement state machine, subscription provider abstraction (RevenueCat) and ad configuration (AdMob).",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" },
+  "peerDependencies": { "react-native-purchases": "*", "react-native-google-mobile-ads": "*" },
+  "peerDependenciesMeta": { "react-native-purchases": { "optional": true }, "react-native-google-mobile-ads": { "optional": true } }
+}

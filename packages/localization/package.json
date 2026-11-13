@@ -1,0 +1,10 @@
+{
+  "name": "@factory/localization",
+  "version": "0.1.0",
+  "private": true,
+  "description": "i18next bootstrap, language detection/persistence and Intl formatters.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" },
+  "peerDependencies": { "i18next": "*", "react-i18next": "*" }
+}

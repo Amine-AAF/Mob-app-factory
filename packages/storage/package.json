@@ -1,0 +1,15 @@
+{
+  "name": "@factory/storage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SQLite abstraction, migration runner, repository helpers, key-value store and backup/restore.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "jest --passWithNoTests"
+  },
+  "devDependencies": {
+    "@factory/testing": "workspace:*"
+  }
+}

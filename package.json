@@ -1,0 +1,28 @@
+{
+  "name": "mobile-apps-factory",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Mobile Apps Factory monorepo: shared packages and independent Expo applications.",
+  "packageManager": "pnpm@10.34.9",
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r run typecheck",
+    "lint": "eslint .",
+    "test": "pnpm -r run test",
+    "validate": "pnpm typecheck && pnpm lint && pnpm test",
+    "registry:check": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON factory/scripts/check-registry.ts",
+    "new-app": "node factory/scripts/new-app.mjs",
+    "brand-assets": "node factory/scripts/generate-brand-assets.mjs"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.6",
+    "@types/sql.js": "^1.4.11",
+    "eslint": "^9.39.5",
+    "eslint-config-expo": "^58.0.4",
+    "prettier": "^3.10.1",
+    "typescript": "~6.0.3"
+  }
+}

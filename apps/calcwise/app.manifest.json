@@ -1,0 +1,43 @@
+{
+  "id": "calcwise",
+  "name": "CalcWise",
+  "storeName": "CalcWise – Smart Calculator",
+  "slug": "calcwise",
+  "scheme": "calcwise",
+  "packageId": "com.mobileappsfactory.calcwise",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "tools",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#C2410C", "accent": "#2DD4BF", "splashBackground": "#120C0A" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "calcwise_premium_monthly", "period": "monthly", "indicativePriceUsd": 1.99 },
+        { "productId": "calcwise_premium_annual", "period": "annual", "indicativePriceUsd": 9.99 },
+        { "productId": "calcwise_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 19.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "interstitial", "rewarded"], "graceSessions": 1 }
+  },
+  "features": {
+    "standardCalculator": true,
+    "scientificCalculator": true,
+    "percentage": true,
+    "discount": true,
+    "tipSplit": true,
+    "unitConverter": true,
+    "loan": true,
+    "savings": true,
+    "history": true,
+    "favorites": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

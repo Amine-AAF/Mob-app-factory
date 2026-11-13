@@ -1,0 +1,10 @@
+{
+  "name": "@factory/design-system",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Themeable React Native design system: tokens, theme provider and accessible primitives.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": { "typecheck": "tsc --noEmit -p .", "test": "jest --passWithNoTests" },
+  "peerDependencies": { "react": "*", "react-native": "*", "@expo/vector-icons": "*", "react-native-safe-area-context": "*" }
+}

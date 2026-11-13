@@ -1,0 +1,614 @@
+{
+  "seq": {
+    "instructions": {
+      "next": "Which number comes next?",
+      "missing": "Which number is missing?"
+    },
+    "calc": "Missing number: {{calc}}",
+    "title": {
+      "arithmetic": "Steady Steps",
+      "geometric": "Multiplier",
+      "division": "Halfway Down",
+      "fibonacci": "Golden Chain",
+      "tribonacci": "Triple Chain",
+      "product": "Snowball",
+      "interleave": "Two Tracks",
+      "interleaveMix": "Split Paths",
+      "cycleOps": "Rhythm",
+      "growingStep": "Growing Gaps",
+      "doublingStep": "Doubling Gaps",
+      "zigzag": "Zigzag",
+      "power": "Perfect Powers",
+      "triangular": "Triangle Stack",
+      "pronic": "Rectangle Numbers",
+      "primes": "Prime Time",
+      "primeGaps": "Prime Steps",
+      "powerOfTwo": "Binary Climb",
+      "affine": "Double Trouble",
+      "factorialStep": "Rising Multiplier",
+      "stairs": "Staircase"
+    },
+    "hint": {
+      "arithmetic": "Compare each number with the one before it.",
+      "geometric": "Try dividing each number by the one before it.",
+      "division": "Each number is a fraction of the previous one.",
+      "fibonacci": "Look at the two numbers before each term.",
+      "tribonacci": "Look at the three numbers before each term.",
+      "product": "Try combining the two previous numbers with an operation other than +.",
+      "interleave": "Read every other number: there are two sequences.",
+      "interleaveMix": "Split the sequence into odd and even positions.",
+      "cycleOps": "The operations repeat in a cycle. Find the cycle.",
+      "growingStep": "Write down the differences between neighbours.",
+      "doublingStep": "Write down the differences: how do they change?",
+      "zigzag": "Write down the differences, including their signs.",
+      "power": "Think about squares and cubes: 1, 4, 9… or 1, 8, 27…",
+      "triangular": "Write down the differences between neighbours.",
+      "pronic": "Each number is the product of two consecutive whole numbers.",
+      "primes": "These numbers have something to do with divisibility.",
+      "primeGaps": "Write down the differences: are they special numbers?",
+      "powerOfTwo": "Compare the numbers with 1, 2, 4, 8, 16…",
+      "affine": "Multiply the previous number, then adjust it.",
+      "factorialStep": "Divide each number by the previous one.",
+      "stairs": "Some numbers repeat before the sequence moves on."
+    },
+    "explain": {
+      "arithmeticUp": "Each number is {{step}} more than the one before.",
+      "arithmeticDown": "Each number is {{step}} less than the one before.",
+      "geometric": "Each number is the previous one multiplied by {{ratio}}.",
+      "division": "Each number is the previous one divided by {{divisor}}.",
+      "fibonacci": "Each number is the sum of the two numbers before it.",
+      "fibonacciPlus": "Each number is the sum of the two numbers before it, {{sign}} {{plus}}.",
+      "tribonacci": "Each number is the sum of the three numbers before it.",
+      "product": "Each number is the product of the two numbers before it.",
+      "interleave": "Two sequences alternate: one changes by {{step1}}, the other by {{step2}}.",
+      "interleaveMix": "Two sequences alternate: one is multiplied by {{ratio}}, the other changes by {{step}}.",
+      "cycleOps": "The same operations repeat in a cycle: {{ops}}.",
+      "growingStep": "The gaps change by {{growth}} each time: {{gaps}}.",
+      "doublingStep": "Each gap is {{factor}} times the previous gap: {{gaps}}.",
+      "zigzag": "The gaps alternate between up and down and grow in size: {{gaps}}.",
+      "squares": "The numbers are perfect squares.",
+      "squaresShifted": "The numbers are perfect squares {{add}}.",
+      "cubes": "The numbers are perfect cubes.",
+      "cubesShifted": "The numbers are perfect cubes {{add}}.",
+      "triangular": "These are triangular numbers: n × (n + 1) ÷ 2.",
+      "triangularShifted": "These are triangular numbers {{add}}.",
+      "pronic": "Each number is the product of two consecutive whole numbers.",
+      "primes": "These are consecutive prime numbers.",
+      "primesShifted": "These are consecutive prime numbers {{add}}.",
+      "primeGaps": "The gaps between the numbers are consecutive prime numbers.",
+      "powerOfTwo": "These are powers of 2.",
+      "powerOfTwoShifted": "These are powers of 2 {{add}}.",
+      "affine": "Each number is the previous one × {{mul}}, then {{add}}.",
+      "factorialStep": "The multiplier grows by 1 each time, starting at × {{first}}.",
+      "stairs": "Each value appears {{repeat}} times, then the sequence moves {{step}}."
+    }
+  },
+  "pat": {
+    "shape": {
+      "circle": "circle",
+      "square": "square",
+      "triangle": "triangle",
+      "diamond": "gem",
+      "star": "star",
+      "heart": "heart",
+      "arrow": "arrow"
+    },
+    "color": {
+      "blue": "blue",
+      "orange": "orange",
+      "green": "green",
+      "purple": "pink",
+      "red": "red"
+    },
+    "fill": {
+      "solid": "filled",
+      "outline": "outline"
+    },
+    "size": {
+      "s": "small",
+      "m": "medium",
+      "l": "large"
+    },
+    "attr": {
+      "shape": "shape",
+      "color": "color",
+      "fill": "fill",
+      "count": "number of symbols",
+      "rotation": "rotation"
+    },
+    "bitsLabel": "Pattern {{rows}}",
+    "optionLabel": "Option {{n}}",
+    "title": {
+      "shape-sequence": "Shape Shift",
+      "rotation": "Turning Point",
+      "color-pattern": "Color Code",
+      "transformation": "Metamorphosis",
+      "grid-pattern": "Grid Logic",
+      "symmetry": "Mirror Image"
+    },
+    "instructions": {
+      "row": "Which tile completes the row?",
+      "matrix": "Which tile completes the grid?",
+      "analogy": "The first tile becomes the second. What does the third become?",
+      "symmetry_vertical": "Complete the figure so it is symmetric left to right.",
+      "symmetry_horizontal": "Complete the figure so it is symmetric top to bottom.",
+      "symmetry_rotational": "Complete the figure so it looks the same after a half turn."
+    },
+    "hint": {
+      "shape-sequence": "Look at each property on its own: shape, color, fill, number.",
+      "rotation": "Follow the direction the shape points from tile to tile.",
+      "color-pattern": "Colors repeat in a fixed cycle. How long is it?",
+      "transformation": "Something changes by the same amount at each step.",
+      "grid-pattern": "Check each row, then each column, one property at a time.",
+      "symmetry": "Imagine folding the figure along the dashed line."
+    },
+    "explain": {
+      "shapeCycle": "The shapes repeat: {{list}}.",
+      "colorCycle": "The colors repeat: {{list}}.",
+      "fillCycle": "The fill repeats: {{list}}.",
+      "sizeCycle": "The sizes repeat: {{list}}.",
+      "rotateClockwise": "The symbol turns {{deg}}° clockwise at each step.",
+      "rotateCounter": "The symbol turns {{deg}}° counter-clockwise at each step.",
+      "rotationCycle": "The angle repeats: {{list}}.",
+      "countUp_one": "Each tile has {{count}} more symbol than the previous one.",
+      "countUp_other": "Each tile has {{count}} more symbols than the previous one.",
+      "countDown_one": "Each tile has {{count}} fewer symbol than the previous one.",
+      "countDown_other": "Each tile has {{count}} fewer symbols than the previous one.",
+      "countCycle": "The number of symbols repeats: {{list}}.",
+      "matrixRow": "The {{attr}} stays the same across each row ({{list}}).",
+      "matrixCol": "The {{attr}} stays the same down each column ({{list}}).",
+      "matrixLatin": "Each row and each column contains every {{attr}} exactly once ({{list}}).",
+      "analogyIntro": "From the first tile to the second:",
+      "trRotateClockwise": "it turns {{deg}}° clockwise,",
+      "trRotateCounter": "it turns {{deg}}° counter-clockwise,",
+      "trSwapFill": "filled becomes outline (or the reverse),",
+      "trAddCount_one": "it gains {{count}} symbol,",
+      "trAddCount_other": "it gains {{count}} symbols,",
+      "trRemoveCount_one": "it loses {{count}} symbol,",
+      "trRemoveCount_other": "it loses {{count}} symbols,",
+      "trSetColor": "it turns {{color}},",
+      "trGrow": "it gets bigger,",
+      "symmetry_vertical": "The right half is the mirror image of the left half.",
+      "symmetry_horizontal": "The bottom half is the mirror image of the top half.",
+      "symmetry_rotational": "The right half is the left half turned upside down (a half turn).",
+      "answer": "Answer: {{answer}}."
+    }
+  },
+  "ded": {
+    "and": "and",
+    "andBeforeI": "and",
+    "rank": "#{{n}}",
+    "answerIs": "Answer: {{answer}}.",
+    "instructions": {
+      "ordering": "Use every clue to work out the order.",
+      "grid": "Each person matches exactly one item in each list.",
+      "logic": "Take every statement as true. What follows for sure?",
+      "knights": "Truth-tellers always tell the truth. Liars always lie.",
+      "code": "Find the code that fits every clue.",
+      "math": "Reason it out, then enter a whole number."
+    }
+  },
+  "ord": {
+    "unique": "This is the only order that satisfies every clue.",
+    "hint": {
+      "anchor": "Start with what you know for sure about {{a}}, then place the others around them.",
+      "chain": "Chain the comparisons together: who must come before whom?"
+    },
+    "race": {
+      "title": "Finish Line",
+      "intro": "{{names}} ran a race. There were no ties.",
+      "above": "{{a}} finished ahead of {{b}}.",
+      "directlyAbove": "{{a}} finished just ahead of {{b}}.",
+      "first": "{{a}} won the race.",
+      "last": "{{a}} finished last.",
+      "notFirst": "{{a}} did not win.",
+      "notLast": "{{a}} did not finish last.",
+      "between": "{{a}} finished somewhere between {{b}} and {{c}}.",
+      "adjacent": "{{a}} and {{b}} finished one right after the other.",
+      "notAdjacent": "{{a}} and {{b}} did not finish one right after the other.",
+      "position": "{{a}} finished in position {{n}}.",
+      "notPosition": "{{a}} did not finish in position {{n}}.",
+      "askFirst": "Who won the race?",
+      "askLast": "Who finished last?",
+      "askAt": "Who finished in position {{n}}?",
+      "askPositionOf": "In which position did {{who}} finish?",
+      "order": "Finishing order: {{order}}."
+    },
+    "height": {
+      "title": "Tall Order",
+      "intro": "{{names}} all have different heights.",
+      "above": "{{a}} is taller than {{b}}.",
+      "directlyAbove": "{{a}} is just taller than {{b}}, with nobody in between.",
+      "first": "{{a}} is the tallest.",
+      "last": "{{a}} is the shortest.",
+      "notFirst": "{{a}} is not the tallest.",
+      "notLast": "{{a}} is not the shortest.",
+      "between": "{{a}}'s height is between {{b}}'s and {{c}}'s.",
+      "adjacent": "{{a}} and {{b}} are next to each other when lined up by height.",
+      "notAdjacent": "{{a}} and {{b}} are not next to each other when lined up by height.",
+      "position": "Lined up from tallest to shortest, {{a}} is number {{n}}.",
+      "notPosition": "Lined up from tallest to shortest, {{a}} is not number {{n}}.",
+      "askFirst": "Who is the tallest?",
+      "askLast": "Who is the shortest?",
+      "askAt": "Lined up from tallest to shortest, who is number {{n}}?",
+      "askPositionOf": "Lined up from tallest to shortest, what number is {{who}}?",
+      "order": "From tallest to shortest: {{order}}."
+    },
+    "age": {
+      "title": "Birthday Puzzle",
+      "intro": "{{names}} were all born in different years.",
+      "above": "{{a}} is older than {{b}}.",
+      "directlyAbove": "{{a}} is just older than {{b}}, with nobody born in between.",
+      "first": "{{a}} is the oldest.",
+      "last": "{{a}} is the youngest.",
+      "notFirst": "{{a}} is not the oldest.",
+      "notLast": "{{a}} is not the youngest.",
+      "between": "{{a}} is younger than one of {{b}} and {{c}}, and older than the other.",
+      "adjacent": "{{a}} and {{b}} are next to each other when sorted by age.",
+      "notAdjacent": "{{a}} and {{b}} are not next to each other when sorted by age.",
+      "position": "Sorted from oldest to youngest, {{a}} is number {{n}}.",
+      "notPosition": "Sorted from oldest to youngest, {{a}} is not number {{n}}.",
+      "askFirst": "Who is the oldest?",
+      "askLast": "Who is the youngest?",
+      "askAt": "Sorted from oldest to youngest, who is number {{n}}?",
+      "askPositionOf": "Sorted from oldest to youngest, what number is {{who}}?",
+      "order": "From oldest to youngest: {{order}}."
+    },
+    "queue": {
+      "title": "Waiting Line",
+      "intro": "{{names}} are waiting in a single line at a ticket office.",
+      "above": "{{a}} is somewhere ahead of {{b}}.",
+      "directlyAbove": "{{a}} is directly in front of {{b}}.",
+      "first": "{{a}} is at the front of the line.",
+      "last": "{{a}} is at the back of the line.",
+      "notFirst": "{{a}} is not at the front.",
+      "notLast": "{{a}} is not at the back.",
+      "between": "{{a}} is somewhere between {{b}} and {{c}}.",
+      "adjacent": "{{a}} and {{b}} are standing next to each other.",
+      "notAdjacent": "{{a}} and {{b}} are not standing next to each other.",
+      "position": "Counting from the front, {{a}} is number {{n}}.",
+      "notPosition": "Counting from the front, {{a}} is not number {{n}}.",
+      "askFirst": "Who is at the front of the line?",
+      "askLast": "Who is at the back of the line?",
+      "askAt": "Counting from the front, who is number {{n}}?",
+      "askPositionOf": "Counting from the front, what number is {{who}}?",
+      "order": "From front to back: {{order}}."
+    }
+  },
+  "grid": {
+    "title": "Who Has What?",
+    "intro": "{{names}} each have exactly one item from every list below, and no two of them share an item.",
+    "catLine": "{{cat}}: {{values}}",
+    "hint": "Cross out what each clue rules out. When only one option is left for someone, it must be theirs.",
+    "solutionLine": "{{who}}: {{items}}",
+    "unique": "This is the only arrangement that satisfies every clue.",
+    "is": "{{who}} {{vp}}.",
+    "isNot": "{{who}} {{vp}}.",
+    "same": "The person who {{vp1}} {{vp2}}.",
+    "notSame": "The person who {{vp1}} {{vp2}}.",
+    "askWho": "Who {{vp}}?",
+    "askWhat": {
+      "pet": "Which pet does {{who}} have?",
+      "drink": "What does {{who}} drink?",
+      "sport": "Which activity does {{who}} do?",
+      "instrument": "Which instrument does {{who}} play?",
+      "house": "What color is {{who}}'s house?"
+    },
+    "cat": {
+      "pet": "Pets",
+      "drink": "Drinks",
+      "sport": "Activities",
+      "instrument": "Instruments",
+      "house": "House colors"
+    },
+    "v": {
+      "pet": {
+        "cat": "cat",
+        "dog": "dog",
+        "fish": "fish",
+        "parrot": "parrot"
+      },
+      "drink": {
+        "tea": "tea",
+        "coffee": "coffee",
+        "juice": "juice",
+        "water": "water"
+      },
+      "sport": {
+        "tennis": "tennis",
+        "chess": "chess",
+        "swimming": "swimming",
+        "cycling": "cycling"
+      },
+      "instrument": {
+        "piano": "piano",
+        "guitar": "guitar",
+        "violin": "violin",
+        "drums": "drums"
+      },
+      "house": {
+        "red": "red",
+        "blue": "blue",
+        "green": "green",
+        "yellow": "yellow"
+      }
+    },
+    "vp": {
+      "pet": {
+        "cat": "has the cat",
+        "dog": "has the dog",
+        "fish": "has the fish",
+        "parrot": "has the parrot"
+      },
+      "drink": {
+        "tea": "drinks tea",
+        "coffee": "drinks coffee",
+        "juice": "drinks juice",
+        "water": "drinks water"
+      },
+      "sport": {
+        "tennis": "plays tennis",
+        "chess": "plays chess",
+        "swimming": "goes swimming",
+        "cycling": "goes cycling"
+      },
+      "instrument": {
+        "piano": "plays the piano",
+        "guitar": "plays the guitar",
+        "violin": "plays the violin",
+        "drums": "plays the drums"
+      },
+      "house": {
+        "red": "lives in the red house",
+        "blue": "lives in the blue house",
+        "green": "lives in the green house",
+        "yellow": "lives in the yellow house"
+      }
+    },
+    "vpNeg": {
+      "pet": {
+        "cat": "does not have the cat",
+        "dog": "does not have the dog",
+        "fish": "does not have the fish",
+        "parrot": "does not have the parrot"
+      },
+      "drink": {
+        "tea": "does not drink tea",
+        "coffee": "does not drink coffee",
+        "juice": "does not drink juice",
+        "water": "does not drink water"
+      },
+      "sport": {
+        "tennis": "does not play tennis",
+        "chess": "does not play chess",
+        "swimming": "does not go swimming",
+        "cycling": "does not go cycling"
+      },
+      "instrument": {
+        "piano": "does not play the piano",
+        "guitar": "does not play the guitar",
+        "violin": "does not play the violin",
+        "drums": "does not play the drums"
+      },
+      "house": {
+        "red": "does not live in the red house",
+        "blue": "does not live in the blue house",
+        "green": "does not live in the green house",
+        "yellow": "does not live in the yellow house"
+      }
+    }
+  },
+  "logic": {
+    "title": "If… Then",
+    "intro": "Assume that all of these statements are true:",
+    "ask": "Which conclusion is certainly true?",
+    "if": "If {{a}}, then {{b}}.",
+    "or": "{{a}}, or {{b}} (or both).",
+    "and": "{{a}}, and {{b}}.",
+    "none": "None of these can be concluded for sure.",
+    "hint": "For each option, ask: could every statement be true while this option is false?",
+    "explainCertain": "In every situation where all the statements are true, “{{conclusion}}” is true too.",
+    "explainNone": "Each option can be false while every statement is still true, so nothing can be concluded for sure.",
+    "explainNotCertain": "“{{option}}” is not certain: everything holds if {{example}}."
+  },
+  "atom": {
+    "rain": {
+      "pos": "it rains",
+      "neg": "it does not rain"
+    },
+    "match": {
+      "pos": "the match is cancelled",
+      "neg": "the match is not cancelled"
+    },
+    "alarm": {
+      "pos": "the alarm rings",
+      "neg": "the alarm does not ring"
+    },
+    "late": {
+      "pos": "Sam is late",
+      "neg": "Sam is not late"
+    },
+    "bakery": {
+      "pos": "the bakery is open",
+      "neg": "the bakery is not open"
+    },
+    "bread": {
+      "pos": "Lina buys bread",
+      "neg": "Lina does not buy bread"
+    },
+    "lamp": {
+      "pos": "the lamp is on",
+      "neg": "the lamp is not on"
+    },
+    "switch": {
+      "pos": "the switch is up",
+      "neg": "the switch is not up"
+    },
+    "train": {
+      "pos": "the train is delayed",
+      "neg": "the train is not delayed"
+    },
+    "meeting": {
+      "pos": "the meeting starts late",
+      "neg": "the meeting does not start late"
+    },
+    "password": {
+      "pos": "the password is correct",
+      "neg": "the password is not correct"
+    },
+    "door": {
+      "pos": "the door opens",
+      "neg": "the door does not open"
+    },
+    "study": {
+      "pos": "Noah studies",
+      "neg": "Noah does not study"
+    },
+    "exam": {
+      "pos": "Noah passes the exam",
+      "neg": "Noah does not pass the exam"
+    },
+    "water": {
+      "pos": "the garden is watered",
+      "neg": "the garden is not watered"
+    },
+    "bloom": {
+      "pos": "the roses bloom",
+      "neg": "the roses do not bloom"
+    },
+    "charged": {
+      "pos": "the battery is charged",
+      "neg": "the battery is not charged"
+    },
+    "phone": {
+      "pos": "the phone turns on",
+      "neg": "the phone does not turn on"
+    },
+    "snow": {
+      "pos": "it snows",
+      "neg": "it does not snow"
+    },
+    "school": {
+      "pos": "the school is closed",
+      "neg": "the school is not closed"
+    }
+  },
+  "kn": {
+    "title": "Truth or Lie",
+    "intro": "On this island, everyone is either a truth-teller, who always tells the truth, or a liar, who always lies. You meet {{names}}.",
+    "says": "{{who}} says: “{{text}}”",
+    "ask": "Who tells the truth, and who lies?",
+    "assignment": "Truth-tellers: {{truthful}} · Liars: {{liars}}",
+    "nobody": "nobody",
+    "hint": "Assume the first person tells the truth and follow the consequences. Does anything contradict?",
+    "checkTruthful": "{{who}} tells the truth, so “{{text}}” is true.",
+    "checkLiar": "{{who}} lies, so “{{text}}” is false.",
+    "unique": "Every other combination leads to a contradiction.",
+    "s": {
+      "liar": "{{x}} is a liar.",
+      "truthful": "{{x}} tells the truth.",
+      "bothLiars": "{{x}} and {{y}} are both liars.",
+      "bothTruthful": "{{x}} and {{y}} both tell the truth.",
+      "same": "{{x}} and {{y}} are of the same kind.",
+      "different": "{{x}} and {{y}} are of different kinds.",
+      "oneOfLiar": "At least one of {{x}} and {{y}} is a liar.",
+      "bothLiarsMe": "{{other}} and I are both liars.",
+      "bothTruthfulMe": "{{other}} and I both tell the truth.",
+      "sameMe": "{{other}} and I are of the same kind.",
+      "differentMe": "{{other}} and I are of different kinds.",
+      "oneOfLiarMe": "At least one of {{other}} and me is a liar.",
+      "atLeastOneLiar": "At least one of us is a liar.",
+      "exactlyLiars_one": "Exactly {{count}} of us is a liar.",
+      "exactlyLiars_other": "Exactly {{count}} of us are liars."
+    }
+  },
+  "code": {
+    "title": "Code Breaker",
+    "intro": "A lock opens with a {{digits}}-digit code. All its digits are different.",
+    "clue": "{{guess}} — right digit, right place: {{correct}} · right digit, wrong place: {{misplaced}}",
+    "ask": "What is the code?",
+    "hint": "Compare two clues that share digits: what changes between them?",
+    "hintZero": "In {{guess}}, no digit is in the code at all. Cross those digits out first.",
+    "check": "{{guess}} against {{code}}: {{correct}} in the right place, {{misplaced}} in the wrong place. ✓",
+    "unique": "{{code}} is the only code that fits every clue."
+  },
+  "math": {
+    "headsLegs": {
+      "title": "Count the Legs",
+      "hint": "Imagine they were all of the first kind. How many legs (or wheels) would be missing?",
+      "farm": "A farm has only chickens and cows. Together they have {{heads}} heads and {{legs}} legs. How many cows are there?",
+      "bikes": "A rental shop has only bicycles and tricycles: {{heads}} vehicles with {{legs}} wheels in total. How many tricycles are there?",
+      "bugs": "A jar holds only beetles (6 legs) and spiders (8 legs): {{heads}} creatures with {{legs}} legs in total. How many spiders are there?",
+      "explain": {
+        "farm": "If all {{heads}} animals were chickens, there would be {{base}} legs. Each cow adds {{extra}} legs: ({{legs}} − {{base}}) ÷ {{extra}} = {{answer}} cows (and {{other}} chickens).",
+        "bikes": "If all {{heads}} vehicles were bicycles, there would be {{base}} wheels. Each tricycle adds {{extra}} wheel: ({{legs}} − {{base}}) ÷ {{extra}} = {{answer}} tricycles (and {{other}} bicycles).",
+        "bugs": "If all {{heads}} creatures were beetles, there would be {{base}} legs. Each spider adds {{extra}} legs: ({{legs}} − {{base}}) ÷ {{extra}} = {{answer}} spiders (and {{other}} beetles)."
+      }
+    },
+    "ages": {
+      "title": "Age Riddle",
+      "hint": "Call the younger age x and write both sentences as equations.",
+      "askYounger": "Mia is {{ratioNow}} times as old as her nephew Leo. In {{years}} years, she will be {{ratioLater}} times as old as him. How old is Leo now?",
+      "askOlder": "Mia is {{ratioNow}} times as old as her nephew Leo. In {{years}} years, she will be {{ratioLater}} times as old as him. How old is Mia now?",
+      "explain": "Leo is {{younger}} and Mia is {{older}} ({{ratioNow}} × {{younger}}). In {{years}} years they will be {{youngerLater}} and {{olderLater}}, and {{olderLater}} = {{ratioLater}} × {{youngerLater}}."
+    },
+    "sumDiff": {
+      "title": "Sum and Difference",
+      "hint": "If you remove the difference from the total, what is left is shared equally.",
+      "numbers": "Two numbers add up to {{sum}}. Their difference is {{diff}}. What is the larger number?",
+      "shop": "A notebook and a pen cost {{sum}} coins together. The notebook costs {{diff}} coins more than the pen. How many coins does the pen cost?",
+      "explain": {
+        "numbers": "Larger = (sum + difference) ÷ 2 = ({{sum}} + {{diff}}) ÷ 2 = {{answer}}. Check: {{answer}} + {{small}} = {{sum}}.",
+        "shop": "Pen = (total − difference) ÷ 2 = ({{sum}} − {{diff}}) ÷ 2 = {{answer}}. Check: the notebook costs {{large}}, and {{answer}} + {{large}} = {{sum}}."
+      }
+    },
+    "consecutive": {
+      "title": "In a Row",
+      "hint": "Consecutive numbers are spread evenly around their average.",
+      "askSmallest": "The sum of {{count}} consecutive whole numbers is {{sum}}. What is the smallest of them?",
+      "askLargest": "The sum of {{count}} consecutive whole numbers is {{sum}}. What is the largest of them?",
+      "explain": "The average of the {{count}} numbers is the middle value: {{middle}}."
+    },
+    "handshakes": {
+      "title": "Handshakes",
+      "hint": "With n people, each one shakes n − 1 hands, but every handshake involves two people.",
+      "ask": "At a meeting, everyone shook hands exactly once with everyone else. There were {{handshakes}} handshakes. How many people were at the meeting?",
+      "explain": "With n people there are n × (n − 1) ÷ 2 handshakes."
+    }
+  },
+  "mem": {
+    "title": {
+      "sequence": "Light Trail",
+      "pattern": "Flash Grid",
+      "number": "Number Recall",
+      "visual": "Snapshot"
+    },
+    "instructions": {
+      "sequence_one": "Watch {{count}} tile light up, then tap it.",
+      "sequence_other": "Watch {{count}} tiles light up, then tap them in the same order.",
+      "pattern_one": "Memorize the lit cell, then tap it.",
+      "pattern_other": "Memorize the {{count}} lit cells, then tap them (any order).",
+      "number_one": "Memorize the digit, then type it.",
+      "number_other": "Memorize the {{count}} digits, then type them.",
+      "numberReverse_one": "Memorize the digit, then type it.",
+      "numberReverse_other": "Memorize the {{count}} digits, then type them in reverse order.",
+      "visual_missing_one": "Memorize the symbol. Then spot the one that was NOT shown.",
+      "visual_missing_other": "Memorize the {{count}} symbols. Then spot the one that was NOT shown.",
+      "visual_present_one": "Memorize the symbol. Then spot the one that WAS shown.",
+      "visual_present_other": "Memorize the {{count}} symbols. Then spot the one that WAS shown."
+    },
+    "hint": "Watch it once more. Using this hint halves the XP.",
+    "cellsLabel_one": "{{count}} cell",
+    "cellsLabel_other": "{{count}} cells",
+    "explain": {
+      "sequence_one": "The tile that lit up is shown in order on the board.",
+      "sequence_other": "The {{count}} tiles lit up in the order shown on the board.",
+      "pattern_one": "The lit cell is highlighted on the board.",
+      "pattern_other": "The {{count}} lit cells are highlighted on the board.",
+      "number": "The number was {{digits}}.",
+      "numberReverse": "The number was {{digits}}; reversed, it reads as the answer below.",
+      "visualMissing": "The highlighted symbol was the only one not shown.",
+      "visualPresent": "The highlighted symbol was the only one that was shown."
+    }
+  }
+}

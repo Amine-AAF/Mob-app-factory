@@ -1,0 +1,15 @@
+{
+  "name": "@factory/testing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Test utilities: in-memory SQLite (sql.js) adapter and fixtures.",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p .",
+    "test": "jest --passWithNoTests"
+  },
+  "dependencies": {
+    "sql.js": "^1.13.0"
+  }
+}
