@@ -1,0 +1,566 @@
+{
+  "common": {
+    "back": "Back",
+    "cancel": "Cancel",
+    "clear": "Clear",
+    "close": "Close",
+    "delete": "Delete",
+    "dismiss": "Dismiss",
+    "moveUp": "Move {{name}} up",
+    "moveDown": "Move {{name}} down",
+    "next": "Next",
+    "outputFormat": "Output format",
+    "pages_one": "{{count}} page",
+    "pages_other": "{{count}} pages",
+    "quality": "Quality",
+    "removeFile": "Remove {{name}}",
+    "retry": "Try again",
+    "skip": "Skip",
+    "transparencyToWhite": "This image has transparent areas. JPEG doesn't support transparency, so they will become white. Choose PNG or WebP to keep them."
+  },
+  "tabs": {
+    "tools": "Tools",
+    "history": "History",
+    "settings": "Settings"
+  },
+  "ads": {
+    "label": "Advertisement"
+  },
+  "onboarding": {
+    "privacy": {
+      "title": "Your files stay on your phone",
+      "body": "FilePilot processes images and PDFs directly on your device. Nothing is uploaded to our servers.",
+      "point1": "No account, no sign-up",
+      "point2": "Works offline, even in airplane mode",
+      "point3": "Your original files are never modified"
+    },
+    "tools": {
+      "title": "All your file tools in one app",
+      "body": "Compress, resize and convert images. Merge, split and convert PDFs.",
+      "point1": "Before/after sizes for every result",
+      "point2": "Save to any folder or share in one tap",
+      "point3": "JPEG, PNG, WebP and PDF supported"
+    },
+    "free": {
+      "title": "Free to use every day",
+      "body": "Get free operations every day. Go Premium for unlimited use, batch processing and no ads.",
+      "point1": "{{count}} free operations per day",
+      "point2": "Optional ads, never during processing",
+      "point3": "Cancel Premium anytime in Google Play"
+    },
+    "analyticsTitle": "Share anonymous usage statistics",
+    "analyticsBody": "Helps us improve FilePilot. Never includes file names, file contents or personal data. Off by default.",
+    "start": "Get started",
+    "step": "Step {{current}} of {{total}}"
+  },
+  "dashboard": {
+    "welcome": "Welcome to FilePilot",
+    "tagline": "All your file tools. One simple app.",
+    "search": "Search tools",
+    "privacyLine": "Processed on your device. Files are never uploaded.",
+    "group": {
+      "images": "Images",
+      "pdf": "PDF"
+    },
+    "noTools": "No matching tool",
+    "noToolsHint": "Try \"compress\", \"resize\", \"merge\" or \"PDF\".",
+    "recent": "Recent operations",
+    "seeAll": "See all",
+    "noRecent": "Your recent operations will appear here.",
+    "saved": "You have saved {{size}} with FilePilot"
+  },
+  "tools": {
+    "compress": {
+      "title": "Image Compressor",
+      "subtitle": "Make photos smaller",
+      "keywords": "compress reduce size shrink jpeg png webp optimize photo kb mb"
+    },
+    "resize": {
+      "title": "Image Resizer",
+      "subtitle": "Change width and height",
+      "keywords": "resize scale dimensions pixels width height smaller photo"
+    },
+    "convert": {
+      "title": "Image Converter",
+      "subtitle": "JPEG, PNG, WebP",
+      "keywords": "convert format jpg jpeg png webp change type"
+    },
+    "pdfTools": {
+      "title": "PDF Tools",
+      "subtitle": "Merge, split, extract",
+      "keywords": "pdf merge combine join split extract pages document"
+    },
+    "imageToPdf": {
+      "title": "Image to PDF",
+      "subtitle": "Photos into one PDF",
+      "keywords": "image photo jpg png to pdf scan document create"
+    },
+    "pdfToImages": {
+      "title": "PDF to Images",
+      "subtitle": "Pages as JPEG or PNG",
+      "keywords": "pdf to image jpg png pages export convert render"
+    }
+  },
+  "selection": {
+    "chooseImage": "Choose an image",
+    "chooseImages": "Choose images",
+    "choosePdf": "Choose a PDF",
+    "choosePdfs": "Choose PDF files",
+    "addMore": "Add images",
+    "addPdfs": "Add PDF files",
+    "replace": "Choose another file",
+    "imageHint": "JPEG, PNG or WebP. Your original is not modified.",
+    "pdfHint": "Choose a PDF from your phone or cloud storage. Your original is not modified.",
+    "rejected_one": "{{count}} file could not be used",
+    "rejected_other": "{{count}} files could not be used"
+  },
+  "compress": {
+    "pickTitle": "Choose an image to compress",
+    "processing": "Compressing your image",
+    "processingBatch_one": "Compressing {{count}} image",
+    "processingBatch_other": "Compressing {{count}} images",
+    "action": "Compress",
+    "actionBatch_one": "Compress {{count}} image",
+    "actionBatch_other": "Compress {{count}} images",
+    "batchPremium": "Batch: Premium",
+    "totalSize": "Total: {{size}}",
+    "keepFormat": "Same as original",
+    "pngNote": "PNG is lossless: FilePilot re-encodes it without losing quality, so savings vary and can be small. Choose JPEG or WebP for much smaller files.",
+    "mode": "Compression",
+    "byQuality": "By quality",
+    "byTarget": "Target size",
+    "qualityHint": "80 is a good balance. Lower values give smaller files with visible artifacts.",
+    "targetCustom": "Target size",
+    "targetError": {
+      "min": "Enter at least 10 kB.",
+      "max": "Enter at most 50,000 kB."
+    },
+    "targetHint": "FilePilot looks for the best quality under this size. If quality alone isn't enough, it reduces the dimensions, and tells you if the target can't be reached.",
+    "targetPremium": "Target file size and batch compression are Premium features.",
+    "metadataNote": "The output doesn't keep the original metadata (camera, location, date). Orientation is preserved."
+  },
+  "resize": {
+    "pickTitle": "Choose an image to resize",
+    "processing": "Resizing your image",
+    "action": "Resize",
+    "mode": "Resize by",
+    "presets": "Preset",
+    "percentage": "Percentage",
+    "custom": "Custom",
+    "preset": {
+      "small": "Small · 640 px",
+      "medium": "Medium · 1280 px",
+      "large": "Large · 1920 px"
+    },
+    "width": "Width",
+    "height": "Height",
+    "lockAspect": "Keep aspect ratio",
+    "lockedHint": "Aspect ratio locked: the other side is calculated automatically.",
+    "unlockedHint": "Aspect ratio unlocked: the image may be stretched.",
+    "allowUpscale": "Allow enlarging beyond the original size",
+    "result": "New size",
+    "error": {
+      "min": "Enter a value of at least 1 px.",
+      "max": "Enter at most {{max}} px."
+    },
+    "warn": {
+      "noUpscale": "FilePilot doesn't enlarge images by default, so the size was limited to the original.",
+      "upscale": "Enlarging adds no detail and makes images blurry.",
+      "distorted": "The aspect ratio changes: the image will look stretched.",
+      "largeReduction": "Big reduction: fine details and small text may become hard to read.",
+      "unchanged": "Same size as the original."
+    }
+  },
+  "convert": {
+    "pickTitle": "Choose an image to convert",
+    "processing": "Converting to {{format}}",
+    "action": "Convert to {{format}}",
+    "detected": "Detected format: {{format}}",
+    "to": "Convert to",
+    "about": {
+      "jpeg": "JPEG: best for photos, small files, no transparency.",
+      "png": "PNG: lossless, keeps transparency, larger files.",
+      "webp": "WebP: modern format, small files, keeps transparency."
+    },
+    "sameFormat": "The image is already in this format. Choose another format, or use the compressor to make it smaller.",
+    "transparencyKept": "Transparency will be kept.",
+    "supportedTitle": "Supported formats",
+    "supportedBody": "FilePilot really decodes and re-encodes your image: it never just renames the file. Supported: JPEG, PNG and WebP. HEIC, GIF, BMP and TIFF are not supported yet."
+  },
+  "pdf": {
+    "hubIntro": "Work with PDF files directly on your phone. Pages are copied as they are, so text and quality are preserved.",
+    "hub": {
+      "merge": {
+        "title": "Merge PDFs",
+        "subtitle": "Combine several PDFs into one"
+      },
+      "split": {
+        "title": "Split PDF",
+        "subtitle": "One PDF per page range"
+      },
+      "extract": {
+        "title": "Extract pages",
+        "subtitle": "Create a new PDF with selected pages"
+      },
+      "imageToPdf": {
+        "title": "Image to PDF",
+        "subtitle": "Turn photos and scans into a PDF"
+      },
+      "pdfToImages": {
+        "title": "PDF to Images",
+        "subtitle": "Save pages as JPEG, PNG or WebP"
+      }
+    },
+    "compressionTitle": "PDF compression",
+    "compressionBody": "Not available yet. FilePilot only offers operations whose results it can verify, and on-device PDF compression can't guarantee a smaller, intact document today.",
+    "info": {
+      "title": "Document",
+      "pages_one": "{{count}} page",
+      "pages_other": "{{count}} pages",
+      "size": "Size: {{size}}",
+      "pageSize": "Page size: {{width}} × {{height}} mm",
+      "firstPageSize": "First page: {{width}} × {{height}} mm (pages have different sizes)"
+    },
+    "merge": {
+      "title": "Merge PDFs",
+      "pickTitle": "Choose the PDFs to merge",
+      "pickHint_one": "Select up to {{count}} file. Use the arrows to set the order.",
+      "pickHint_other": "Select up to {{count}} files. Use the arrows to set the order.",
+      "order": "Order in the merged PDF",
+      "summary_one": "{{count}} page in total · {{size}}",
+      "summary_other": "{{count}} pages in total · {{size}}",
+      "needTwo": "Add at least one more PDF to merge.",
+      "freeLimit_one": "The free version merges up to {{count}} file at a time.",
+      "freeLimit_other": "The free version merges up to {{count}} files at a time.",
+      "processing_one": "Merging {{count}} file",
+      "processing_other": "Merging {{count}} files",
+      "action_one": "Merge {{count}} file",
+      "action_other": "Merge {{count}} files",
+      "quality": "Pages are copied without re-rendering: text stays selectable and quality is unchanged."
+    },
+    "split": {
+      "title": "Split & extract",
+      "pickTitle": "Choose a PDF to split or extract pages from",
+      "mode": "What do you want to do?",
+      "modes": {
+        "extract": "Extract pages",
+        "ranges": "Split by ranges",
+        "every": "Every page",
+        "chunks": "Every N pages"
+      },
+      "explain": {
+        "extract": "Creates one new PDF containing the selected pages, in the order you type them.",
+        "ranges": "Creates one PDF per range. Example: \"1-3, 4-6\" gives two files.",
+        "every": "Creates one PDF for each page.",
+        "chunks": "Creates a PDF every N pages."
+      },
+      "pages": "Pages",
+      "placeholder": "e.g. 1-3, 5, 8-",
+      "firstPage": "First page",
+      "lastPage": "Last page",
+      "oddPages": "Odd pages",
+      "chunkSize": "Pages per file",
+      "chunkError": "Enter a whole number of at least 1.",
+      "rangeError": {
+        "empty": "Enter the pages to use, e.g. 1-3, 5.",
+        "syntax": "Use page numbers, commas and dashes, e.g. 1-3, 5, 8-.",
+        "out_of_range_one": "This document has only {{count}} page.",
+        "out_of_range_other": "This document has {{count}} pages: use numbers from 1 to {{count}}.",
+        "reversed": "Write ranges from the lower to the higher page, e.g. 2-5."
+      },
+      "willExtract_one": "Page {{pages}} will be used.",
+      "willExtract_other": "{{count}} pages will be used: {{pages}}.",
+      "willCreate_one": "{{count}} PDF will be created.",
+      "willCreate_other": "{{count}} PDFs will be created.",
+      "tooManyParts_one": "The free version creates up to {{count}} file per split.",
+      "tooManyParts_other": "The free version creates up to {{count}} files per split.",
+      "processing": "Splitting your PDF",
+      "processingExtract": "Extracting pages",
+      "action_one": "Create {{count}} PDF",
+      "action_other": "Create {{count}} PDFs",
+      "actionExtract_one": "Extract {{count}} page",
+      "actionExtract_other": "Extract {{count}} pages",
+      "quality": "Pages are copied as they are: nothing is re-rendered or compressed."
+    }
+  },
+  "imageToPdf": {
+    "pickTitle": "Choose images for your PDF",
+    "pickHint_one": "Select up to {{count}} image. One image per page.",
+    "pickHint_other": "Select up to {{count}} images. One image per page.",
+    "order": "Page order",
+    "freeLimit_one": "The free version adds up to {{count}} image per PDF.",
+    "freeLimit_other": "The free version adds up to {{count}} images per PDF.",
+    "pageSize": "Page size",
+    "letter": "Letter",
+    "fit": "Fit to image",
+    "orientation": "Orientation",
+    "orientationAuto": "Automatic",
+    "portrait": "Portrait",
+    "landscape": "Landscape",
+    "margins": "Margins",
+    "margin": {
+      "none": "None",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large"
+    },
+    "imageQuality": "Image quality",
+    "qualityStandard": "Standard",
+    "qualityHigh": "High",
+    "qualityHint": "Standard keeps the PDF small and sharp on screens. High is better for printing.",
+    "processing_one": "Creating a PDF from {{count}} image",
+    "processing_other": "Creating a PDF from {{count}} images",
+    "action_one": "Create PDF ({{count}} page)",
+    "action_other": "Create PDF ({{count}} pages)"
+  },
+  "pdfToImages": {
+    "pickTitle": "Choose a PDF to convert",
+    "pages": "Pages",
+    "allPages_one": "All ({{count}} page)",
+    "allPages_other": "All ({{count}} pages)",
+    "allPagesShort": "All pages",
+    "selectPages": "Select pages",
+    "limit_one": "The free version converts up to {{count}} page at a time.",
+    "limit_other": "The free version converts up to {{count}} pages at a time.",
+    "resolution": "Resolution",
+    "res": {
+      "screen": "Screen · 96 dpi",
+      "standard": "Standard · 150 dpi",
+      "high": "High · 300 dpi"
+    },
+    "hint": "Pages are rendered one at a time, so large documents don't overload your phone. Very large pages are limited to 16 megapixels.",
+    "processing": "Rendering pages",
+    "action_one": "Convert {{count}} page",
+    "action_other": "Convert {{count}} pages"
+  },
+  "processing": {
+    "working": "Working on it…",
+    "progressLabel": "Progress",
+    "percent": "{{percent}} % done",
+    "stepProgress": "Step {{done}} of {{total}}",
+    "fileProgress": "File {{done}} of {{total}}",
+    "pageProgress": "Page {{done}} of {{total}}",
+    "onDevice": "Processing on your device. Nothing is uploaded.",
+    "cancelled": "Cancelled. No file was created and your originals are untouched.",
+    "failedTitle": "Something went wrong"
+  },
+  "result": {
+    "title": "Result",
+    "headline": {
+      "image_compress": "Image compressed",
+      "image_resize": "Image resized",
+      "image_convert": "Image converted",
+      "pdf_merge": "PDFs merged",
+      "pdf_split": "PDF split",
+      "pdf_extract": "Pages extracted",
+      "image_to_pdf": "PDF created",
+      "pdf_to_images": "Pages converted"
+    },
+    "before": "Before",
+    "after": "After",
+    "originalNotKept": "The original preview is not kept after you leave the tool. Your original file was not modified.",
+    "original": "Original",
+    "output_one": "Result",
+    "output_other": "Results ({{count}} files)",
+    "saved_label": "Saved",
+    "larger_label": "Larger by",
+    "noGain": "The result is not smaller than the original: this image was already well optimized. You can keep using your original.",
+    "targetNotReached": "The target size couldn't be reached without making the image unusable. FilePilot kept the smallest result it could produce.",
+    "downscaled": "To reach the target size, the image dimensions were reduced.",
+    "fileGone": "File no longer available",
+    "share": "Share",
+    "shareFile": "Share {{name}}",
+    "shareTitle": "Share with",
+    "shareUnavailable": "Sharing is not available on this device.",
+    "shareFailed": "The file couldn't be shared. Please try again.",
+    "save": "Save to device",
+    "saveAll_one": "Save {{count}} file",
+    "saveAll_other": "Save {{count}} files",
+    "saved_one": "{{count}} file saved to the folder you chose.",
+    "saved_other": "{{count}} files saved to the folder you chose.",
+    "savePartial": "{{saved}} saved, {{failed}} failed. Check the free space in the chosen folder.",
+    "done": "Done",
+    "deleteTitle": "Delete this result",
+    "deleteBody": "The output files created by FilePilot and this history entry will be deleted. Your original files are not affected.",
+    "missingTitle": "Result not found",
+    "missingBody": "This entry was deleted from your history.",
+    "statusExplain": {
+      "failed": "This operation failed. No output was kept.",
+      "cancelled": "This operation was cancelled. No output was kept.",
+      "interrupted": "This operation was interrupted (the app was closed or the phone restarted). Its temporary files were removed. Please run it again.",
+      "running": "This operation is still running."
+    },
+    "storedPrivately": "Results are stored privately inside FilePilot until you delete them. Use \"Save to device\" to keep a copy in your folders."
+  },
+  "operations": {
+    "image_compress": "Compression",
+    "image_resize": "Resize",
+    "image_convert": "Conversion",
+    "pdf_merge": "PDF merge",
+    "pdf_split": "PDF split",
+    "pdf_extract": "Page extraction",
+    "image_to_pdf": "Image to PDF",
+    "pdf_to_images": "PDF to images"
+  },
+  "status": {
+    "running": "In progress",
+    "completed": "Completed",
+    "failed": "Failed",
+    "cancelled": "Cancelled",
+    "interrupted": "Interrupted"
+  },
+  "history": {
+    "title": "History",
+    "privacyNote": "Only names, sizes and dates are stored, on this device. File contents are never stored in the history.",
+    "emptyTitle": "No operations yet",
+    "emptyBody": "Compress an image or merge PDFs: your results will be listed here.",
+    "openTools": "Open tools",
+    "multiple_one": "{{name}} + {{count}} other",
+    "multiple_other": "{{name}} + {{count}} others",
+    "clear": "Clear",
+    "clearTitle": "Clear history?",
+    "clearBody": "Do you also want to delete the result files FilePilot created? Your original files are never affected.",
+    "clearKeepFiles": "Keep files",
+    "clearWithFiles": "Delete files too",
+    "loadMore": "Show more",
+    "premiumMore_one": "{{count}} older entry is kept. Premium shows your full history.",
+    "premiumMore_other": "{{count}} older entries are kept. Premium shows your full history."
+  },
+  "quota": {
+    "title": "Free operations today",
+    "remaining_one": "{{count}} of {{total}} left",
+    "remaining_other": "{{count}} of {{total}} left",
+    "explainer": "Only successful operations count. The counter resets every day.",
+    "reachedTitle": "Daily free limit reached",
+    "watchAd_one": "Watch an ad: +{{count}} operation",
+    "watchAd_other": "Watch an ad: +{{count}} operations",
+    "bonusGranted_one": "+{{count}} free operation added for today.",
+    "bonusGranted_other": "+{{count}} free operations added for today.",
+    "adUnavailable": "No ad is available right now. Please try again later."
+  },
+  "premium": {
+    "badge": "Premium",
+    "unlock": "Unlock with Premium",
+    "goUnlimited": "Go unlimited",
+    "cardTitle": "FilePilot Premium",
+    "cardSubtitle": "Unlimited, batch processing, no ads",
+    "activeShort": "Premium is active. Thank you!"
+  },
+  "paywall": {
+    "title": "FilePilot Premium",
+    "subtitle": "Every tool, without limits. Still 100% on your device.",
+    "benefit": {
+      "unlimited": "Unlimited operations every day",
+      "batch": "Batch compression of up to {{count}} images",
+      "targetSize": "Target file size compression",
+      "pdf": "Merge up to {{merge}} PDFs at once (free: {{free}}), longer splits and conversions",
+      "noAds": "No ads",
+      "history": "Full operation history"
+    },
+    "plan": {
+      "monthly": "Monthly",
+      "annual": "Annual",
+      "lifetime": "Lifetime"
+    },
+    "perMonth": "{{price}} / month",
+    "perYear": "{{price}} / year",
+    "oneTime": "{{price}} once",
+    "save": "Save {{percent}} %",
+    "freeTrial": "Free trial",
+    "subscribe": "Continue",
+    "restore": "Restore purchases",
+    "manage": "Manage subscription",
+    "active": "Premium is active",
+    "activeUntil": "Renews or expires on {{date}}",
+    "success": "Welcome to Premium!",
+    "cancelled": "Purchase cancelled.",
+    "pending": "Your payment is pending. Premium will activate once it's confirmed.",
+    "unavailable": "The store is not available right now. Please check your connection and try again.",
+    "notConfigured": "Purchases are not available in this build.",
+    "restored": "Your Premium access has been restored.",
+    "nothingToRestore": "No previous purchase was found for this Google account.",
+    "legal": "Subscriptions renew automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel anytime in Google Play. The lifetime purchase is a one-time payment.",
+    "terms": "Terms",
+    "privacy": "Privacy"
+  },
+  "settings": {
+    "title": "Settings",
+    "appearance": "Appearance",
+    "language": "Language",
+    "languageDevice": "Device",
+    "theme": "Theme",
+    "themes": {
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "defaults": "Default options",
+    "defaultQuality": "Default image quality",
+    "saveDefault": "Save as default",
+    "defaultFormat": "Preferred output format",
+    "premium": "Premium",
+    "privacy": "Privacy",
+    "analytics": "Anonymous usage statistics",
+    "analyticsHint": "Never includes file names or contents.",
+    "adPrivacy": "Ad privacy choices",
+    "privacyDetails": "How FilePilot handles your files",
+    "storage": "Storage",
+    "outputs": "Result files",
+    "outputsUsage_one": "{{count}} file · {{size}}",
+    "outputsUsage_other": "{{count}} files · {{size}}",
+    "clearTemp": "Clear temporary files",
+    "clearTempHint": "Removes copies made while choosing files.",
+    "tempCleared": "Temporary files cleared.",
+    "deleteAll": "Delete all my data",
+    "deleteAllHint": "Results, history and settings",
+    "deleteAllTitle": "Delete all data?",
+    "deleteAllBody": "This deletes every result file created by FilePilot, your history and your settings. Your original files and your Google Play subscription are not affected. This cannot be undone.",
+    "version": "{{name}} {{version}}"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "intro": "FilePilot is built so that your documents stay yours. Here is exactly what happens to your files.",
+    "processingTitle": "Processed on your device",
+    "processingBody": "Compression, resizing, conversion and every PDF operation run on your phone. FilePilot has no server and never uploads your files.",
+    "lifecycleTitle": "The life of a file",
+    "lifecycleBody": "1. You pick a file in Android's file picker: FilePilot gets a temporary private copy. 2. The copy is processed in a private temporary folder. 3. The result is saved in FilePilot's private storage. 4. Temporary copies are deleted when you leave the tool, and again at every app start. Your original file is only read, never modified.",
+    "storageTitle": "Where results are kept",
+    "storageBody": "Results stay in FilePilot's private app storage, which other apps can't read, until you delete them (from a result, the history or Settings). \"Save to device\" writes a copy to a folder you choose.",
+    "sharingTitle": "Sharing",
+    "sharingBody": "When you share a result, Android gives the app you choose temporary read access to that single file. Internal storage paths are never exposed.",
+    "historyTitle": "History",
+    "historyBody": "The history stores the operation type, file names, sizes, date and status on your device only. It never contains file contents. You can clear it anytime.",
+    "analyticsTitle": "Anonymous statistics (optional)",
+    "analyticsBody": "Off by default. If you turn it on, FilePilot counts anonymous events such as \"compression completed\". It never sends file names, file contents or document metadata.",
+    "adsTitle": "Advertising",
+    "adsBody": "The free version shows Google AdMob ads, with consent requested where the law requires it. Ads never see your files. Premium removes ads.",
+    "purchasesTitle": "Purchases",
+    "purchasesBody": "Payments are handled by Google Play. FilePilot only receives whether Premium is active.",
+    "permissionsTitle": "Permissions",
+    "permissionsBody": "FilePilot doesn't ask for access to your photos or storage: you choose each file in Android's picker, which grants access to that file only.",
+    "rightsTitle": "Your control",
+    "rightsBody": "Delete results one by one, clear the history, or use \"Delete all my data\" in Settings. Uninstalling FilePilot also removes its private storage.",
+    "fullPolicy": "Read the full privacy policy"
+  },
+  "errors": {
+    "cancelled": "The operation was cancelled.",
+    "unsupported_format": "This file type is not supported. FilePilot supports JPEG, PNG and WebP images, and PDF documents.",
+    "corrupted_file": "This file seems damaged or incomplete and can't be read.",
+    "file_too_large": "This file is too large to process safely on this device.",
+    "image_too_large": "This image is too large for your phone's memory. Try a smaller image.",
+    "too_many_files": "Some files were not added because the limit was reached.",
+    "file_missing": "The file is no longer available. Please choose it again.",
+    "storage_full": "Not enough free storage on your phone. Free up some space and try again.",
+    "write_failed": "The result couldn't be saved. Please try again.",
+    "read_failed": "The file couldn't be opened. Please try again.",
+    "pdf_encrypted": "This PDF is password-protected. Remove the password with the app that created it, then try again.",
+    "pdf_invalid": "This PDF seems damaged and can't be processed.",
+    "invalid_page_range": "Some selected pages don't exist in this document.",
+    "native_unavailable": "This feature isn't available in this version of the app.",
+    "quota_exceeded": "You've used all your free operations for today. Come back tomorrow, watch an optional ad for extra operations, or go Premium.",
+    "premium_required": "This option is part of FilePilot Premium.",
+    "target_unreachable": "The target size can't be reached for this image.",
+    "transparency_unsupported": "This image has transparency, which JPEG can't store on this device. Choose PNG or WebP instead.",
+    "unknown": "An unexpected error occurred. Your original files are safe. Please try again."
+  }
+}

@@ -21,10 +21,8 @@ export function quotaStatus(isPremium: boolean, usage: DailyUsage): QuotaStatus 
   return { unlimited: false, limit, used: usage.operations, remaining, canEarnBonus: usage.rewardedCount < FREE_LIMITS.maxRewardedPerDay };
 }
 
-export type GatedFeature = 'batch' | 'targetSize' | 'mergeFiles' | 'imagesPerPdf' | 'pdfToImagesPages' | 'fullHistory';
-
 /** Numeric caps per plan (Infinity = no cap). */
-export function featureCap(isPremium: boolean, feature: 'mergeFiles' | 'imagesPerPdf' | 'pdfToImagesPages' | 'batchImages' | 'historyEntries'): number {
+export function featureCap(isPremium: boolean, feature: 'mergeFiles' | 'imagesPerPdf' | 'pdfToImagesPages' | 'splitParts' | 'batchImages' | 'historyEntries'): number {
   if (isPremium) {
     if (feature === 'historyEntries') return Infinity;
     return PREMIUM_LIMITS[feature];
