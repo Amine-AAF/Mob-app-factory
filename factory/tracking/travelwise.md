@@ -1,6 +1,136 @@
 # TravelWise — suivi
 
 Dossier : `apps/travelwise` · Branche / worktree : `feat/travelwise` → `C:\Projets\maf-travelwise`
+· Package id : `com.mobileappsfactory.travelwise` · Statut manifest : `development` · Dernière mise à jour : 2026-11-14
+
+## Fonctionnalités terminées
+
+Phase 1 — Audit : monorepo, packages partagés, conventions, risques (voir le rapport de session).
+
+Phase 2 — Fondation :
+- App Expo Router : boot (préférences → i18n → SQLite), écran d'erreur de démarrage, redirection onboarding.
+- Navigation : 5 onglets (Home, Trips, Places, Budget, Settings) ; sections par voyage
+  (Overview, Itinerary, Bookings, Budget, Checklist, Journal) via `TripTabBar` ; création en modal, édition.
+- Thème clair/sombre via `@factory/design-system` (couleurs de marque du manifest), préférence système/clair/sombre.
+- i18n en/fr/es complète (pluriels CLDR one/many/other en fr/es), formats de date/monnaie `Intl`, libellés a11y.
+- SQLite : schéma v1 de 20 tables (17 demandées + `currency_conversions`, `weather_notes`, `user_settings`),
+  index, clés étrangères `ON DELETE CASCADE / SET NULL`, contraintes CHECK, transactions.
+- Modèles TypeScript de toutes les entités ; stratégie dates/fuseaux documentée (`apps/travelwise/docs/data-model.md`).
+- Gestion des voyages (début de Phase 3) : créer, modifier, dupliquer (plan copié, progression remise à zéro,
+  décalage de dates), archiver/restaurer, supprimer avec confirmation (cascade + suppression des fichiers),
+  multi-destinations, voyageurs, statut dérivé des dates, historique (filtres Actifs/Passés/Archivés).
+- Home dashboard : empty state « Start planning your next adventure. », voyages en cours / à venir / terminés,
+  actions rapides ; TripCard (compte à rebours, jour X sur Y, préparation réelle uniquement).
+- Trip overview : statut, nuits, destinations, activités, réservations, préparation, budget consommé, actions.
+- Onboarding : présentation + langue → devise → premier voyage facultatif → dashboard.
+- Settings : langue, thème, devise par défaut, consentement analytics (opt-in), suppression totale des données.
+- Analytics : catalogue typé d'événements anonymes, aucun provider en production.
+- Docs : `docs/data-model.md`, `docs/security.md` (limites explicites : fichiers non chiffrés par l'app).
+
+Phase 3 — MVP (itinéraire, réservations, bagages) :
+- Itinerary Builder : un jour par date du voyage (création depuis les dates, idempotente), jour rattaché à la ville
+  qui couvre la date (jour d'arrivée = nouvelle ville), jours hors dates conservés et signalés, jour supplémentaire,
+  édition du jour (titre, ville, description, notes, budget estimé), suppression (activités en cascade).
+- Timeline visuelle par jour (`DayTimeline` + `ActivityCard`) : tri par heure locale, activités sans horaire en fin,
+  marquer fait/prévu, monter/descendre, mention « heures locales » par destination.
+- Activités : création, modification, duplication, suppression, statut planned/completed/skipped, catégories, durée
+  calculée (y compris après minuit), prix + devise, adresse, lien http(s) validé, déplacement vers un autre jour/une
+  autre ville sans modifier l'heure locale.
+- 7 modèles d'itinéraire (weekend, 3 jours, 7 jours, road trip 10 jours, famille, business, plage) : trames neutres
+  sans lieux ni horaires réels, adaptées à toute durée (premier jour / jours du milieu en cycle / dernier jour),
+  appliquées dans la langue de l'utilisateur, ne remplacent jamais un titre existant.
+- Reservations Organizer : 9 types, saisie manuelle uniquement (avertissement « non vérifié »), réservations
+  incomplètes acceptées et signalées, référence stockée telle que saisie, affichage chronologique groupé par date,
+  heure d'arrivée « plus tôt » acceptée (fuseaux), rappel de ne jamais saisir de données bancaires.
+- Packing Lists : catalogue original de 101 éléments en/fr/es dans 7 catégories, 6 modèles (weekend, business,
+  plage, hiver, famille, international ; 15+ éléments chacun), listes vides, quantité/priorité/notes, cocher/décocher,
+  progression « Packing progress: 75% », tout décocher, renommer, supprimer, modèles personnels réutilisables.
+- Overview du voyage : programme du jour, prochaines activités, réservations à venir (données réelles uniquement).
+- Sélecteur de date calendrier en JS pur (`DateField`, sans dépendance native), champ d'heure normalisé (`TimeField`).
+
+Phase 4 — Gestion financière :
+- Budget planning : budget total + 6 catégories (transport, hébergement, repas, activités, shopping, divers),
+  prévu / dépensé / restant / % consommé, par catégorie et au total ; budget estimé par jour de l'itinéraire.
+- Expense tracking : montant, devise, catégorie, date, description, ville, moyen de paiement (libellé seulement,
+  numéros de carte refusés), notes ; modification, suppression, historique, filtre par catégorie/payeur/période,
+  recherche, tri (date, montant). Montant converti dans la devise du voyage avec le taux saisi (taux mémorisable).
+  La devise d'un voyage est verrouillée dès qu'il a des dépenses.
+- Shared expenses : payeur, participants, répartition égale (reste au centime près sur les premiers) ou personnalisée
+  (somme exacte exigée), soldes théoriques en devise du voyage (allocation au plus fort reste : jamais de centime
+  perdu), remboursements suggérés (≤ n-1 virements), mention « aucun paiement réel ».
+- Budget insights (données réelles uniquement) : plus gros poste, dépense moyenne par jour, budget restant, montant
+  par jour restant pour tenir le budget, dépenses par jour vs budget du jour.
+- Currency converter : 11 devises, mode manuel/offline (taux saisi, daté, source « saisi par vous », par voyage ou
+  global), taux inverse utilisé si besoin (signalé), historique des 50 dernières conversions, avertissement
+  « le taux bancaire peut différer » ; interface `RateProvider` prête pour une API future (`features/currency/rates.ts`).
+
+Phase 5 — Organisation avancée :
+- Travel Documents : import PDF/images (sélecteur Android / Photo Picker, sans permission de stockage), contrôle
+  type + taille (25 Mo) avant copie, copie privée sous nom aléatoire, refus si stockage < 50 Mo restants,
+  métadonnées seules en SQLite (titre, type, voyage, expiration, notes), consultation hors ligne (image dans l'app,
+  PDF via une visionneuse du téléphone), badge expiré/bientôt, suppression définitive (ligne + fichier),
+  fichier manquant signalé. Verrou facultatif biométrie / code du téléphone (BiometricPrompt), 5 min, reverrouillé
+  en arrière-plan ; présenté comme masquage, pas comme chiffrement.
+- Travel Checklist : checklist « Avant le départ » par voyage, tâches perso (échéance, priorité, statut, notes),
+  14 tâches suggérées en/fr/es (5 internationales, ajoutables une seule fois, échéance relative au départ jamais
+  dans le passé), progression, rappels locaux (notification datée, permission demandée seulement à ce moment),
+  annulation à la suppression de la tâche/du voyage/des données ; avertissement visa/passeport « vérifiez auprès
+  des autorités officielles ».
+- Places : CRUD, catégories, favoris, recherche, filtre, coordonnées saisies uniquement (validées), photo
+  facultative, association voyage/jour, ouverture dans une app de cartes (`geo:` puis Google Maps web) ;
+  aucune carte intégrée ni itinéraire GPS.
+- Travel Journal : entrées datées par voyage, titre, ville, texte, notes, jusqu'à 12 photos locales, timeline
+  chronologique groupée par jour ; photos retirées / non enregistrées supprimées.
+- Weather Planner : notes météo manuelles par voyage ou destination (conditions, min/max °C, notes), aucune
+  prévision affichée, suggestions de bagages selon les conditions/températures saisies, ajout à une liste.
+
+Phase 6 — Monétisation :
+- Premium via `@factory/monetization` (RevenueCat sur Google Play Billing) : 3 offres du manifest
+  (`travelwise_premium_monthly`, `_annual`, `_lifetime`), prix affichés = prix localisés du store, aucun achat simulé
+  (sans clé RevenueCat : « achats indisponibles »), cache d'entitlement en SQLite (migration v2) honoré hors ligne
+  7 jours max, restauration, gestion des abonnements, mentions légales.
+- Limites free appliquées dans les actions (pas seulement l'UI) : 3 voyages actifs (terminés/archivés exclus,
+  +2 max via rewarded), 10 documents ; Premium : budget détaillé (catégories, par jour, montant quotidien),
+  répartition personnalisée, export PDF itinéraire, export CSV dépenses, tous les modèles, sans pub.
+- AdMob (UMP, IDs de test en dev/preview, IDs prod via variables protégées) : bannières seulement Home / Trips /
+  Places / Budget ; interstitiel au retour sur la liste/accueil, plafonné (3 voyages consultés, 4 min) ; rewarded
+  uniquement sur demande (créneau de voyage) ; jamais sur documents, édition d'itinéraire, saisie de dépense,
+  export, formulaires, paywall, onboarding ; démarrage après l'onboarding ; options de confidentialité dans Settings.
+- Exports Premium : PDF (expo-print, HTML échappé) et CSV (BOM, anti-injection de formules) partagés via la feuille
+  Android puis supprimés du cache.
+
+Phase 7 — Préparation release (partielle, sans appareil) :
+- Assets générés depuis `brand/mark.mjs` (épingle + avion en papier, original) : icon 1024, adaptive + monochrome,
+  splash, icône de notification, `store/graphics` (icône Play 512, feature graphic 1024×500).
+- `store/` : fiches en/fr/es (longueurs vérifiées), ASO, Data Safety (AdMob + RevenueCat, aucun contenu de
+  voyage transmis), questionnaire IARC, politique de confidentialité à héberger, plan de captures (vraies captures).
+- Bundle Android JS validé (`expo export --platform android`, Hermes 4,4 Mo) et config Expo résolue (9 plugins).
+- Audit : aucun appel réseau dans le code (fetch/XHR/WebSocket/upload absents), 3 URL externes ouvertes dans
+  d'autres apps, aucun provider analytics en production, logs uniquement en dev, SQL paramétré.
+
+## Fonctionnalités en cours
+
+- —
+
+## Fonctionnalités restantes
+
+- Phase 3 (reste) : réorganisation par glisser-déposer (aujourd'hui : boutons monter/descendre), lier une activité à un lieu
+  (Phase 5, table `places`), pièce jointe de réservation (Phase 5, documents).
+- Phase 4 (reste) : export CSV des dépenses (Phase 6, Premium), gating Premium « budget détaillé / shared avancées »
+  (Phase 6), provider de taux externe (non intégré volontairement : pas d'API payante par défaut).
+- Phase 5 (reste) : choisir un lieu enregistré depuis le formulaire d'activité, joindre un document à une
+  réservation depuis l'écran réservation (le schéma et le repository le gèrent déjà), replanifier les rappels
+  après restauration de sauvegarde (`pendingReminders` prêt), provider météo externe (non intégré).
+- Phase 6 (reste / à configurer) : clé RevenueCat, produits Play Console + entitlement "premium" + offering "default",
+  IDs AdMob de production (app, bannière, interstitiel, rewarded), tests d'achat sur piste interne. Non
+  implémentés (donc non vendus sur le paywall) : personnalisation, sauvegardes locales avancées.
+- Phase 7 (reste, nécessite comptes/appareil) : `eas init` (EAS_PROJECT_ID), build preview APK + tests sur
+  appareil (pickers, visionneuse PDF, biométrie, notifications, pubs de test, achats en piste interne, mode avion),
+  captures d'écran, hébergement de la politique, build production AAB, fiche Play Console.
+- CI (fichier partagé, protocole §3 de parallel-development.md — non modifié) : ajouter `travelwise` aux matrices
+  `integration-tests`, `bundle-validation`, `android-development` et la règle de tag `^travelwise-vd+.d+.d+# TravelWise — suivi
+
+Dossier : `apps/travelwise` · Branche / worktree : `feat/travelwise` → `C:\Projets\maf-travelwise`
 · Package id : `com.mobileappsfactory.travelwise` · Statut manifest : `development` · Dernière mise à jour : 2026-11-13
 
 ## Fonctionnalités terminées
@@ -99,6 +229,15 @@ Phase 6 — Monétisation :
 - Exports Premium : PDF (expo-print, HTML échappé) et CSV (BOM, anti-injection de formules) partagés via la feuille
   Android puis supprimés du cache.
 
+Phase 7 — Préparation release (partielle, sans appareil) :
+- Assets générés depuis `brand/mark.mjs` (épingle + avion en papier, original) : icon 1024, adaptive + monochrome,
+  splash, icône de notification, `store/graphics` (icône Play 512, feature graphic 1024×500).
+- `store/` : fiches en/fr/es (longueurs vérifiées), ASO, Data Safety (AdMob + RevenueCat, aucun contenu de
+  voyage transmis), questionnaire IARC, politique de confidentialité à héberger, plan de captures (vraies captures).
+- Bundle Android JS validé (`expo export --platform android`, Hermes 4,4 Mo) et config Expo résolue (9 plugins).
+- Audit : aucun appel réseau dans le code (fetch/XHR/WebSocket/upload absents), 3 URL externes ouvertes dans
+  d'autres apps, aucun provider analytics en production, logs uniquement en dev, SQL paramétré.
+
 ## Fonctionnalités en cours
 
 - —
@@ -115,9 +254,7 @@ Phase 6 — Monétisation :
 - Phase 6 (reste / à configurer) : clé RevenueCat, produits Play Console + entitlement "premium" + offering "default",
   IDs AdMob de production (app, bannière, interstitiel, rewarded), tests d'achat sur piste interne. Non
   implémentés (donc non vendus sur le paywall) : personnalisation, sauvegardes locales avancées.
-- Phase 7 : tests appareil Android, offline, APK preview, AAB, `store/` (fiche, ASO, Data Safety, politique).
-- Assets de marque : `brand/mark.mjs` écrit ; PNG à générer (`pnpm brand-assets apps/travelwise`, nécessite sharp).
-  `app.config.ts` référence `assets/images/*.png` : **un prebuild échoue tant qu'ils ne sont pas générés**.
+.
 
 ## Bugs connus
 
@@ -197,7 +334,9 @@ Phase 6 — Monétisation :
 - [x] Package id définitif `com.mobileappsfactory.travelwise`
 - [x] Manifest (hybrid, 3 plans `travelwise_premium_{monthly,annual,lifetime}`, ads banner/interstitial/rewarded)
 - [x] `eas.json` (development/preview APK, production AAB), `.env.example`
-- [ ] Assets PNG, `store/`, IDs prod (AdMob, RevenueCat), projet EAS, jobs CI (matrice), tests appareil
+- [x] Assets PNG, `store/` (fiches, Data Safety, IARC, politique, plan de captures)
+- [x] Bundle Android JS (`expo export`)
+- [ ] IDs prod AdMob / clé RevenueCat / produits Play, projet EAS, URL de politique, jobs CI (matrice), tests appareil, captures
 
 ## Candidats à la mutualisation
 

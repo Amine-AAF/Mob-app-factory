@@ -17,7 +17,7 @@ export function mark({ bubble, glyph }) {
 
 /** Play Store feature graphic (1024×500). Text is the product name and tagline only. */
 export function featureGraphic({ primary, accent, ink, name, mark: m }) {
-  const route = `<path d="M560 420 C 640 300, 760 380, 820 260 S 930 120, 990 90" fill="none" stroke="${accent}" stroke-width="5" stroke-dasharray="2 16" stroke-linecap="round" opacity="0.45"/>`;
+  const route = `<path d="M935 480 C 905 400, 1000 330, 965 240 S 985 90, 1005 30" fill="none" stroke="${accent}" stroke-width="5" stroke-dasharray="2 16" stroke-linecap="round" opacity="0.45"/>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
   <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${ink}"/><stop offset="1" stop-color="#0B3B37"/></linearGradient></defs>
   <rect width="1024" height="500" fill="url(#bg)"/>
