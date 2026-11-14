@@ -1,0 +1,48 @@
+{
+  "id": "petcare",
+  "name": "PetCare",
+  "storeName": "PetCare: Pet Health Tracker",
+  "slug": "petcare",
+  "scheme": "petcare",
+  "packageId": "com.mobileappsfactory.petcare",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "lifestyle",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#B8502F", "accent": "#2BAE8E", "splashBackground": "#1C1411" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "petcare_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "petcare_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "petcare_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 2 }
+  },
+  "features": {
+    "petProfiles": true,
+    "healthTracker": true,
+    "vaccinations": true,
+    "treatments": true,
+    "weightTracker": true,
+    "feeding": true,
+    "foodInventory": true,
+    "appointments": true,
+    "documents": true,
+    "activities": true,
+    "expenses": true,
+    "careTemplates": true,
+    "notifications": true,
+    "backupRestore": true,
+    "pdfCsvExport": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
