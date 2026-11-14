@@ -1,0 +1,48 @@
+{
+  "id": "plantcare",
+  "name": "PlantCare",
+  "storeName": "PlantCare: Plant Care & Garden",
+  "slug": "plantcare",
+  "scheme": "plantcare",
+  "packageId": "com.mobileappsfactory.plantcare",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "lifestyle",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#2E7D4F", "accent": "#C8794A", "splashBackground": "#0F2018" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "plantcare_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "plantcare_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "plantcare_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 2 }
+  },
+  "features": {
+    "plantCollection": true,
+    "plantLibrary": true,
+    "wateringTracker": true,
+    "careScheduler": true,
+    "growthTracker": true,
+    "plantJournal": true,
+    "plantHealth": true,
+    "fertilizerSoil": true,
+    "gardenOrganizer": true,
+    "wishlist": true,
+    "seasonalCare": true,
+    "statistics": true,
+    "notifications": true,
+    "backupRestore": true,
+    "pdfExport": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
