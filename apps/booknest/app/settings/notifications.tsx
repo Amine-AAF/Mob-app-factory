@@ -22,9 +22,12 @@ export default function NotificationSettings() {
   const { data } = useData((r) => r.organize.notificationSettings(), []);
   const [settings, setSettings] = useState<NotificationSetting[]>([]);
   const [permission, setPermission] = useState<string>('undetermined');
-  useEffect(() => {
-    if (data) setSettings(data);
-  }, [data]);
+  // Mirror the stored settings each time they are reloaded (derived during render, no effect needed).
+  const [syncedData, setSyncedData] = useState<typeof data>(undefined);
+  if (data && data !== syncedData) {
+    setSyncedData(data);
+    setSettings(data);
+  }
   useEffect(() => {
     getPermission().then(setPermission).catch(() => undefined);
   }, []);

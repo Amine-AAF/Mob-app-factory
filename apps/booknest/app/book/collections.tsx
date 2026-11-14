@@ -1,6 +1,6 @@
 import { Button, OptionCard } from '@factory/design-system';
 import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Field, Page } from '@/components/ui';
@@ -15,9 +15,12 @@ export default function BookCollections() {
   const { data } = useData((r) => Promise.all([r.organize.collections(), r.organize.collectionsOfBook(id)]), [id]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [name, setName] = useState('');
-  useEffect(() => {
-    if (data) setSelected(new Set(data[1]));
-  }, [data]);
+  // Reset the selection each time fresh data is loaded (derived during render, no effect needed).
+  const [syncedData, setSyncedData] = useState<typeof data>(undefined);
+  if (data && data !== syncedData) {
+    setSyncedData(data);
+    setSelected(new Set(data[1]));
+  }
 
   const toggle = (cid: string) => {
     const next = new Set(selected);

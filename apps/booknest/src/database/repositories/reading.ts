@@ -128,8 +128,14 @@ export function createReadingRepository(db: SqlDatabase) {
     async sessions(opts: { from?: string; to?: string; limit?: number } = {}): Promise<(ReadingSession & { bookTitle: string })[]> {
       const where: string[] = [];
       const params: SqlValue[] = [];
-      if (opts.from) (where.push('s.day >= ?'), params.push(opts.from));
-      if (opts.to) (where.push('s.day <= ?'), params.push(opts.to));
+      if (opts.from) {
+        where.push('s.day >= ?');
+        params.push(opts.from);
+      }
+      if (opts.to) {
+        where.push('s.day <= ?');
+        params.push(opts.to);
+      }
       const rows = await db.getAllAsync<Row>(
         `SELECT s.*, b.title AS book_title FROM reading_sessions s JOIN books b ON b.id = s.book_id
           ${where.length ? `WHERE ${where.join(' AND ')}` : ''} ORDER BY s.started_at DESC${opts.limit ? ` LIMIT ${Math.floor(opts.limit)}` : ''}`,

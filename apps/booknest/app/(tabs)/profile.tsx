@@ -17,6 +17,12 @@ import { useIsPremium } from '@/store/session';
 import { syncNotifications } from '@/services/reminders';
 import { repos } from '@/database';
 
+/** Navigation row of the profile menus. */
+function Link({ icon, title, subtitle, to, testID }: { icon: IconName; title: string; subtitle?: string; to: string; testID?: string }) {
+  const theme = useBookTheme();
+  return <ListRow icon={icon} title={title} subtitle={subtitle} onPress={() => router.push(to as never)} testID={testID} right={<Icon name="chevron-forward" size={18} color={theme.colors.textSubtle} />} />;
+}
+
 export default function Profile() {
   const { t, i18n } = useTranslation();
   const theme = useBookTheme();
@@ -37,10 +43,6 @@ export default function Profile() {
     // Reminder texts are localized when scheduled.
     void syncNotifications(repos(), i18n.t);
   };
-
-  const Link = ({ icon, title, subtitle, to, testID }: { icon: IconName; title: string; subtitle?: string; to: string; testID?: string }) => (
-    <ListRow icon={icon} title={title} subtitle={subtitle} onPress={() => router.push(to as never)} testID={testID} right={<Icon name="chevron-forward" size={18} color={theme.colors.textSubtle} />} />
-  );
 
   return (
     <Page testID="profile">

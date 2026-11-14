@@ -1,5 +1,5 @@
 import { Icon, Text, type IconName, type TextProps } from '@factory/design-system';
-import { memo, useEffect, useRef, type ReactNode } from 'react';
+import { memo, useEffect, useState, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   Animated,
@@ -161,7 +161,7 @@ export function StarRating({ value, onChange, size = 22, testID }: { value: numb
 
 export function ProgressLine({ ratio, label, tone = 'primary', height = 6 }: { ratio: number | null; label?: string; tone?: 'primary' | 'accent' | 'success'; height?: number }) {
   const t = useBookTheme();
-  const anim = useRef(new Animated.Value(0)).current;
+  const [anim] = useState(() => new Animated.Value(0));
   useEffect(() => {
     Animated.timing(anim, { toValue: ratio ?? 0, duration: 450, useNativeDriver: false }).start();
   }, [anim, ratio]);

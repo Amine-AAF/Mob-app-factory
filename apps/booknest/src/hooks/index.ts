@@ -27,11 +27,19 @@ export function useData<T>(loader: (r: Repositories) => Promise<T>, deps: unknow
   const [loading, setLoading] = useState(true);
   const [tick, setTick] = useState(0);
   const loaderRef = useRef(loader);
-  loaderRef.current = loader;
+  useEffect(() => {
+    loaderRef.current = loader;
+  });
+  // Flag the reload as soon as an input changes (derived during render, not set from the effect).
+  const inputs = [ready, version, tick, ...deps];
+  const [loadedInputs, setLoadedInputs] = useState(inputs);
+  if (inputs.length !== loadedInputs.length || inputs.some((v, i) => !Object.is(v, loadedInputs[i]))) {
+    setLoadedInputs(inputs);
+    setLoading(true);
+  }
   useEffect(() => {
     if (!ready) return;
     let alive = true;
-    setLoading(true);
     loaderRef
       .current(repos())
       .then((d) => alive && setData(d))
@@ -58,9 +66,14 @@ export function useToday(): string {
 /** A "now" that re-renders every `intervalMs` while mounted (used by the live timer display). */
 export function useNow(intervalMs = 1000, active = true): Date {
   const [now, setNow] = useState(() => clock.now());
+  // Catch up immediately when the ticker is (re)activated (derived during render).
+  const [wasActive, setWasActive] = useState(active);
+  if (active !== wasActive) {
+    setWasActive(active);
+    if (active) setNow(clock.now());
+  }
   useEffect(() => {
     if (!active) return;
-    setNow(clock.now());
     const id = setInterval(() => setNow(clock.now()), intervalMs);
     const sub = AppState.addEventListener('change', (s) => s === 'active' && setNow(clock.now()));
     return () => {

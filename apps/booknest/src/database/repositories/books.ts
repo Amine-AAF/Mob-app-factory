@@ -201,13 +201,31 @@ export function createBooksRepository(db: SqlDatabase) {
         where.push('b.search_text LIKE ?');
         params.push(`%${tok}%`);
       }
-      if (q.status) (where.push('r.status = ?'), params.push(q.status));
-      if (q.format) (where.push('b.format = ?'), params.push(q.format));
-      if (q.genreId) (where.push('b.genre_id = ?'), params.push(q.genreId));
-      if (q.authorId) (where.push('b.author_id = ?'), params.push(q.authorId));
+      if (q.status) {
+        where.push('r.status = ?');
+        params.push(q.status);
+      }
+      if (q.format) {
+        where.push('b.format = ?');
+        params.push(q.format);
+      }
+      if (q.genreId) {
+        where.push('b.genre_id = ?');
+        params.push(q.genreId);
+      }
+      if (q.authorId) {
+        where.push('b.author_id = ?');
+        params.push(q.authorId);
+      }
       if (q.favoritesOnly) where.push('b.is_favorite = 1');
-      if (q.minRating) (where.push('rv.rating >= ?'), params.push(q.minRating));
-      if (q.collectionId) (where.push('b.id IN (SELECT book_id FROM collection_books WHERE collection_id = ?)'), params.push(q.collectionId));
+      if (q.minRating) {
+        where.push('rv.rating >= ?');
+        params.push(q.minRating);
+      }
+      if (q.collectionId) {
+        where.push('b.id IN (SELECT book_id FROM collection_books WHERE collection_id = ?)');
+        params.push(q.collectionId);
+      }
       const limit = q.limit != null ? ` LIMIT ${Math.max(0, Math.floor(q.limit))} OFFSET ${Math.max(0, Math.floor(q.offset ?? 0))}` : '';
       const rows = await db.getAllAsync<Row>(
         `SELECT b.id, b.title, a.name AS author_name, b.cover_thumb_uri, b.format, b.page_count, b.is_favorite, b.is_archived, b.updated_at,

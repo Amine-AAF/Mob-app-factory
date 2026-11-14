@@ -200,7 +200,10 @@ export function createOrganizeRepository(db: SqlDatabase) {
     async wishlist(opts: { status?: WishlistStatus | null; search?: string; sort?: WishlistSort } = {}): Promise<WishlistItem[]> {
       const where: string[] = [];
       const params: SqlValue[] = [];
-      if (opts.status) (where.push('status = ?'), params.push(opts.status));
+      if (opts.status) {
+        where.push('status = ?');
+        params.push(opts.status);
+      }
       if (opts.search?.trim()) {
         where.push('(title LIKE ? OR author LIKE ? OR store LIKE ?)');
         const like = `%${opts.search.trim()}%`;

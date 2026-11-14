@@ -13,9 +13,25 @@ import { fmt } from '@/i18n';
 import { loadStatsInput } from '@/services/statsService';
 import { useIsPremium } from '@/store/session';
 
-export default function Stats() {
+/** Premium-only statistic: opens the paywall. */
+function Locked({ title }: { title: string }) {
   const { t } = useTranslation();
   const theme = useBookTheme();
+  return (
+    <Paper tone="alt" onPress={() => router.push({ pathname: '/paywall', params: { source: 'advanced_stats' } })} accessibilityLabel={title}>
+      <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
+        <Icon name="lock-closed" size={18} color={theme.colors.accent} />
+        <Text style={{ fontWeight: '600', flex: 1 }}>{title}</Text>
+        <Text variant="caption" tone="primary" style={{ fontWeight: '700' }}>
+          {t('premium.badge')}
+        </Text>
+      </View>
+    </Paper>
+  );
+}
+
+export default function Stats() {
+  const { t } = useTranslation();
   const today = useToday();
   const premium = useIsPremium();
   const [year, setYear] = useState<number | null>(Number(today.slice(0, 4)));
@@ -33,18 +49,6 @@ export default function Stats() {
 
   const share = () =>
     Share.share({ message: shareSummary(o, shownYear, { minutes: (s) => fmt.duration(s) }, (k, p) => t(k, p ?? {})) });
-
-  const Locked = ({ title }: { title: string }) => (
-    <Paper tone="alt" onPress={() => router.push({ pathname: '/paywall', params: { source: 'advanced_stats' } })} accessibilityLabel={title}>
-      <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center' }}>
-        <Icon name="lock-closed" size={18} color={theme.colors.accent} />
-        <Text style={{ fontWeight: '600', flex: 1 }}>{title}</Text>
-        <Text variant="caption" tone="primary" style={{ fontWeight: '700' }}>
-          {t('premium.badge')}
-        </Text>
-      </View>
-    </Paper>
-  );
 
   return (
     <Page edges={['bottom']} testID="stats">

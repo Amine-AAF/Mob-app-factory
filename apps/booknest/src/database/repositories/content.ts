@@ -14,7 +14,10 @@ export function normalizeTags(tags: readonly string[]): string[] {
   for (const raw of tags) {
     const t = raw.trim().replace(/^#/, '').slice(0, 40);
     const key = t.toLowerCase();
-    if (t && !seen.has(key)) (seen.add(key), out.push(t));
+    if (t && !seen.has(key)) {
+      seen.add(key);
+      out.push(t);
+    }
   }
   return out.slice(0, 12);
 }
@@ -112,7 +115,10 @@ export function createContentRepository(db: SqlDatabase) {
     async quotes(opts: { bookId?: string | null; search?: string; favoritesOnly?: boolean; tag?: string | null; limit?: number } = {}): Promise<Quote[]> {
       const where: string[] = [];
       const params: SqlValue[] = [];
-      if (opts.bookId) (where.push('q.book_id = ?'), params.push(opts.bookId));
+      if (opts.bookId) {
+        where.push('q.book_id = ?');
+        params.push(opts.bookId);
+      }
       if (opts.favoritesOnly) where.push('q.is_favorite = 1');
       const rows = await db.getAllAsync<Row>(
         `SELECT q.*, b.title AS book_title FROM quotes q LEFT JOIN books b ON b.id = q.book_id ${where.length ? `WHERE ${where.join(' AND ')}` : ''} ORDER BY q.created_at DESC`,
@@ -153,8 +159,14 @@ export function createContentRepository(db: SqlDatabase) {
     async notes(opts: { bookId?: string | null; search?: string; favoritesOnly?: boolean; tag?: string | null; kind?: NoteKind | null } = {}): Promise<ReadingNote[]> {
       const where: string[] = [];
       const params: SqlValue[] = [];
-      if (opts.bookId) (where.push('n.book_id = ?'), params.push(opts.bookId));
-      if (opts.kind) (where.push('n.kind = ?'), params.push(opts.kind));
+      if (opts.bookId) {
+        where.push('n.book_id = ?');
+        params.push(opts.bookId);
+      }
+      if (opts.kind) {
+        where.push('n.kind = ?');
+        params.push(opts.kind);
+      }
       if (opts.favoritesOnly) where.push('n.is_favorite = 1');
       const rows = await db.getAllAsync<Row>(
         `SELECT n.*, b.title AS book_title FROM reading_notes n LEFT JOIN books b ON b.id = n.book_id ${where.length ? `WHERE ${where.join(' AND ')}` : ''} ORDER BY n.created_at DESC`,

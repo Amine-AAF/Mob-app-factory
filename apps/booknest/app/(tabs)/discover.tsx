@@ -14,26 +14,12 @@ import { useData, useToday } from '@/hooks';
  * Discover = transparent rules over the user's own library (no AI, no network).
  * Every card says why it is suggested.
  */
-export default function Discover() {
+/** Horizontal shelf of suggested books, each with the reason it was suggested. */
+function Row({ items }: { items: Suggestion[] }) {
   const { t } = useTranslation();
   const theme = useBookTheme();
-  const today = useToday();
-  const { data } = useData(
-    async (r) => {
-      const [books, wishlist, last] = await Promise.all([r.books.list(), r.organize.wishlist(), r.reading.lastSessionByBook()]);
-      const lastActivity = new Map([...last].map(([k, v]) => [k, v.slice(0, 10)]));
-      return { books, result: discover({ books, wishlist, lastActivity, today }) };
-    },
-    [today],
-  );
-
   const reason = (s: Suggestion) => t(`discover.reasons.${s.reason}`, { about: s.about ?? '', days: s.score });
-  const surprise = () => {
-    const b = data ? randomWantToRead(data.books) : null;
-    if (b) router.push(`/book/${b.id}`);
-  };
-
-  const Row = ({ items }: { items: Suggestion[] }) => (
+  return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 14 }}>
       {items.map((s) => (
         <Pressable key={s.bookId} onPress={() => router.push(`/book/${s.bookId}`)} accessibilityRole="button" accessibilityLabel={`${s.title}. ${reason(s)}`} style={{ width: 110, gap: 6 }}>
@@ -48,6 +34,25 @@ export default function Discover() {
       ))}
     </ScrollView>
   );
+}
+
+export default function Discover() {
+  const { t } = useTranslation();
+  const theme = useBookTheme();
+  const today = useToday();
+  const { data } = useData(
+    async (r) => {
+      const [books, wishlist, last] = await Promise.all([r.books.list(), r.organize.wishlist(), r.reading.lastSessionByBook()]);
+      const lastActivity = new Map([...last].map(([k, v]) => [k, v.slice(0, 10)]));
+      return { books, result: discover({ books, wishlist, lastActivity, today }) };
+    },
+    [today],
+  );
+
+  const surprise = () => {
+    const b = data ? randomWantToRead(data.books) : null;
+    if (b) router.push(`/book/${b.id}`);
+  };
 
   const r = data?.result;
   const nothing = r && !r.forYou.length && !r.unfinished.length && !r.forgottenWishlist.length && !r.randomPick;

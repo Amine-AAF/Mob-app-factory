@@ -1,7 +1,7 @@
 import { addDays, startOfWeek } from '@factory/app-core';
 import { Button, Icon, Text } from '@factory/design-system';
 import { router } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Modal, Pressable, ScrollView, View } from 'react-native';
 
@@ -24,9 +24,12 @@ function Celebration() {
   const theme = useBookTheme();
   const pending = useSession((s) => s.celebrations.length);
   const [visible, setVisible] = useState(false);
-  useEffect(() => {
+  // Open whenever new celebrations are queued (derived during render, no effect needed).
+  const [seenPending, setSeenPending] = useState(0);
+  if (pending !== seenPending) {
+    setSeenPending(pending);
     if (pending) setVisible(true);
-  }, [pending]);
+  }
   const close = () => {
     useSession.getState().takeCelebrations();
     setVisible(false);

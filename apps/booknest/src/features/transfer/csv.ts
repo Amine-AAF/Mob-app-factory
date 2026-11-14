@@ -27,14 +27,18 @@ export function parseCsv(raw: string): string[][] {
     const ch = text[i]!;
     if (quoted) {
       if (ch === '"') {
-        if (text[i + 1] === '"') (field += '"'), i++;
-        else quoted = false;
+        if (text[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else quoted = false;
       } else field += ch;
       continue;
     }
     if (ch === '"' && field === '') quoted = true;
-    else if (ch === delimiter) (row.push(field), (field = ''));
-    else if (ch === '\n' || ch === '\r') {
+    else if (ch === delimiter) {
+      row.push(field);
+      field = '';
+    } else if (ch === '\n' || ch === '\r') {
       if (ch === '\r' && text[i + 1] === '\n') i++;
       row.push(field);
       field = '';
@@ -201,9 +205,15 @@ export function previewImport(raw: string, existing: readonly DuplicateCandidate
     const parsed = { startedOn: parseDay(dates.startedOn), finishedOn: parseDay(dates.finishedOn), acquiredOn: parseDay(dates.acquiredOn) };
     for (const k of Object.keys(dates) as (keyof typeof dates)[]) {
       if (dates[k] && !parsed[k]) warnings.push('invalid_date');
-      if (parsed[k] && parsed[k]! > today) (warnings.push('invalid_date'), (parsed[k] = null));
+      if (parsed[k] && parsed[k]! > today) {
+        warnings.push('invalid_date');
+        parsed[k] = null;
+      }
     }
-    if (parsed.startedOn && parsed.finishedOn && parsed.finishedOn < parsed.startedOn) (warnings.push('finish_before_start'), (parsed.startedOn = null));
+    if (parsed.startedOn && parsed.finishedOn && parsed.finishedOn < parsed.startedOn) {
+      warnings.push('finish_before_start');
+      parsed.startedOn = null;
+    }
 
     const priceRaw = get('price');
     const price = priceRaw ? parseMoneyToCents(priceRaw.replace(/[^\d.,]/g, '')) : null;

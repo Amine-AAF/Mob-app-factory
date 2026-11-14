@@ -41,12 +41,11 @@ export default function EditQuote() {
       });
   }, [params.id]);
 
-  // Default the quote author to the book's author.
-  useEffect(() => {
-    if (!bookId || author) return;
+  // Default the quote author to the book's author (derived during render, no effect needed).
+  if (bookId && !author) {
     const b = books?.find((x) => x.id === bookId);
     if (b?.authorName) setAuthor(b.authorName);
-  }, [bookId, books, author]);
+  }
 
   const save = () => run(() => saveQuote(repos(), { bookId, text, authorName: author, page: page ? Number(page) : null, tags, comment, isFavorite: favorite }, params.id).then(() => router.back()));
 

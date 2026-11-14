@@ -1,6 +1,6 @@
 import { Chip, Icon, Text } from '@factory/design-system';
 import { router, useLocalSearchParams } from 'expo-router';
-import { useCallback, useDeferredValue, useEffect, useMemo, useState } from 'react';
+import { useCallback, useDeferredValue, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlatList, Modal, Pressable, ScrollView, TextInput, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -32,9 +32,12 @@ export default function Library() {
   const [archived, setArchived] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
 
-  useEffect(() => {
+  // Apply the status passed in the route once per change (derived during render, no effect needed).
+  const [syncedStatusParam, setSyncedStatusParam] = useState<string | undefined>(undefined);
+  if (params.status !== syncedStatusParam) {
+    setSyncedStatusParam(params.status);
     if (params.status && (READING_STATUSES as readonly string[]).includes(params.status)) setStatus(params.status as ReadingStatus);
-  }, [params.status]);
+  }
 
   const { data } = useData((r) => Promise.all([r.books.list({ search, status, format, genreId, favoritesOnly: favorites, archived, sort }), r.books.genres(), r.books.count()]), [search, status, format, genreId, favorites, archived, sort]);
   const [books, genres, total] = data ?? [[] as BookListItem[], [], 0];

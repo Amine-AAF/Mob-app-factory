@@ -32,9 +32,8 @@ export default function Paywall() {
     track('premium_viewed', { source: source ?? 'unknown' });
     void loadPlans();
   }, [source]);
-  useEffect(() => {
-    if (!selected && plans.length) setSelected((plans.find((p) => p.period === 'annual') ?? plans[0])!.id);
-  }, [plans, selected]);
+  // Preselect the annual plan once plans are loaded (derived during render, no effect needed).
+  if (!selected && plans.length) setSelected((plans.find((p) => p.period === 'annual') ?? plans[0])!.id);
 
   const savings = annualSavingsPercent(plans);
 

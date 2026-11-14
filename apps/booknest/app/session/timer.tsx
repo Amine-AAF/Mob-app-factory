@@ -1,6 +1,6 @@
 import { Button, Text } from '@factory/design-system';
 import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, View } from 'react-native';
 
@@ -38,10 +38,15 @@ export default function TimerScreen() {
   const [finishing, setFinishing] = useState(false);
   const [duration, setDuration] = useState('');
 
-  useEffect(() => {
-    if (data?.record) setEndPage(String(data.record.currentPage));
-    if (data?.audio) setEndPos(secondsToHm(data.audio.positionSeconds));
-  }, [data?.record, data?.audio]);
+  // Refill the end position each time fresh data is loaded (derived during render, no effect needed).
+  const record = data?.record;
+  const audio = data?.audio;
+  const [synced, setSynced] = useState<{ record: object | null | undefined; audio: object | null | undefined }>({ record: undefined, audio: undefined });
+  if (record !== synced.record || audio !== synced.audio) {
+    setSynced({ record, audio });
+    if (record) setEndPage(String(record.currentPage));
+    if (audio) setEndPos(secondsToHm(audio.positionSeconds));
+  }
 
   if (!data) return <Page>{null}</Page>;
   const { book } = data;

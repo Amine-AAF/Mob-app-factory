@@ -1,6 +1,6 @@
 import { Button, Icon, Text } from '@factory/design-system';
 import { router, Stack, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert, Pressable, ScrollView, View } from 'react-native';
 
@@ -50,17 +50,22 @@ export default function BookDetail() {
   const [dates, setDates] = useState({ started: '', finished: '' });
   const [editingDates, setEditingDates] = useState(false);
 
-  useEffect(() => {
-    if (!data?.record) return;
-    setPage(String(data.record.currentPage));
-    setDates({ started: data.record.startedOn ?? '', finished: data.record.finishedOn ?? '' });
-  }, [data?.record]);
-  useEffect(() => {
-    if (!data?.audio) return;
-    setPosition(secondsToHm(data.audio.positionSeconds));
-    setTotal(data.audio.totalSeconds ? secondsToHm(data.audio.totalSeconds) : '');
-    setSpeed(data.audio.playbackSpeed?.toString() ?? '');
-  }, [data?.audio]);
+  // Refill the inputs each time fresh data is loaded (derived during render, no effect needed).
+  const loadedRecord = data?.record;
+  const audio = data?.audio;
+  const [syncedRecord, setSyncedRecord] = useState<object | null | undefined>(undefined);
+  const [syncedAudio, setSyncedAudio] = useState<object | null | undefined>(undefined);
+  if (loadedRecord && loadedRecord !== syncedRecord) {
+    setSyncedRecord(loadedRecord);
+    setPage(String(loadedRecord.currentPage));
+    setDates({ started: loadedRecord.startedOn ?? '', finished: loadedRecord.finishedOn ?? '' });
+  }
+  if (audio && audio !== syncedAudio) {
+    setSyncedAudio(audio);
+    setPosition(secondsToHm(audio.positionSeconds));
+    setTotal(audio.totalSeconds ? secondsToHm(audio.totalSeconds) : '');
+    setSpeed(audio.playbackSpeed?.toString() ?? '');
+  }
 
   if (!data) return <Page>{null}</Page>;
   const { book, record } = data;
