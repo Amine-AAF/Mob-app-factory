@@ -1,0 +1,46 @@
+{
+  "title": "Liste d'envies",
+  "intro": "Les pièces auxquelles vous pensez. Prenez votre temps : une liste d'envies aide à acheter ce que vous voulez vraiment.",
+  "add": "Ajouter une envie",
+  "leaveTitle": "Ouvrir ce lien ?",
+  "leaveMessage": "Le lien enregistré s'ouvre dans votre navigateur, en dehors de ClosetWise. ClosetWise ne se connecte jamais aux boutiques en ligne.",
+  "openLink": "Ouvrir le lien",
+  "linkError": "Impossible d'ouvrir ce lien.",
+  "priorityBadge": "Priorité : {{priority}}",
+  "markPurchased": "Marquer comme acheté",
+  "changeStatus": "Changer le statut",
+  "purchasedTitle": "C'est acheté ?",
+  "purchasedMessage": "Voulez-vous enregistrer cet achat dans votre historique ? Cela aide à suivre votre budget.",
+  "justMark": "Juste le marquer",
+  "recordPurchase": "Enregistrer l'achat",
+  "totalTitle": "Total estimé · envies et prévus",
+  "totalNoConversion": "Chaque devise est totalisée à part : les montants ne sont jamais convertis.",
+  "offlineNote": "Les liens sont simplement enregistrés : ClosetWise ne se connecte jamais aux boutiques et ne suit pas les prix.",
+  "empty": {
+    "title": "Votre liste d'envies est vide",
+    "message": "Gardez les pièces qui vous font envie, avec une photo, un prix estimé et un lien si vous voulez."
+  },
+  "emptyFilter": {
+    "title": "Rien avec ce statut",
+    "action": "Tout afficher"
+  },
+  "edit": {
+    "titleNew": "Nouvelle envie",
+    "titleEdit": "Modifier l'envie",
+    "notFound": "Cette envie n'existe plus.",
+    "nameRequired": "Donnez un nom à cette pièce",
+    "urlInvalid": "Saisissez un lien web commençant par http:// ou https://",
+    "name": "Nom",
+    "namePlaceholder": "ex. Mocassins en cuir",
+    "brand": "Marque",
+    "category": "Catégorie",
+    "price": "Prix estimé",
+    "store": "Boutique",
+    "url": "Lien",
+    "urlHint": "Seuls les liens web sont enregistrés. ClosetWise ne se connecte pas à la boutique.",
+    "priority": "Priorité",
+    "status": "Statut",
+    "purchasedHint": "Astuce : utilisez « Marquer comme acheté » depuis la liste pour enregistrer aussi l'achat.",
+    "notes": "Notes"
+  }
+}

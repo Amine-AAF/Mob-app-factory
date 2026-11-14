@@ -1,0 +1,73 @@
+{
+  "eyebrow": "Outfit planner",
+  "title": "Calendar",
+  "goToday": "Go to today",
+  "previousWeek": "Previous week",
+  "nextWeek": "Next week",
+  "previousDay": "Previous day",
+  "nextDay": "Next day",
+  "plansCount_one": "{{count}} plan",
+  "plansCount_other": "{{count}} plans",
+  "history": "Wear history",
+  "historyHint": "What you wore, day by day",
+  "mode": {
+    "day": "Day",
+    "week": "Week",
+    "month": "Month"
+  },
+  "week": {
+    "nothingPlanned": "Nothing planned",
+    "duplicate": "Duplicate this week to next week",
+    "duplicateTitle": "Copy to next week?",
+    "duplicateMessage": "This week’s plans are copied to the same days next week. Days that already have a plan next week are kept as they are.",
+    "duplicateConfirm": "Copy",
+    "duplicated_one": "{{count}} plan copied to next week.",
+    "duplicated_other": "{{count}} plans copied to next week.",
+    "nothingToCopy": "Nothing new to copy: next week’s days already have plans, or this week is empty."
+  },
+  "day": {
+    "emptyTitle": "Nothing planned yet",
+    "emptyMessage": "Plan an outfit for this day — you can add several, like work and an evening out.",
+    "addPlan": "Plan an outfit"
+  },
+  "plan": {
+    "title": "Day plan",
+    "invalidDate": "This date isn’t valid.",
+    "emptyMessage": "Add one or more plans for this day, like work and an evening event.",
+    "newPlan": "New plan",
+    "editPlan": "Edit plan",
+    "addAnother": "Add another plan",
+    "chooseOutfit": "Choose an outfit",
+    "changeOutfit": "Change outfit",
+    "removeOutfit": "Remove outfit",
+    "createOutfit": "Create a new outfit",
+    "noOutfits": "You have no outfits yet. Create one to plan it.",
+    "noOutfitChosen": "No outfit chosen",
+    "outfitDeleted": "Outfit deleted",
+    "occasion": "Occasion",
+    "notes": "Notes",
+    "notesPlaceholder": "e.g. Client meeting at 10",
+    "remind": "Remind me",
+    "remindHint": "A local reminder on the day at {{time}} (set in Settings › Notifications).",
+    "remindDisabled": "Planned outfit reminders are turned off in Settings › Notifications.",
+    "enableNotifications": "Turn on reminders",
+    "reminderOn": "Reminder",
+    "errorEmpty": "Choose an outfit, an occasion or add a note.",
+    "markWorn": "Mark as worn",
+    "undoWorn": "Undo worn",
+    "worn": "Worn",
+    "deleteTitle": "Delete this plan?",
+    "deleteMessage": "The outfit itself is kept."
+  },
+  "historyScreen": {
+    "freeIntro_one": "Your last {{count}} day of outfits.",
+    "freeIntro_other": "Your last {{count}} days of outfits.",
+    "premiumIntro": "Your full wear history, with every piece you logged.",
+    "premiumPitch": "Premium keeps your full, detailed wear history.",
+    "olderLocked": "Older days are kept safely on your device. Premium shows your full, detailed history.",
+    "emptyTitle": "No wears logged yet",
+    "emptyMessage": "Use “Wear today” on an outfit or “Mark as worn” in the planner.",
+    "alsoWorn": "Also worn",
+    "itemsOnly": "Individual pieces worn"
+  }
+}

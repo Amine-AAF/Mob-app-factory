@@ -1,0 +1,73 @@
+{
+  "eyebrow": "Planificador de conjuntos",
+  "title": "Calendario",
+  "goToday": "Ir a hoy",
+  "previousWeek": "Semana anterior",
+  "nextWeek": "Semana siguiente",
+  "previousDay": "Día anterior",
+  "nextDay": "Día siguiente",
+  "plansCount_one": "{{count}} plan",
+  "plansCount_other": "{{count}} planes",
+  "history": "Historial de uso",
+  "historyHint": "Lo que te has puesto, día a día",
+  "mode": {
+    "day": "Día",
+    "week": "Semana",
+    "month": "Mes"
+  },
+  "week": {
+    "nothingPlanned": "Nada planificado",
+    "duplicate": "Duplicar esta semana en la siguiente",
+    "duplicateTitle": "¿Copiar a la semana que viene?",
+    "duplicateMessage": "Los planes de esta semana se copian a los mismos días de la semana que viene. Los días que ya tienen un plan la semana que viene se mantienen tal cual.",
+    "duplicateConfirm": "Copiar",
+    "duplicated_one": "{{count}} plan copiado a la semana que viene.",
+    "duplicated_other": "{{count}} planes copiados a la semana que viene.",
+    "nothingToCopy": "Nada nuevo que copiar: los días de la semana que viene ya tienen planes o esta semana está vacía."
+  },
+  "day": {
+    "emptyTitle": "Aún no hay nada planificado",
+    "emptyMessage": "Planifica un conjunto para este día; puedes añadir varios, como trabajo y una salida por la noche.",
+    "addPlan": "Planificar un conjunto"
+  },
+  "plan": {
+    "title": "Plan del día",
+    "invalidDate": "Esta fecha no es válida.",
+    "emptyMessage": "Añade uno o varios planes para este día, como trabajo y un evento por la noche.",
+    "newPlan": "Nuevo plan",
+    "editPlan": "Editar plan",
+    "addAnother": "Añadir otro plan",
+    "chooseOutfit": "Elegir un conjunto",
+    "changeOutfit": "Cambiar conjunto",
+    "removeOutfit": "Quitar conjunto",
+    "createOutfit": "Crear un conjunto nuevo",
+    "noOutfits": "Aún no tienes conjuntos. Crea uno para planificarlo.",
+    "noOutfitChosen": "Ningún conjunto elegido",
+    "outfitDeleted": "Conjunto eliminado",
+    "occasion": "Ocasión",
+    "notes": "Notas",
+    "notesPlaceholder": "p. ej., reunión con cliente a las 10",
+    "remind": "Recordármelo",
+    "remindHint": "Un recordatorio local ese día a las {{time}} (en Ajustes › Notificaciones).",
+    "remindDisabled": "Los recordatorios de conjuntos planificados están desactivados en Ajustes › Notificaciones.",
+    "enableNotifications": "Activar recordatorios",
+    "reminderOn": "Recordatorio",
+    "errorEmpty": "Elige un conjunto, una ocasión o añade una nota.",
+    "markWorn": "Marcar como usado",
+    "undoWorn": "Deshacer uso",
+    "worn": "Usado",
+    "deleteTitle": "¿Eliminar este plan?",
+    "deleteMessage": "El conjunto se conserva."
+  },
+  "historyScreen": {
+    "freeIntro_one": "Tus conjuntos del último día ({{count}}).",
+    "freeIntro_other": "Tus conjuntos de los últimos {{count}} días.",
+    "premiumIntro": "Tu historial completo, con cada prenda registrada.",
+    "premiumPitch": "Premium conserva tu historial de uso completo y detallado.",
+    "olderLocked": "Los días anteriores se guardan de forma segura en tu dispositivo. Premium muestra tu historial completo y detallado.",
+    "emptyTitle": "Aún no hay usos registrados",
+    "emptyMessage": "Usa «Usado hoy» en un conjunto o «Marcar como usado» en el planificador.",
+    "alsoWorn": "También usado",
+    "itemsOnly": "Prendas usadas sueltas"
+  }
+}

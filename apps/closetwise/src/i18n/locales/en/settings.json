@@ -1,0 +1,143 @@
+{
+  "title": "Settings",
+  "language": { "title": "Language", "device": "Follow device" },
+  "theme": { "title": "Appearance", "system": "System", "light": "Light", "dark": "Dark" },
+  "palette": {
+    "title": "Palette",
+    "premiumHint": "Premium palettes are marked with a lock.",
+    "names": { "atelier": "Atelier", "sage": "Sage", "noir": "Noir", "blush": "Blush", "riviera": "Riviera" }
+  },
+  "currency": {
+    "title": "Default currency",
+    "hint": "Used for new purchases and your budget. Existing entries keep their own currency; amounts are never converted."
+  },
+  "hemisphere": {
+    "title": "Seasons",
+    "north": "Northern hemisphere",
+    "south": "Southern hemisphere",
+    "hint": "Used to know which season it is for suggestions and insights."
+  },
+  "privacy": {
+    "title": "Privacy",
+    "analytics": "Share anonymous usage statistics",
+    "analyticsHint": "Only counts and feature use, never your items, photos, prices or destinations. Off by default.",
+    "adChoices": "Ad privacy choices"
+  },
+  "more": "More",
+  "links": { "notifications": "Notifications", "taxonomy": "Styles & occasions", "data": "Backup & data", "privacy": "Privacy summary" },
+  "notifications": {
+    "title": "Notifications",
+    "intro": "Reminders are local to this phone: no server, no account. They never show photos or personal details, and you can turn them off at any time.",
+    "time": "Time",
+    "checkInTime": "Check-in time",
+    "earlier": "Earlier",
+    "later": "Later",
+    "when": "When",
+    "threshold": "Alert threshold",
+    "dayOf": "Departure day",
+    "daysBefore_one": "{{count}} day before",
+    "daysBefore_other": "{{count}} days before",
+    "percent": "{{value}}% of budget",
+    "deniedTitle": "Notifications are blocked",
+    "deniedMessage": "Android isn't allowing ClosetWise to show notifications. You can allow them in the system settings, or keep them off: the app works the same.",
+    "openSettings": "Open settings",
+    "turnAllOff": "Turn everything off",
+    "kinds": {
+      "planned_outfit": { "title": "Planned outfit", "description": "A morning reminder on days you planned a look." },
+      "trip_prep": {
+        "title": "Trip preparation",
+        "description": "A nudge to plan the outfits for an upcoming trip.",
+        "hint": "Each trip can also set its own reminder in the trip editor."
+      },
+      "checklist": { "title": "Packing checklist", "description": "A reminder to check your packing list before leaving." },
+      "budget": {
+        "title": "Budget",
+        "description": "A monthly check-in and an alert when your clothing spending nears your budget.",
+        "hint": "Needs a monthly budget set in the shopping tracker."
+      },
+      "goals": {
+        "title": "Goals & challenges",
+        "description": "A gentle weekly update on how your goals are going.",
+        "hint": "Sent on Sundays while at least one goal is active."
+      }
+    }
+  },
+  "taxonomy": {
+    "title": "Styles & occasions",
+    "intro": "Built-in styles and occasions can be hidden from pickers. Add your own to match how you dress.",
+    "styles": "Styles",
+    "occasions": "Occasions",
+    "newStyle": "New style",
+    "newOccasion": "New occasion",
+    "nameRequired": "Enter a name",
+    "custom": "Yours",
+    "noCustom": "You haven't added any yet.",
+    "builtin": "Built-in",
+    "builtinHint": "Built-in names follow the app language and can't be renamed.",
+    "archiveHint": "Hidden or archived tags stay on the items and outfits that already use them.",
+    "archived": "archived",
+    "rename": "Rename {{name}}",
+    "renameTitle": "Rename",
+    "name": "Name",
+    "archive": "Archive {{name}}",
+    "restore": "Restore {{name}}",
+    "show": "Show {{name}} in pickers"
+  },
+  "data": {
+    "title": "Backup & data",
+    "storageNote": "Your wardrobe and photos are stored only on this device. Photos are compressed when added. Android cloud auto-backup is turned off, so keep your own backup file somewhere safe.",
+    "exportTitle": "Export",
+    "exportMessage": "Create a backup file you can save to your drive or send to yourself. You choose where it goes.",
+    "includePhotos": "Include photos",
+    "includePhotosHint": "Makes the file much larger (several MB per 100 photos).",
+    "exportJson": "Export backup (JSON)",
+    "exportCsv": "Export wardrobe (CSV)",
+    "exportDialog": "Save your ClosetWise backup",
+    "csvDialog": "Export your wardrobe",
+    "exportPremium": "Backup and CSV exports are part of Premium. Restoring a backup stays free for everyone.",
+    "shareUnavailable": "Sharing isn't available on this device.",
+    "restoreTitle": "Restore",
+    "restoreMessage": "Restore a ClosetWise backup file. It replaces everything currently in the app.",
+    "restore": "Restore from a backup",
+    "restoreConfirmTitle": "Replace your current data?",
+    "restoreConfirmMessage": "Everything in ClosetWise will be replaced by the content of the backup file. This can't be undone.",
+    "restoreConfirm": "Choose file",
+    "restoreDone": "Backup restored",
+    "restoreRows_one": "{{count}} record restored.",
+    "restoreRows_other": "{{count}} records restored.",
+    "restorePhotos_one": "{{count}} photo restored.",
+    "restorePhotos_other": "{{count}} photos restored.",
+    "restoreMissing_one": "{{count}} photo wasn't in the backup: that item shows a placeholder.",
+    "restoreMissing_other": "{{count}} photos weren't in the backup: those items show a placeholder.",
+    "restoreFailed": "Couldn't restore",
+    "restoreErrors": {
+      "wrongApp": "This file isn't a ClosetWise backup.",
+      "newerSchema": "This backup was made with a newer version of ClosetWise. Update the app and try again.",
+      "readFailed": "The file couldn't be read.",
+      "invalid": "This file isn't a valid backup. Your current data was not changed."
+    },
+    "wipeSection": "Delete",
+    "wipeHint": "Deletes every item, photo, outfit, plan, trip, purchase and goal from this device and resets the app.",
+    "wipe": "Delete all my data",
+    "wipeTitle": "Delete all your data?",
+    "wipeMessage": "Your whole wardrobe, photos and history will be removed from this device. Consider exporting a backup first.",
+    "wipeContinue": "Continue",
+    "wipeFinalTitle": "Are you absolutely sure?",
+    "wipeFinalMessage": "This can't be undone. A Premium subscription is not cancelled: manage it in Google Play.",
+    "wipeConfirm": "Delete everything"
+  },
+  "privacyPage": {
+    "title": "Privacy",
+    "headline": "Your wardrobe stays yours.",
+    "account": { "title": "No account", "body": "ClosetWise has no sign-up and no backend. Nobody but you can see your wardrobe." },
+    "local": { "title": "Stored on your device", "body": "Items, outfits, plans, purchases and photos are kept only on this phone. Photos are compressed when added." },
+    "transfer": { "title": "No automatic transfer", "body": "Nothing is uploaded. A backup file is only created when you export one, and you choose where it goes." },
+    "permissions": { "title": "Minimal permissions", "body": "The camera is used only when you take a photo. Choosing from the gallery uses the Android photo picker and needs no storage permission." },
+    "notifications": { "title": "Optional notifications", "body": "Reminders are local, opt-in and generic: they never show photos, item names, destinations or amounts." },
+    "ads": { "title": "Ads", "body": "The free version shows a few banner ads (Google AdMob) on browsing screens, never while you create or plan. Consent is collected with Google's consent tool where required, development builds use test ads, and Premium removes ads." },
+    "analytics": { "title": "Anonymous statistics", "body": "Only if you agree in Settings: anonymous counts of feature use, never your content." },
+    "control": { "title": "You're in control", "body": "Export, restore or delete all your data at any time from Backup & data." },
+    "policy": "Privacy policy",
+    "terms": "Terms of use"
+  }
+}

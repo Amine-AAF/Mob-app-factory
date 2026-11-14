@@ -1,0 +1,41 @@
+{
+  "greeting": { "morning": "Good morning", "afternoon": "Good afternoon", "evening": "Good evening" },
+  "subtitle": "Here's your wardrobe today.",
+  "firstRun": {
+    "title": "Start your digital wardrobe",
+    "message": "Snap a photo of a piece you love, add a few details, and ClosetWise will help you build outfits, plan your week and see what you really wear.",
+    "cta": "Add your first item",
+    "privacy": "Your photos are compressed and stay on this device. No account, no cloud."
+  },
+  "today": {
+    "eyebrow": "Today's outfit",
+    "emptyTitle": "Nothing planned yet",
+    "emptyMessage": "Pick a look for today, or get ideas from your own wardrobe.",
+    "plan": "Plan today's look",
+    "ideas": "Get ideas",
+    "open": "Open today's plan",
+    "noOutfit": "A plan without an outfit yet.",
+    "worn": "Worn",
+    "more_one": "+ {{count}} more plan today",
+    "more_other": "+ {{count}} more plans today"
+  },
+  "actions": { "addItem": "Add item", "newOutfit": "New outfit", "ideas": "Ideas", "planWeek": "Plan week" },
+  "snapshot": { "title": "Your wardrobe", "insights": "Insights", "items": "Items", "outfits": "Outfits", "wornThisMonth": "Pieces worn this month" },
+  "care": {
+    "title_one": "{{count}} piece waiting for care",
+    "title_other": "{{count}} pieces waiting for care",
+    "message": "To wash, in the laundry or to iron."
+  },
+  "trip": {
+    "now": "Travelling now",
+    "inDays_one": "Leaving in {{count}} day",
+    "inDays_other": "Leaving in {{count}} days",
+    "startPacking": "Start your packing list"
+  },
+  "goals": {
+    "title": "Goals & challenges",
+    "active_one": "{{count}} goal in progress",
+    "active_other": "{{count}} goals in progress"
+  },
+  "rediscover": { "title": "Rediscover", "message": "Pieces you haven't worn in a while. Maybe today?" }
+}

@@ -1,0 +1,41 @@
+{
+  "greeting": { "morning": "Buenos días", "afternoon": "Buenas tardes", "evening": "Buenas noches" },
+  "subtitle": "Así está tu armario hoy.",
+  "firstRun": {
+    "title": "Crea tu armario digital",
+    "message": "Fotografía una prenda que te encante, añade algunos detalles y ClosetWise te ayudará a crear conjuntos, planificar tu semana y ver lo que realmente usas.",
+    "cta": "Añadir mi primera prenda",
+    "privacy": "Tus fotos se comprimen y se quedan en este dispositivo. Sin cuenta, sin nube."
+  },
+  "today": {
+    "eyebrow": "El look de hoy",
+    "emptyTitle": "Aún no hay nada planificado",
+    "emptyMessage": "Elige un look para hoy o busca ideas en tu propio armario.",
+    "plan": "Planificar el look de hoy",
+    "ideas": "Ver ideas",
+    "open": "Abrir el plan de hoy",
+    "noOutfit": "Un plan todavía sin conjunto.",
+    "worn": "Usado",
+    "more_one": "+ {{count}} plan más hoy",
+    "more_other": "+ {{count}} planes más hoy"
+  },
+  "actions": { "addItem": "Añadir", "newOutfit": "Nuevo conjunto", "ideas": "Ideas", "planWeek": "Mi semana" },
+  "snapshot": { "title": "Tu armario", "insights": "Estadísticas", "items": "Prendas", "outfits": "Conjuntos", "wornThisMonth": "Prendas usadas este mes" },
+  "care": {
+    "title_one": "{{count}} prenda pendiente de cuidado",
+    "title_other": "{{count}} prendas pendientes de cuidado",
+    "message": "Para lavar, en la lavadora o para planchar."
+  },
+  "trip": {
+    "now": "De viaje ahora",
+    "inDays_one": "Sales en {{count}} día",
+    "inDays_other": "Sales en {{count}} días",
+    "startPacking": "Empieza tu lista de equipaje"
+  },
+  "goals": {
+    "title": "Objetivos y retos",
+    "active_one": "{{count}} objetivo en curso",
+    "active_other": "{{count}} objetivos en curso"
+  },
+  "rediscover": { "title": "Redescubre", "message": "Prendas que no usas desde hace tiempo. ¿Quizás hoy?" }
+}

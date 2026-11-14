@@ -1,0 +1,143 @@
+{
+  "title": "Ajustes",
+  "language": { "title": "Idioma", "device": "Idioma del dispositivo" },
+  "theme": { "title": "Apariencia", "system": "Sistema", "light": "Claro", "dark": "Oscuro" },
+  "palette": {
+    "title": "Paleta",
+    "premiumHint": "Las paletas premium llevan un candado.",
+    "names": { "atelier": "Atelier", "sage": "Salvia", "noir": "Noir", "blush": "Rosa empolvado", "riviera": "Riviera" }
+  },
+  "currency": {
+    "title": "Moneda predeterminada",
+    "hint": "Se usa para las compras nuevas y tu presupuesto. Las entradas existentes conservan su propia moneda; los importes nunca se convierten."
+  },
+  "hemisphere": {
+    "title": "Temporadas",
+    "north": "Hemisferio norte",
+    "south": "Hemisferio sur",
+    "hint": "Sirve para saber en qué temporada estamos en las ideas y estadísticas."
+  },
+  "privacy": {
+    "title": "Privacidad",
+    "analytics": "Compartir estadísticas de uso anónimas",
+    "analyticsHint": "Solo recuentos y uso de funciones, nunca tus prendas, fotos, precios ni destinos. Desactivado por defecto.",
+    "adChoices": "Opciones de privacidad de anuncios"
+  },
+  "more": "Más",
+  "links": { "notifications": "Notificaciones", "taxonomy": "Estilos y ocasiones", "data": "Copia de seguridad y datos", "privacy": "Resumen de privacidad" },
+  "notifications": {
+    "title": "Notificaciones",
+    "intro": "Los recordatorios son locales en este teléfono: sin servidor ni cuenta. Nunca muestran fotos ni datos personales, y puedes desactivarlos cuando quieras.",
+    "time": "Hora",
+    "checkInTime": "Hora del repaso",
+    "earlier": "Antes",
+    "later": "Después",
+    "when": "Cuándo",
+    "threshold": "Umbral de aviso",
+    "dayOf": "Día de salida",
+    "daysBefore_one": "{{count}} día antes",
+    "daysBefore_other": "{{count}} días antes",
+    "percent": "{{value}} % del presupuesto",
+    "deniedTitle": "Las notificaciones están bloqueadas",
+    "deniedMessage": "Android no permite que ClosetWise muestre notificaciones. Puedes permitirlas en los ajustes del sistema o dejarlas desactivadas: la aplicación funciona igual.",
+    "openSettings": "Abrir ajustes",
+    "turnAllOff": "Desactivar todo",
+    "kinds": {
+      "planned_outfit": { "title": "Conjunto planificado", "description": "Un aviso por la mañana los días en que planificaste un look." },
+      "trip_prep": {
+        "title": "Preparación del viaje",
+        "description": "Un aviso para planificar los conjuntos de un próximo viaje.",
+        "hint": "Cada viaje también puede tener su propio recordatorio en el editor de viajes."
+      },
+      "checklist": { "title": "Lista de equipaje", "description": "Un aviso para revisar tu lista antes de salir." },
+      "budget": {
+        "title": "Presupuesto",
+        "description": "Un repaso mensual y un aviso cuando tu gasto en ropa se acerque a tu presupuesto.",
+        "hint": "Necesita un presupuesto mensual en el seguimiento de compras."
+      },
+      "goals": {
+        "title": "Objetivos y retos",
+        "description": "Un breve resumen semanal de cómo van tus objetivos.",
+        "hint": "Se envía los domingos mientras haya al menos un objetivo activo."
+      }
+    }
+  },
+  "taxonomy": {
+    "title": "Estilos y ocasiones",
+    "intro": "Los estilos y ocasiones incluidos se pueden ocultar de los selectores. Añade los tuyos según tu forma de vestir.",
+    "styles": "Estilos",
+    "occasions": "Ocasiones",
+    "newStyle": "Nuevo estilo",
+    "newOccasion": "Nueva ocasión",
+    "nameRequired": "Escribe un nombre",
+    "custom": "Los tuyos",
+    "noCustom": "Aún no has añadido ninguno.",
+    "builtin": "Incluidos",
+    "builtinHint": "Los nombres incluidos siguen el idioma de la aplicación y no se pueden renombrar.",
+    "archiveHint": "Las etiquetas ocultas o archivadas se mantienen en las prendas y conjuntos que ya las usan.",
+    "archived": "archivado",
+    "rename": "Renombrar {{name}}",
+    "renameTitle": "Renombrar",
+    "name": "Nombre",
+    "archive": "Archivar {{name}}",
+    "restore": "Restaurar {{name}}",
+    "show": "Mostrar {{name}} en los selectores"
+  },
+  "data": {
+    "title": "Copia de seguridad y datos",
+    "storageNote": "Tu armario y tus fotos se guardan solo en este dispositivo. Las fotos se comprimen al añadirlas. La copia automática de Android en la nube está desactivada, así que guarda tu propio archivo de copia en un lugar seguro.",
+    "exportTitle": "Exportar",
+    "exportMessage": "Crea un archivo de copia de seguridad para guardarlo en tu nube o enviártelo. Tú decides dónde va.",
+    "includePhotos": "Incluir fotos",
+    "includePhotosHint": "El archivo será mucho más grande (varios MB por cada 100 fotos).",
+    "exportJson": "Exportar copia (JSON)",
+    "exportCsv": "Exportar armario (CSV)",
+    "exportDialog": "Guardar tu copia de ClosetWise",
+    "csvDialog": "Exportar tu armario",
+    "exportPremium": "Las copias de seguridad y la exportación CSV forman parte de Premium. Restaurar una copia sigue siendo gratis para todos.",
+    "shareUnavailable": "Compartir no está disponible en este dispositivo.",
+    "restoreTitle": "Restaurar",
+    "restoreMessage": "Restaura un archivo de copia de ClosetWise. Sustituye todo lo que hay ahora en la aplicación.",
+    "restore": "Restaurar una copia",
+    "restoreConfirmTitle": "¿Sustituir tus datos actuales?",
+    "restoreConfirmMessage": "Todo el contenido de ClosetWise se sustituirá por el del archivo de copia. No se puede deshacer.",
+    "restoreConfirm": "Elegir archivo",
+    "restoreDone": "Copia restaurada",
+    "restoreRows_one": "{{count}} registro restaurado.",
+    "restoreRows_other": "{{count}} registros restaurados.",
+    "restorePhotos_one": "{{count}} foto restaurada.",
+    "restorePhotos_other": "{{count}} fotos restauradas.",
+    "restoreMissing_one": "{{count}} foto no estaba en la copia: esa prenda muestra una imagen genérica.",
+    "restoreMissing_other": "{{count}} fotos no estaban en la copia: esas prendas muestran una imagen genérica.",
+    "restoreFailed": "No se pudo restaurar",
+    "restoreErrors": {
+      "wrongApp": "Este archivo no es una copia de ClosetWise.",
+      "newerSchema": "Esta copia se hizo con una versión más reciente de ClosetWise. Actualiza la aplicación e inténtalo de nuevo.",
+      "readFailed": "No se pudo leer el archivo.",
+      "invalid": "Este archivo no es una copia válida. Tus datos actuales no se han modificado."
+    },
+    "wipeSection": "Eliminar",
+    "wipeHint": "Elimina de este dispositivo todas las prendas, fotos, conjuntos, planes, viajes, compras y objetivos, y reinicia la aplicación.",
+    "wipe": "Eliminar todos mis datos",
+    "wipeTitle": "¿Eliminar todos tus datos?",
+    "wipeMessage": "Todo tu armario, tus fotos y tu historial se eliminarán de este dispositivo. Te recomendamos exportar una copia antes.",
+    "wipeContinue": "Continuar",
+    "wipeFinalTitle": "¿Seguro que quieres hacerlo?",
+    "wipeFinalMessage": "No se puede deshacer. Una suscripción Premium no se cancela: gestiónala en Google Play.",
+    "wipeConfirm": "Eliminar todo"
+  },
+  "privacyPage": {
+    "title": "Privacidad",
+    "headline": "Tu armario sigue siendo tuyo.",
+    "account": { "title": "Sin cuenta", "body": "ClosetWise no tiene registro ni servidor. Nadie más que tú puede ver tu armario." },
+    "local": { "title": "Guardado en tu dispositivo", "body": "Prendas, conjuntos, planes, compras y fotos se guardan solo en este teléfono. Las fotos se comprimen al añadirlas." },
+    "transfer": { "title": "Sin transferencias automáticas", "body": "No se sube nada. Solo se crea un archivo de copia cuando lo exportas, y tú eliges dónde va." },
+    "permissions": { "title": "Permisos mínimos", "body": "La cámara solo se usa cuando haces una foto. Elegir de la galería usa el selector de fotos de Android y no necesita permiso de almacenamiento." },
+    "notifications": { "title": "Notificaciones opcionales", "body": "Los recordatorios son locales, opcionales y genéricos: nunca muestran fotos, nombres de prendas, destinos ni importes." },
+    "ads": { "title": "Anuncios", "body": "La versión gratuita muestra algunos banners (Google AdMob) en las pantallas de consulta, nunca mientras creas o planificas. El consentimiento se recoge con la herramienta de Google cuando es obligatorio, las versiones de desarrollo usan anuncios de prueba y Premium elimina los anuncios." },
+    "analytics": { "title": "Estadísticas anónimas", "body": "Solo si lo aceptas en Ajustes: recuentos anónimos de uso, nunca tu contenido." },
+    "control": { "title": "Tú tienes el control", "body": "Exporta, restaura o elimina todos tus datos cuando quieras desde Copia de seguridad y datos." },
+    "policy": "Política de privacidad",
+    "terms": "Condiciones de uso"
+  }
+}

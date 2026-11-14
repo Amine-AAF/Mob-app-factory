@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Votre espace",
+  "title": "Profil",
+  "premium": {
+    "activeTitle": "Premium est actif",
+    "monthly": "Formule mensuelle",
+    "annual": "Formule annuelle",
+    "lifetime": "Accès à vie",
+    "renews": "Renouvellement le {{date}}",
+    "expires": "Accès jusqu'au {{date}}",
+    "manage": "Gérez ou résiliez votre abonnement à tout moment dans Google Play > Abonnements.",
+    "upsellTitle": "ClosetWise Premium",
+    "upsellMessage": "Garde-robe et tenues illimitées, statistiques complètes, Assistant bagages complet, exports, thèmes premium et sans publicité."
+  },
+  "groups": { "wardrobe": "Garde-robe", "planning": "Organisation", "shopping": "Achats", "app": "Application" },
+  "links": {
+    "insights": "Statistiques",
+    "care": "Lessive et entretien",
+    "archived": "Articles archivés",
+    "trips": "Assistant bagages",
+    "history": "Historique des tenues portées",
+    "goals": "Objectifs et défis",
+    "shopping": "Suivi des achats",
+    "wishlist": "Liste d'envies",
+    "settings": "Réglages",
+    "notifications": "Notifications",
+    "taxonomy": "Styles et occasions",
+    "data": "Sauvegarde et données",
+    "privacy": "Confidentialité"
+  },
+  "version": "ClosetWise {{version}}"
+}

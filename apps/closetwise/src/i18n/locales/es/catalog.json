@@ -1,0 +1,52 @@
+{
+  "category": {
+    "tops": "Tops", "shirts": "Camisas", "tshirts": "Camisetas", "sweaters": "Suéteres", "jackets": "Chaquetas", "coats": "Abrigos",
+    "pants": "Pantalones", "jeans": "Vaqueros", "shorts": "Pantalones cortos", "skirts": "Faldas", "dresses": "Vestidos", "shoes": "Zapatos",
+    "bags": "Bolsos", "accessories": "Accesorios", "sportswear": "Ropa deportiva", "formalwear": "Ropa formal", "other": "Otro"
+  },
+  "style": {
+    "casual": "Informal", "smart_casual": "Elegante informal", "business": "Profesional", "formal": "Formal", "sport": "Deportivo",
+    "streetwear": "Urbano", "minimalist": "Minimalista", "classic": "Clásico", "elegant": "Elegante", "vintage": "Vintage", "other": "Otro"
+  },
+  "occasion": {
+    "work": "Trabajo", "meeting": "Reunión", "wedding": "Boda", "party": "Fiesta", "travel": "Viaje", "weekend": "Fin de semana",
+    "sport": "Deporte", "daily": "Diario", "special_event": "Evento especial"
+  },
+  "season": { "spring": "Primavera", "summer": "Verano", "autumn": "Otoño", "winter": "Invierno", "all": "Todas las estaciones" },
+  "color": {
+    "black": "Negro", "white": "Blanco", "grey": "Gris", "charcoal": "Gris marengo", "beige": "Beis", "cream": "Crema", "camel": "Camel",
+    "brown": "Marrón", "navy": "Azul marino", "denim": "Azul vaquero", "khaki": "Caqui", "olive": "Oliva", "green": "Verde", "teal": "Verde azulado",
+    "blue": "Azul", "light_blue": "Azul claro", "purple": "Morado", "lavender": "Lavanda", "pink": "Rosa", "red": "Rojo",
+    "burgundy": "Burdeos", "orange": "Naranja", "yellow": "Amarillo", "gold": "Dorado", "silver": "Plateado", "multicolor": "Multicolor"
+  },
+  "condition": { "new": "Nuevo", "like_new": "Como nuevo", "good": "Buen estado", "worn": "Desgastado", "needs_repair": "Necesita arreglo" },
+  "care": { "clean": "Limpio", "to_wash": "Para lavar", "in_laundry": "En la lavandería", "to_iron": "Para planchar", "ready": "Listo para usar" },
+  "slot": {
+    "top": "Parte superior", "bottom": "Parte inferior", "onepiece": "Vestido / mono", "outerwear": "Chaqueta / abrigo", "shoes": "Zapatos",
+    "bag": "Bolso", "accessory": "Accesorios", "extra": "Complementos"
+  },
+  "sizeSystem": { "intl": "Internacional (S/M/L)", "eu": "UE", "us": "EE. UU.", "uk": "R. Unido", "fr": "FR", "it": "IT", "jp": "JP", "other": "Otra / marca" },
+  "wishlistStatus": { "wanted": "Deseado", "planned": "Previsto", "purchased": "Comprado", "cancelled": "Cancelado" },
+  "priority": { "1": "Alta", "2": "Media", "3": "Baja" },
+  "tripTemplate": { "weekend": "Escapada de fin de semana", "business": "Viaje de negocios", "summer": "Vacaciones de verano", "winter": "Vacaciones de invierno", "beach": "Vacaciones en la playa", "city": "Escapada urbana" },
+  "packingSection": { "clothes": "Ropa", "shoes": "Zapatos", "accessories": "Accesorios", "care": "Cuidado de la ropa", "other": "Otro" },
+  "careLog": { "washed": "Lavado", "dry_cleaned": "Limpieza en seco", "ironed": "Planchado", "repaired": "Arreglado" },
+  "washMethod": { "machine": "Lavado a máquina", "hand": "Lavado a mano", "dry_clean_only": "Solo limpieza en seco", "do_not_wash": "No lavar" },
+  "drying": { "tumble_low": "Secadora, temperatura baja", "tumble_normal": "Secadora, normal", "line_dry": "Secar tendido", "flat_dry": "Secar en plano", "do_not_tumble": "No usar secadora" },
+  "ironing": { "low": "Planchar a baja temperatura", "medium": "Planchar a temperatura media", "high": "Planchar a alta temperatura", "do_not_iron": "No planchar" },
+  "preset": {
+    "casual": "Conjunto informal", "business_casual": "Profesional informal", "formal": "Conjunto formal", "weekend": "Look de fin de semana",
+    "sport": "Conjunto deportivo", "summer": "Look de verano", "winter": "Look de invierno", "evening": "Conjunto de noche"
+  },
+  "reason": {
+    "style_match": "Coincide con el estilo", "occasion_match": "Adecuado para la ocasión", "season_match": "Marcado para la estación",
+    "neutral_palette": "Colores mayormente neutros", "rarely_worn": "Da una oportunidad a una prenda poco usada", "liked_before": "Te gustó antes"
+  },
+  "goal": {
+    "wear_forgotten": "Usar prendas olvidadas", "reduce_impulse": "Menos compras impulsivas", "create_outfits": "Crear nuevos conjuntos",
+    "monthly_budget": "Respetar mi presupuesto mensual", "organize": "Organizar mi armario", "capsule": "Preparar un armario cápsula",
+    "challenge_7x7": "7 días, 7 conjuntos", "challenge_no_shopping": "Reto sin compras", "challenge_30_looks": "30 días de looks diferentes",
+    "challenge_capsule": "Reto armario cápsula"
+  },
+  "usage": { "never": "Sin usar todavía", "rare": "Poco usado", "occasional": "Usado a veces", "frequent": "Usado a menudo" }
+}
