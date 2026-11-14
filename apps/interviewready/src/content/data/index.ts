@@ -8,6 +8,7 @@ import { pack as frontend } from './frontend';
 import { pack as general } from './general';
 import { pack as hrSalary } from './hr-salary';
 import { pack as java } from './java';
+import { pack as quizzes } from './quizzes';
 import { pack as jobSpecific } from './job-specific';
 import { pack as software } from './software';
 
@@ -22,4 +23,4 @@ import { pack as software } from './software';
  */
 export const questionPacks: QuestionPack[] = [general, behavioral, software, java, frontend, databases, devops, aiData, jobSpecific, hrSalary];
 
-export const quizPacks: QuizPack[] = [];
+export const quizPacks: QuizPack[] = [quizzes];

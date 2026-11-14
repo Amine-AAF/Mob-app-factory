@@ -4,6 +4,7 @@ import { USER_TABLES, migrations } from './migrations';
 import { createActivityRepository } from './repositories/activityRepository';
 import { createLibraryRepository } from './repositories/libraryRepository';
 import { createProfileRepository } from './repositories/profileRepository';
+import { createReviewRepository } from './repositories/reviewRepository';
 
 export const DATABASE_NAME = 'interviewready.db';
 
@@ -12,6 +13,7 @@ export interface Repositories {
   profile: ReturnType<typeof createProfileRepository>;
   library: ReturnType<typeof createLibraryRepository>;
   activity: ReturnType<typeof createActivityRepository>;
+  review: ReturnType<typeof createReviewRepository>;
 }
 
 /** Migrates and wires repositories. Pure: works with expo-sqlite or the sql.js test adapter. */
@@ -27,6 +29,7 @@ export function createRepositories(db: SqlDatabase): Repositories {
     profile: createProfileRepository(db),
     library: createLibraryRepository(db),
     activity: createActivityRepository(db),
+    review: createReviewRepository(db),
   };
 }
 
