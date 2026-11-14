@@ -1,0 +1,44 @@
+{
+  "id": "habitflow",
+  "name": "HabitFlow",
+  "storeName": "HabitFlow - Habit Tracker",
+  "slug": "habitflow",
+  "scheme": "habitflow",
+  "packageId": "com.mobileappsfactory.habitflow",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "productivity",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de", "ar"],
+  "brand": { "primary": "#5A4FCF", "accent": "#2EC4A6", "splashBackground": "#120F2A" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "habitflow_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "habitflow_premium_annual", "period": "annual", "indicativePriceUsd": 14.99 },
+        { "productId": "habitflow_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 24.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded", "interstitial"], "graceSessions": 3 }
+  },
+  "features": {
+    "habits": true,
+    "tracking": true,
+    "streaks": true,
+    "calendar": true,
+    "planner": true,
+    "reminders": true,
+    "statistics": true,
+    "templates": true,
+    "gamification": true,
+    "backupRestore": true,
+    "widgets": false
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
