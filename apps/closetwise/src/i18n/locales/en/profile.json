@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Your space",
+  "title": "Profile",
+  "premium": {
+    "activeTitle": "Premium is active",
+    "monthly": "Monthly plan",
+    "annual": "Annual plan",
+    "lifetime": "Lifetime access",
+    "renews": "Renews on {{date}}",
+    "expires": "Access until {{date}}",
+    "manage": "Manage or cancel your subscription anytime in Google Play > Subscriptions.",
+    "upsellTitle": "ClosetWise Premium",
+    "upsellMessage": "Unlimited wardrobe and outfits, full insights, the complete Packing Assistant, exports, premium themes and no ads."
+  },
+  "groups": { "wardrobe": "Wardrobe", "planning": "Planning", "shopping": "Shopping", "app": "App" },
+  "links": {
+    "insights": "Insights",
+    "care": "Laundry & care",
+    "archived": "Archived items",
+    "trips": "Packing assistant",
+    "history": "Wear history",
+    "goals": "Goals & challenges",
+    "shopping": "Shopping tracker",
+    "wishlist": "Wishlist",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "taxonomy": "Styles & occasions",
+    "data": "Backup & data",
+    "privacy": "Privacy"
+  },
+  "version": "ClosetWise {{version}}"
+}

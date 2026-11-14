@@ -1,0 +1,18 @@
+{
+  "channelName": "Reminders",
+  "content": {
+    "outfitTitle": "Your outfit is planned",
+    "outfitBody": "Open ClosetWise to see today's look.",
+    "tripTitle": "Trip coming up",
+    "tripBody": "Time to plan the outfits for your trip.",
+    "checklistTitle": "Packing checklist",
+    "checklistBody": "Check your packing list before you leave.",
+    "budgetTitle": "Monthly budget check-in",
+    "budgetBody": "Take a look at this month's clothing spending.",
+    "budgetAlertTitle": "Budget update",
+    "budgetWarningBody": "You're close to your monthly clothing budget.",
+    "budgetOverBody": "You've gone past your monthly clothing budget.",
+    "goalsTitle": "Your wardrobe goals",
+    "goalsBody": "See how your goals and challenges are going."
+  }
+}

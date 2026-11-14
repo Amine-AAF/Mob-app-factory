@@ -1,0 +1,46 @@
+{
+  "title": "Wishlist",
+  "intro": "Pieces you're thinking about. Take your time — a wishlist helps you buy what you really want.",
+  "add": "Add to wishlist",
+  "leaveTitle": "Open this link?",
+  "leaveMessage": "The saved link opens in your browser, outside ClosetWise. ClosetWise never connects to online shops.",
+  "openLink": "Open link",
+  "linkError": "This link couldn't be opened.",
+  "priorityBadge": "Priority: {{priority}}",
+  "markPurchased": "Mark as purchased",
+  "changeStatus": "Change status",
+  "purchasedTitle": "Got it?",
+  "purchasedMessage": "Would you like to record this purchase in your shopping history? It helps you follow your budget.",
+  "justMark": "Just mark it",
+  "recordPurchase": "Record purchase",
+  "totalTitle": "Estimated total · wanted and planned",
+  "totalNoConversion": "Each currency is totalled separately — amounts are never converted.",
+  "offlineNote": "Links are simply saved for you: ClosetWise never connects to shops or tracks prices.",
+  "empty": {
+    "title": "Your wishlist is empty",
+    "message": "Save pieces you have your eye on, with a photo, a price estimate and a link if you like."
+  },
+  "emptyFilter": {
+    "title": "Nothing with this status",
+    "action": "Show all"
+  },
+  "edit": {
+    "titleNew": "New wish",
+    "titleEdit": "Edit wish",
+    "notFound": "This wishlist entry no longer exists.",
+    "nameRequired": "Give this piece a name",
+    "urlInvalid": "Enter a web link starting with http:// or https://",
+    "name": "Name",
+    "namePlaceholder": "e.g. Leather loafers",
+    "brand": "Brand",
+    "category": "Category",
+    "price": "Estimated price",
+    "store": "Store",
+    "url": "Link",
+    "urlHint": "Only web links are saved. ClosetWise doesn't connect to the shop.",
+    "priority": "Priority",
+    "status": "Status",
+    "purchasedHint": "Tip: use “Mark as purchased” from the wishlist to also record the purchase.",
+    "notes": "Notes"
+  }
+}

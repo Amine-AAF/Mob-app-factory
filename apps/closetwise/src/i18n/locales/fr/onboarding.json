@@ -1,0 +1,32 @@
+{
+  "stepLabel": "{{step}} / {{total}}",
+  "progress": "Étape {{step}} sur {{total}}",
+  "steps": {
+    "digitalise": {
+      "title": "Votre garde-robe dans votre poche",
+      "body": "Photographiez vos vêtements, chaussures et accessoires et ajoutez les détails utiles : catégorie, couleurs, saison, marque, prix."
+    },
+    "plan": {
+      "title": "Créez et planifiez vos tenues",
+      "body": "Composez des looks avec vos propres pièces, trouvez des idées grâce à des règles simples, planifiez la semaine et préparez mieux vos valises."
+    },
+    "value": {
+      "title": "Portez davantage ce que vous avez",
+      "body": "Voyez ce que vous portez vraiment, redécouvrez des pièces oubliées, suivez lessive et achats, et fixez-vous des objectifs en douceur."
+    }
+  },
+  "language": "Langue",
+  "languageDevice": "Langue de l'appareil",
+  "currency": "Votre devise",
+  "currencyHint": "Utilisée pour les prix et votre budget. Modifiable plus tard dans les Réglages.",
+  "notifications": {
+    "title": "Des rappels utiles",
+    "body": "Recevez un rappel pour vos tenues planifiées et vos prochains voyages. Facultatif, local et sans aucune donnée personnelle.",
+    "enable": "Activer les rappels",
+    "enabled": "Les rappels sont activés. Ajustez-les dans Réglages > Notifications.",
+    "denied": "Les notifications sont désactivées. Vous pourrez les activer plus tard dans les Réglages."
+  },
+  "privacy": "Pas de compte, pas de cloud : votre garde-robe et vos photos restent sur cet appareil.",
+  "addFirstItem": "Ajouter mon premier article",
+  "start": "Découvrir ClosetWise"
+}

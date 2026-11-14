@@ -1,0 +1,41 @@
+{
+  "greeting": { "morning": "Bonjour", "afternoon": "Bon après-midi", "evening": "Bonsoir" },
+  "subtitle": "Voici votre garde-robe aujourd'hui.",
+  "firstRun": {
+    "title": "Créez votre garde-robe numérique",
+    "message": "Photographiez une pièce que vous aimez, ajoutez quelques détails, et ClosetWise vous aide à composer des tenues, planifier votre semaine et voir ce que vous portez vraiment.",
+    "cta": "Ajouter mon premier article",
+    "privacy": "Vos photos sont compressées et restent sur cet appareil. Pas de compte, pas de cloud."
+  },
+  "today": {
+    "eyebrow": "La tenue du jour",
+    "emptyTitle": "Rien de prévu pour l'instant",
+    "emptyMessage": "Choisissez un look pour aujourd'hui, ou trouvez des idées dans votre propre garde-robe.",
+    "plan": "Planifier le look du jour",
+    "ideas": "Trouver des idées",
+    "open": "Ouvrir le programme du jour",
+    "noOutfit": "Un programme sans tenue pour l'instant.",
+    "worn": "Portée",
+    "more_one": "+ {{count}} autre programme aujourd'hui",
+    "more_other": "+ {{count}} autres programmes aujourd'hui"
+  },
+  "actions": { "addItem": "Ajouter", "newOutfit": "Nouvelle tenue", "ideas": "Idées", "planWeek": "Ma semaine" },
+  "snapshot": { "title": "Votre garde-robe", "insights": "Statistiques", "items": "Articles", "outfits": "Tenues", "wornThisMonth": "Pièces portées ce mois-ci" },
+  "care": {
+    "title_one": "{{count}} pièce en attente d'entretien",
+    "title_other": "{{count}} pièces en attente d'entretien",
+    "message": "À laver, au lavage ou à repasser."
+  },
+  "trip": {
+    "now": "Voyage en cours",
+    "inDays_one": "Départ dans {{count}} jour",
+    "inDays_other": "Départ dans {{count}} jours",
+    "startPacking": "Commencez votre liste de bagages"
+  },
+  "goals": {
+    "title": "Objectifs et défis",
+    "active_one": "{{count}} objectif en cours",
+    "active_other": "{{count}} objectifs en cours"
+  },
+  "rediscover": { "title": "À redécouvrir", "message": "Des pièces que vous n'avez pas portées depuis un moment. Pourquoi pas aujourd'hui ?" }
+}

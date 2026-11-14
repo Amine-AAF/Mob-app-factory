@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Vos looks",
+  "title": "Tenues",
+  "new": "Nouvelle tenue",
+  "favorites": "Favoris",
+  "searchPlaceholder": "Rechercher une tenue par nom",
+  "addFavorite": "Ajouter aux favoris",
+  "removeFavorite": "Retirer des favoris",
+  "neverWorn": "Pas encore portée",
+  "noResults": "Aucune tenue ne correspond à votre recherche",
+  "emptyFavorites": "Aucune tenue favorite pour l’instant — touchez le cœur d’un look que vous aimez.",
+  "ideas": {
+    "title": "Trouver des idées de tenues",
+    "subtitle": "De nouvelles combinaisons à partir de votre propre garde-robe"
+  },
+  "empty": {
+    "title": "Créez votre première tenue",
+    "message": "Associez des pièces de votre garde-robe en looks à planifier et à reporter.",
+    "noItems": "Ajoutez d’abord quelques pièces à votre garde-robe, puis associez-les en tenues.",
+    "addItem": "Ajouter un vêtement"
+  },
+  "notFound": {
+    "title": "Tenue introuvable",
+    "message": "Cette tenue a peut-être été supprimée."
+  },
+  "builder": {
+    "title": "Nouvelle tenue",
+    "editTitle": "Modifier la tenue",
+    "preview": "Aperçu de la tenue",
+    "emptyHint": "Touchez un emplacement ci-dessous pour ajouter des pièces.",
+    "noMatchingItems": "Aucun vêtement correspondant",
+    "addTo": "Ajouter : {{slot}}",
+    "replace": "Remplacer : {{slot}}",
+    "change": "Changer",
+    "removeItem": "Retirer {{name}}",
+    "defaultName": "Look n°{{n}}",
+    "name": "Nom",
+    "style": "Style",
+    "occasion": "Occasion",
+    "seasons": "Saisons",
+    "seasonsHint": "Laissez vide si elle se porte toute l’année.",
+    "notes": "Notes",
+    "favorite": "Favori",
+    "errorNoItems": "Ajoutez au moins un vêtement à la tenue.",
+    "errorName": "Donnez un nom à la tenue.",
+    "laundryWarning": "À noter : {{names}} attend d’être lavé ou est au lavage. Vous pouvez quand même enregistrer la tenue."
+  },
+  "detail": {
+    "title": "Tenue",
+    "wearToday": "Je la porte aujourd’hui",
+    "undoWearToday": "Annuler le port du jour",
+    "plan": "Planifier",
+    "duplicate": "Dupliquer",
+    "delete": "Supprimer la tenue",
+    "deleteTitle": "Supprimer cette tenue ?",
+    "deleteMessage": "Ses vêtements restent dans votre garde-robe. Les plannings qui l’utilisent sont conservés sans elle.",
+    "copyName": "{{name}} (copie)",
+    "wears": "Ports",
+    "lastWorn": "Dernier port",
+    "created": "Créée le",
+    "fromIdea": "Issue d’une idée",
+    "archived": "Archivé",
+    "noItemsLeft": "Les vêtements de cette tenue ne sont plus dans votre garde-robe."
+  }
+}

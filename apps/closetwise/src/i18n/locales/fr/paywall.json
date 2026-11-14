@@ -1,0 +1,50 @@
+{
+  "eyebrow": "ClosetWise Premium",
+  "title": "Tirez le meilleur de chaque pièce",
+  "subtitle": "La version gratuite reste utile. Premium lève les limites et débloque les outils avancés.",
+  "activeTitle": "Vous êtes Premium",
+  "activeMessage": "Merci de soutenir ClosetWise. Toutes les fonctionnalités Premium sont débloquées.",
+  "values": {
+    "unlimited": "Garde-robe et tenues illimitées",
+    "suggestions": "Idées de tenues avancées : tous les styles, plus de résultats, exclusions",
+    "insights": "Statistiques complètes : couleurs, saisons, marques, coût par port",
+    "calendar": "Calendrier avancé avec duplication de semaine",
+    "packing": "Assistant bagages complet pour tous vos voyages",
+    "history": "Historique détaillé des tenues portées",
+    "shopping": "Achats avancés : catégories, comparaisons, alertes",
+    "export": "Sauvegarde et export CSV",
+    "themes": "Palettes premium",
+    "noAds": "Sans publicité"
+  },
+  "plans": {
+    "annual": "Annuel",
+    "monthly": "Mensuel",
+    "lifetime": "À vie",
+    "other": "Premium",
+    "perYear": "/ an",
+    "perMonth": "/ mois",
+    "once": "en une fois",
+    "oneTime": "Paiement unique",
+    "save": "Économisez {{percent}} %",
+    "perMonthEquivalent": "Soit {{price}} par mois",
+    "trial": "Essai gratuit inclus"
+  },
+  "cta": { "subscribe": "Continuer · {{price}}", "trial": "Commencer l'essai gratuit" },
+  "unavailable": {
+    "title": "Achats indisponibles",
+    "message": "Les achats ne sont pas disponibles dans cette version de l'application (pas de connexion à la boutique). Toute la version gratuite continue de fonctionner."
+  },
+  "success": { "title": "Bienvenue dans Premium", "message": "Toutes les fonctionnalités Premium sont maintenant débloquées." },
+  "pending": { "title": "Paiement en attente", "message": "Votre paiement est en cours de traitement par Google Play. Premium sera débloqué dès sa confirmation." },
+  "error": { "title": "Achat impossible", "message": "L'achat n'a pas pu aboutir. Réessayez plus tard." },
+  "restore": {
+    "button": "Restaurer mes achats",
+    "successTitle": "Achats restaurés",
+    "successMessage": "Premium est de nouveau actif sur cet appareil.",
+    "noneTitle": "Rien à restaurer",
+    "noneMessage": "Aucun achat Premium actif n'a été trouvé pour ce compte Google."
+  },
+  "legal": "Les abonnements se renouvellent automatiquement via Google Play jusqu'à leur résiliation. Vous pouvez résilier à tout moment dans le Play Store, rubrique Abonnements ; la résiliation prend effet à la fin de la période en cours. L'accès à vie est un achat unique.",
+  "privacy": "Politique de confidentialité",
+  "terms": "Conditions d'utilisation"
+}

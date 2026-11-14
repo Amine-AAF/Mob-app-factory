@@ -1,0 +1,46 @@
+{
+  "title": "Lista de deseos",
+  "intro": "Las prendas en las que estás pensando. Tómate tu tiempo: una lista de deseos te ayuda a comprar lo que de verdad quieres.",
+  "add": "Añadir deseo",
+  "leaveTitle": "¿Abrir este enlace?",
+  "leaveMessage": "El enlace guardado se abre en tu navegador, fuera de ClosetWise. ClosetWise nunca se conecta a tiendas en línea.",
+  "openLink": "Abrir enlace",
+  "linkError": "No se pudo abrir este enlace.",
+  "priorityBadge": "Prioridad: {{priority}}",
+  "markPurchased": "Marcar como comprado",
+  "changeStatus": "Cambiar estado",
+  "purchasedTitle": "¿Ya lo tienes?",
+  "purchasedMessage": "¿Quieres registrar esta compra en tu historial? Te ayuda a seguir tu presupuesto.",
+  "justMark": "Solo marcarlo",
+  "recordPurchase": "Registrar compra",
+  "totalTitle": "Total estimado · deseados y previstos",
+  "totalNoConversion": "Cada moneda se suma por separado: los importes nunca se convierten.",
+  "offlineNote": "Los enlaces solo se guardan: ClosetWise nunca se conecta a tiendas ni sigue precios.",
+  "empty": {
+    "title": "Tu lista de deseos está vacía",
+    "message": "Guarda las prendas que te gustan, con una foto, un precio estimado y un enlace si quieres."
+  },
+  "emptyFilter": {
+    "title": "Nada con este estado",
+    "action": "Mostrar todo"
+  },
+  "edit": {
+    "titleNew": "Nuevo deseo",
+    "titleEdit": "Editar deseo",
+    "notFound": "Este deseo ya no existe.",
+    "nameRequired": "Ponle un nombre a esta prenda",
+    "urlInvalid": "Introduce un enlace web que empiece por http:// o https://",
+    "name": "Nombre",
+    "namePlaceholder": "p. ej. Mocasines de piel",
+    "brand": "Marca",
+    "category": "Categoría",
+    "price": "Precio estimado",
+    "store": "Tienda",
+    "url": "Enlace",
+    "urlHint": "Solo se guardan enlaces web. ClosetWise no se conecta a la tienda.",
+    "priority": "Prioridad",
+    "status": "Estado",
+    "purchasedHint": "Consejo: usa «Marcar como comprado» desde la lista para registrar también la compra.",
+    "notes": "Notas"
+  }
+}

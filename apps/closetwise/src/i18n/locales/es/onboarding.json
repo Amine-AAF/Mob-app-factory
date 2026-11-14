@@ -1,0 +1,32 @@
+{
+  "stepLabel": "{{step}} / {{total}}",
+  "progress": "Paso {{step}} de {{total}}",
+  "steps": {
+    "digitalise": {
+      "title": "Tu armario, en tu bolsillo",
+      "body": "Fotografía tu ropa, calzado y accesorios y añade los detalles importantes: categoría, colores, temporada, marca, precio."
+    },
+    "plan": {
+      "title": "Crea y planifica conjuntos",
+      "body": "Combina looks con tus propias prendas, obtén ideas basadas en reglas sencillas, planifica la semana y prepara mejor tu equipaje."
+    },
+    "value": {
+      "title": "Aprovecha más lo que ya tienes",
+      "body": "Descubre lo que realmente usas, recupera prendas olvidadas, controla el lavado y las compras, y ponte objetivos sin presión."
+    }
+  },
+  "language": "Idioma",
+  "languageDevice": "Idioma del dispositivo",
+  "currency": "Tu moneda",
+  "currencyHint": "Se usa para los precios y tu presupuesto. Puedes cambiarla más tarde en Ajustes.",
+  "notifications": {
+    "title": "Recordatorios útiles",
+    "body": "Recibe un aviso para tus conjuntos planificados y tus próximos viajes. Opcional, local y nunca con datos personales.",
+    "enable": "Activar recordatorios",
+    "enabled": "Los recordatorios están activados. Ajústalos en Ajustes > Notificaciones.",
+    "denied": "Las notificaciones están desactivadas. Puedes activarlas más tarde en Ajustes."
+  },
+  "privacy": "Sin cuenta y sin nube: tu armario y tus fotos se quedan en este dispositivo.",
+  "addFirstItem": "Añadir mi primera prenda",
+  "start": "Explorar ClosetWise"
+}

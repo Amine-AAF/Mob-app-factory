@@ -1,0 +1,32 @@
+{
+  "stepLabel": "{{step}} / {{total}}",
+  "progress": "Step {{step}} of {{total}}",
+  "steps": {
+    "digitalise": {
+      "title": "Your wardrobe, in your pocket",
+      "body": "Photograph your clothes, shoes and accessories and add the details that matter: category, colours, season, brand, price."
+    },
+    "plan": {
+      "title": "Create & plan outfits",
+      "body": "Compose looks from your own pieces, get ideas based on simple rules, plan the week ahead and pack smarter for trips."
+    },
+    "value": {
+      "title": "Wear more of what you own",
+      "body": "See what you really wear, rediscover forgotten pieces, keep track of laundry and shopping, and set gentle goals."
+    }
+  },
+  "language": "Language",
+  "languageDevice": "Device language",
+  "currency": "Your currency",
+  "currencyHint": "Used for prices and your budget. You can change it later in Settings.",
+  "notifications": {
+    "title": "Helpful reminders",
+    "body": "Get a reminder for planned outfits and upcoming trips. Optional, local and never with personal details.",
+    "enable": "Turn on reminders",
+    "enabled": "Reminders are on. Fine-tune them in Settings > Notifications.",
+    "denied": "Notifications are off. You can turn them on later in Settings."
+  },
+  "privacy": "No account and no cloud: your wardrobe and photos stay on this device.",
+  "addFirstItem": "Add my first item",
+  "start": "Explore ClosetWise"
+}

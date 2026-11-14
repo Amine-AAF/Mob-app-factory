@@ -1,0 +1,50 @@
+{
+  "eyebrow": "ClosetWise Premium",
+  "title": "Get more from every piece you own",
+  "subtitle": "The free version stays useful. Premium removes the limits and unlocks the advanced tools.",
+  "activeTitle": "You're Premium",
+  "activeMessage": "Thank you for supporting ClosetWise. Every Premium feature is unlocked.",
+  "values": {
+    "unlimited": "Unlimited wardrobe and outfits",
+    "suggestions": "Advanced outfit ideas: every preset, more results, exclusions",
+    "insights": "Full insights: colours, seasons, brands, cost per wear",
+    "calendar": "Advanced calendar with week duplication",
+    "packing": "Complete Packing Assistant for all your trips",
+    "history": "Detailed wear history",
+    "shopping": "Advanced shopping: categories, comparisons, alerts",
+    "export": "Backup and CSV export",
+    "themes": "Premium palettes",
+    "noAds": "No ads"
+  },
+  "plans": {
+    "annual": "Annual",
+    "monthly": "Monthly",
+    "lifetime": "Lifetime",
+    "other": "Premium",
+    "perYear": "/ year",
+    "perMonth": "/ month",
+    "once": "one-time",
+    "oneTime": "Pay once",
+    "save": "Save {{percent}}%",
+    "perMonthEquivalent": "That's {{price}} per month",
+    "trial": "Free trial included"
+  },
+  "cta": { "subscribe": "Continue · {{price}}", "trial": "Start free trial" },
+  "unavailable": {
+    "title": "Purchases unavailable",
+    "message": "Purchases aren't available in this build of the app (no store connection). Everything in the free version keeps working."
+  },
+  "success": { "title": "Welcome to Premium", "message": "Every Premium feature is now unlocked." },
+  "pending": { "title": "Payment pending", "message": "Your payment is being processed by Google Play. Premium will unlock as soon as it's confirmed." },
+  "error": { "title": "Purchase failed", "message": "The purchase couldn't be completed. Please try again later." },
+  "restore": {
+    "button": "Restore purchases",
+    "successTitle": "Purchases restored",
+    "successMessage": "Premium is active again on this device.",
+    "noneTitle": "Nothing to restore",
+    "noneMessage": "No active Premium purchase was found for this Google account."
+  },
+  "legal": "Subscriptions renew automatically through Google Play until cancelled. You can cancel anytime in the Play Store under Subscriptions; cancelling takes effect at the end of the current period. Lifetime access is a one-time purchase.",
+  "privacy": "Privacy policy",
+  "terms": "Terms of use"
+}

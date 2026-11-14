@@ -1,0 +1,45 @@
+{
+  "id": "closetwise",
+  "name": "ClosetWise",
+  "storeName": "ClosetWise: Outfit Planner",
+  "slug": "closetwise",
+  "scheme": "closetwise",
+  "packageId": "com.closetwise.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "lifestyle",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#3B2F2A", "accent": "#C29B6C", "splashBackground": "#15110F" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "closetwise_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "closetwise_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "closetwise_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 2 }
+  },
+  "features": {
+    "digitalWardrobe": true,
+    "outfitBuilder": true,
+    "localSuggestions": true,
+    "outfitPlanner": true,
+    "wardrobeInsights": true,
+    "shoppingTracker": true,
+    "wishlist": true,
+    "packingAssistant": true,
+    "clothingCare": true,
+    "goalsChallenges": true,
+    "notifications": true,
+    "backupRestore": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

@@ -1,0 +1,18 @@
+{
+  "channelName": "Rappels",
+  "content": {
+    "outfitTitle": "Votre tenue est prévue",
+    "outfitBody": "Ouvrez ClosetWise pour voir le look du jour.",
+    "tripTitle": "Voyage en approche",
+    "tripBody": "C'est le moment de prévoir les tenues de votre voyage.",
+    "checklistTitle": "Liste de valise",
+    "checklistBody": "Vérifiez votre liste de valise avant de partir.",
+    "budgetTitle": "Point budget du mois",
+    "budgetBody": "Jetez un œil à vos dépenses vestimentaires du mois.",
+    "budgetAlertTitle": "Point sur le budget",
+    "budgetWarningBody": "Vous approchez de votre budget vestimentaire mensuel.",
+    "budgetOverBody": "Vous avez dépassé votre budget vestimentaire mensuel.",
+    "goalsTitle": "Vos objectifs dressing",
+    "goalsBody": "Voyez où en sont vos objectifs et défis."
+  }
+}

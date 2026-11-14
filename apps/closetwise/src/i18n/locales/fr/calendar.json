@@ -1,0 +1,73 @@
+{
+  "eyebrow": "Planificateur de tenues",
+  "title": "Calendrier",
+  "goToday": "Revenir à aujourd’hui",
+  "previousWeek": "Semaine précédente",
+  "nextWeek": "Semaine suivante",
+  "previousDay": "Jour précédent",
+  "nextDay": "Jour suivant",
+  "plansCount_one": "{{count}} planning",
+  "plansCount_other": "{{count}} plannings",
+  "history": "Historique des ports",
+  "historyHint": "Ce que vous avez porté, jour après jour",
+  "mode": {
+    "day": "Jour",
+    "week": "Semaine",
+    "month": "Mois"
+  },
+  "week": {
+    "nothingPlanned": "Rien de prévu",
+    "duplicate": "Dupliquer cette semaine sur la suivante",
+    "duplicateTitle": "Copier sur la semaine prochaine ?",
+    "duplicateMessage": "Les plannings de cette semaine sont copiés sur les mêmes jours la semaine prochaine. Les jours déjà planifiés la semaine prochaine restent inchangés.",
+    "duplicateConfirm": "Copier",
+    "duplicated_one": "{{count}} planning copié sur la semaine prochaine.",
+    "duplicated_other": "{{count}} plannings copiés sur la semaine prochaine.",
+    "nothingToCopy": "Rien de nouveau à copier : les jours de la semaine prochaine sont déjà planifiés, ou cette semaine est vide."
+  },
+  "day": {
+    "emptyTitle": "Rien de prévu pour l’instant",
+    "emptyMessage": "Planifiez une tenue pour ce jour — vous pouvez en ajouter plusieurs, par exemple travail et soirée.",
+    "addPlan": "Planifier une tenue"
+  },
+  "plan": {
+    "title": "Planning du jour",
+    "invalidDate": "Cette date n’est pas valide.",
+    "emptyMessage": "Ajoutez un ou plusieurs plannings pour ce jour, par exemple travail et soirée.",
+    "newPlan": "Nouveau planning",
+    "editPlan": "Modifier le planning",
+    "addAnother": "Ajouter un autre planning",
+    "chooseOutfit": "Choisir une tenue",
+    "changeOutfit": "Changer de tenue",
+    "removeOutfit": "Retirer la tenue",
+    "createOutfit": "Créer une nouvelle tenue",
+    "noOutfits": "Vous n’avez pas encore de tenue. Créez-en une pour la planifier.",
+    "noOutfitChosen": "Aucune tenue choisie",
+    "outfitDeleted": "Tenue supprimée",
+    "occasion": "Occasion",
+    "notes": "Notes",
+    "notesPlaceholder": "ex. Rendez-vous client à 10 h",
+    "remind": "Me le rappeler",
+    "remindHint": "Un rappel local le jour même à {{time}} (réglable dans Réglages › Notifications).",
+    "remindDisabled": "Les rappels de tenue planifiée sont désactivés dans Réglages › Notifications.",
+    "enableNotifications": "Activer les rappels",
+    "reminderOn": "Rappel",
+    "errorEmpty": "Choisissez une tenue, une occasion ou ajoutez une note.",
+    "markWorn": "Marquer comme portée",
+    "undoWorn": "Annuler le port",
+    "worn": "Portée",
+    "deleteTitle": "Supprimer ce planning ?",
+    "deleteMessage": "La tenue elle-même est conservée."
+  },
+  "historyScreen": {
+    "freeIntro_one": "Vos tenues du dernier jour ({{count}}).",
+    "freeIntro_other": "Vos tenues des {{count}} derniers jours.",
+    "premiumIntro": "Votre historique complet, avec chaque pièce enregistrée.",
+    "premiumPitch": "Premium conserve votre historique de ports complet et détaillé.",
+    "olderLocked": "Les jours plus anciens restent en sécurité sur votre appareil. Premium affiche votre historique complet et détaillé.",
+    "emptyTitle": "Aucun port enregistré",
+    "emptyMessage": "Utilisez « Portée aujourd’hui » sur une tenue ou « Marquer comme portée » dans le planificateur.",
+    "alsoWorn": "Également porté",
+    "itemsOnly": "Pièces portées individuellement"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "channelName": "Recordatorios",
+  "content": {
+    "outfitTitle": "Tu conjunto está planificado",
+    "outfitBody": "Abre ClosetWise para ver el look de hoy.",
+    "tripTitle": "Se acerca un viaje",
+    "tripBody": "Es hora de planificar los conjuntos de tu viaje.",
+    "checklistTitle": "Lista de equipaje",
+    "checklistBody": "Revisa tu lista de equipaje antes de salir.",
+    "budgetTitle": "Revisión mensual del presupuesto",
+    "budgetBody": "Echa un vistazo a tus gastos en ropa de este mes.",
+    "budgetAlertTitle": "Novedades del presupuesto",
+    "budgetWarningBody": "Estás cerca de tu presupuesto mensual de ropa.",
+    "budgetOverBody": "Has superado tu presupuesto mensual de ropa.",
+    "goalsTitle": "Tus objetivos de armario",
+    "goalsBody": "Mira cómo van tus objetivos y retos."
+  }
+}

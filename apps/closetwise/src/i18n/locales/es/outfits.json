@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Tus looks",
+  "title": "Conjuntos",
+  "new": "Nuevo conjunto",
+  "favorites": "Favoritos",
+  "searchPlaceholder": "Buscar conjuntos por nombre",
+  "addFavorite": "Añadir a favoritos",
+  "removeFavorite": "Quitar de favoritos",
+  "neverWorn": "Aún sin usar",
+  "noResults": "Ningún conjunto coincide con tu búsqueda",
+  "emptyFavorites": "Aún no tienes conjuntos favoritos: toca el corazón de un look que te encante.",
+  "ideas": {
+    "title": "Obtener ideas de conjuntos",
+    "subtitle": "Nuevas combinaciones con tu propio armario"
+  },
+  "empty": {
+    "title": "Crea tu primer conjunto",
+    "message": "Combina prendas de tu armario en looks que puedes planificar y repetir.",
+    "noItems": "Primero añade algunas prendas a tu armario y luego combínalas en conjuntos.",
+    "addItem": "Añadir una prenda"
+  },
+  "notFound": {
+    "title": "Conjunto no encontrado",
+    "message": "Puede que este conjunto se haya eliminado."
+  },
+  "builder": {
+    "title": "Nuevo conjunto",
+    "editTitle": "Editar conjunto",
+    "preview": "Vista previa del conjunto",
+    "emptyHint": "Toca un espacio abajo para añadir prendas.",
+    "noMatchingItems": "No hay prendas que coincidan",
+    "addTo": "Añadir: {{slot}}",
+    "replace": "Cambiar: {{slot}}",
+    "change": "Cambiar",
+    "removeItem": "Quitar {{name}}",
+    "defaultName": "Look n.º {{n}}",
+    "name": "Nombre",
+    "style": "Estilo",
+    "occasion": "Ocasión",
+    "seasons": "Temporadas",
+    "seasonsHint": "Déjalo vacío si sirve todo el año.",
+    "notes": "Notas",
+    "favorite": "Favorito",
+    "errorNoItems": "Añade al menos una prenda al conjunto.",
+    "errorName": "Ponle un nombre al conjunto.",
+    "laundryWarning": "Ojo: {{names}} está pendiente de lavar o en la lavandería. Aun así puedes guardar el conjunto."
+  },
+  "detail": {
+    "title": "Conjunto",
+    "wearToday": "Usar hoy",
+    "undoWearToday": "Deshacer el uso de hoy",
+    "plan": "Planificar",
+    "duplicate": "Duplicar",
+    "delete": "Eliminar conjunto",
+    "deleteTitle": "¿Eliminar este conjunto?",
+    "deleteMessage": "Sus prendas se quedan en tu armario. Los planes que lo usan se conservan sin él.",
+    "copyName": "{{name}} (copia)",
+    "wears": "Usos",
+    "lastWorn": "Último uso",
+    "created": "Creado",
+    "fromIdea": "De una idea",
+    "archived": "Archivada",
+    "noItemsLeft": "Las prendas de este conjunto ya no están en tu armario."
+  }
+}

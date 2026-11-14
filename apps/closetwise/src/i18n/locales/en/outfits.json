@@ -1,0 +1,65 @@
+{
+  "eyebrow": "Your looks",
+  "title": "Outfits",
+  "new": "New outfit",
+  "favorites": "Favorites",
+  "searchPlaceholder": "Search outfits by name",
+  "addFavorite": "Add to favorites",
+  "removeFavorite": "Remove from favorites",
+  "neverWorn": "Not worn yet",
+  "noResults": "No outfits match your search",
+  "emptyFavorites": "No favorite outfits yet — tap the heart on a look you love.",
+  "ideas": {
+    "title": "Get outfit ideas",
+    "subtitle": "Fresh combinations from your own wardrobe"
+  },
+  "empty": {
+    "title": "Create your first outfit",
+    "message": "Combine pieces from your wardrobe into looks you can plan and wear again.",
+    "noItems": "Add a few pieces to your wardrobe first, then combine them into outfits.",
+    "addItem": "Add an item"
+  },
+  "notFound": {
+    "title": "Outfit not found",
+    "message": "This outfit may have been deleted."
+  },
+  "builder": {
+    "title": "New outfit",
+    "editTitle": "Edit outfit",
+    "preview": "Outfit preview",
+    "emptyHint": "Tap a slot below to add pieces.",
+    "noMatchingItems": "No matching items",
+    "addTo": "Add to {{slot}}",
+    "replace": "Replace {{slot}}",
+    "change": "Change",
+    "removeItem": "Remove {{name}}",
+    "defaultName": "Look #{{n}}",
+    "name": "Name",
+    "style": "Style",
+    "occasion": "Occasion",
+    "seasons": "Seasons",
+    "seasonsHint": "Leave empty if it works all year.",
+    "notes": "Notes",
+    "favorite": "Favorite",
+    "errorNoItems": "Add at least one item to the outfit.",
+    "errorName": "Give the outfit a name.",
+    "laundryWarning": "Heads up: {{names}} is waiting to be washed or in the laundry. You can still save the outfit."
+  },
+  "detail": {
+    "title": "Outfit",
+    "wearToday": "Wear today",
+    "undoWearToday": "Undo today’s wear",
+    "plan": "Plan",
+    "duplicate": "Duplicate",
+    "delete": "Delete outfit",
+    "deleteTitle": "Delete this outfit?",
+    "deleteMessage": "Its items stay in your wardrobe. Plans using this outfit will be kept without it.",
+    "copyName": "{{name}} (copy)",
+    "wears": "Wears",
+    "lastWorn": "Last worn",
+    "created": "Created",
+    "fromIdea": "From an idea",
+    "archived": "Archived",
+    "noItemsLeft": "The items of this outfit are no longer in your wardrobe."
+  }
+}

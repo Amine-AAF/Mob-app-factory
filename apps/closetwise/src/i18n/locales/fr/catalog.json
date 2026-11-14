@@ -1,0 +1,52 @@
+{
+  "category": {
+    "tops": "Hauts", "shirts": "Chemises", "tshirts": "T-shirts", "sweaters": "Pulls", "jackets": "Vestes", "coats": "Manteaux",
+    "pants": "Pantalons", "jeans": "Jeans", "shorts": "Shorts", "skirts": "Jupes", "dresses": "Robes", "shoes": "Chaussures",
+    "bags": "Sacs", "accessories": "Accessoires", "sportswear": "Tenues de sport", "formalwear": "Tenues habillées", "other": "Autre"
+  },
+  "style": {
+    "casual": "Décontracté", "smart_casual": "Chic décontracté", "business": "Professionnel", "formal": "Habillé", "sport": "Sport",
+    "streetwear": "Streetwear", "minimalist": "Minimaliste", "classic": "Classique", "elegant": "Élégant", "vintage": "Vintage", "other": "Autre"
+  },
+  "occasion": {
+    "work": "Travail", "meeting": "Réunion", "wedding": "Mariage", "party": "Soirée", "travel": "Voyage", "weekend": "Week-end",
+    "sport": "Sport", "daily": "Quotidien", "special_event": "Événement spécial"
+  },
+  "season": { "spring": "Printemps", "summer": "Été", "autumn": "Automne", "winter": "Hiver", "all": "Toutes saisons" },
+  "color": {
+    "black": "Noir", "white": "Blanc", "grey": "Gris", "charcoal": "Anthracite", "beige": "Beige", "cream": "Crème", "camel": "Camel",
+    "brown": "Marron", "navy": "Bleu marine", "denim": "Bleu jean", "khaki": "Kaki", "olive": "Olive", "green": "Vert", "teal": "Bleu canard",
+    "blue": "Bleu", "light_blue": "Bleu clair", "purple": "Violet", "lavender": "Lavande", "pink": "Rose", "red": "Rouge",
+    "burgundy": "Bordeaux", "orange": "Orange", "yellow": "Jaune", "gold": "Doré", "silver": "Argenté", "multicolor": "Multicolore"
+  },
+  "condition": { "new": "Neuf", "like_new": "Comme neuf", "good": "Bon état", "worn": "Usé", "needs_repair": "À réparer" },
+  "care": { "clean": "Propre", "to_wash": "À laver", "in_laundry": "Au lavage", "to_iron": "À repasser", "ready": "Prêt à porter" },
+  "slot": {
+    "top": "Haut", "bottom": "Bas", "onepiece": "Robe / combinaison", "outerwear": "Veste / manteau", "shoes": "Chaussures",
+    "bag": "Sac", "accessory": "Accessoires", "extra": "Compléments"
+  },
+  "sizeSystem": { "intl": "International (S/M/L)", "eu": "EU", "us": "US", "uk": "UK", "fr": "FR", "it": "IT", "jp": "JP", "other": "Autre / marque" },
+  "wishlistStatus": { "wanted": "Envie", "planned": "Prévu", "purchased": "Acheté", "cancelled": "Annulé" },
+  "priority": { "1": "Haute", "2": "Moyenne", "3": "Basse" },
+  "tripTemplate": { "weekend": "Week-end", "business": "Voyage d'affaires", "summer": "Vacances d'été", "winter": "Vacances d'hiver", "beach": "Vacances à la plage", "city": "City break" },
+  "packingSection": { "clothes": "Vêtements", "shoes": "Chaussures", "accessories": "Accessoires", "care": "Entretien des vêtements", "other": "Autre" },
+  "careLog": { "washed": "Lavé", "dry_cleaned": "Nettoyé à sec", "ironed": "Repassé", "repaired": "Réparé" },
+  "washMethod": { "machine": "Lavage en machine", "hand": "Lavage à la main", "dry_clean_only": "Nettoyage à sec uniquement", "do_not_wash": "Ne pas laver" },
+  "drying": { "tumble_low": "Sèche-linge, basse température", "tumble_normal": "Sèche-linge, normal", "line_dry": "Séchage sur fil", "flat_dry": "Séchage à plat", "do_not_tumble": "Pas de sèche-linge" },
+  "ironing": { "low": "Repassage doux", "medium": "Repassage moyen", "high": "Repassage chaud", "do_not_iron": "Ne pas repasser" },
+  "preset": {
+    "casual": "Tenue décontractée", "business_casual": "Chic professionnel", "formal": "Tenue habillée", "weekend": "Look du week-end",
+    "sport": "Tenue de sport", "summer": "Look d'été", "winter": "Look d'hiver", "evening": "Tenue de soirée"
+  },
+  "reason": {
+    "style_match": "Correspond au style", "occasion_match": "Adapté à l'occasion", "season_match": "Associé à la saison",
+    "neutral_palette": "Couleurs surtout neutres", "rarely_worn": "Donne sa chance à une pièce peu portée", "liked_before": "Vous l'avez aimé"
+  },
+  "goal": {
+    "wear_forgotten": "Porter les pièces oubliées", "reduce_impulse": "Moins d'achats impulsifs", "create_outfits": "Créer de nouvelles tenues",
+    "monthly_budget": "Respecter mon budget mensuel", "organize": "Organiser mon dressing", "capsule": "Préparer une garde-robe capsule",
+    "challenge_7x7": "7 jours, 7 tenues", "challenge_no_shopping": "Défi zéro achat", "challenge_30_looks": "30 jours de looks différents",
+    "challenge_capsule": "Défi garde-robe capsule"
+  },
+  "usage": { "never": "Jamais porté", "rare": "Rarement porté", "occasional": "Porté parfois", "frequent": "Porté souvent" }
+}

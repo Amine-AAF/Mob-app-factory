@@ -1,0 +1,52 @@
+{
+  "category": {
+    "tops": "Tops", "shirts": "Shirts", "tshirts": "T-shirts", "sweaters": "Sweaters", "jackets": "Jackets", "coats": "Coats",
+    "pants": "Pants", "jeans": "Jeans", "shorts": "Shorts", "skirts": "Skirts", "dresses": "Dresses", "shoes": "Shoes",
+    "bags": "Bags", "accessories": "Accessories", "sportswear": "Sportswear", "formalwear": "Formalwear", "other": "Other"
+  },
+  "style": {
+    "casual": "Casual", "smart_casual": "Smart casual", "business": "Business", "formal": "Formal", "sport": "Sport",
+    "streetwear": "Streetwear", "minimalist": "Minimalist", "classic": "Classic", "elegant": "Elegant", "vintage": "Vintage", "other": "Other"
+  },
+  "occasion": {
+    "work": "Work", "meeting": "Meeting", "wedding": "Wedding", "party": "Party", "travel": "Travel", "weekend": "Weekend",
+    "sport": "Sport", "daily": "Daily", "special_event": "Special event"
+  },
+  "season": { "spring": "Spring", "summer": "Summer", "autumn": "Autumn", "winter": "Winter", "all": "All seasons" },
+  "color": {
+    "black": "Black", "white": "White", "grey": "Grey", "charcoal": "Charcoal", "beige": "Beige", "cream": "Cream", "camel": "Camel",
+    "brown": "Brown", "navy": "Navy", "denim": "Denim blue", "khaki": "Khaki", "olive": "Olive", "green": "Green", "teal": "Teal",
+    "blue": "Blue", "light_blue": "Light blue", "purple": "Purple", "lavender": "Lavender", "pink": "Pink", "red": "Red",
+    "burgundy": "Burgundy", "orange": "Orange", "yellow": "Yellow", "gold": "Gold", "silver": "Silver", "multicolor": "Multicolor"
+  },
+  "condition": { "new": "New", "like_new": "Like new", "good": "Good", "worn": "Worn", "needs_repair": "Needs repair" },
+  "care": { "clean": "Clean", "to_wash": "To wash", "in_laundry": "In laundry", "to_iron": "To iron", "ready": "Ready to wear" },
+  "slot": {
+    "top": "Top", "bottom": "Bottom", "onepiece": "Dress / one-piece", "outerwear": "Jacket / coat", "shoes": "Shoes",
+    "bag": "Bag", "accessory": "Accessories", "extra": "Extras"
+  },
+  "sizeSystem": { "intl": "International (S/M/L)", "eu": "EU", "us": "US", "uk": "UK", "fr": "FR", "it": "IT", "jp": "JP", "other": "Other / brand" },
+  "wishlistStatus": { "wanted": "Wanted", "planned": "Planned", "purchased": "Purchased", "cancelled": "Cancelled" },
+  "priority": { "1": "High", "2": "Medium", "3": "Low" },
+  "tripTemplate": { "weekend": "Weekend trip", "business": "Business trip", "summer": "Summer vacation", "winter": "Winter vacation", "beach": "Beach holiday", "city": "City break" },
+  "packingSection": { "clothes": "Clothes", "shoes": "Shoes", "accessories": "Accessories", "care": "Clothing care", "other": "Other" },
+  "careLog": { "washed": "Washed", "dry_cleaned": "Dry-cleaned", "ironed": "Ironed", "repaired": "Repaired" },
+  "washMethod": { "machine": "Machine wash", "hand": "Hand wash", "dry_clean_only": "Dry clean only", "do_not_wash": "Do not wash" },
+  "drying": { "tumble_low": "Tumble dry, low heat", "tumble_normal": "Tumble dry, normal", "line_dry": "Line dry", "flat_dry": "Dry flat", "do_not_tumble": "Do not tumble dry" },
+  "ironing": { "low": "Iron, low heat", "medium": "Iron, medium heat", "high": "Iron, high heat", "do_not_iron": "Do not iron" },
+  "preset": {
+    "casual": "Casual outfit", "business_casual": "Business casual", "formal": "Formal outfit", "weekend": "Weekend look",
+    "sport": "Sport outfit", "summer": "Summer look", "winter": "Winter look", "evening": "Evening outfit"
+  },
+  "reason": {
+    "style_match": "Matches the style", "occasion_match": "Fits the occasion", "season_match": "Tagged for the season",
+    "neutral_palette": "Mostly neutral colors", "rarely_worn": "Gives a rarely worn piece a chance", "liked_before": "You liked this before"
+  },
+  "goal": {
+    "wear_forgotten": "Wear forgotten pieces", "reduce_impulse": "Fewer impulse buys", "create_outfits": "Create new outfits",
+    "monthly_budget": "Stay within my monthly budget", "organize": "Organize my wardrobe", "capsule": "Build a capsule wardrobe",
+    "challenge_7x7": "7 days, 7 outfits", "challenge_no_shopping": "No-shopping challenge", "challenge_30_looks": "30 days of different looks",
+    "challenge_capsule": "Capsule wardrobe challenge"
+  },
+  "usage": { "never": "Not worn yet", "rare": "Rarely worn", "occasional": "Worn sometimes", "frequent": "Worn often" }
+}

@@ -1,0 +1,32 @@
+{
+  "eyebrow": "Tu espacio",
+  "title": "Perfil",
+  "premium": {
+    "activeTitle": "Premium está activo",
+    "monthly": "Plan mensual",
+    "annual": "Plan anual",
+    "lifetime": "Acceso de por vida",
+    "renews": "Se renueva el {{date}}",
+    "expires": "Acceso hasta el {{date}}",
+    "manage": "Gestiona o cancela tu suscripción cuando quieras en Google Play > Suscripciones.",
+    "upsellTitle": "ClosetWise Premium",
+    "upsellMessage": "Armario y conjuntos ilimitados, estadísticas completas, el Asistente de equipaje completo, exportaciones, temas premium y sin anuncios."
+  },
+  "groups": { "wardrobe": "Armario", "planning": "Planificación", "shopping": "Compras", "app": "Aplicación" },
+  "links": {
+    "insights": "Estadísticas",
+    "care": "Lavado y cuidado",
+    "archived": "Prendas archivadas",
+    "trips": "Asistente de equipaje",
+    "history": "Historial de uso",
+    "goals": "Objetivos y retos",
+    "shopping": "Seguimiento de compras",
+    "wishlist": "Lista de deseos",
+    "settings": "Ajustes",
+    "notifications": "Notificaciones",
+    "taxonomy": "Estilos y ocasiones",
+    "data": "Copia de seguridad y datos",
+    "privacy": "Privacidad"
+  },
+  "version": "ClosetWise {{version}}"
+}
