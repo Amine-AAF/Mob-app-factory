@@ -52,6 +52,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "habitflow",
+      "path": "apps/habitflow",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }
