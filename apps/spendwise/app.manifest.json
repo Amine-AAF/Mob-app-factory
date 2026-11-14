@@ -1,0 +1,48 @@
+{
+  "id": "spendwise",
+  "name": "SpendWise",
+  "storeName": "SpendWise: Budget & Expenses",
+  "slug": "spendwise",
+  "scheme": "spendwise",
+  "packageId": "com.mobileappsfactory.spendwise",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "finance",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt", "ar"],
+  "brand": { "primary": "#0F766E", "accent": "#F2B544", "splashBackground": "#071A18" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "spendwise_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "spendwise_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "spendwise_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded", "interstitial"], "graceSessions": 3 }
+  },
+  "features": {
+    "transactions": true,
+    "accounts": true,
+    "budgets": true,
+    "recurring": true,
+    "subscriptions": true,
+    "savingsGoals": true,
+    "reports": true,
+    "calculators": true,
+    "csvImportExport": true,
+    "backupRestore": true,
+    "privacyMode": true,
+    "notifications": true,
+    "pinLock": false,
+    "cloudSync": false,
+    "bankConnection": false
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}

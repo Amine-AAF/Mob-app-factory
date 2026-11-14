@@ -193,6 +193,19 @@
           "en-US"
         ]
       }
+    },
+    {
+      "id": "spendwise",
+      "path": "apps/spendwise",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }
