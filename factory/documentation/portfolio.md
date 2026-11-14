@@ -11,7 +11,7 @@ Dernière mise à jour : 2026-11-13.
 | App | Dossier | Package id | Catégorie | Monétisation | Locales | Statut manifest | Avancement | Registre | Suivi |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | DevSpeak | `apps/devspeak` | `com.devspeak.app` ⚠ placeholder | education | hybrid (sub + banner/rewarded) | en, fr, es | development | ✅ Terminée (code) — reste config externe + tests sur appareil | ✅ | [devspeak.md](../tracking/devspeak.md) |
-| Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 En cours — moteur, contenu, DB, services faits ; écrans en cours | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
+| Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Fonctionnelle — 320 défis + quotidien, écrans, monétisation, store/ ; reste : tests appareil, comptes externes | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
 | CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
 
@@ -123,6 +123,7 @@ reflètent un travail en cours, pas une régression.
 | 7 packages testés | ✅ | ✅ | ✅ 59/59 (`notifications` et `testing` sans tests) |
 | devspeak | ✅ | ✅ | ✅ 126/126 |
 | logic-quest | ✅ | ❌ 4 erreurs, 3 avertissements | 🟡 78–79/82 (i18n) |
+| logic-quest (fin de session, même jour) | ✅ | ✅ 0 problème | ✅ 98/98 · bundle Android ✅ · expo-doctor 20/20 |
 | filepilot | ❌ (pas de sources) | — | ❌ (pas de tests) |
 | registre | — | — | ✅ 2 apps valides |
 
@@ -140,3 +141,7 @@ Une ligne par modification en cours d'un package ou fichier partagé. Supprimer 
 | --- | --- | --- | --- | --- |
 | 2026-11-13 | dépôt | Commit initial `f7a0ebd`, push GitHub, branches `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` | toutes | — |
 | 2026-11-13 | `factory/documentation`, `factory/tracking` | Ajout portfolio.md, parallel-development.md, fichiers de suivi | aucune (docs) | — |
+| 2026-11-13 | `packages/monetization` | Ajouts rétrocompatibles : `ADMOB_TEST_IDS.interstitial`, `resolveInterstitialUnit`, `shouldShowInterstitial` (pauses naturelles, plafonnement), champ optionnel `EntitlementState.activeEntitlements` (rempli par l'adaptateur RevenueCat). Inclus dans `f7a0ebd` | logic-quest (devspeak inchangé) | ✅ 12/12 package, devspeak 126/126 |
+| 2026-11-13 | `factory/scripts/generate-brand-assets.mjs` | Charge un `apps/<id>/brand/mark.mjs` optionnel (marque + feature graphic par app) ; sans lui, marque DevSpeak par défaut. Inclus dans `f7a0ebd` | logic-quest | ✅ assets DevSpeak identiques à l'octet près |
+| 2026-11-13 | `.gitlab-ci.yml` | Jobs d'intégration/bundle/dev en matrice `APP: [devspeak, logic-quest]` ; tags `<app>-vX.Y.Z` → `rules:variables` + environnement `production/<app>` pour les variables par app. Inclus dans `f7a0ebd` | devspeak, logic-quest | ✅ YAML et regex de tags vérifiés (pas de pipeline exécuté) |
+| 2026-11-13 | `README.md`, `factory/documentation/{architecture,monetization,adding-a-new-app,status}.md` | Documentation de Logic Quest et des ajouts partagés ci-dessus (branche `chore/shared-logic-quest-docs`) | aucune (docs) | — |

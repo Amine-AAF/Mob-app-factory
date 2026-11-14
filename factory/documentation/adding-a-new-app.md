@@ -53,12 +53,16 @@ pnpm brand-assets apps/focus-timer
 
 Replace the generated mark with the app's own design when it has one.
 
+Give the app its own mark: create `apps/<id>/brand/mark.mjs` exporting `mark({ bubble, glyph })`
+(and optionally `featureGraphic(...)`), as Logic Quest does. Without it the DevSpeak mark is used.
+
 ## 6. CI and builds
 
 - Add `apps/focus-timer/eas.json` (copied by the template) and run `eas init` to get an EAS project id.
-- In `.gitlab-ci.yml`, duplicate the `APP`-specific jobs (or turn them into a matrix) and add a
-  tag rule `^focus-timer-v\d+\.\d+\.\d+$`.
-- Add protected CI variables for the app's production IDs.
+- In `.gitlab-ci.yml`, add the app id to the `APP` matrices (integration-tests, bundle-validation,
+  android-development) and a `.release-rules` entry: `$CI_COMMIT_TAG =~ /^focus-timer-v\d+\.\d+\.\d+$/`
+  with `variables: { APP: focus-timer }`.
+- Add the app's production IDs as protected CI variables with environment scope `production/focus-timer`.
 
 ## 7. Release
 

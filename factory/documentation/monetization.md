@@ -39,6 +39,17 @@ Implementation: `packages/monetization/src/revenuecat.ts` (adapter), `apps/devsp
 (orchestration, SQLite `subscription_cache`). Offline: a verified premium state is honoured until its
 expiry and for at most 7 days without re-verification.
 
+## Interstitials and secondary products (added for Logic Quest)
+
+- `resolveInterstitialUnit({ isDev, production })`: test unit in development/preview, never a test unit
+  (and no fallback) in production.
+- `shouldShowInterstitial(...)`: only at a natural break, for free users with consent, after the grace
+  sessions, at most one per `minActivitiesBetween` (3) activities and `minIntervalMs` (4 min).
+- `EntitlementState.activeEntitlements` (filled by the RevenueCat adapter) lets an app sell a one-time
+  product with its own entitlement (Logic Quest: `no_ads`). See `apps/logic-quest/store/monetization-setup.md`.
+
+All additions are optional: apps that don't use them (DevSpeak) are unaffected.
+
 ## AdMob (ads)
 
 1. AdMob → add Android app → create **Banner (adaptive)** and **Rewarded** units.
