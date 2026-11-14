@@ -1,0 +1,30 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "types": [
+      "jest",
+      "node"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "safevault-native": [
+        "./modules/safevault-native"
+      ]
+    }
+  },
+  "include": [
+    "app",
+    "src",
+    "modules",
+    "app.config.ts",
+    "expo-env.d.ts",
+    ".expo/types/**/*.ts",
+    "jest.setup.ts"
+  ]
+}

@@ -1,0 +1,21 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'com.safevault'
+version = '1.0.0'
+
+android {
+  namespace "expo.modules.safevault"
+  defaultConfig {
+    versionCode 1
+    versionName "1.0.0"
+    consumerProguardFiles 'proguard-rules.pro'
+  }
+}
+
+dependencies {
+  // BouncyCastle provider (Argon2id). Pinned; bump deliberately and re-run the KAT tests.
+  implementation 'org.bouncycastle:bcprov-jdk18on:1.80'
+}
