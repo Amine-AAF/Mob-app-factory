@@ -1,0 +1,46 @@
+{
+  "id": "homecare",
+  "name": "HomeCare",
+  "storeName": "HomeCare: Home Maintenance",
+  "slug": "homecare",
+  "scheme": "homecare",
+  "packageId": "com.homecare.app",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "house-and-home",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#0F766E", "accent": "#F59E0B", "splashBackground": "#0B1A1C" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "homecare_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "homecare_premium_annual", "period": "annual", "indicativePriceUsd": 17.99 },
+        { "productId": "homecare_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 29.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 2 }
+  },
+  "features": {
+    "dashboard": true,
+    "homes": true,
+    "assets": true,
+    "maintenance": true,
+    "documents": true,
+    "expenses": true,
+    "repairs": true,
+    "householdTasks": true,
+    "inventory": true,
+    "notifications": true,
+    "backupRestore": true,
+    "exportCsv": true,
+    "exportPdf": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
