@@ -52,6 +52,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "petcare",
+      "path": "apps/petcare",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }
