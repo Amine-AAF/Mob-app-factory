@@ -41,9 +41,24 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
   - Composants : QuestionCard, DifficultyBadge, PremiumBadge, CategoryCard, JobCategoryCard, ProgressCard, AnswerCard,
     BulletList, SearchField ; services `library.ts` (favoris, études, notes, fin de quiz, analytics anonymes).
 
+- **Phase 4 — Préparation**
+  - Simulation d'entretien : choix du métier, du niveau et de la durée (5/10/20 min → 3/5/8 questions), sélection
+    réaliste (ouverture par une présentation, alternance soft skills / questions métier, clôture motivation ou RH),
+    chronomètre facultatif qui n'interrompt jamais, réponses écrites et notes, auto-évaluation transparente sur
+    5 critères (1 à 5), bilan avec axe de progrès, historique. Gratuit : 1 simulation par jour (+ bonus récompensés
+    prévus en phase 6). Aucune publicité pendant la simulation, aucune évaluation automatique annoncée.
+  - Answer Builder : 5 structures (STAR, motivation, présent-passé-futur, technique, négociation) avec sections
+    guidées, métier/niveau/compétence, aperçu, nombre de mots et temps de parole, vérifications simples de rédaction,
+    comparaison avec la réponse modèle, brouillon/finale, copie, suppression ; accès depuis chaque question.
+  - Flashcards : paquets de 15 cartes issues de la bibliothèque (à revoir d'abord, puis nouvelles), auto-notation
+    (à revoir / difficile / bien / facile) reliée à la révision espacée SM-2.
+  - Parcours de préparation : plan généré localement et figé (7, 14, 30, 60 jours ; 30 et 60 jours Premium) :
+    questions du jour ordonnées par priorité métier et niveau, quiz quotidien, révision tous les 4 jours, simulation
+    hebdomadaire ; suivi des tâches et progression, accès depuis l'accueil et l'onglet Pratique.
+
 ## Fonctionnalités en cours
 
-- Aucune (prochaine étape : phase 4).
+- Aucune (prochaine étape : phase 5).
 
 ## Bibliothèque de questions : terminée (500/500)
 
@@ -54,8 +69,7 @@ gratuites) par métier, au moins la moitié de la bibliothèque gratuite.
 
 ## Fonctionnalités restantes
 
-- Phase 3 contenu : parcours métiers ; passe d'harmonisation terminologique FR/ES.
-- Phase 4 : Mock Interview, Answer Builder, flashcards, learning paths.
+- Contenu : passe d'harmonisation terminologique FR/ES.
 - Phase 5 : statistiques avancées, export/sauvegarde des données, suppression des données dans Réglages.
 - Phase 6 : AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), finalisation des offres Premium.
 - Phase 7 : tests complets, export Android, dossier `store/`, politique de confidentialité.
@@ -109,6 +123,7 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-14 | Quiz (160 items, moteur, persistance) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 52/52 |
 | 2026-11-14 | Écrans MVP : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 73/73 (logique de recherche, question du jour, progression, actions, routage, composant) |
 | 2026-11-14 | `npx expo export --platform android` | ✅ bundle Hermes de 7,6 Mo généré (aucun test sur appareil réel à ce stade) |
+| 2026-11-14 | Phase 4 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 91/91 · bundle Hermes 7,8 Mo |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication

@@ -229,7 +229,8 @@
     "quickQuiz": "Quick quiz (10 questions)",
     "recentTitle": "Recent activity",
     "recentEmpty": "No activity yet",
-    "recentEmptyHint": "Open a question to start your preparation."
+    "recentEmptyHint": "Open a question to start your preparation.",
+    "openPath": "Open my preparation plan"
   },
   "explore": {
     "title": "Explore",
@@ -242,7 +243,6 @@
   "practice": {
     "title": "Practice",
     "subtitle": "Mock interviews, answer builder, flashcards and quizzes.",
-    "soon": "Coming soon",
     "dueCount_one": "{{count}} to review",
     "dueCount_other": "{{count}} to review",
     "quiz": {
@@ -264,6 +264,10 @@
     "flashcards": {
       "title": "Flashcards",
       "body": "Quick recall of key concepts and questions."
+    },
+    "path": {
+      "title": "My preparation plan",
+      "body": "A day-by-day plan for your target job: questions, quizzes, review and mock interviews."
     }
   },
   "progress": {
@@ -345,7 +349,8 @@
     "lockedBody": "The detailed answer, explanation, tips and follow-ups for this question are part of Premium.",
     "notes": "My notes",
     "notesPlaceholder": "Write your own answer, examples or reminders…",
-    "notesPrivate": "Private: stored only on this device."
+    "notesPrivate": "Private: stored only on this device.",
+    "buildAnswer": "Build my answer"
   },
   "questions": {
     "title": "Questions",
@@ -405,5 +410,232 @@
     "restored": "Your Premium access has been restored.",
     "nothingToRestore": "No active purchase was found for this account.",
     "manage": "Manage subscription"
+  },
+  "mock": {
+    "intro": "Choose a job, a level and a duration. Questions come one by one; you answer in writing, then rate yourself.",
+    "role": "Job",
+    "generalRole": "General",
+    "level": "Level",
+    "duration": "Duration",
+    "timer": "Timer",
+    "timerHint": "Shows a suggested time per answer. It never cuts you off.",
+    "freeRemaining_one": "{{count}} free mock interview left today",
+    "freeRemaining_other": "{{count}} free mock interviews left today",
+    "limitReached": "You have used today's free mock interview. Come back tomorrow or upgrade to Premium for unlimited sessions.",
+    "noQuestions": "No questions match this selection. Try another level or job.",
+    "start": "Start the interview",
+    "history": "Past sessions",
+    "historyEmpty": "Your mock interviews will appear here.",
+    "completed": "Completed",
+    "notFinished": "Not finished",
+    "selfScore": "Self-assessment {{score}}/5",
+    "progress": "Question {{current}} of {{total}}",
+    "answerHint": "Answer as you would speak. Short notes are fine.",
+    "answerPlaceholder": "Your answer…",
+    "yourAnswer": "Your answer",
+    "notes": "Notes",
+    "notesPlaceholder": "Notes for later (optional)",
+    "skip": "Skip",
+    "nextQuestion": "Next question",
+    "finishAnswers": "Finish and assess",
+    "selfAssessment": "Self-assessment",
+    "ratingIntro": "Rate each answer honestly from 1 to 5. Compare with the model answer if you like. This is your own assessment: there is no automatic grading.",
+    "skipped": "Skipped",
+    "compareModel": "Compare with the example answer",
+    "criteria": {
+      "structure": "Structure",
+      "relevance": "Relevance to the question",
+      "examples": "Concrete examples",
+      "clarity": "Clarity and concision",
+      "confidence": "Confidence"
+    },
+    "starLabel_one": "{{count}} star",
+    "starLabel_other": "{{count}} stars",
+    "answerScore": "Average: {{score}}/5",
+    "notRated": "Not rated yet",
+    "saveAssessment": "Save my assessment",
+    "summaryTitle": "Session summary",
+    "selfScoreLabel": "Your average self-assessment",
+    "answeredOf": "You answered {{answered}} of {{total}} questions.",
+    "nextFocus": "What to work on next",
+    "advice": {
+      "structure": "Structure your answers: use STAR for experience questions and present-past-future for introductions.",
+      "relevance": "Answer the exact question first, then add context. Read what the interviewer wants to know on each question.",
+      "examples": "Prepare two or three real stories with numbers you can reuse across questions.",
+      "clarity": "Aim for one to two minutes per answer and remove details that do not support your point.",
+      "confidence": "Practise out loud and repeat sessions: confidence grows with repetition."
+    },
+    "transparency": "This score is your own assessment based on the grid above. InterviewReady does not evaluate your answers automatically.",
+    "newSession": "New session",
+    "notFound": "Session not found"
+  },
+  "builder": {
+    "intro": "Build strong answers step by step, save drafts and compare them with example answers.",
+    "new": "New answer",
+    "noAnswers": "No saved answers yet",
+    "noAnswersHint": "Start a new answer or open a question and tap \"Build my answer\".",
+    "draft": "Draft",
+    "final": "Final",
+    "empty": "Your answer will appear here as you write.",
+    "untitled": "Untitled answer",
+    "titleLabel": "Answer title",
+    "titlePlaceholder": "Question or title",
+    "type": "Question type",
+    "context": "Job, level and skill",
+    "structure": {
+      "star": "Behavioral (STAR)",
+      "motivation": "Motivation",
+      "present-past-future": "Introduce yourself",
+      "technical": "Technical",
+      "negotiation": "Salary & negotiation"
+    },
+    "structureHint": {
+      "star": "Situation, Task, Action, Result: tell a real story and spend most of it on your actions.",
+      "motivation": "Why you, why this role: motivation, relevant experience, skills and what you will bring.",
+      "present-past-future": "Who you are today, how you got here and why this job is your next step.",
+      "technical": "Define the concept, explain how it works, give an example and discuss trade-offs.",
+      "negotiation": "Give a researched range, justify it, show flexibility and close positively."
+    },
+    "section": {
+      "situation": {
+        "label": "Situation",
+        "hint": "Where and when? Give the context in one or two sentences."
+      },
+      "task": {
+        "label": "Task",
+        "hint": "What was your responsibility or goal?"
+      },
+      "action": {
+        "label": "Action",
+        "hint": "What did YOU do, step by step? This is the most important part."
+      },
+      "result": {
+        "label": "Result",
+        "hint": "What changed? Use numbers if you can, and what you learned."
+      },
+      "motivation": {
+        "label": "Motivation",
+        "hint": "What attracts you to this role or company, concretely?"
+      },
+      "experience": {
+        "label": "Relevant experience",
+        "hint": "Which past experience prepares you for it?"
+      },
+      "skills": {
+        "label": "Skills",
+        "hint": "Which two or three skills will you use in this job?"
+      },
+      "contribution": {
+        "label": "Expected contribution",
+        "hint": "What will you bring in the first months?"
+      },
+      "present": {
+        "label": "Present",
+        "hint": "Your current role or situation and a key strength."
+      },
+      "past": {
+        "label": "Past",
+        "hint": "The experience that led you here, with one achievement."
+      },
+      "future": {
+        "label": "Future",
+        "hint": "Why this job is the logical next step for you."
+      },
+      "definition": {
+        "label": "Definition",
+        "hint": "Define the concept in one or two simple sentences."
+      },
+      "how": {
+        "label": "How it works",
+        "hint": "Explain the mechanism or the main steps."
+      },
+      "example": {
+        "label": "Example",
+        "hint": "A concrete example, ideally from your own work."
+      },
+      "tradeoffs": {
+        "label": "Trade-offs",
+        "hint": "Limits, alternatives or when you would not use it."
+      },
+      "range": {
+        "label": "Range",
+        "hint": "Your researched range for this role and location."
+      },
+      "justification": {
+        "label": "Justification",
+        "hint": "Why: market data, experience, scope of the role."
+      },
+      "flexibility": {
+        "label": "Flexibility",
+        "hint": "What else matters: benefits, remote work, training, review date."
+      },
+      "close": {
+        "label": "Close",
+        "hint": "A positive sentence that keeps the conversation open."
+      }
+    },
+    "preview": "Preview",
+    "stats": "{{words}} words · about {{seconds}} s spoken",
+    "check": {
+      "complete": "Every section is filled in",
+      "length": "Between 30 seconds and 2.5 minutes when spoken",
+      "result-measurable": "The result includes a number or measurable outcome",
+      "first-person": "The action describes what you did (\"I\")"
+    },
+    "checksNote": "Simple writing checks, not an evaluation of your answer.",
+    "compare": "Compare with the example answer",
+    "hideExample": "Hide the example",
+    "saveDraft": "Save draft",
+    "markFinal": "Mark as final",
+    "deleteTitle": "Delete this answer?",
+    "deleteBody": "This cannot be undone."
+  },
+  "flashcards": {
+    "intro": "Review {{count}} cards: questions due for review first, then new ones.",
+    "question": "Question",
+    "answer": "Key answer",
+    "tapToReveal": "Think of your answer, then tap to reveal.",
+    "reveal": "Show the answer",
+    "howWell": "How well did you remember?",
+    "grade": {
+      "again": "Again",
+      "hard": "Hard",
+      "good": "Good",
+      "easy": "Easy"
+    },
+    "openQuestion": "Open the full question",
+    "progress": "Card {{current}} of {{total}}",
+    "doneTitle": "Deck complete",
+    "doneBody_one": "You reviewed {{count}} card. It will come back at the right time.",
+    "doneBody_other": "You reviewed {{count}} cards. They will come back at the right time.",
+    "empty": "No cards available for this selection.",
+    "again": "New deck"
+  },
+  "path": {
+    "title": "Preparation plan",
+    "headline_one": "Prepare in {{count}} day",
+    "headline_other": "Prepare in {{count}} days",
+    "headlineRole_one": "Prepare for a {{role}} interview in {{count}} day",
+    "headlineRole_other": "Prepare for a {{role}} interview in {{count}} days",
+    "intro": "Each day: questions to study and a short quiz. Every few days: flashcard review. Every week: a mock interview.",
+    "disclaimer": "A plan helps you prepare regularly; it cannot guarantee the outcome of an interview.",
+    "create": "Create my plan",
+    "generalTitle": "General interview preparation",
+    "progress": "{{done}} of {{total}} tasks completed",
+    "completed": "Plan completed",
+    "today": "Today · day {{day}}",
+    "day": "Day {{day}}",
+    "task": {
+      "study": "Study questions",
+      "quiz": "Quiz",
+      "review": "Flashcard review",
+      "mock": "Mock interview"
+    },
+    "taskHint": {
+      "quiz": "Mixed quiz",
+      "review": "Review what you studied",
+      "mock": "Simulate a real interview"
+    },
+    "restart": "Start a new plan"
   }
 }

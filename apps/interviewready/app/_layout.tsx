@@ -36,6 +36,12 @@ function Navigator() {
         <Stack.Screen name="questions" options={{ title: '' }} />
         <Stack.Screen name="question/[id]" options={{ title: '' }} />
         <Stack.Screen name="quiz" options={{ title: '', gestureEnabled: false }} />
+        <Stack.Screen name="mock/index" options={{ title: '' }} />
+        <Stack.Screen name="mock/[id]" options={{ title: '', gestureEnabled: false }} />
+        <Stack.Screen name="builder/index" options={{ title: '' }} />
+        <Stack.Screen name="builder/edit" options={{ title: '' }} />
+        <Stack.Screen name="flashcards" options={{ title: '' }} />
+        <Stack.Screen name="path" options={{ title: '' }} />
         <Stack.Screen name="paywall" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
       </Stack>
     </>

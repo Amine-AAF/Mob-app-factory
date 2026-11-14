@@ -96,7 +96,10 @@ export default function HomeScreen() {
 
       <SectionHeader title={t('home.pathTitle')} />
       {role ? (
-        <JobCategoryCard role={role} count={roleCount} onPress={() => router.push({ pathname: '/questions', params: { role } })} />
+        <>
+          <JobCategoryCard role={role} count={roleCount} onPress={() => router.push({ pathname: '/questions', params: { role } })} />
+          <Button label={t('home.openPath')} icon="map-outline" onPress={() => router.push('/path')} testID="home-path" />
+        </>
       ) : (
         <Card>
           <Stack gap={2}>

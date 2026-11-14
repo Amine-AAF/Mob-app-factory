@@ -3,6 +3,7 @@ import { migrate, type SqlDatabase } from '@factory/storage';
 import { USER_TABLES, migrations } from './migrations';
 import { createActivityRepository } from './repositories/activityRepository';
 import { createLibraryRepository } from './repositories/libraryRepository';
+import { createPracticeRepository } from './repositories/practiceRepository';
 import { createProfileRepository } from './repositories/profileRepository';
 import { createReviewRepository } from './repositories/reviewRepository';
 
@@ -14,6 +15,7 @@ export interface Repositories {
   library: ReturnType<typeof createLibraryRepository>;
   activity: ReturnType<typeof createActivityRepository>;
   review: ReturnType<typeof createReviewRepository>;
+  practice: ReturnType<typeof createPracticeRepository>;
 }
 
 /** Migrates and wires repositories. Pure: works with expo-sqlite or the sql.js test adapter. */
@@ -30,6 +32,7 @@ export function createRepositories(db: SqlDatabase): Repositories {
     library: createLibraryRepository(db),
     activity: createActivityRepository(db),
     review: createReviewRepository(db),
+    practice: createPracticeRepository(db),
   };
 }
 

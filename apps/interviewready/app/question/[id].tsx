@@ -147,6 +147,14 @@ export default function QuestionScreen() {
         </Card>
       )}
 
+      <Button
+        label={t('question.buildAnswer')}
+        icon="construct-outline"
+        variant="secondary"
+        onPress={() => router.push({ pathname: '/builder/edit', params: { questionId: question.id } })}
+        testID="build-answer"
+      />
+
       <AnswerCard title={t('question.notes')} icon="create-outline">
         <TextInput
           value={noteValue}

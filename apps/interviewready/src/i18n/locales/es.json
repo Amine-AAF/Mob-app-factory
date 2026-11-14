@@ -229,7 +229,8 @@
     "quickQuiz": "Cuestionario rápido (10 preguntas)",
     "recentTitle": "Actividad reciente",
     "recentEmpty": "Aún no hay actividad",
-    "recentEmptyHint": "Abre una pregunta para empezar tu preparación."
+    "recentEmptyHint": "Abre una pregunta para empezar tu preparación.",
+    "openPath": "Abrir mi plan de preparación"
   },
   "explore": {
     "title": "Explorar",
@@ -242,7 +243,6 @@
   "practice": {
     "title": "Practicar",
     "subtitle": "Simulaciones de entrevista, asistente de respuestas, flashcards y cuestionarios.",
-    "soon": "Próximamente",
     "dueCount_one": "{{count}} por repasar",
     "dueCount_other": "{{count}} por repasar",
     "quiz": {
@@ -264,6 +264,10 @@
     "flashcards": {
       "title": "Tarjetas de memoria",
       "body": "Repaso rápido de conceptos y preguntas clave."
+    },
+    "path": {
+      "title": "Mi plan de preparación",
+      "body": "Un plan día a día para tu puesto objetivo: preguntas, cuestionarios, repasos y simulaciones."
     }
   },
   "progress": {
@@ -345,7 +349,8 @@
     "lockedBody": "La respuesta detallada, la explicación, los consejos y las preguntas de seguimiento de esta pregunta forman parte de Premium.",
     "notes": "Mis notas",
     "notesPlaceholder": "Escribe tu propia respuesta, ejemplos o recordatorios…",
-    "notesPrivate": "Privado: solo se guarda en este dispositivo."
+    "notesPrivate": "Privado: solo se guarda en este dispositivo.",
+    "buildAnswer": "Construir mi respuesta"
   },
   "questions": {
     "title": "Preguntas",
@@ -405,5 +410,232 @@
     "restored": "Tu acceso Premium se ha restaurado.",
     "nothingToRestore": "No se encontró ninguna compra activa para esta cuenta.",
     "manage": "Gestionar suscripción"
+  },
+  "mock": {
+    "intro": "Elige un puesto, un nivel y una duración. Las preguntas llegan una a una; respondes por escrito y luego te autoevalúas.",
+    "role": "Puesto",
+    "generalRole": "General",
+    "level": "Nivel",
+    "duration": "Duración",
+    "timer": "Cronómetro",
+    "timerHint": "Muestra un tiempo sugerido por respuesta. Nunca te interrumpe.",
+    "freeRemaining_one": "Te queda {{count}} simulación gratuita hoy",
+    "freeRemaining_other": "Te quedan {{count}} simulaciones gratuitas hoy",
+    "limitReached": "Ya usaste la simulación gratuita de hoy. Vuelve mañana o pásate a Premium para tener sesiones ilimitadas.",
+    "noQuestions": "Ninguna pregunta coincide con esta selección. Prueba otro nivel u otro puesto.",
+    "start": "Empezar la entrevista",
+    "history": "Sesiones anteriores",
+    "historyEmpty": "Tus simulaciones de entrevista aparecerán aquí.",
+    "completed": "Terminada",
+    "notFinished": "Sin terminar",
+    "selfScore": "Autoevaluación {{score}}/5",
+    "progress": "Pregunta {{current}} de {{total}}",
+    "answerHint": "Responde como lo harías en voz alta. Basta con notas breves.",
+    "answerPlaceholder": "Tu respuesta…",
+    "yourAnswer": "Tu respuesta",
+    "notes": "Notas",
+    "notesPlaceholder": "Notas para más tarde (opcional)",
+    "skip": "Omitir",
+    "nextQuestion": "Siguiente pregunta",
+    "finishAnswers": "Terminar y autoevaluarme",
+    "selfAssessment": "Autoevaluación",
+    "ratingIntro": "Puntúa cada respuesta con honestidad del 1 al 5. Compárala con la respuesta modelo si quieres. Es tu propia evaluación: no hay calificación automática.",
+    "skipped": "Omitida",
+    "compareModel": "Comparar con la respuesta de ejemplo",
+    "criteria": {
+      "structure": "Estructura",
+      "relevance": "Pertinencia respecto a la pregunta",
+      "examples": "Ejemplos concretos",
+      "clarity": "Claridad y concisión",
+      "confidence": "Seguridad"
+    },
+    "starLabel_one": "{{count}} estrella",
+    "starLabel_other": "{{count}} estrellas",
+    "answerScore": "Media: {{score}}/5",
+    "notRated": "Aún sin puntuar",
+    "saveAssessment": "Guardar mi evaluación",
+    "summaryTitle": "Resumen de la sesión",
+    "selfScoreLabel": "Tu autoevaluación media",
+    "answeredOf": "Respondiste {{answered}} de {{total}} preguntas.",
+    "nextFocus": "En qué trabajar ahora",
+    "advice": {
+      "structure": "Estructura tus respuestas: STAR para preguntas sobre experiencias y presente-pasado-futuro para presentarte.",
+      "relevance": "Responde primero exactamente a la pregunta y luego añade contexto. Lee lo que el entrevistador quiere saber en cada pregunta.",
+      "examples": "Prepara dos o tres historias reales con cifras que puedas reutilizar en varias preguntas.",
+      "clarity": "Busca respuestas de uno a dos minutos y elimina los detalles que no apoyan tu idea.",
+      "confidence": "Practica en voz alta y repite sesiones: la seguridad crece con la repetición."
+    },
+    "transparency": "Esta puntuación es tu propia evaluación según la tabla anterior. InterviewReady no evalúa tus respuestas automáticamente.",
+    "newSession": "Nueva sesión",
+    "notFound": "Sesión no encontrada"
+  },
+  "builder": {
+    "intro": "Construye buenas respuestas paso a paso, guarda borradores y compáralos con respuestas de ejemplo.",
+    "new": "Nueva respuesta",
+    "noAnswers": "Aún no tienes respuestas guardadas",
+    "noAnswersHint": "Crea una nueva respuesta o abre una pregunta y toca «Construir mi respuesta».",
+    "draft": "Borrador",
+    "final": "Final",
+    "empty": "Tu respuesta aparecerá aquí mientras escribes.",
+    "untitled": "Respuesta sin título",
+    "titleLabel": "Título de la respuesta",
+    "titlePlaceholder": "Pregunta o título",
+    "type": "Tipo de pregunta",
+    "context": "Puesto, nivel y competencia",
+    "structure": {
+      "star": "Conductual (STAR)",
+      "motivation": "Motivación",
+      "present-past-future": "Presentarte",
+      "technical": "Técnica",
+      "negotiation": "Salario y negociación"
+    },
+    "structureHint": {
+      "star": "Situación, Tarea, Acción, Resultado: cuenta una historia real y dedica la mayor parte a tus acciones.",
+      "motivation": "Por qué tú y por qué este puesto: motivación, experiencia relevante, competencias y aportación.",
+      "present-past-future": "Quién eres hoy, cómo llegaste aquí y por qué este puesto es tu siguiente paso.",
+      "technical": "Define el concepto, explica cómo funciona, da un ejemplo y comenta las ventajas y desventajas.",
+      "negotiation": "Da un rango investigado, justifícalo, muestra flexibilidad y cierra de forma positiva."
+    },
+    "section": {
+      "situation": {
+        "label": "Situación",
+        "hint": "¿Dónde y cuándo? Da el contexto en una o dos frases."
+      },
+      "task": {
+        "label": "Tarea",
+        "hint": "¿Cuál era tu responsabilidad u objetivo?"
+      },
+      "action": {
+        "label": "Acción",
+        "hint": "¿Qué hiciste TÚ, paso a paso? Es la parte más importante."
+      },
+      "result": {
+        "label": "Resultado",
+        "hint": "¿Qué cambió? Usa cifras si puedes y di qué aprendiste."
+      },
+      "motivation": {
+        "label": "Motivación",
+        "hint": "¿Qué te atrae concretamente de este puesto o empresa?"
+      },
+      "experience": {
+        "label": "Experiencia relevante",
+        "hint": "¿Qué experiencia anterior te prepara para ello?"
+      },
+      "skills": {
+        "label": "Competencias",
+        "hint": "¿Qué dos o tres competencias usarás en este puesto?"
+      },
+      "contribution": {
+        "label": "Aportación esperada",
+        "hint": "¿Qué aportarás en los primeros meses?"
+      },
+      "present": {
+        "label": "Presente",
+        "hint": "Tu puesto o situación actual y una fortaleza clave."
+      },
+      "past": {
+        "label": "Pasado",
+        "hint": "La experiencia que te trajo aquí, con un logro."
+      },
+      "future": {
+        "label": "Futuro",
+        "hint": "Por qué este puesto es el siguiente paso lógico para ti."
+      },
+      "definition": {
+        "label": "Definición",
+        "hint": "Define el concepto en una o dos frases sencillas."
+      },
+      "how": {
+        "label": "Cómo funciona",
+        "hint": "Explica el mecanismo o los pasos principales."
+      },
+      "example": {
+        "label": "Ejemplo",
+        "hint": "Un ejemplo concreto, idealmente de tu propio trabajo."
+      },
+      "tradeoffs": {
+        "label": "Ventajas y desventajas",
+        "hint": "Límites, alternativas o cuándo no lo usarías."
+      },
+      "range": {
+        "label": "Rango",
+        "hint": "Tu rango investigado para este puesto y ubicación."
+      },
+      "justification": {
+        "label": "Justificación",
+        "hint": "Por qué: datos del mercado, experiencia, alcance del puesto."
+      },
+      "flexibility": {
+        "label": "Flexibilidad",
+        "hint": "Qué más importa: beneficios, teletrabajo, formación, fecha de revisión."
+      },
+      "close": {
+        "label": "Cierre",
+        "hint": "Una frase positiva que deje abierta la conversación."
+      }
+    },
+    "preview": "Vista previa",
+    "stats": "{{words}} palabras · unos {{seconds}} s en voz alta",
+    "check": {
+      "complete": "Todas las secciones están completas",
+      "length": "Entre 30 segundos y 2,5 minutos en voz alta",
+      "result-measurable": "El resultado incluye una cifra o un efecto medible",
+      "first-person": "La acción describe lo que hiciste tú («yo»)"
+    },
+    "checksNote": "Comprobaciones sencillas de redacción, no una evaluación de tu respuesta.",
+    "compare": "Comparar con la respuesta de ejemplo",
+    "hideExample": "Ocultar el ejemplo",
+    "saveDraft": "Guardar borrador",
+    "markFinal": "Marcar como final",
+    "deleteTitle": "¿Eliminar esta respuesta?",
+    "deleteBody": "Esta acción no se puede deshacer."
+  },
+  "flashcards": {
+    "intro": "Repasa {{count}} tarjetas: primero las pendientes de repaso y luego otras nuevas.",
+    "question": "Pregunta",
+    "answer": "Respuesta clave",
+    "tapToReveal": "Piensa tu respuesta y luego toca para verla.",
+    "reveal": "Mostrar la respuesta",
+    "howWell": "¿Qué tan bien la recordabas?",
+    "grade": {
+      "again": "Otra vez",
+      "hard": "Difícil",
+      "good": "Bien",
+      "easy": "Fácil"
+    },
+    "openQuestion": "Abrir la pregunta completa",
+    "progress": "Tarjeta {{current}} de {{total}}",
+    "doneTitle": "Mazo completado",
+    "doneBody_one": "Repasaste {{count}} tarjeta. Volverá en el momento adecuado.",
+    "doneBody_other": "Repasaste {{count}} tarjetas. Volverán en el momento adecuado.",
+    "empty": "No hay tarjetas disponibles para esta selección.",
+    "again": "Nuevo mazo"
+  },
+  "path": {
+    "title": "Plan de preparación",
+    "headline_one": "Prepárate en {{count}} día",
+    "headline_other": "Prepárate en {{count}} días",
+    "headlineRole_one": "Prepara una entrevista de {{role}} en {{count}} día",
+    "headlineRole_other": "Prepara una entrevista de {{role}} en {{count}} días",
+    "intro": "Cada día: preguntas para estudiar y un cuestionario corto. Cada pocos días: repaso con tarjetas. Cada semana: una simulación de entrevista.",
+    "disclaimer": "Un plan ayuda a prepararse con regularidad; no puede garantizar el resultado de una entrevista.",
+    "create": "Crear mi plan",
+    "generalTitle": "Preparación general para entrevistas",
+    "progress": "{{done}} de {{total}} tareas completadas",
+    "completed": "Plan completado",
+    "today": "Hoy · día {{day}}",
+    "day": "Día {{day}}",
+    "task": {
+      "study": "Estudiar preguntas",
+      "quiz": "Cuestionario",
+      "review": "Repaso con tarjetas",
+      "mock": "Simulación de entrevista"
+    },
+    "taskHint": {
+      "quiz": "Cuestionario mixto",
+      "review": "Repasa lo que estudiaste",
+      "mock": "Simula una entrevista real"
+    },
+    "restart": "Empezar un nuevo plan"
   }
 }

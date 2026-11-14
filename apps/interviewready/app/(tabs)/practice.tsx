@@ -7,7 +7,7 @@ import { useAsync } from '@/hooks/useAsync';
 import { clock } from '@/services/clock';
 
 interface Mode {
-  key: 'quiz' | 'review' | 'mock' | 'builder' | 'flashcards';
+  key: 'path' | 'quiz' | 'review' | 'mock' | 'builder' | 'flashcards';
   icon: IconName;
   available: boolean;
   onPress?: () => void;
@@ -19,12 +19,12 @@ export default function PracticeScreen() {
   const { data: due } = useAsync(() => repos().review.dueCount('quiz', clock.today()), []);
 
   const modes: Mode[] = [
+    { key: 'path', icon: 'map-outline', available: true, onPress: () => router.push('/path') },
+    { key: 'mock', icon: 'videocam-outline', available: true, onPress: () => router.push('/mock') },
+    { key: 'builder', icon: 'construct-outline', available: true, onPress: () => router.push('/builder') },
     { key: 'quiz', icon: 'help-circle-outline', available: true, onPress: () => router.push('/quiz') },
+    { key: 'flashcards', icon: 'albums-outline', available: true, onPress: () => router.push('/flashcards') },
     { key: 'review', icon: 'refresh-circle-outline', available: true, onPress: () => router.push({ pathname: '/quiz', params: { mode: 'review' } }) },
-    // Phase 4 features: shown honestly as not yet available.
-    { key: 'mock', icon: 'videocam-outline', available: false },
-    { key: 'builder', icon: 'construct-outline', available: false },
-    { key: 'flashcards', icon: 'albums-outline', available: false },
   ];
 
   return (
@@ -41,7 +41,6 @@ export default function PracticeScreen() {
               <Row gap={2} wrap>
                 <Text variant="subheading">{t(`practice.${m.key}.title`)}</Text>
                 {m.key === 'review' && (due ?? 0) > 0 ? <Badge label={t('practice.dueCount', { count: due ?? 0 })} tone="warning" /> : null}
-                {!m.available ? <Badge label={t('practice.soon')} tone="neutral" /> : null}
               </Row>
               <Text variant="bodySmall" tone="muted">
                 {t(`practice.${m.key}.body`)}
