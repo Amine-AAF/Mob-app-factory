@@ -24,14 +24,13 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
 
 ## Fonctionnalités en cours
 
-- Bibliothèque de questions (lots par catégorie, EN/FR/ES complets) : 355/500 questions validées.
+- Bibliothèque de questions (lots par catégorie, EN/FR/ES complets) : 440/500 questions validées.
   Méthode : rédaction EN + core, traduction FR/ES par sous-agents selon `src/content/CONTENT_BRIEF.md`,
   puis validation automatique (`src/__tests__/content.test.ts`).
 
 ## Fonctionnalités restantes
 
-- Phase 3 contenu : AI & Data (45), Job-specific (60),
-  HR & Salary (40) ; 150+ quiz ; parcours métiers.
+- Phase 3 contenu : Job-specific (60) ; 150+ quiz ; parcours métiers.
 - Phase 3 MVP : onboarding, dashboard, question du jour, exploration, recherche/filtres, favoris, notes.
 - Phase 4 : Mock Interview, Answer Builder, flashcards, quiz, learning paths.
 - Phase 5 : statistiques, historique, révision espacée.
@@ -49,7 +48,9 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
 | Frontend (`fe`, JS/TS/React/React Native/CSS/perf) | 50 (35 / 15) | 0 |
 | Databases (`db`, SQL/PostgreSQL/MongoDB) | 40 (26 / 14) | 0 |
 | Cloud & DevOps (`ops`) | 45 (30 / 15) | 0 |
-| **Total** | **355 (242 / 113)**, chacune en EN/FR/ES | **0** |
+| AI & Data (`ai`, ML, LLM, RAG, vecteurs, data engineering) | 45 (30 / 15) | 0 |
+| HR & Salary (`hr`) | 40 (28 / 12) | 0 |
+| **Total** | **440 (300 / 140)**, chacune en EN/FR/ES | **0** |
 
 ## Bugs connus
 
@@ -74,6 +75,7 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-13 | Lot contenu 1 : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (170 questions × 3 langues validées) |
 | 2026-11-13 | Lot contenu 2 (Java, Frontend) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (270 questions × 3 langues validées) |
 | 2026-11-14 | Lot contenu 3 (Databases, DevOps) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (355 questions × 3 langues validées) |
+| 2026-11-14 | Lot contenu 4 (AI & Data, HR & Salary) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (440 questions × 3 langues validées) |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication

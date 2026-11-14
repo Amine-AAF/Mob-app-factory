@@ -1,10 +1,12 @@
 import type { QuestionPack, QuizPack } from '@/types/content';
 
+import { pack as aiData } from './ai-data';
 import { pack as behavioral } from './behavioral';
 import { pack as databases } from './databases';
 import { pack as devops } from './devops';
 import { pack as frontend } from './frontend';
 import { pack as general } from './general';
+import { pack as hrSalary } from './hr-salary';
 import { pack as java } from './java';
 import { pack as software } from './software';
 
@@ -17,6 +19,6 @@ import { pack as software } from './software';
  * Add a pack here once its validation passes (src/__tests__/content.test.ts).
  * Writing and translation rules: src/content/CONTENT_BRIEF.md.
  */
-export const questionPacks: QuestionPack[] = [general, behavioral, software, java, frontend, databases, devops];
+export const questionPacks: QuestionPack[] = [general, behavioral, software, java, frontend, databases, devops, aiData, hrSalary];
 
 export const quizPacks: QuizPack[] = [];
