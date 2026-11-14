@@ -256,7 +256,8 @@
       "invalid_status": "Elige un estado.",
       "destination_city_required": "Cada destino necesita una ciudad.",
       "not_found": "Este viaje ya no existe.",
-      "generic": "Algo salió mal. Tus datos no se han modificado."
+      "generic": "Algo salió mal. Tus datos no se han modificado.",
+      "currency_has_expenses": "Este viaje ya tiene gastos convertidos a su moneda. Mantén la moneda o elimina primero los gastos."
     }
   },
   "tripDetail": {
@@ -530,6 +531,144 @@
       "invalid_category": "Elige una categoría.",
       "invalid_priority": "Elige una prioridad.",
       "not_found": "Esta lista ya no existe."
+    }
+  },
+  "budget": {
+    "spentTotal": "Gastado hasta ahora",
+    "ofPlanned": "de {{planned}} previstos · {{percent}}",
+    "remaining": "Quedan {{amount}}",
+    "over": "{{amount}} por encima del presupuesto",
+    "noPlan": "Todavía no hay presupuesto. Define uno para ver lo que queda.",
+    "plan": "Planificar presupuesto",
+    "planHint": "Importes en {{currency}}, la moneda del viaje. Todos los campos son opcionales.",
+    "total": "Presupuesto total",
+    "categoriesSum": "Las categorías suman {{amount}}."
+  },
+  "insights": {
+    "title": "Análisis",
+    "empty": "El análisis aparece cuando registras gastos. No se estima nada.",
+    "biggest": "Categoría principal: {{category}} ({{percent}} del gasto)",
+    "average_one": "Gasto medio diario: {{amount}} (en {{count}} día)",
+    "average_many": "Gasto medio diario: {{amount}} (en {{count}} días)",
+    "average_other": "Gasto medio diario: {{amount}} (en {{count}} días)",
+    "remaining": "Presupuesto restante: {{amount}}",
+    "allowance": "Para cumplir el presupuesto: unos {{amount}} por día restante",
+    "byDay": "Gasto por día"
+  },
+  "shared": {
+    "title": "Gastos compartidos",
+    "empty": "Reparte un gasto entre viajeros para ver quién debe a quién.",
+    "getsBack": "recupera {{amount}}",
+    "owes": "debe {{amount}}",
+    "settled": "al día",
+    "suggested": "Reembolsos sugeridos",
+    "transfer": "{{from}} → {{to}}: {{amount}}",
+    "noPayment": "TravelWise solo calcula los saldos. Nunca realiza ni solicita pagos."
+  },
+  "expenses": {
+    "title": "Gastos",
+    "add": "Añadir un gasto",
+    "newTitle": "Nuevo gasto",
+    "editTitle": "Editar gasto",
+    "emptyTitle": "Todavía no hay gastos",
+    "emptyMessage": "Registra lo que gastas para seguir tu presupuesto, incluso sin conexión.",
+    "noMatch": "Ningún gasto coincide con estos filtros.",
+    "search": "Buscar",
+    "allCategories": "Todas",
+    "amount": "Importe",
+    "currency": "Moneda",
+    "rate": "Tipo de cambio: 1 {{from}} = ? {{to}}",
+    "usingSavedRate": "Se usa tu tipo guardado del {{date}}. Escribe otro tipo si quieres cambiarlo.",
+    "savedRateAvailable": "Tipo guardado: {{rate}} ({{date}}).",
+    "noSavedRate": "No hay ningún tipo guardado para esta moneda: escribe el que obtuviste.",
+    "rememberRate": "Guardar este tipo para el viaje",
+    "category": "Categoría",
+    "date": "Fecha",
+    "description": "Descripción",
+    "city": "Ciudad",
+    "paymentMethod": "Medio de pago",
+    "paymentHint": "Solo una etiqueta (p. ej. «Tarjeta»). Nunca escribas un número de tarjeta.",
+    "payment": {
+      "cash": "Efectivo",
+      "card": "Tarjeta",
+      "transfer": "Transferencia",
+      "other": "Otro"
+    },
+    "paidByLabel": "Pagado por",
+    "paidBy": "pagado por {{name}}",
+    "split": "Reparto",
+    "splitMode": {
+      "none": "No compartido",
+      "equal": "A partes iguales",
+      "custom": "Importes personalizados"
+    },
+    "customTotal": "Partes: {{total}} de {{amount}}",
+    "sharedBetween_one": "Compartido por {{count}}",
+    "sharedBetween_many": "Compartido por {{count}}",
+    "sharedBetween_other": "Compartido por {{count}}",
+    "notes": "Notas",
+    "deleteTitle": "¿Eliminar este gasto?",
+    "sort": {
+      "date_desc": "Más recientes",
+      "date_asc": "Más antiguos",
+      "amount_desc": "Más altos",
+      "amount_asc": "Más bajos"
+    },
+    "errors": {
+      "invalid_amount": "Introduce un importe válido.",
+      "invalid_currency": "Elige una moneda.",
+      "invalid_rate": "Introduce el tipo de cambio (un número positivo).",
+      "invalid_date": "Elige una fecha válida.",
+      "invalid_category": "Elige una categoría.",
+      "invalid_split": "Elige cómo repartir.",
+      "payer_required": "Indica quién pagó para compartir este gasto.",
+      "unknown_participant": "Este viajero ya no forma parte del viaje.",
+      "looks_like_card_number": "Parece un número de tarjeta. Nunca guardes datos de pago aquí.",
+      "too_long": "Este texto es demasiado largo.",
+      "trip_not_found": "Este viaje ya no existe.",
+      "not_found": "Este gasto ya no existe.",
+      "no_participants": "Selecciona al menos un viajero.",
+      "shares_mismatch": "Las partes deben sumar exactamente el importe.",
+      "negative_share": "Las partes deben ser importes positivos."
+    }
+  },
+  "converter": {
+    "title": "Conversor de divisas",
+    "open": "Conversor de divisas",
+    "manualNotice": "Modo sin conexión: introduce el tipo de cambio que obtuviste (banco, casa de cambio, app de la tarjeta). TravelWise no muestra tipos en tiempo real.",
+    "from": "De",
+    "to": "A",
+    "swap": "Intercambiar monedas",
+    "amount": "Importe ({{currency}})",
+    "rateLabel": "1 {{from}} = ? {{to}}",
+    "rateDate": "Fecha del tipo",
+    "forTrip": "Solo para {{name}}",
+    "forAll": "Para todos los viajes",
+    "saveRate": "Guardar este tipo",
+    "rateSaved": "Tipo guardado.",
+    "sameCurrency": "Elige dos monedas diferentes.",
+    "rateInfo": "1 {{from}} = {{rate}} {{to}} · {{date}} · {{source}}",
+    "inverted": "(calculado a partir de tu tipo inverso guardado)",
+    "noRate": "No hay ningún tipo guardado para {{from}} → {{to}}. Introduce uno arriba.",
+    "result": "Resultado",
+    "bankWarning": "Orientativo: el tipo que aplique realmente tu banco o tarjeta puede ser distinto y puede haber comisiones.",
+    "addToHistory": "Añadir al historial",
+    "savedRates": "Tipos guardados",
+    "tripRate": "este viaje",
+    "history": "Conversiones recientes",
+    "clearHistory": "Borrar",
+    "historyRate": "tipo {{rate}} del {{date}}",
+    "sources": {
+      "manual": "introducido por ti",
+      "other": "fuente externa"
+    },
+    "errors": {
+      "invalid_currency": "Elige una moneda.",
+      "same_currency": "Elige dos monedas diferentes.",
+      "invalid_rate": "Introduce un tipo de cambio positivo.",
+      "invalid_date": "Elige una fecha válida.",
+      "invalid_amount": "Introduce un importe válido.",
+      "no_rate": "Introduce o guarda primero un tipo de cambio."
     }
   }
 }

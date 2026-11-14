@@ -249,7 +249,8 @@
       "invalid_status": "Choose a status.",
       "destination_city_required": "Each destination needs a city.",
       "not_found": "This trip no longer exists.",
-      "generic": "Something went wrong. Your data was not changed."
+      "generic": "Something went wrong. Your data was not changed.",
+      "currency_has_expenses": "This trip already has expenses converted to its currency. Keep the currency, or delete the expenses first."
     }
   },
   "tripDetail": {
@@ -520,6 +521,142 @@
       "invalid_category": "Choose a category.",
       "invalid_priority": "Choose a priority.",
       "not_found": "This list no longer exists."
+    }
+  },
+  "budget": {
+    "spentTotal": "Spent so far",
+    "ofPlanned": "of {{planned}} planned · {{percent}}",
+    "remaining": "{{amount}} left",
+    "over": "{{amount}} over budget",
+    "noPlan": "No budget planned yet. Set one to follow what is left.",
+    "plan": "Plan budget",
+    "planHint": "Amounts in {{currency}}, the trip currency. All fields are optional.",
+    "total": "Total budget",
+    "categoriesSum": "Categories add up to {{amount}}."
+  },
+  "insights": {
+    "title": "Insights",
+    "empty": "Insights appear once you record expenses. Nothing is estimated.",
+    "biggest": "Biggest category: {{category}} ({{percent}} of spending)",
+    "average_one": "Average daily spending: {{amount}} (over {{count}} day)",
+    "average_other": "Average daily spending: {{amount}} (over {{count}} days)",
+    "remaining": "Remaining budget: {{amount}}",
+    "allowance": "To stay on budget: about {{amount}} per remaining day",
+    "byDay": "Spending by day"
+  },
+  "shared": {
+    "title": "Shared expenses",
+    "empty": "Split an expense between travellers to see who owes whom.",
+    "getsBack": "gets back {{amount}}",
+    "owes": "owes {{amount}}",
+    "settled": "settled",
+    "suggested": "Suggested reimbursements",
+    "transfer": "{{from}} → {{to}}: {{amount}}",
+    "noPayment": "TravelWise only calculates balances. It never makes or requests any payment."
+  },
+  "expenses": {
+    "title": "Expenses",
+    "add": "Add an expense",
+    "newTitle": "New expense",
+    "editTitle": "Edit expense",
+    "emptyTitle": "No expenses yet",
+    "emptyMessage": "Record what you spend to follow your budget, even offline.",
+    "noMatch": "No expense matches these filters.",
+    "search": "Search",
+    "allCategories": "All",
+    "amount": "Amount",
+    "currency": "Currency",
+    "rate": "Exchange rate: 1 {{from}} = ? {{to}}",
+    "usingSavedRate": "Using your saved rate from {{date}}. Type a rate to use another one.",
+    "savedRateAvailable": "Saved rate: {{rate}} ({{date}}).",
+    "noSavedRate": "No saved rate for this currency: type the rate you got.",
+    "rememberRate": "Save this rate for the trip",
+    "category": "Category",
+    "date": "Date",
+    "description": "Description",
+    "city": "City",
+    "paymentMethod": "Payment method",
+    "paymentHint": "A label only (e.g. \"Card\"). Never enter a card number.",
+    "payment": {
+      "cash": "Cash",
+      "card": "Card",
+      "transfer": "Transfer",
+      "other": "Other"
+    },
+    "paidByLabel": "Paid by",
+    "paidBy": "paid by {{name}}",
+    "split": "Split",
+    "splitMode": {
+      "none": "Not shared",
+      "equal": "Equally",
+      "custom": "Custom amounts"
+    },
+    "customTotal": "Shares: {{total}} of {{amount}}",
+    "sharedBetween_one": "Shared by {{count}}",
+    "sharedBetween_other": "Shared by {{count}}",
+    "notes": "Notes",
+    "deleteTitle": "Delete this expense?",
+    "sort": {
+      "date_desc": "Newest",
+      "date_asc": "Oldest",
+      "amount_desc": "Highest",
+      "amount_asc": "Lowest"
+    },
+    "errors": {
+      "invalid_amount": "Enter a valid amount.",
+      "invalid_currency": "Choose a currency.",
+      "invalid_rate": "Enter the exchange rate (a positive number).",
+      "invalid_date": "Choose a valid date.",
+      "invalid_category": "Choose a category.",
+      "invalid_split": "Choose how to split.",
+      "payer_required": "Choose who paid to share this expense.",
+      "unknown_participant": "This traveller is no longer part of the trip.",
+      "looks_like_card_number": "This looks like a card number. Never store payment details here.",
+      "too_long": "This text is too long.",
+      "trip_not_found": "This trip no longer exists.",
+      "not_found": "This expense no longer exists.",
+      "no_participants": "Select at least one traveller.",
+      "shares_mismatch": "The shares must add up exactly to the amount.",
+      "negative_share": "Shares must be positive amounts."
+    }
+  },
+  "converter": {
+    "title": "Currency converter",
+    "open": "Currency converter",
+    "manualNotice": "Offline mode: enter the exchange rate you got (bank, exchange office, card app). TravelWise does not show live rates.",
+    "from": "From",
+    "to": "To",
+    "swap": "Swap currencies",
+    "amount": "Amount ({{currency}})",
+    "rateLabel": "1 {{from}} = ? {{to}}",
+    "rateDate": "Rate date",
+    "forTrip": "For {{name}} only",
+    "forAll": "For all trips",
+    "saveRate": "Save this rate",
+    "rateSaved": "Rate saved.",
+    "sameCurrency": "Choose two different currencies.",
+    "rateInfo": "1 {{from}} = {{rate}} {{to}} · {{date}} · {{source}}",
+    "inverted": "(calculated from your saved reverse rate)",
+    "noRate": "No rate saved for {{from}} → {{to}}. Enter one above.",
+    "result": "Result",
+    "bankWarning": "Indicative only: the rate actually applied by your bank or card may differ, and fees may apply.",
+    "addToHistory": "Add to history",
+    "savedRates": "Saved rates",
+    "tripRate": "this trip",
+    "history": "Recent conversions",
+    "clearHistory": "Clear",
+    "historyRate": "rate {{rate}} of {{date}}",
+    "sources": {
+      "manual": "entered by you",
+      "other": "external source"
+    },
+    "errors": {
+      "invalid_currency": "Choose a currency.",
+      "same_currency": "Choose two different currencies.",
+      "invalid_rate": "Enter a positive exchange rate.",
+      "invalid_date": "Choose a valid date.",
+      "invalid_amount": "Enter a valid amount.",
+      "no_rate": "Enter or save an exchange rate first."
     }
   }
 }

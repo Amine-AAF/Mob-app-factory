@@ -81,5 +81,14 @@ Local SQLite database `travelwise.db` (expo-sqlite), schema in
 - `bookings` (Phase 3): CRUD with typed validation, chronological list (undated last), upcoming (non-cancelled).
 - `packing` (Phase 3): trip lists, built-in templates (content/packingCatalog.ts, names copied in the user language),
   personal templates (`is_template = 1`, no trip, survive trip deletion), items CRUD, packed toggle, reset.
+- `expenses` (Phase 4): CRUD with shares (equal / custom, validated in minor units), filter / search / sort, category
+  budget, day budgets. `trip_amount_minor = convert(amount, rate_to_trip)` is computed once at entry with the user's
+  rate; the trip currency is therefore locked once a trip has expenses.
+- `currency` (Phase 4): manual rates (`source = manual`, rate date kept), best-rate lookup (trip > most recent >
+  inverse), conversion history capped at 50. `RateProvider` (features/currency/rates.ts) is the seam for a future API.
+
+Shared balances are computed on the fly (features/shared-expenses/split.ts): each shared expense's trip-currency
+amount is allocated to participants proportionally to their shares with the largest-remainder method, so balances
+always sum to exactly zero; settlements are suggested greedily (at most n-1 transfers).
 
 Later phases add one repository per feature (itinerary, bookings, expenses…) on the same schema.

@@ -1,4 +1,4 @@
-import { Card, EmptyState, ProgressBar, Row, Screen, Stack, Text } from '@factory/design-system';
+import { Button, Card, EmptyState, ProgressBar, Row, Screen, Stack, Text } from '@factory/design-system';
 import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
@@ -6,7 +6,7 @@ import { useTripsOverview } from '@/features/trips/useTrips';
 import { fmt } from '@/i18n';
 import { budgetRatio } from '@/utils/money';
 
-/** Cross-trip budget overview, from recorded expenses only (Phase 4 adds expense entry). */
+/** Cross-trip budget overview, from recorded expenses only, plus the currency converter. */
 export default function BudgetScreen() {
   const { t } = useTranslation();
   const { data } = useTripsOverview();
@@ -17,6 +17,7 @@ export default function BudgetScreen() {
       <Text variant="title" accessibilityRole="header">
         {t('budgetTab.title')}
       </Text>
+      <Button label={t('converter.open')} variant="secondary" icon="swap-horizontal-outline" onPress={() => router.push('/converter')} testID="budget-tab-converter" />
       {data && trips.length === 0 ? <EmptyState icon="wallet-outline" title={t('budgetTab.empty')} /> : null}
       <Stack gap={3}>
         {trips.map((trip) => {

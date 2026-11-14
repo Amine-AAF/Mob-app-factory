@@ -256,7 +256,8 @@
       "invalid_status": "Choisissez un statut.",
       "destination_city_required": "Chaque destination doit avoir une ville.",
       "not_found": "Ce voyage n'existe plus.",
-      "generic": "Une erreur s'est produite. Vos données n'ont pas été modifiées."
+      "generic": "Une erreur s'est produite. Vos données n'ont pas été modifiées.",
+      "currency_has_expenses": "Ce voyage a déjà des dépenses converties dans sa devise. Gardez la devise, ou supprimez d’abord les dépenses."
     }
   },
   "tripDetail": {
@@ -530,6 +531,144 @@
       "invalid_category": "Choisissez une catégorie.",
       "invalid_priority": "Choisissez une priorité.",
       "not_found": "Cette liste n'existe plus."
+    }
+  },
+  "budget": {
+    "spentTotal": "Dépensé à ce jour",
+    "ofPlanned": "sur {{planned}} prévus · {{percent}}",
+    "remaining": "Reste {{amount}}",
+    "over": "{{amount}} de dépassement",
+    "noPlan": "Aucun budget prévu. Définissez-en un pour suivre ce qu'il reste.",
+    "plan": "Planifier le budget",
+    "planHint": "Montants en {{currency}}, la devise du voyage. Tous les champs sont facultatifs.",
+    "total": "Budget total",
+    "categoriesSum": "Total des catégories : {{amount}}."
+  },
+  "insights": {
+    "title": "Analyse",
+    "empty": "L'analyse apparaît dès que vous enregistrez des dépenses. Rien n'est estimé.",
+    "biggest": "Plus gros poste : {{category}} ({{percent}} des dépenses)",
+    "average_one": "Dépense moyenne par jour : {{amount}} (sur {{count}} jour)",
+    "average_many": "Dépense moyenne par jour : {{amount}} (sur {{count}} jours)",
+    "average_other": "Dépense moyenne par jour : {{amount}} (sur {{count}} jours)",
+    "remaining": "Budget restant : {{amount}}",
+    "allowance": "Pour tenir le budget : environ {{amount}} par jour restant",
+    "byDay": "Dépenses par jour"
+  },
+  "shared": {
+    "title": "Dépenses partagées",
+    "empty": "Partagez une dépense entre voyageurs pour voir qui doit combien à qui.",
+    "getsBack": "doit recevoir {{amount}}",
+    "owes": "doit {{amount}}",
+    "settled": "à jour",
+    "suggested": "Remboursements suggérés",
+    "transfer": "{{from}} → {{to}} : {{amount}}",
+    "noPayment": "TravelWise calcule seulement les soldes. L'application n'effectue ni ne demande aucun paiement."
+  },
+  "expenses": {
+    "title": "Dépenses",
+    "add": "Ajouter une dépense",
+    "newTitle": "Nouvelle dépense",
+    "editTitle": "Modifier la dépense",
+    "emptyTitle": "Aucune dépense",
+    "emptyMessage": "Notez vos dépenses pour suivre votre budget, même hors ligne.",
+    "noMatch": "Aucune dépense ne correspond à ces filtres.",
+    "search": "Rechercher",
+    "allCategories": "Toutes",
+    "amount": "Montant",
+    "currency": "Devise",
+    "rate": "Taux de change : 1 {{from}} = ? {{to}}",
+    "usingSavedRate": "Taux enregistré du {{date}} utilisé. Saisissez un taux pour en utiliser un autre.",
+    "savedRateAvailable": "Taux enregistré : {{rate}} ({{date}}).",
+    "noSavedRate": "Aucun taux enregistré pour cette devise : saisissez celui que vous avez obtenu.",
+    "rememberRate": "Enregistrer ce taux pour le voyage",
+    "category": "Catégorie",
+    "date": "Date",
+    "description": "Description",
+    "city": "Ville",
+    "paymentMethod": "Moyen de paiement",
+    "paymentHint": "Un simple libellé (ex. « Carte »). N'indiquez jamais de numéro de carte.",
+    "payment": {
+      "cash": "Espèces",
+      "card": "Carte",
+      "transfer": "Virement",
+      "other": "Autre"
+    },
+    "paidByLabel": "Payé par",
+    "paidBy": "payé par {{name}}",
+    "split": "Répartition",
+    "splitMode": {
+      "none": "Non partagée",
+      "equal": "À parts égales",
+      "custom": "Montants personnalisés"
+    },
+    "customTotal": "Parts : {{total}} sur {{amount}}",
+    "sharedBetween_one": "Partagée par {{count}}",
+    "sharedBetween_many": "Partagée par {{count}}",
+    "sharedBetween_other": "Partagée par {{count}}",
+    "notes": "Notes",
+    "deleteTitle": "Supprimer cette dépense ?",
+    "sort": {
+      "date_desc": "Plus récentes",
+      "date_asc": "Plus anciennes",
+      "amount_desc": "Plus élevées",
+      "amount_asc": "Plus faibles"
+    },
+    "errors": {
+      "invalid_amount": "Saisissez un montant valide.",
+      "invalid_currency": "Choisissez une devise.",
+      "invalid_rate": "Saisissez le taux de change (un nombre positif).",
+      "invalid_date": "Choisissez une date valide.",
+      "invalid_category": "Choisissez une catégorie.",
+      "invalid_split": "Choisissez une répartition.",
+      "payer_required": "Indiquez qui a payé pour partager cette dépense.",
+      "unknown_participant": "Ce voyageur ne fait plus partie du voyage.",
+      "looks_like_card_number": "Cela ressemble à un numéro de carte. N'enregistrez jamais de données de paiement ici.",
+      "too_long": "Ce texte est trop long.",
+      "trip_not_found": "Ce voyage n'existe plus.",
+      "not_found": "Cette dépense n'existe plus.",
+      "no_participants": "Sélectionnez au moins un voyageur.",
+      "shares_mismatch": "La somme des parts doit être exactement égale au montant.",
+      "negative_share": "Les parts doivent être des montants positifs."
+    }
+  },
+  "converter": {
+    "title": "Convertisseur de devises",
+    "open": "Convertisseur de devises",
+    "manualNotice": "Mode hors ligne : saisissez le taux obtenu (banque, bureau de change, application de carte). TravelWise n'affiche pas de taux en temps réel.",
+    "from": "De",
+    "to": "Vers",
+    "swap": "Inverser les devises",
+    "amount": "Montant ({{currency}})",
+    "rateLabel": "1 {{from}} = ? {{to}}",
+    "rateDate": "Date du taux",
+    "forTrip": "Pour {{name}} uniquement",
+    "forAll": "Pour tous les voyages",
+    "saveRate": "Enregistrer ce taux",
+    "rateSaved": "Taux enregistré.",
+    "sameCurrency": "Choisissez deux devises différentes.",
+    "rateInfo": "1 {{from}} = {{rate}} {{to}} · {{date}} · {{source}}",
+    "inverted": "(calculé à partir de votre taux inverse enregistré)",
+    "noRate": "Aucun taux enregistré pour {{from}} → {{to}}. Saisissez-en un ci-dessus.",
+    "result": "Résultat",
+    "bankWarning": "Indicatif : le taux réellement appliqué par votre banque ou votre carte peut être différent, et des frais peuvent s’ajouter.",
+    "addToHistory": "Ajouter à l'historique",
+    "savedRates": "Taux enregistrés",
+    "tripRate": "ce voyage",
+    "history": "Conversions récentes",
+    "clearHistory": "Effacer",
+    "historyRate": "taux {{rate}} du {{date}}",
+    "sources": {
+      "manual": "saisi par vous",
+      "other": "source externe"
+    },
+    "errors": {
+      "invalid_currency": "Choisissez une devise.",
+      "same_currency": "Choisissez deux devises différentes.",
+      "invalid_rate": "Saisissez un taux de change positif.",
+      "invalid_date": "Choisissez une date valide.",
+      "invalid_amount": "Saisissez un montant valide.",
+      "no_rate": "Saisissez ou enregistrez d'abord un taux de change."
     }
   }
 }

@@ -48,6 +48,22 @@ Phase 3 — MVP (itinéraire, réservations, bagages) :
 - Overview du voyage : programme du jour, prochaines activités, réservations à venir (données réelles uniquement).
 - Sélecteur de date calendrier en JS pur (`DateField`, sans dépendance native), champ d'heure normalisé (`TimeField`).
 
+Phase 4 — Gestion financière :
+- Budget planning : budget total + 6 catégories (transport, hébergement, repas, activités, shopping, divers),
+  prévu / dépensé / restant / % consommé, par catégorie et au total ; budget estimé par jour de l'itinéraire.
+- Expense tracking : montant, devise, catégorie, date, description, ville, moyen de paiement (libellé seulement,
+  numéros de carte refusés), notes ; modification, suppression, historique, filtre par catégorie/payeur/période,
+  recherche, tri (date, montant). Montant converti dans la devise du voyage avec le taux saisi (taux mémorisable).
+  La devise d'un voyage est verrouillée dès qu'il a des dépenses.
+- Shared expenses : payeur, participants, répartition égale (reste au centime près sur les premiers) ou personnalisée
+  (somme exacte exigée), soldes théoriques en devise du voyage (allocation au plus fort reste : jamais de centime
+  perdu), remboursements suggérés (≤ n-1 virements), mention « aucun paiement réel ».
+- Budget insights (données réelles uniquement) : plus gros poste, dépense moyenne par jour, budget restant, montant
+  par jour restant pour tenir le budget, dépenses par jour vs budget du jour.
+- Currency converter : 11 devises, mode manuel/offline (taux saisi, daté, source « saisi par vous », par voyage ou
+  global), taux inverse utilisé si besoin (signalé), historique des 50 dernières conversions, avertissement
+  « le taux bancaire peut différer » ; interface `RateProvider` prête pour une API future (`features/currency/rates.ts`).
+
 ## Fonctionnalités en cours
 
 - —
@@ -56,8 +72,8 @@ Phase 3 — MVP (itinéraire, réservations, bagages) :
 
 - Phase 3 (reste) : réorganisation par glisser-déposer (aujourd'hui : boutons monter/descendre), lier une activité à un lieu
   (Phase 5, table `places`), pièce jointe de réservation (Phase 5, documents).
-- Phase 4 : budget par catégorie, dépenses (filtre/tri/répartition), dépenses partagées + remboursements suggérés,
-  convertisseur manuel (taux saisi, daté, source) + interface `RateProvider` future.
+- Phase 4 (reste) : export CSV des dépenses (Phase 6, Premium), gating Premium « budget détaillé / shared avancées »
+  (Phase 6), provider de taux externe (non intégré volontairement : pas d'API payante par défaut).
 - Phase 5 : documents (expo-document-picker + Photo Picker, copie privée, verrou biométrique facultatif),
   checklist de départ + rappels locaux, lieux (liens geo:/Google Maps), carnet de voyage, notes météo manuelles.
 - Phase 6 : RevenueCat (3 plans), AdMob (bannières/interstitiels/rewarded avec règles d'exclusion), limite free
@@ -68,7 +84,7 @@ Phase 3 — MVP (itinéraire, réservations, bagages) :
 
 ## Bugs connus
 
-- Sections Budget et Journal du voyage, onglet Places et tâches avant départ : écrans « bientôt disponible ».
+- Section Journal du voyage, onglet Places et tâches avant départ : écrans « bientôt disponible ».
 - Le sélecteur de date ouvre le mois courant ou la date minimale : pas de saisie clavier directe d'une date lointaine
   (navigation mois par mois).
 
@@ -110,6 +126,15 @@ Phase 3 — MVP (itinéraire, réservations, bagages) :
     listes depuis modèle, progression, modèles personnels, résumé de préparation.
   - `phase3.ui.test.tsx` : ActivityCard (clair/sombre, sans horaire), BookingCard (référence, incomplète), PackingItems,
     grille calendrier (semaine dimanche/lundi, février bissextile) ; `ui.test.tsx` : TripForm via le calendrier.
+2026-11-14 (Phase 4) :
+- `tsc --noEmit` ✅ · ESLint `apps/travelwise` ✅ 0 problème · `jest --ci` ✅ 8 suites, 136/136 tests.
+  - `phase4.test.ts` : partage égal/proportionnel sans perte, parts personnalisées, soldes à somme nulle, remboursements
+    (≤ n-1, tout soldé), budget prévu vs réel, insights (moyenne, reste par jour, après voyage, sans dépense, sans dates),
+    dépenses (devise du voyage, conversion MAD/JPY, taux requis, 9 rejets dont numéro de carte), partage égal/perso,
+    soldes multi-devises, filtres/recherche (caractères % échappés)/tri, mise à jour, voyageur retiré, budget par
+    catégorie/jour, devise verrouillée, taux manuels (validation, priorité voyage > récent > inverse), conversion
+    arrondie, historique borné à 50.
+  - `phase4.ui.test.tsx` : ExpenseCard (devise étrangère + équivalent, clair/sombre), BudgetOverview (reste, dépassement, sans budget).
 - Note : machine très chargée (plusieurs sessions) → `testTimeout: 30000` et un rendu de préchauffage dans `ui.test.tsx`.
 
 ## Préparation à la publication

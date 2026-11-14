@@ -2,6 +2,8 @@ import { migrate, wipeTables, type SqlDatabase } from '@factory/storage';
 
 import { USER_TABLES, migrations } from './migrations';
 import { createBookingRepository } from './repositories/bookings';
+import { createCurrencyRepository } from './repositories/currency';
+import { createExpenseRepository } from './repositories/expenses';
 import { createItineraryRepository } from './repositories/itinerary';
 import { createPackingRepository } from './repositories/packing';
 import { createSettingsRepository } from './repositories/settings';
@@ -16,6 +18,8 @@ export interface Repositories {
   itinerary: ReturnType<typeof createItineraryRepository>;
   bookings: ReturnType<typeof createBookingRepository>;
   packing: ReturnType<typeof createPackingRepository>;
+  expenses: ReturnType<typeof createExpenseRepository>;
+  currency: ReturnType<typeof createCurrencyRepository>;
 }
 
 /** Migrates and wires repositories. Pure: works with expo-sqlite or the sql.js test adapter. */
@@ -34,6 +38,8 @@ export function createRepositories(db: SqlDatabase): Repositories {
     itinerary: createItineraryRepository(db),
     bookings: createBookingRepository(db),
     packing: createPackingRepository(db),
+    expenses: createExpenseRepository(db),
+    currency: createCurrencyRepository(db),
   };
 }
 

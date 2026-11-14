@@ -21,6 +21,7 @@ export type TripValidationCode =
   | 'invalid_type'
   | 'invalid_status'
   | 'destination_city_required'
+  | 'currency_has_expenses'
   | 'not_found';
 
 export class TripValidationError extends Error {
@@ -232,6 +233,11 @@ export function createTripRepository(db: SqlDatabase) {
       const existing = await repo.get(id);
       if (!existing) throw new TripValidationError('not_found');
       const data = normalizeTripInput({ ...input, isDemo: existing.isDemo });
+      // Expenses store their amount converted to the trip currency: changing it would make them wrong.
+      if (data.currency !== existing.currency) {
+        const n = await db.getFirstAsync<{ n: number }>('SELECT COUNT(*) AS n FROM expenses WHERE trip_id = ?', [id]);
+        if ((n?.n ?? 0) > 0) throw new TripValidationError('currency_has_expenses', 'currency');
+      }
       await db.withTransactionAsync(async () => {
         await db.runAsync(
           `UPDATE trips SET name = ?, primary_destination = ?, country_code = ?, city = ?, start_date = ?, end_date = ?, time_zone = ?,
