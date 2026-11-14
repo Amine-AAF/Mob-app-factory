@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AdBanner } from '@/components/AdBanner';
 import { CategoryCard, JobCategoryCard } from '@/components/content';
 import { SearchField } from '@/components/SearchField';
 import { matchesRole } from '@/features/questions/search';
@@ -56,6 +57,7 @@ export default function ExploreScreen() {
       {roles.map((r) => (
         <JobCategoryCard key={r} role={r} count={counts.byRole.get(r) ?? 0} selected={r === myRole} onPress={() => router.push({ pathname: '/questions', params: { role: r } })} />
       ))}
+      <AdBanner screen="explore" />
     </Screen>
   );
 }

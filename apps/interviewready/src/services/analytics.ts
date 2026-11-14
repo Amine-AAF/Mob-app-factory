@@ -15,7 +15,8 @@ export type ProductEvent =
   | { name: 'mock_interview_started'; params: { job_role: string; level: string; minutes: number } }
   | { name: 'mock_interview_completed'; params: { job_role: string; answered: number; total: number } }
   | { name: 'premium_viewed'; params: { source: string } }
-  | { name: 'purchase_completed'; params: { plan: string } };
+  | { name: 'purchase_completed'; params: { plan: string } }
+  | { name: 'rewarded_ad_completed'; params: { placement: string } };
 
 const providers: AnalyticsProvider[] = [];
 if (__DEV__ && process.env.NODE_ENV !== 'test') providers.push(createConsoleProvider());

@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AdBanner } from '@/components/AdBanner';
 import { JobCategoryCard, ProgressCard, QuestionCard } from '@/components/content';
 import { allQuestionCores } from '@/content';
 import { repos } from '@/database';
@@ -116,6 +117,7 @@ export default function HomeScreen() {
       ) : (
         <EmptyState icon="time-outline" title={t('home.recentEmpty')} message={t('home.recentEmptyHint')} />
       )}
+      <AdBanner screen="home" />
     </Screen>
   );
 }

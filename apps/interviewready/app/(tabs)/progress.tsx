@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AdBanner } from '@/components/AdBanner';
 import { AdvancedStats } from '@/components/AdvancedStats';
 import { ProgressCard } from '@/components/content';
 import { allQuestionCores } from '@/content';
@@ -87,6 +88,7 @@ export default function ProgressScreen() {
       ) : (
         <EmptyState icon="sunny-outline" title={t('progress.dailyEmpty')} />
       )}
+      <AdBanner screen="progress" />
     </Screen>
   );
 }

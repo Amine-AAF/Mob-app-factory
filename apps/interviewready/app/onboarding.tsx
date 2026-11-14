@@ -10,6 +10,7 @@ import { repos } from '@/database';
 import { PREPARATION_GOALS, type PreparationGoal } from '@/database/repositories/profileRepository';
 import { dailyTarget } from '@/features/progress/plan';
 import { matchesRole } from '@/features/questions/search';
+import { initAds } from '@/services/ads';
 import { recordError, track } from '@/services/analytics';
 import { usePreferences } from '@/store/preferences';
 import { useSession } from '@/store/session';
@@ -49,6 +50,7 @@ export default function Onboarding() {
       track('onboarding_completed', { job_role: role ?? 'none', level, ui_language: i18n.language });
       if (role) track('job_role_selected', { job_role: role, source: 'onboarding' });
       router.replace('/(tabs)');
+      initAds().catch((e) => recordError(e, 'onboarding_ads'));
     } catch (e) {
       recordError(e, 'onboarding_save');
       setSaving(false);

@@ -1,9 +1,10 @@
 import type { ReviewGrade } from '@factory/app-core';
 
-import { FREE_LIMITS } from '@/constants/limits';
+import { FREE_LIMITS, PremiumRequiredError } from '@/constants/limits';
 import { allQuestionCores } from '@/content';
 import { repos } from '@/database';
 import type { SavedAnswer } from '@/database/repositories/practiceRepository';
+import { bonusMocksToday } from '@/features/ads/policy';
 import { generatePlan, type PathLength } from '@/features/learning-path/plan';
 import { averageRating, selectMockQuestions, summarizeMock, type MockAnswerInput, type MockDuration, type MockSummary } from '@/features/mock-interview/session';
 import { nextCard } from '@/features/quizzes/engine';
@@ -11,6 +12,7 @@ import { usePreferences } from '@/store/preferences';
 import { useSession } from '@/store/session';
 import type { Difficulty, JobRoleId } from '@/types/content';
 
+import { countActivityForAds } from './ads';
 import { track } from './analytics';
 import { clock } from './clock';
 
@@ -20,8 +22,7 @@ const bump = () => useSession.getState().bump();
 export async function remainingFreeMocks(): Promise<number> {
   const today = clock.today();
   const used = await repos().practice.mocksStartedOn(today);
-  const bonus = usePreferences.getState().bonusMocks;
-  const extra = bonus?.day === today ? bonus.count : 0;
+  const extra = bonusMocksToday(usePreferences.getState().bonusMocks, today);
   return Math.max(0, FREE_LIMITS.mockInterviewsPerDay + extra - used);
 }
 
@@ -67,6 +68,7 @@ export async function finishMockInterview(sessionId: number, answers: readonly (
   await activity.increment('mocks_completed');
   // Only counts are sent: never the answers or notes.
   track('mock_interview_completed', { job_role: role, answered: summary.answered, total: summary.total });
+  countActivityForAds();
   bump();
   return summary;
 }
@@ -89,6 +91,7 @@ export async function saveBuilderAnswer(input: Omit<SavedAnswer, 'id' | 'updated
 }
 
 export async function createLearningPath(input: { role: JobRoleId | null; level: Difficulty; goal: string; length: PathLength; isPremium: boolean }): Promise<number> {
+  if (!input.isPremium && input.length > FREE_LIMITS.pathMaxDays) throw new PremiumRequiredError('path_length');
   const plan = generatePlan({ cores: allQuestionCores(), role: input.role, level: input.level, length: input.length, includePremium: input.isPremium });
   const id = await repos().practice.createPath({
     jobRole: input.role ?? 'general',

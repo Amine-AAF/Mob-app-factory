@@ -21,6 +21,10 @@ export interface PreferencesState {
   sessionCount: number;
   /** Extra free mock interviews unlocked with a rewarded ad, valid for one local day. */
   bonusMocks: { day: string; count: number } | null;
+  /** Interstitial frequency cap: epoch ms of the last one shown (null = never). */
+  lastInterstitialAt: number | null;
+  /** Interstitial frequency cap: completed activities (quizzes, mocks) since the last one. */
+  activitiesSinceInterstitial: number;
   set: (patch: Partial<Omit<PreferencesState, 'set' | 'hydrated' | 'reset'>>) => void;
   reset: () => void;
 }
@@ -35,6 +39,8 @@ const DEFAULTS = {
   mockTimerEnabled: false,
   sessionCount: 0,
   bonusMocks: null,
+  lastInterstitialAt: null as number | null,
+  activitiesSinceInterstitial: 0,
 };
 
 export const usePreferences = create<PreferencesState>()(

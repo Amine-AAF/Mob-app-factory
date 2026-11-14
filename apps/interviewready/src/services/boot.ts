@@ -7,6 +7,7 @@ import { initI18n } from '@/i18n';
 import { usePreferences } from '@/store/preferences';
 import { useSession } from '@/store/session';
 
+import { initAds } from './ads';
 import { recordError, setAnalyticsConsent } from './analytics';
 import { initMonetization } from './monetization';
 
@@ -42,6 +43,8 @@ export async function boot(): Promise<{ i18n: i18n; repos: Repositories }> {
 
   // Background work: must never block or crash start-up.
   initMonetization(db).catch((e) => recordError(e, 'boot_monetization'));
+  // Ad consent (UMP) is gathered only once onboarding is done, so the first run is never interrupted.
+  if (prefs.onboardingCompleted) initAds().catch((e) => recordError(e, 'boot_ads'));
 
   return { i18n, repos };
 }

@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable } from 'react-native';
 
+import { FREE_LIMITS } from '@/constants/limits';
 import { repos } from '@/database';
 import { currentDayIndex, PATH_LENGTHS, planProgress, type PathLength, type PathTask } from '@/features/learning-path/plan';
 import { useAsync } from '@/hooks/useAsync';
@@ -36,7 +37,7 @@ export default function PathScreen() {
   const day = path?.plan.days[dayIndex];
   const progress = useMemo(() => (path ? planProgress(path.plan, done) : null), [path, done]);
   // Free plan: short paths only. Longer, personalised paths are a Premium feature.
-  const lengthAllowed = (l: PathLength) => isPremium || l <= 14;
+  const lengthAllowed = (l: PathLength) => isPremium || l <= FREE_LIMITS.pathMaxDays;
 
   const create = async () => {
     try {

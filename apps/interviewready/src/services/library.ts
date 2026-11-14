@@ -5,6 +5,7 @@ import type { QuizMode } from '@/database/repositories/reviewRepository';
 import { gradeFromAnswer, nextCard, scoreAnswers, type QuizScore, type RoundAnswer } from '@/features/quizzes/engine';
 import { useSession } from '@/store/session';
 
+import { countActivityForAds } from './ads';
 import { track } from './analytics';
 import { clock } from './clock';
 
@@ -68,6 +69,7 @@ export async function finishQuiz(input: { mode: QuizMode; category: string | nul
   await activity.increment('quizzes_completed');
   const score = scoreAnswers(input.answers);
   track('quiz_completed', { mode: input.mode, score: score.correct, total: score.total });
+  countActivityForAds();
   bump();
   return score;
 }

@@ -66,9 +66,22 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
     Android : l'application n'envoie rien elle-même.
   - Réglages : modification du profil (onboarding pré-rempli), accès Premium, accès aux données.
 
+- **Phase 6 — Publicité et limites Premium**
+  - Politique de placement pure et testée (`src/features/ads/policy.ts`) : bannières uniquement sur Accueil,
+    Explorer, liste des questions et Progression ; aucune publicité pendant une simulation, la rédaction d'une
+    réponse, un quiz en cours, une session de flashcards, l'onboarding ou le paywall (test de scan des sources).
+  - Service AdMob (`src/services/ads.ts`) : consentement UMP recueilli après l'onboarding, SDK initialisé
+    seulement si `canRequestAds`, identifiants de test Google hors production, aucun repli sur un identifiant de
+    test en production ; « Choix de confidentialité publicitaire » dans les Réglages quand UMP l'exige.
+  - Interstitiel uniquement en quittant les résultats d'un quiz (« Terminé »), plafonné par la règle partagée
+    `shouldShowInterstitial` (3 activités et 4 minutes minimum, 2 sessions de grâce, jamais pour Premium).
+  - Publicité récompensée choisie par l'utilisateur sur l'écran de préparation d'une simulation : une simulation
+    gratuite de plus, accordée seulement sur l'événement EARNED_REWARD, 2 au maximum par jour.
+  - Limites Premium côté service : un parcours de 30 ou 60 jours sans Premium lève `PremiumRequiredError`.
+
 ## Fonctionnalités en cours
 
-- Aucune (prochaine étape : phase 6).
+- Aucune (prochaine étape : phase 7).
 
 ## Bibliothèque de questions : terminée (500/500)
 
@@ -80,8 +93,8 @@ gratuites) par métier, au moins la moitié de la bibliothèque gratuite.
 ## Fonctionnalités restantes
 
 - Contenu : passe d'harmonisation terminologique FR/ES.
-- Phase 6 : AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), publicités récompensées
-  (simulations bonus), application des limites Premium côté service (plans de 30/60 jours).
+- Publicité : vérifier l'affichage réel des annonces et du formulaire UMP sur un appareil Android (non testable
+  ici, aucun SDK Android sur la machine) ; renseigner les identifiants AdMob de production en variables CI.
 - Phase 7 : tests complets, export Android, dossier `store/`, politique de confidentialité.
 
 ## Décompte du contenu
@@ -135,6 +148,7 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-14 | `npx expo export --platform android` | ✅ bundle Hermes de 7,6 Mo généré (aucun test sur appareil réel à ce stade) |
 | 2026-11-14 | Phase 4 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 91/91 · bundle Hermes 7,8 Mo |
 | 2026-11-14 | Phase 5 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 99/99 (dont aller-retour sauvegarde/restauration de toutes les tables) · bundle 7,9 Mo |
+| 2026-11-14 | Phase 6 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 109/109 (politique de placement, consentement, plafonds, limites Premium) · export OK |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication

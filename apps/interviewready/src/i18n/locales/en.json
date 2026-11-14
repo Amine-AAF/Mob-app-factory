@@ -286,6 +286,11 @@
     "dailyHistory": "Questions of the day",
     "dailyEmpty": "Your daily questions will appear here."
   },
+  "ads": {
+    "label": "Advertisement",
+    "bonusMock": "Watch an ad for one extra mock interview today",
+    "loading": "Loading a video…"
+  },
   "settings": {
     "title": "Settings",
     "language": "Language",
@@ -296,6 +301,8 @@
     "themeDark": "Dark",
     "analytics": "Share anonymous usage statistics",
     "analyticsHint": "Only anonymous events such as \"quiz completed\". Your answers and notes never leave your device.",
+    "adChoices": "Ad privacy choices",
+    "adChoicesHint": "Review or change your ad consent at any time.",
     "version": "Version {{version}}",
     "account": "Profile & data",
     "profile": "Target job and goal",

@@ -286,6 +286,11 @@
     "dailyHistory": "Preguntas del día",
     "dailyEmpty": "Tus preguntas del día aparecerán aquí."
   },
+  "ads": {
+    "label": "Publicidad",
+    "bonusMock": "Mira un anuncio para una entrevista simulada más hoy",
+    "loading": "Cargando un vídeo…"
+  },
   "settings": {
     "title": "Ajustes",
     "language": "Idioma",
@@ -296,6 +301,8 @@
     "themeDark": "Oscuro",
     "analytics": "Compartir estadísticas de uso anónimas",
     "analyticsHint": "Solo eventos anónimos como «cuestionario completado». Tus respuestas y notas nunca salen de tu dispositivo.",
+    "adChoices": "Opciones de privacidad de anuncios",
+    "adChoicesHint": "Revisa o cambia tu consentimiento publicitario en cualquier momento.",
     "version": "Versión {{version}}",
     "account": "Perfil y datos",
     "profile": "Puesto objetivo y meta",

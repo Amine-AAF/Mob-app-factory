@@ -4,7 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { Switch } from 'react-native';
 
 import { appManifest } from '@/config/brand';
+import { useAdsStateVersion } from '@/hooks/useAds';
 import { INTERFACE_LANGUAGES, LANGUAGE_NAMES, type InterfaceLanguage } from '@/i18n';
+import { adsState, showPrivacyOptions } from '@/services/ads';
 import { setAnalyticsConsent } from '@/services/analytics';
 import { usePreferences } from '@/store/preferences';
 
@@ -18,6 +20,7 @@ export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const prefs = usePreferences();
+  useAdsStateVersion();
 
   const chooseLanguage = (lng: InterfaceLanguage | null) => {
     prefs.set({ interfaceLanguage: lng });
@@ -67,6 +70,10 @@ export default function SettingsScreen() {
           />
         </Row>
       </Card>
+
+      {adsState().privacyOptionsRequired ? (
+        <ListRow title={t('settings.adChoices')} subtitle={t('settings.adChoicesHint')} icon="options-outline" onPress={() => void showPrivacyOptions()} testID="settings-ad-choices" />
+      ) : null}
 
       <SectionHeader title={t('settings.account')} />
       <ListRow title={t('settings.profile')} subtitle={t('settings.profileHint')} icon="person-circle-outline" onPress={() => router.push('/onboarding')} testID="settings-profile" />

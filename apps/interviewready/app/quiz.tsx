@@ -7,7 +7,9 @@ import { ScrollView } from 'react-native';
 import { FREE_LIMITS } from '@/constants/limits';
 import { repos } from '@/database';
 import { answerRound, buildQuiz, correctDisplayIndex, filterItems, reviewQueue, toRound, type QuizRound, type QuizScore, type RoundAnswer } from '@/features/quizzes/engine';
+import { useInterstitial } from '@/hooks/useAds';
 import { useQuizzes } from '@/hooks/useContent';
+import { interstitialAllowed } from '@/services/ads';
 import { recordError } from '@/services/analytics';
 import { clock } from '@/services/clock';
 import { finishQuiz } from '@/services/library';
@@ -35,6 +37,9 @@ export default function QuizScreen() {
   const [selected, setSelected] = useState<number | null>(null);
   const [score, setScore] = useState<QuizScore | null>(null);
   const [startedAt, setStartedAt] = useState('');
+  // Decided once when the results appear; shown only if the user leaves via "Done" (natural break).
+  const [interstitialOk, setInterstitialOk] = useState(false);
+  const { showThen } = useInterstitial(interstitialOk);
 
   const start = async () => {
     const pool = category ? available.filter((i) => i.category === category) : available;
@@ -73,6 +78,7 @@ export default function QuizScreen() {
     } catch (e) {
       recordError(e, 'finish_quiz');
     }
+    setInterstitialOk(interstitialAllowed({ isPremium, at: 'quiz-results-exit', now: clock.now().getTime() }));
     setPhase('done');
   };
 
@@ -127,9 +133,16 @@ export default function QuizScreen() {
           </Stack>
         </Card>
         <Text tone="muted">{t('quiz.srsNote')}</Text>
-        <Button label={t('quiz.again')} onPress={() => setPhase('setup')} testID="quiz-again" />
+        <Button
+          label={t('quiz.again')}
+          onPress={() => {
+            setInterstitialOk(false);
+            setPhase('setup');
+          }}
+          testID="quiz-again"
+        />
         <Button label={t('quiz.reviewMistakes')} variant="secondary" onPress={() => router.replace({ pathname: '/quiz', params: { mode: 'review' } })} />
-        <Button label={t('common.done')} variant="ghost" onPress={() => router.back()} />
+        <Button label={t('common.done')} variant="ghost" onPress={() => void showThen(() => router.back())} testID="quiz-exit" />
       </Screen>
     );
   }

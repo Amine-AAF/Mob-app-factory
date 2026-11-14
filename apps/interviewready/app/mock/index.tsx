@@ -7,8 +7,10 @@ import { Switch } from 'react-native';
 import { JOB_ROLE_META } from '@/content/taxonomy';
 import { MOCK_DURATIONS, QUESTIONS_PER_DURATION, type MockDuration } from '@/features/mock-interview/session';
 import { repos } from '@/database';
+import { useAdsStateVersion, useRewardedAd } from '@/hooks/useAds';
 import { useAsync } from '@/hooks/useAsync';
 import { fmt } from '@/i18n';
+import { grantRewardedMock, rewardedAvailable } from '@/services/ads';
 import { recordError } from '@/services/analytics';
 import { remainingFreeMocks, startMockInterview } from '@/services/practice';
 import { usePreferences } from '@/store/preferences';
@@ -26,11 +28,25 @@ export default function MockSetup() {
   const [timer, setTimer] = useState(timerPref);
   const [problem, setProblem] = useState<'limit' | 'empty' | 'error' | null>(null);
   const [starting, setStarting] = useState(false);
+  const bonusMocks = usePreferences((s) => s.bonusMocks);
 
   const { data } = useAsync(async () => {
     const [history, remaining] = await Promise.all([repos().practice.listMocks(10), remainingFreeMocks()]);
     return { history, remaining };
-  }, []);
+  }, [bonusMocks]);
+
+  // Rewarded ad: offered only to free users who used today's mock, on this setup screen
+  // (never during the interview). The extra session is granted on EARNED_REWARD only.
+  useAdsStateVersion();
+  const rewardedEnabled = !isPremium && data?.remaining === 0 && rewardedAvailable(isPremium);
+  const rewarded = useRewardedAd(rewardedEnabled);
+  const watchForBonus = () =>
+    rewarded
+      .show(() => {
+        grantRewardedMock();
+        setProblem(null);
+      })
+      .catch((e) => recordError(e, 'rewarded_mock'));
 
   const start = async () => {
     setStarting(true);
@@ -101,6 +117,9 @@ export default function MockSetup() {
         </Text>
       ) : null}
       {problem ? <Text tone="danger">{problem === 'limit' ? t('mock.limitReached') : problem === 'empty' ? t('mock.noQuestions') : t('common.error')}</Text> : null}
+      {rewardedEnabled ? (
+        <Button label={rewarded.ready ? t('ads.bonusMock') : t('ads.loading')} variant="secondary" icon="play-circle-outline" disabled={!rewarded.ready} onPress={() => void watchForBonus()} testID="mock-bonus" />
+      ) : null}
       {problem === 'limit' ? <Button label={t('paywall.cta')} variant="secondary" onPress={() => router.push({ pathname: '/paywall', params: { source: 'mock_limit' } })} /> : null}
       <Button label={t('mock.start')} size="lg" loading={starting} onPress={start} testID="mock-start" />
 

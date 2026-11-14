@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FlatList, ScrollView, View } from 'react-native';
 
+import { AdBanner } from '@/components/AdBanner';
 import { QuestionCard } from '@/components/content';
 import { SearchField } from '@/components/SearchField';
 import { CATEGORY_META } from '@/content/taxonomy';
@@ -98,6 +99,7 @@ export default function QuestionsScreen() {
           </View>
         }
       />
+      <AdBanner screen="questions" />
     </Screen>
   );
 }
