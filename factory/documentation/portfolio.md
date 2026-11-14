@@ -14,6 +14,8 @@ Dernière mise à jour : 2026-11-13.
 | Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Fonctionnelle — 320 défis + quotidien, écrans, monétisation, store/ ; reste : tests appareil, comptes externes | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
 | CalcWise | `apps/calcwise` | `com.mobileappsfactory.calcwise` | tools | hybrid (sub mensuel/annuel + achat à vie + banner/interstitial/rewarded) | en, fr, es | development | 🟡 Code terminé sur `feat/calcwise` — reste config externe + tests sur appareil | ✅ | [calcwise.md](../tracking/calcwise.md) |
+| CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
+| AutoCare | `apps/autocare` | `com.mobileappsfactory.autocare` | auto-vehicles | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 MVP complet codé et testé — reste pnpm install/lockfile, assets, CI, config externe, tests appareil | ✅ | [autocare.md](../tracking/autocare.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
