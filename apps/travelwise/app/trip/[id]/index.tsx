@@ -1,28 +1,52 @@
 import { Button, Card, ProgressBar, Row, Stack, Stat, Text } from '@factory/design-system';
 import { router, useLocalSearchParams } from 'expo-router';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 
 import { TripProgress } from '@/components/TripCard';
 import { TripHighlights } from '@/components/TripHighlights';
 import { TripScaffold } from '@/components/TripScaffold';
+import { exportTripPdf } from '@/features/export/actions';
+import { PremiumLimitError } from '@/features/premium/guard';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { archiveTrip, deleteTrip, duplicateTrip, unarchiveTrip } from '@/features/trips/actions';
 import { effectiveStatus, preparationProgress, tripTiming } from '@/features/trips/status';
 import { fmt } from '@/i18n';
+import { countTripVisitForAds } from '@/services/ads';
 import { recordError } from '@/services/analytics';
 import { budgetRatio } from '@/utils/money';
 
 export default function TripOverviewScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { isPremium, openPaywall, explainLimit } = usePremiumGate();
+  const [exporting, setExporting] = useState(false);
+  // Browsing a trip counts towards the interstitial frequency cap (shown later, on the trip list).
+  useEffect(() => {
+    countTripVisitForAds();
+  }, [id]);
 
   const run = (fn: () => Promise<unknown>, after?: () => void) =>
     fn()
       .then(after)
       .catch((e) => {
+        if (e instanceof PremiumLimitError) return explainLimit(e.limit);
         recordError(e, 'trip_action');
         Alert.alert(t('tripForm.errors.generic'));
       });
+
+  // No ad is shown during an export.
+  const exportPdf = () => {
+    if (!isPremium) return openPaywall('pdf_export');
+    setExporting(true);
+    exportTripPdf(id, t, i18n.language)
+      .then((res) => {
+        if (res === 'unavailable') Alert.alert(t('export.unavailable'));
+        if (res === 'failed') Alert.alert(t('export.failed'));
+      })
+      .finally(() => setExporting(false));
+  };
 
   return (
     <TripScaffold tripId={id} section="overview">
@@ -111,6 +135,15 @@ export default function TripOverviewScreen() {
               <Button label={t('documents.title')} icon="folder-open-outline" variant="secondary" onPress={() => router.push({ pathname: '/documents', params: { tripId: trip.id } })} testID="trip-documents" />
               <Button label={t('places.addForTrip')} icon="location-outline" variant="secondary" onPress={() => router.push({ pathname: '/place', params: { tripId: trip.id } })} />
             </Row>
+
+            <Button
+              label={isPremium ? t('export.pdf') : t('export.pdfPremium')}
+              icon="document-text-outline"
+              variant="secondary"
+              loading={exporting}
+              onPress={exportPdf}
+              testID="trip-export-pdf"
+            />
 
             <Stack gap={2}>
               <Button label={t('common.edit')} icon="create-outline" variant="secondary" onPress={() => router.push({ pathname: '/trip/[id]/edit', params: { id: trip.id } })} testID="trip-edit" />

@@ -258,7 +258,8 @@
       "destination_city_required": "Cada destino necesita una ciudad.",
       "not_found": "Este viaje ya no existe.",
       "generic": "Algo salió mal. Tus datos no se han modificado.",
-      "currency_has_expenses": "Este viaje ya tiene gastos convertidos a su moneda. Mantén la moneda o elimina primero los gastos."
+      "currency_has_expenses": "Este viaje ya tiene gastos convertidos a su moneda. Mantén la moneda o elimina primero los gastos.",
+      "premium_limit": "Has alcanzado el límite gratuito de viajes activos. Archiva un viaje o descubre Premium para tener viajes ilimitados."
     }
   },
   "tripDetail": {
@@ -332,7 +333,13 @@
     "version": "Versión {{version}}",
     "documentsLock": "Bloquear los documentos de viaje",
     "documentsLockHint": "Pide tu huella, tu cara o el bloqueo de pantalla antes de mostrar los documentos. Los oculta en la app; no los cifra.",
-    "documentsLockUnavailable": "Configura primero un bloqueo de pantalla o la biometría en tu teléfono."
+    "documentsLockUnavailable": "Configura primero un bloqueo de pantalla o la biometría en tu teléfono.",
+    "premium": "Premium",
+    "premiumActive": "Premium está activo en este dispositivo.",
+    "premiumFree": "Estás usando la versión gratuita.",
+    "premiumSee": "Ver Premium",
+    "premiumManage": "Gestionar Premium",
+    "adsPrivacy": "Opciones de privacidad de anuncios"
   },
   "dateField": {
     "choose": "Elegir una fecha",
@@ -544,7 +551,9 @@
     "plan": "Planificar presupuesto",
     "planHint": "Importes en {{currency}}, la moneda del viaje. Todos los campos son opcionales.",
     "total": "Presupuesto total",
-    "categoriesSum": "Las categorías suman {{amount}}."
+    "categoriesSum": "Las categorías suman {{amount}}.",
+    "detailedPremium": "Presupuesto diario y gasto por día · Premium",
+    "categoriesPremium": "Presupuesto por categoría · Premium"
   },
   "insights": {
     "title": "Análisis",
@@ -845,5 +854,89 @@
       "too_many_photos": "Demasiadas fotos para una sola entrada.",
       "not_found": "Esta entrada ya no existe."
     }
+  },
+  "ads": {
+    "label": "Publicidad"
+  },
+  "premium": {
+    "limitTitle": "Límite gratuito alcanzado",
+    "limitTrips_one": "La versión gratuita permite {{count}} viaje activo a la vez. Los viajes terminados o archivados nunca cuentan.",
+    "limitTrips_many": "La versión gratuita permite {{count}} viajes activos a la vez. Los viajes terminados o archivados nunca cuentan.",
+    "limitTrips_other": "La versión gratuita permite {{count}} viajes activos a la vez. Los viajes terminados o archivados nunca cuentan.",
+    "limitDocuments_one": "La versión gratuita guarda hasta {{count}} documento.",
+    "limitDocuments_many": "La versión gratuita guarda hasta {{count}} documentos.",
+    "limitDocuments_other": "La versión gratuita guarda hasta {{count}} documentos.",
+    "seePremium": "Ver Premium",
+    "watchAdForSlot": "Ver un anuncio para 1 viaje más"
+  },
+  "export": {
+    "pdf": "Exportar itinerario (PDF)",
+    "pdfPremium": "Exportar itinerario (PDF) · Premium",
+    "csvPremium": "Exportar gastos (CSV) · Premium",
+    "shareTitle": "Compartir o guardar",
+    "unavailable": "Compartir no está disponible en este teléfono.",
+    "failed": "No se pudo crear la exportación. No se ha compartido nada.",
+    "footer": "Creado con TravelWise. Información introducida por el viajero; las horas son las locales de cada destino. TravelWise no verifica las reservas.",
+    "generated": "Generado el {{date}}",
+    "csv": {
+      "button": "Exportar gastos (CSV)",
+      "date": "Fecha",
+      "description": "Descripción",
+      "category": "Categoría",
+      "amount": "Importe",
+      "currency": "Moneda",
+      "rate": "Tipo a la moneda del viaje",
+      "tripAmount": "Importe en la moneda del viaje",
+      "tripCurrency": "Moneda del viaje",
+      "city": "Ciudad",
+      "payment": "Medio de pago",
+      "paidBy": "Pagado por",
+      "shares": "Partes",
+      "notes": "Notas"
+    }
+  },
+  "paywall": {
+    "title": "TravelWise Premium",
+    "headline": "Viaja sin límites",
+    "subtitle": "Todo para planificar grandes viajes, repartir gastos y tener planes imprimibles.",
+    "benefits": {
+      "unlimited_trips": "Viajes activos ilimitados",
+      "detailed_budget": "Presupuesto detallado: por categoría, por día, importe diario",
+      "custom_split": "Gastos compartidos con importes personalizados",
+      "pdf_export": "Exportación del itinerario a PDF",
+      "csv_export": "Exportación de gastos a CSV",
+      "all_templates": "Todas las plantillas de itinerario y equipaje",
+      "unlimited_documents": "Documentos de viaje ilimitados",
+      "no_ads": "Sin anuncios"
+    },
+    "freeStays": "La versión gratuita sigue siendo totalmente usable sin conexión: viajes, itinerario, reservas, equipaje, presupuesto, documentos y diario.",
+    "period": {
+      "monthly": "Mensual",
+      "annual": "Anual",
+      "lifetime": "Para siempre",
+      "unknown": "Plan"
+    },
+    "perMonth": "Solo {{price}} al mes",
+    "oneTime": "Pago único",
+    "renews": "Se renueva automáticamente, cancela cuando quieras",
+    "save": "Ahorra un {{percent}} %",
+    "freeTrial": "Prueba gratuita",
+    "continue": "Continuar",
+    "restore": "Restaurar compras",
+    "restored": "Premium restaurado. ¡Gracias!",
+    "nothingToRestore": "No se ha encontrado ninguna compra activa para esta cuenta de Google.",
+    "thanks": "Te damos la bienvenida a Premium. ¡Gracias!",
+    "pending": "Tu compra está pendiente. Premium se activará cuando Google Play la confirme.",
+    "error": "No se pudo completar la compra. No se te ha cobrado.",
+    "storeUnavailable": "Las compras no están disponibles en esta versión de la app.",
+    "loadingOrOffline": "No se pudieron cargar los planes. Revisa tu conexión e inténtalo de nuevo.",
+    "active": "Premium está activo",
+    "renewsOn": "Se renueva el {{date}}",
+    "endsOn": "Finaliza el {{date}}",
+    "offlineCache": "Sin conexión: tu estado Premium se confirmará cuando vuelvas a estar en línea.",
+    "legal": "El pago lo gestiona Google Play. Las suscripciones se renuevan automáticamente salvo que se cancelen al menos 24 horas antes del final del periodo. Gestiónalas o cancélalas en Google Play.",
+    "manage": "Gestionar suscripciones",
+    "privacy": "Política de privacidad",
+    "terms": "Condiciones"
   }
 }

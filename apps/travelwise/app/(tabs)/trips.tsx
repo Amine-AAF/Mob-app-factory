@@ -1,16 +1,25 @@
 import { Button, Chip, EmptyState, Row, Screen, Stack, Text } from '@factory/design-system';
-import { router } from 'expo-router';
-import { useState } from 'react';
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AdBanner } from '@/components/AdBanner';
 import { TripCard } from '@/components/TripCard';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { useTripsOverview } from '@/features/trips/useTrips';
+import { maybeShowInterstitial } from '@/services/ads';
 
 type Filter = 'active' | 'past' | 'archived';
 
 export default function TripsScreen() {
   const { t } = useTranslation();
   const { data } = useTripsOverview();
+  const { startNewTrip } = usePremiumGate();
+  useFocusEffect(
+    useCallback(() => {
+      maybeShowInterstitial().catch(() => undefined);
+    }, []),
+  );
   const [filter, setFilter] = useState<Filter>('active');
   const b = data?.buckets;
   const list = !b ? [] : filter === 'active' ? [...b.ongoing, ...b.upcoming] : filter === 'past' ? b.completed : b.archived;
@@ -22,7 +31,7 @@ export default function TripsScreen() {
         <Text variant="title" accessibilityRole="header">
           {t('trips.title')}
         </Text>
-        <Button label={t('trips.new')} icon="add" onPress={() => router.push('/trip/new')} testID="trips-new" />
+        <Button label={t('trips.new')} icon="add" onPress={() => startNewTrip()} testID="trips-new" />
       </Row>
       <Row gap={2} wrap>
         <Chip label={t('trips.filterActive')} selected={filter === 'active'} onPress={() => setFilter('active')} />
@@ -45,6 +54,7 @@ export default function TripsScreen() {
             ))
           : null}
       </Stack>
+      <AdBanner screen="trips" />
     </Screen>
   );
 }

@@ -9,6 +9,8 @@ import { useSession } from '@/store/session';
 
 import { recordError, setAnalyticsConsent } from './analytics';
 import { cleanTemporaryFiles } from './files';
+import { initAds, preloadInterstitial } from './ads';
+import { initMonetization } from './monetization';
 import { initReminders } from './reminders';
 
 function waitForHydration(): Promise<void> {
@@ -38,6 +40,13 @@ export async function boot(): Promise<{ i18n: i18n; repos: Repositories }> {
   setAnalyticsConsent(prefs.analyticsConsent);
   initReminders();
 
+  // Background, never blocking: entitlement (cache first, then store), then ads for free users.
+  initMonetization(db)
+    .then(() => {
+      if (prefs.onboardingCompleted) startPostOnboardingServices();
+    })
+    .catch((e) => recordError(e, 'boot_monetization'));
+
   // Background, best effort: leftovers from interrupted imports/exports.
   setTimeout(() => {
     try {
@@ -48,4 +57,11 @@ export async function boot(): Promise<{ i18n: i18n; repos: Repositories }> {
   }, 2000);
 
   return { i18n, repos };
+}
+
+/** Ads (with UMP consent) start only after onboarding, never on the first screens. */
+export function startPostOnboardingServices(): void {
+  initAds()
+    .then(preloadInterstitial)
+    .catch((e) => recordError(e, 'boot_ads'));
 }

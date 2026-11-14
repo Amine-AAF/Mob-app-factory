@@ -8,6 +8,7 @@ import { BUDGET_CATEGORIES, type BudgetCategory } from '@/constants/domain';
 import { repos } from '@/database';
 import type { TripDetails } from '@/database/repositories/trips';
 import { saveBudget } from '@/features/expenses/actions';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { updateTrip } from '@/features/trips/actions';
 import { useAsync } from '@/hooks/useAsync';
 import { fmt } from '@/i18n';
@@ -20,6 +21,8 @@ function PlanForm({ trip, planned }: { trip: TripDetails; planned: Partial<Recor
   const [total, setTotal] = useState(trip.budgetMinor != null ? String(fromMinor(trip.budgetMinor, cur)) : '');
   const [lines, setLines] = useState<Record<string, string>>(Object.fromEntries(BUDGET_CATEGORIES.map((c) => [c, planned[c] != null ? String(fromMinor(planned[c]!, cur)) : ''])));
   const [error, setError] = useState<string | null>(null);
+  // Per-category planning is a Premium feature; existing values stay visible and editable to clear them.
+  const { isPremium, openPaywall } = usePremiumGate();
 
   const parsed = Object.fromEntries(BUDGET_CATEGORIES.map((c) => [c, lines[c]?.trim() ? parseAmount(lines[c]!, cur) : null])) as Record<BudgetCategory, number | null>;
   const sum = Object.values(parsed).reduce<number>((s, v) => s + (v ?? 0), 0);
@@ -51,8 +54,11 @@ function PlanForm({ trip, planned }: { trip: TripDetails; planned: Partial<Recor
         {t('budget.planHint', { currency: cur })}
       </Text>
       <TextField label={t('budget.total')} keyboardType="decimal-pad" value={total} onChangeText={setTotal} testID="budget-total-input" />
+      {!isPremium ? (
+        <Button label={t('budget.categoriesPremium')} variant="secondary" icon="lock-closed-outline" onPress={() => openPaywall('detailed_budget')} testID="budget-categories-locked" />
+      ) : null}
       {BUDGET_CATEGORIES.map((c) => (
-        <TextField key={c} label={t(`enums.budgetCategory.${c}`)} keyboardType="decimal-pad" value={lines[c] ?? ''} onChangeText={(v) => setLines({ ...lines, [c]: v })} optional optionalLabel={t('common.optional')} testID={`budget-input-${c}`} />
+        <TextField key={c} editable={isPremium || !!lines[c]} label={t(`enums.budgetCategory.${c}`)} keyboardType="decimal-pad" value={lines[c] ?? ''} onChangeText={(v) => setLines({ ...lines, [c]: v })} optional optionalLabel={t('common.optional')} testID={`budget-input-${c}`} />
       ))}
       <Text variant="bodySmall" tone={totalMinor !== null && sum > totalMinor ? 'warning' : 'muted'}>
         {t('budget.categoriesSum', { amount: fmt.money(sum, cur) })}

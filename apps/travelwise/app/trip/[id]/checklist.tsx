@@ -10,6 +10,8 @@ import { TextField } from '@/components/TextField';
 import { TripScaffold } from '@/components/TripScaffold';
 import { PACKING_TEMPLATES, templateItems, type PackingTemplateKey } from '@/content/packingCatalog';
 import { repos } from '@/database';
+import { isPackingTemplateFree } from '@/features/premium/limits';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { createPackingFromTemplate, createPackingFromUserTemplate, createPackingList } from '@/features/packing/actions';
 import { useAsync } from '@/hooks/useAsync';
 import { fmt } from '@/i18n';
@@ -19,6 +21,7 @@ import { recordError } from '@/services/analytics';
 export default function TripChecklistScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, i18n } = useTranslation();
+  const { isPremium, openPaywall } = usePremiumGate();
   const { data } = useAsync(async () => {
     const [lists, userTemplates] = await Promise.all([repos().packing.listsForTrip(id), repos().packing.userTemplates()]);
     return { lists, userTemplates };
@@ -67,7 +70,7 @@ export default function TripChecklistScreen() {
             <Row gap={2} wrap>
               <Chip label={t('packing.blank')} selected={template === null} onPress={() => setTemplate(null)} testID="packing-template-blank" />
               {PACKING_TEMPLATES.map((k) => (
-                <Chip key={k} label={`${t(`packing.templates.${k}`)} (${templateItems(k).length})`} selected={template === k} onPress={() => setTemplate(k)} testID={`packing-template-${k}`} />
+                <Chip key={k} label={`${t(`packing.templates.${k}`)} (${templateItems(k).length})${isPremium || isPackingTemplateFree(k) ? '' : ' · Premium'}`} selected={template === k} onPress={() => (isPremium || isPackingTemplateFree(k) ? setTemplate(k) : openPaywall('all_templates'))} testID={`packing-template-${k}`} />
               ))}
             </Row>
             <TextField label={t('packing.listName')} placeholder={template ? t(`packing.templates.${template}`) : t('packing.defaultName')} value={name} onChangeText={setName} />

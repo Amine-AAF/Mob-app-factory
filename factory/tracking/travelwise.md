@@ -84,6 +84,21 @@ Phase 5 — Organisation avancée :
 - Weather Planner : notes météo manuelles par voyage ou destination (conditions, min/max °C, notes), aucune
   prévision affichée, suggestions de bagages selon les conditions/températures saisies, ajout à une liste.
 
+Phase 6 — Monétisation :
+- Premium via `@factory/monetization` (RevenueCat sur Google Play Billing) : 3 offres du manifest
+  (`travelwise_premium_monthly`, `_annual`, `_lifetime`), prix affichés = prix localisés du store, aucun achat simulé
+  (sans clé RevenueCat : « achats indisponibles »), cache d'entitlement en SQLite (migration v2) honoré hors ligne
+  7 jours max, restauration, gestion des abonnements, mentions légales.
+- Limites free appliquées dans les actions (pas seulement l'UI) : 3 voyages actifs (terminés/archivés exclus,
+  +2 max via rewarded), 10 documents ; Premium : budget détaillé (catégories, par jour, montant quotidien),
+  répartition personnalisée, export PDF itinéraire, export CSV dépenses, tous les modèles, sans pub.
+- AdMob (UMP, IDs de test en dev/preview, IDs prod via variables protégées) : bannières seulement Home / Trips /
+  Places / Budget ; interstitiel au retour sur la liste/accueil, plafonné (3 voyages consultés, 4 min) ; rewarded
+  uniquement sur demande (créneau de voyage) ; jamais sur documents, édition d'itinéraire, saisie de dépense,
+  export, formulaires, paywall, onboarding ; démarrage après l'onboarding ; options de confidentialité dans Settings.
+- Exports Premium : PDF (expo-print, HTML échappé) et CSV (BOM, anti-injection de formules) partagés via la feuille
+  Android puis supprimés du cache.
+
 ## Fonctionnalités en cours
 
 - —
@@ -97,8 +112,9 @@ Phase 5 — Organisation avancée :
 - Phase 5 (reste) : choisir un lieu enregistré depuis le formulaire d'activité, joindre un document à une
   réservation depuis l'écran réservation (le schéma et le repository le gèrent déjà), replanifier les rappels
   après restauration de sauvegarde (`pendingReminders` prêt), provider météo externe (non intégré).
-- Phase 6 : RevenueCat (3 plans), AdMob (bannières/interstitiels/rewarded avec règles d'exclusion), limite free
-  `FREE_ACTIVE_TRIPS = 3` à appliquer, exports PDF/CSV.
+- Phase 6 (reste / à configurer) : clé RevenueCat, produits Play Console + entitlement "premium" + offering "default",
+  IDs AdMob de production (app, bannière, interstitiel, rewarded), tests d'achat sur piste interne. Non
+  implémentés (donc non vendus sur le paywall) : personnalisation, sauvegardes locales avancées.
 - Phase 7 : tests appareil Android, offline, APK preview, AAB, `store/` (fiche, ASO, Data Safety, politique).
 - Assets de marque : `brand/mark.mjs` écrit ; PNG à générer (`pnpm brand-assets apps/travelwise`, nécessite sharp).
   `app.config.ts` référence `assets/images/*.png` : **un prebuild échoue tant qu'ils ne sont pas générés**.
@@ -119,7 +135,8 @@ Phase 5 — Organisation avancée :
 - Phase 5 (versions alignées SDK 58, déjà utilisées par d'autres apps) : expo-document-picker ~58.0.5,
   expo-image-picker ~58.0.10, expo-local-authentication ~58.0.3, expo-notifications ~58.1.9, expo-sharing ~58.0.23,
   `@factory/notifications` (permission, canal, gestion premier plan).
-- À venir (Phase 6) : expo-print, react-native-purchases, react-native-google-mobile-ads, `@factory/monetization`.
+- Phase 6 : `@factory/monetization`, react-native-purchases ^11.0.2, react-native-google-mobile-ads ^17.4.0
+  (mêmes versions que DevSpeak), expo-print ~58.0.9.
 
 ## Tests réalisés
 
@@ -167,6 +184,12 @@ Phase 5 — Organisation avancée :
     lieux (coordonnées, filtres, photo remplacée, activité conservée), liens cartes, journal (timeline, photos
     dédoublonnées/limite, photos retirées), météo (une note par destination, validations, suggestions).
   - `phase5.ui.test.tsx` : TravelDocumentCard (clair/sombre, expiré), PlaceCard, DocumentsGate (ouvert / verrouillé → déverrouillé).
+2026-11-14 (Phase 6) :
+- `tsc --noEmit` ✅ · ESLint ✅ 0 problème · `jest --ci` ✅ 11 suites, 178/178 tests · `expo config` ✅ (9 plugins).
+  - `phase6.test.ts` : règles free/premium, limite de voyages appliquée dans createTrip/duplicate/unarchive (terminés
+    exclus, rewarded, Premium), limite documents, migration v2, store non configuré = jamais Premium, cache hors ligne
+    (3 j oui / 10 j non), achat + reset, bannières/interstitiels refusés sans consentement ou en Premium, export HTML
+    échappé (XSS), CSV (formules neutralisées, BOM, décimales JPY, parts), noms de fichiers sûrs.
 - Note : machine très chargée (plusieurs sessions) → `testTimeout: 30000` et un rendu de préchauffage dans `ui.test.tsx`.
 
 ## Préparation à la publication
@@ -177,6 +200,9 @@ Phase 5 — Organisation avancée :
 - [ ] Assets PNG, `store/`, IDs prod (AdMob, RevenueCat), projet EAS, jobs CI (matrice), tests appareil
 
 ## Candidats à la mutualisation
+
+- `src/services/monetization.ts`, `src/services/ads.ts` (bannière + interstitiel + UMP), `src/hooks/useRewardedAd.ts`,
+  `src/components/AdBanner.tsx` : 3ᵉ copie après DevSpeak / Logic Quest → à remonter dans `@factory/monetization`.
 
 - `src/hooks/useAsync.ts`, `src/utils/clock.ts` : copies de DevSpeak (3ᵉ copie → à remonter dans `@factory/app-core`).
 - `src/utils/money.ts` (montants en unités mineures, parsing multi-locale) : utile à SpendWise/CalcWise.

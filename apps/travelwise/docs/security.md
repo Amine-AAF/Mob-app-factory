@@ -50,6 +50,19 @@ the store listing, privacy policy and UI never over-promise.
     temporary picker/export copies in the cache.
 - **Temporary files** in the cache directory are cleaned at start-up. Journal photos picked
   but not saved are deleted when the editor closes.
+- **Ads & purchases (Phase 6) — third-party SDKs to declare in the privacy policy and Data Safety form.**
+  - Google Mobile Ads (AdMob) runs for free users only, after Google UMP consent where
+    required, with app measurement delayed until consent. It may use the advertising ID
+    (`AD_ID`) and device data according to the user's consent. It never receives trip content.
+  - Banners appear only on browse screens. Ads never appear on documents, itinerary editing,
+    expense entry, exports, forms, the paywall or onboarding.
+  - RevenueCat / Google Play Billing are loaded only when an API key is configured. They
+    receive an anonymous app user id and purchase data, never trip content. Prices are the
+    store's localized prices, and purchases are never simulated.
+  - The local `subscription_cache` stores only the entitlement state (no payment data).
+- **Exports (Premium).** The PDF and CSV are built on the device in the cache folder, handed to
+  the Android share sheet, then deleted. TravelWise uploads nothing. The CSV is protected
+  against spreadsheet formula injection, and every user value in the PDF HTML is escaped.
 - **Payment data.** Expense notes and payment methods that look like a card number are
   rejected.
 
@@ -66,7 +79,8 @@ the store listing, privacy policy and UI never over-promise.
   Only Documents can be locked.
 - A PDF opened in an external viewer is handled by that app while open. Some viewers may keep
   a recent-files entry.
-- Exports (PDF/CSV, Phase 6) leave the app's sandbox once shared. The UI must say so.
+- Exports leave the app's sandbox once the user shares them (e-mail, drive…). From then on,
+  the receiving app or service is responsible for them.
 
 ## Rules for future phases
 

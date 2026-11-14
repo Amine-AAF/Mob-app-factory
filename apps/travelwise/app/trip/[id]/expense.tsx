@@ -14,6 +14,7 @@ import { ExpenseValidationError, type ExpenseWithShares } from '@/database/repos
 import type { TripDetails } from '@/database/repositories/trips';
 import { formatRate, type RateQuote } from '@/features/currency/rates';
 import { createExpense, deleteExpense, saveRate, updateExpense } from '@/features/expenses/actions';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { useAsync } from '@/hooks/useAsync';
 import { currentLanguage, fmt } from '@/i18n';
 import { recordError } from '@/services/analytics';
@@ -48,6 +49,9 @@ function ExpenseForm({ trip, expense, savedRates }: { trip: TripDetails; expense
   );
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+  // Custom split amounts are Premium; equal split stays free. Existing custom splits remain editable.
+  const { isPremium: premium, openPaywall } = usePremiumGate();
+  const isPremium = premium || expense?.splitMode === 'custom';
 
   const foreign = currency !== tripCurrency;
   const saved = foreign ? initialQuote(currency) : null;
@@ -169,7 +173,7 @@ function ExpenseForm({ trip, expense, savedRates }: { trip: TripDetails; expense
       ) : null}
       {people.length >= 2 ? (
         <Stack gap={2}>
-          <ChoiceChips label={t('expenses.split')} options={SPLIT_MODES} value={splitMode} onChange={setSplitMode} labelOf={(m) => t(`expenses.splitMode.${m}`)} testID="expense-split" />
+          <ChoiceChips label={t('expenses.split')} options={SPLIT_MODES} value={splitMode} onChange={(m) => (m === 'custom' && !isPremium ? openPaywall('custom_split') : setSplitMode(m))} labelOf={(m) => (m === 'custom' && !isPremium ? `${t(`expenses.splitMode.${m}`)} · Premium` : t(`expenses.splitMode.${m}`))} testID="expense-split" />
           {splitMode === 'equal' ? (
             <Row gap={2} wrap>
               {people.map((p) => {

@@ -8,6 +8,8 @@ import { DocumentsGate } from '@/components/DocumentsGate';
 import { formatBytes } from '@/components/TravelDocumentCard';
 import { repos } from '@/database';
 import { DocumentValidationError, MAX_DOCUMENT_BYTES, checkFile } from '@/database/repositories/documents';
+import { PremiumLimitError } from '@/features/premium/guard';
+import { FREE_LIMITS } from '@/features/premium/limits';
 import { useAsync } from '@/hooks/useAsync';
 import { recordError } from '@/services/analytics';
 import { importDocument, pickDocumentFile, type PickedFile } from '@/services/documents';
@@ -23,6 +25,7 @@ export default function NewDocumentScreen() {
   const [saving, setSaving] = useState(false);
 
   const describe = (e: unknown) => {
+    if (e instanceof PremiumLimitError) return t('premium.limitDocuments', { count: FREE_LIMITS.documents });
     if (e instanceof DocumentValidationError) return t(`documents.errors.${e.code}`, { max: formatBytes(MAX_DOCUMENT_BYTES) });
     if (e instanceof FileImportError) return t(`documents.errors.${e.code}`);
     recordError(e, 'document_import');

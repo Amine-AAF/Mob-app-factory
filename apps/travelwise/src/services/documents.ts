@@ -4,6 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { repos } from '@/database';
 import { DocumentValidationError, checkFile, type DocumentMetaInput } from '@/database/repositories/documents';
 import { MAX_PHOTOS_PER_ENTRY } from '@/database/repositories/journal';
+import { assertCanAddDocument } from '@/features/premium/guard';
 import { notifyDataChanged } from '@/store/session';
 import type { TravelDocument } from '@/types/models';
 import { createId } from '@/utils/ids';
@@ -34,6 +35,7 @@ export async function pickDocumentFile(): Promise<PickedFile | null> {
 export async function importDocument(picked: PickedFile, meta: DocumentMetaInput): Promise<TravelDocument> {
   const fileError = checkFile(picked.mimeType, picked.sizeBytes < 0 ? null : picked.sizeBytes);
   if (fileError) throw new DocumentValidationError(fileError, 'file');
+  await assertCanAddDocument();
   const stored = await importIntoPrivateStorage(picked.uri, 'documents', picked.mimeType, picked.sizeBytes, createId(), picked.name);
   try {
     const doc = await repos().documents.create(meta, { uri: stored.uri, mimeType: picked.mimeType, sizeBytes: stored.sizeBytes });

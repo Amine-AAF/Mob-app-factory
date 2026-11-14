@@ -1,5 +1,6 @@
 import { Button, Card, Divider, Row, Screen, SectionHeader, Stack, Text, type ThemePreference } from '@factory/design-system';
 import Constants from 'expo-constants';
+import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert, Switch } from 'react-native';
 
@@ -7,12 +8,14 @@ import { ChoiceChips } from '@/components/Choice';
 import { CURRENCY_CODES } from '@/constants/currencies';
 import { repos, wipeAllData } from '@/database';
 import { INTERFACE_LANGUAGES, LANGUAGE_NAMES } from '@/i18n';
+import { adsState, showPrivacyOptions } from '@/services/ads';
 import { recordError, setAnalyticsConsent } from '@/services/analytics';
 import { authenticate, lockAvailability } from '@/services/documentLock';
 import { wipeAllFiles } from '@/services/files';
+import { resetLocalEntitlement } from '@/services/monetization';
 import { cancelAllTaskReminders } from '@/services/reminders';
 import { usePreferences } from '@/store/preferences';
-import { notifyDataChanged } from '@/store/session';
+import { notifyDataChanged, useIsPremium } from '@/store/session';
 
 const THEMES: ThemePreference[] = ['system', 'light', 'dark'];
 const THEME_KEYS = { system: 'settings.themeSystem', light: 'settings.themeLight', dark: 'settings.themeDark' } as const;
@@ -20,6 +23,7 @@ const THEME_KEYS = { system: 'settings.themeSystem', light: 'settings.themeLight
 export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
   const prefs = usePreferences();
+  const isPremium = useIsPremium();
   const language = (INTERFACE_LANGUAGES as readonly string[]).includes(i18n.language) ? (i18n.language as (typeof INTERFACE_LANGUAGES)[number]) : 'en';
 
   const toggleLock = async (on: boolean) => {
@@ -44,6 +48,7 @@ export default function SettingsScreen() {
         onPress: async () => {
           try {
             await cancelAllTaskReminders();
+            resetLocalEntitlement();
             await wipeAllData(repos().db);
             wipeAllFiles();
             notifyDataChanged();
@@ -113,6 +118,15 @@ export default function SettingsScreen() {
           </Stack>
           <Switch value={prefs.documentsLock} accessibilityLabel={t('settings.documentsLock')} onValueChange={toggleLock} testID="settings-documents-lock" />
         </Row>
+      </Card>
+
+      <SectionHeader title={t('settings.premium')} />
+      <Card testID="settings-premium">
+        <Text variant="bodySmall">{isPremium ? t('settings.premiumActive') : t('settings.premiumFree')}</Text>
+        <Button label={isPremium ? t('settings.premiumManage') : t('settings.premiumSee')} variant="secondary" icon="star-outline" onPress={() => router.push({ pathname: '/paywall', params: { source: 'settings' } })} />
+        {!isPremium && adsState().privacyOptionsRequired ? (
+          <Button label={t('settings.adsPrivacy')} variant="ghost" icon="shield-outline" onPress={() => showPrivacyOptions().catch(() => undefined)} />
+        ) : null}
       </Card>
 
       <SectionHeader title={t('settings.data')} />

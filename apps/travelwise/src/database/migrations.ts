@@ -305,6 +305,21 @@ export const migrations: Migration[] = [
       `);
     },
   },
+  {
+    version: 2,
+    name: 'subscription_cache',
+    async up(db) {
+      // Last entitlement confirmed by the store, honoured offline for a limited time
+      // (@factory/monetization resolveEntitlement). Contains no payment data.
+      await db.execAsync(`
+        CREATE TABLE IF NOT EXISTS subscription_cache (
+          id INTEGER PRIMARY KEY CHECK (id = 1),
+          state TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
+      `);
+    },
+  },
 ];
 
 export const SCHEMA_VERSION = migrations.length;
@@ -331,4 +346,5 @@ export const USER_TABLES = [
   'trip_destinations',
   'trips',
   'user_settings',
+  'subscription_cache',
 ] as const;

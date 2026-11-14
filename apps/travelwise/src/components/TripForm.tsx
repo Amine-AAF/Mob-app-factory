@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { CURRENCY_CODES, isCurrencyCode, type CurrencyCode } from '@/constants/currencies';
 import { TRIP_STATUSES, TRIP_TYPES, type TripStatus, type TripType } from '@/constants/domain';
 import { TripValidationError, type TripDetails, type TripInput } from '@/database/repositories/trips';
+import { PremiumLimitError } from '@/features/premium/guard';
 import { recordError } from '@/services/analytics';
 import { fromMinor, parseAmount } from '@/utils/money';
 
@@ -89,6 +90,7 @@ export function TripForm({
       onDone();
     } catch (e) {
       if (e instanceof TripValidationError) setError({ code: e.code, field: e.field });
+      else if (e instanceof PremiumLimitError) setError({ code: 'premium_limit', field: 'form' });
       else {
         recordError(e, 'trip_form');
         setError({ code: 'generic', field: 'form' });

@@ -1,10 +1,14 @@
 import { Button, Card, EmptyState, FadeIn, Icon, Row, Screen, SectionHeader, Stack, Text, useTheme, type IconName } from '@factory/design-system';
-import { router } from 'expo-router';
+import { router, useFocusEffect } from 'expo-router';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Pressable } from 'react-native';
 
+import { AdBanner } from '@/components/AdBanner';
 import { TripCard } from '@/components/TripCard';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { useTripsOverview } from '@/features/trips/useTrips';
+import { maybeShowInterstitial } from '@/services/ads';
 
 function QuickAction({ icon, label, onPress }: { icon: IconName; label: string; onPress: () => void }) {
   const theme = useTheme();
@@ -49,6 +53,13 @@ function WhyRow({ icon, text }: { icon: IconName; text: string }) {
 export default function HomeScreen() {
   const { t } = useTranslation();
   const { data } = useTripsOverview();
+  const { startNewTrip } = usePremiumGate();
+  // Natural break: back on the dashboard after browsing trips (frequency-capped, free users only).
+  useFocusEffect(
+    useCallback(() => {
+      maybeShowInterstitial().catch(() => undefined);
+    }, []),
+  );
   const buckets = data?.buckets;
   const hasTrips = !!data && data.trips.length > 0;
   const open = (id: string) => router.push({ pathname: '/trip/[id]', params: { id } });
@@ -75,7 +86,7 @@ export default function HomeScreen() {
               icon="earth-outline"
               title={t('home.emptyTitle')}
               message={t('home.emptyMessage')}
-              action={<Button label={t('home.createTrip')} icon="add" onPress={() => router.push('/trip/new')} testID="home-create-trip" />}
+              action={<Button label={t('home.createTrip')} icon="add" onPress={() => startNewTrip()} testID="home-create-trip" />}
             />
           </Card>
           <Stack gap={3} style={{ marginTop: 16 }}>
@@ -91,7 +102,7 @@ export default function HomeScreen() {
         <>
           <SectionHeader title={t('home.quickActions')} />
           <Row gap={2} wrap>
-            <QuickAction icon="add-circle-outline" label={t('home.actionNewTrip')} onPress={() => router.push('/trip/new')} />
+            <QuickAction icon="add-circle-outline" label={t('home.actionNewTrip')} onPress={() => startNewTrip()} />
             <QuickAction icon="airplane-outline" label={t('home.actionAllTrips')} onPress={() => router.push('/(tabs)/trips')} />
             <QuickAction icon="wallet-outline" label={t('home.actionBudget')} onPress={() => router.push('/(tabs)/budget')} />
             <QuickAction icon="map-outline" label={t('home.actionPlaces')} onPress={() => router.push('/(tabs)/places')} />
@@ -120,6 +131,7 @@ export default function HomeScreen() {
           ) : null}
         </>
       ) : null}
+      <AdBanner screen="home" />
     </Screen>
   );
 }

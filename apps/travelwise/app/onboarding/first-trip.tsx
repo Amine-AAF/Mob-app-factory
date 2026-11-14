@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { TripForm } from '@/components/TripForm';
 import { createTrip } from '@/features/trips/actions';
 import { track } from '@/services/analytics';
+import { startPostOnboardingServices } from '@/services/boot';
 import { usePreferences } from '@/store/preferences';
 
 /** Step 4 (optional) + 5: create a first trip or go straight to the dashboard. */
@@ -18,6 +19,7 @@ export default function OnboardingFirstTrip() {
 
   const finish = () => {
     setPrefs({ onboardingCompleted: true });
+    startPostOnboardingServices();
     track('onboarding_completed', { ui_language: i18n.language, created_trip: !!createdId.current });
     router.replace('/(tabs)');
     if (createdId.current) router.push({ pathname: '/trip/[id]', params: { id: createdId.current } });

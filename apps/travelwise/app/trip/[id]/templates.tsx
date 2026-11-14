@@ -1,4 +1,4 @@
-import { Card, Icon, Row, Screen, Stack, Text, useTheme } from '@factory/design-system';
+import { Badge, Card, Icon, Row, Screen, Stack, Text, useTheme } from '@factory/design-system';
 import { router, Stack as RouterStack, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
@@ -6,6 +6,8 @@ import { Alert } from 'react-native';
 import { ITINERARY_TEMPLATES, TEMPLATES, l10n, type ItineraryTemplateKey } from '@/content/itineraryTemplates';
 import { ItineraryValidationError } from '@/database/repositories/itinerary';
 import { applyItineraryTemplate } from '@/features/itinerary/actions';
+import { isItineraryTemplateFree } from '@/features/premium/limits';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { recordError } from '@/services/analytics';
 
 /** Pick an editable outline. Templates never contain real places or verified schedules. */
@@ -14,8 +16,11 @@ export default function TemplatesScreen() {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
 
+  const { isPremium, openPaywall } = usePremiumGate();
   const apply = (key: ItineraryTemplateKey) =>
-    applyItineraryTemplate(id, key, i18n.language)
+    !isPremium && !isItineraryTemplateFree(key)
+      ? openPaywall('all_templates')
+      : applyItineraryTemplate(id, key, i18n.language)
       .then((added) => {
         Alert.alert(t('templates.applied', { count: added }));
         router.back();
@@ -42,7 +47,10 @@ export default function TemplatesScreen() {
               <Row gap={3}>
                 <Icon name="copy-outline" size={20} color={theme.colors.primary} />
                 <Stack gap={0.5} style={{ flex: 1 }}>
-                  <Text variant="subheading">{t(`templates.names.${key}`)}</Text>
+                  <Row gap={2}>
+                    <Text variant="subheading">{t(`templates.names.${key}`)}</Text>
+                    {!isPremium && !isItineraryTemplateFree(key) ? <Badge label="Premium" tone="accent" icon="lock-closed" /> : null}
+                  </Row>
                   <Text variant="caption" tone="muted">
                     {t('templates.outline', { days: tpl.suggestedDays, first: l10n(tpl.first.title, i18n.language), last: l10n(tpl.last.title, i18n.language) })}
                   </Text>

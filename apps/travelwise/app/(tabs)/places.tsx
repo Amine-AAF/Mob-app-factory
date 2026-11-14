@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 
+import { AdBanner } from '@/components/AdBanner';
 import { PlaceCard } from '@/components/PlaceCard';
 import { TextField } from '@/components/TextField';
 import { PLACE_CATEGORIES, type PlaceCategory } from '@/constants/domain';
@@ -62,6 +63,7 @@ export default function PlacesScreen() {
           />
         ))}
       </Stack>
+      <AdBanner screen="places" />
     </Screen>
   );
 }

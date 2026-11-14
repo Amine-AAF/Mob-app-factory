@@ -1,4 +1,5 @@
 import { Button, Card, Chip, EmptyState, Row, SectionHeader, Stack, Text } from '@factory/design-system';
+import { Alert } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +16,8 @@ import { computeBalances, suggestSettlements } from '@/features/shared-expenses/
 import { useAsync } from '@/hooks/useAsync';
 import { fmt } from '@/i18n';
 import { clock } from '@/utils/clock';
+import { exportTripCsv } from '@/features/export/actions';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 
 const SORTS: ExpenseSort[] = ['date_desc', 'date_asc', 'amount_desc', 'amount_asc'];
 
@@ -22,6 +25,19 @@ const SORTS: ExpenseSort[] = ['date_desc', 'date_asc', 'amount_desc', 'amount_as
 export default function TripBudgetScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t } = useTranslation();
+  const { isPremium, openPaywall } = usePremiumGate();
+  const [exporting, setExporting] = useState(false);
+  // No ad is shown during an export.
+  const exportCsv = () => {
+    if (!isPremium) return openPaywall('csv_export');
+    setExporting(true);
+    exportTripCsv(id, t)
+      .then((res) => {
+        if (res === 'unavailable') Alert.alert(t('export.unavailable'));
+        if (res === 'failed') Alert.alert(t('export.failed'));
+      })
+      .finally(() => setExporting(false));
+  };
   const [category, setCategory] = useState<BudgetCategory | null>(null);
   const [sort, setSort] = useState<ExpenseSort>('date_desc');
   const [search, setSearch] = useState('');
@@ -57,6 +73,9 @@ export default function TripBudgetScreen() {
               <Button label={t('expenses.add')} icon="add" onPress={() => openExpense()} testID="expense-add" />
               <Button label={t('budget.plan')} variant="secondary" icon="calculator-outline" onPress={() => router.push({ pathname: '/trip/[id]/budget-plan', params: { id } })} testID="budget-plan" />
               <Button label={t('converter.open')} variant="ghost" icon="swap-horizontal-outline" onPress={() => router.push({ pathname: '/converter', params: { tripId: id } })} />
+              {data.all.length ? (
+                <Button label={isPremium ? t('export.csv.button') : t('export.csvPremium')} variant="ghost" icon="grid-outline" loading={exporting} onPress={exportCsv} testID="expense-export-csv" />
+              ) : null}
             </Row>
 
             <BudgetOverview overview={overview} currency={trip.currency} />
@@ -75,8 +94,12 @@ export default function TripBudgetScreen() {
                 ) : null}
                 {insights.averageDailyMinor !== null ? <Text variant="bodySmall">{t('insights.average', { amount: money(insights.averageDailyMinor), count: insights.daysCounted ?? 0 })}</Text> : null}
                 {overview.remainingMinor !== null ? <Text variant="bodySmall">{t('insights.remaining', { amount: money(overview.remainingMinor) })}</Text> : null}
-                {insights.dailyAllowanceMinor !== null ? <Text variant="bodySmall">{t('insights.allowance', { amount: money(insights.dailyAllowanceMinor) })}</Text> : null}
-                {insights.byDay.some((d) => d.spentMinor > 0 || d.plannedMinor !== null) ? (
+                {/* Detailed insights (daily allowance, spending by day) are part of Premium. */}
+                {!isPremium ? (
+                  <Button label={t('budget.detailedPremium')} variant="ghost" icon="lock-closed-outline" onPress={() => openPaywall('detailed_budget')} testID="budget-detailed-locked" />
+                ) : null}
+                {isPremium && insights.dailyAllowanceMinor !== null ? <Text variant="bodySmall">{t('insights.allowance', { amount: money(insights.dailyAllowanceMinor) })}</Text> : null}
+                {isPremium && insights.byDay.some((d) => d.spentMinor > 0 || d.plannedMinor !== null) ? (
                   <Stack gap={1}>
                     <Text variant="label">{t('insights.byDay')}</Text>
                     {insights.byDay

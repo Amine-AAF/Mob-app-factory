@@ -251,7 +251,8 @@
       "destination_city_required": "Each destination needs a city.",
       "not_found": "This trip no longer exists.",
       "generic": "Something went wrong. Your data was not changed.",
-      "currency_has_expenses": "This trip already has expenses converted to its currency. Keep the currency, or delete the expenses first."
+      "currency_has_expenses": "This trip already has expenses converted to its currency. Keep the currency, or delete the expenses first.",
+      "premium_limit": "You have reached the free limit of active trips. Archive a trip, or see Premium for unlimited trips."
     }
   },
   "tripDetail": {
@@ -324,7 +325,13 @@
     "version": "Version {{version}}",
     "documentsLock": "Lock travel documents",
     "documentsLockHint": "Ask for your fingerprint, face or phone screen lock before showing documents. It hides them in the app; it does not encrypt them.",
-    "documentsLockUnavailable": "Set up a screen lock or biometrics on your phone first."
+    "documentsLockUnavailable": "Set up a screen lock or biometrics on your phone first.",
+    "premium": "Premium",
+    "premiumActive": "Premium is active on this device.",
+    "premiumFree": "You are using the free version.",
+    "premiumSee": "See Premium",
+    "premiumManage": "Manage Premium",
+    "adsPrivacy": "Ad privacy choices"
   },
   "dateField": {
     "choose": "Choose a date",
@@ -534,7 +541,9 @@
     "plan": "Plan budget",
     "planHint": "Amounts in {{currency}}, the trip currency. All fields are optional.",
     "total": "Total budget",
-    "categoriesSum": "Categories add up to {{amount}}."
+    "categoriesSum": "Categories add up to {{amount}}.",
+    "detailedPremium": "Daily allowance and spending by day · Premium",
+    "categoriesPremium": "Budget by category · Premium"
   },
   "insights": {
     "title": "Insights",
@@ -831,5 +840,87 @@
       "too_many_photos": "Too many photos for one entry.",
       "not_found": "This entry no longer exists."
     }
+  },
+  "ads": {
+    "label": "Advertisement"
+  },
+  "premium": {
+    "limitTitle": "Free limit reached",
+    "limitTrips_one": "The free version keeps {{count}} active trip at a time. Completed and archived trips never count.",
+    "limitTrips_other": "The free version keeps {{count}} active trips at a time. Completed and archived trips never count.",
+    "limitDocuments_one": "The free version stores up to {{count}} document.",
+    "limitDocuments_other": "The free version stores up to {{count}} documents.",
+    "seePremium": "See Premium",
+    "watchAdForSlot": "Watch an ad for 1 more trip"
+  },
+  "export": {
+    "pdf": "Export itinerary (PDF)",
+    "pdfPremium": "Export itinerary (PDF) · Premium",
+    "csvPremium": "Export expenses (CSV) · Premium",
+    "shareTitle": "Share or save",
+    "unavailable": "Sharing is not available on this phone.",
+    "failed": "The export could not be created. Nothing was shared.",
+    "footer": "Created with TravelWise. Information entered by the traveller; times are local to each destination. Bookings are not verified by TravelWise.",
+    "generated": "Generated on {{date}}",
+    "csv": {
+      "button": "Export expenses (CSV)",
+      "date": "Date",
+      "description": "Description",
+      "category": "Category",
+      "amount": "Amount",
+      "currency": "Currency",
+      "rate": "Rate to trip currency",
+      "tripAmount": "Amount in trip currency",
+      "tripCurrency": "Trip currency",
+      "city": "City",
+      "payment": "Payment method",
+      "paidBy": "Paid by",
+      "shares": "Shares",
+      "notes": "Notes"
+    }
+  },
+  "paywall": {
+    "title": "TravelWise Premium",
+    "headline": "Travel without limits",
+    "subtitle": "Everything you need to plan big trips, share costs and keep printable plans.",
+    "benefits": {
+      "unlimited_trips": "Unlimited active trips",
+      "detailed_budget": "Detailed budget: by category, by day, daily allowance",
+      "custom_split": "Shared expenses with custom amounts",
+      "pdf_export": "Itinerary export to PDF",
+      "csv_export": "Expenses export to CSV",
+      "all_templates": "All itinerary and packing templates",
+      "unlimited_documents": "Unlimited travel documents",
+      "no_ads": "No ads"
+    },
+    "freeStays": "The free version stays fully usable offline: trips, itinerary, bookings, packing, budget, documents and journal.",
+    "period": {
+      "monthly": "Monthly",
+      "annual": "Yearly",
+      "lifetime": "Lifetime",
+      "unknown": "Plan"
+    },
+    "perMonth": "Only {{price}} per month",
+    "oneTime": "One-time purchase",
+    "renews": "Renews automatically, cancel anytime",
+    "save": "Save {{percent}}%",
+    "freeTrial": "Free trial",
+    "continue": "Continue",
+    "restore": "Restore purchases",
+    "restored": "Premium restored. Thank you!",
+    "nothingToRestore": "No active purchase found for this Google account.",
+    "thanks": "Welcome to Premium. Thank you!",
+    "pending": "Your purchase is pending. Premium will activate once Google Play confirms it.",
+    "error": "The purchase could not be completed. You were not charged.",
+    "storeUnavailable": "Purchases are not available in this version of the app.",
+    "loadingOrOffline": "Plans could not be loaded. Check your connection and try again.",
+    "active": "Premium is active",
+    "renewsOn": "Renews on {{date}}",
+    "endsOn": "Ends on {{date}}",
+    "offlineCache": "Offline: your Premium status will be confirmed when you are back online.",
+    "legal": "Payment is handled by Google Play. Subscriptions renew automatically unless cancelled at least 24 hours before the end of the period. Manage or cancel them in Google Play.",
+    "manage": "Manage subscriptions",
+    "privacy": "Privacy policy",
+    "terms": "Terms"
   }
 }

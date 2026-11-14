@@ -9,11 +9,18 @@ import manifest from './app.manifest.json';
  *   APP_VARIANT=production   -> store build (AAB), production IDs from protected CI variables
  *
  * Secrets are never committed: they come from environment variables (EAS / GitLab CI).
- * Ads and subscriptions are added in Phase 6 (see factory/tracking/travelwise.md).
+ * Ads (AdMob) and subscriptions (RevenueCat) are configured through env variables (.env.example).
  */
 const variant = (process.env.APP_VARIANT ?? 'development') as 'development' | 'preview' | 'production';
 const isProd = variant === 'production';
 const suffix = isProd ? '' : `.${variant}`;
+
+// Google's public sample AdMob App ID (development / preview only, never in production).
+const ADMOB_TEST_APP_ID = 'ca-app-pub-3940256099942544~3347511713';
+const admobAppId = isProd ? process.env.ADMOB_ANDROID_APP_ID : ADMOB_TEST_APP_ID;
+if (isProd && !admobAppId) {
+  throw new Error('ADMOB_ANDROID_APP_ID must be set for production builds.');
+}
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
@@ -68,6 +75,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     // Optional Documents lock with the phone's biometrics / screen lock (USE_BIOMETRIC).
     ['expo-local-authentication', { faceIDPermission: 'TravelWise uses Face ID only to unlock your travel documents.' }],
     ['expo-image-picker', { photosPermission: false, cameraPermission: false, microphonePermission: false }],
+    // Ads for free users (UMP consent; measurement delayed until consent is gathered).
+    ['react-native-google-mobile-ads', { androidAppId: admobAppId, delayAppMeasurementInit: true, userTrackingUsageDescription: undefined }],
     [
       'expo-build-properties',
       { android: { minSdkVersion: manifest.build.minSdkVersion, targetSdkVersion: manifest.build.targetSdkVersion, compileSdkVersion: manifest.build.targetSdkVersion } },

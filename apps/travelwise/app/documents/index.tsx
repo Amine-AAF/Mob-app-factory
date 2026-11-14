@@ -6,6 +6,8 @@ import { useTranslation } from 'react-i18next';
 import { DocumentsGate } from '@/components/DocumentsGate';
 import { TravelDocumentCard } from '@/components/TravelDocumentCard';
 import { repos } from '@/database';
+import { canAddDocument } from '@/features/premium/limits';
+import { usePremiumGate } from '@/features/premium/usePremiumGate';
 import { useAsync } from '@/hooks/useAsync';
 import { clock } from '@/utils/clock';
 
@@ -17,9 +19,10 @@ export default function DocumentsScreen() {
   const [scope, setScope] = useState<'trip' | 'all'>(tripId ? 'trip' : 'all');
   const { data } = useAsync(async () => {
     const [docs, trips] = await Promise.all([repos().documents.list(scope === 'trip' && tripId ? tripId : undefined), repos().trips.list()]);
-    return { docs, tripNames: new Map(trips.map((x) => [x.id, x.name])) };
+    return { docs, tripNames: new Map(trips.map((x) => [x.id, x.name])), total: await repos().documents.count() };
   }, [scope, tripId]);
   const today = clock.today();
+  const { isPremium, explainLimit } = usePremiumGate();
 
   return (
     <DocumentsGate>
@@ -33,7 +36,7 @@ export default function DocumentsScreen() {
             </Text>
           </Row>
         </Card>
-        <Button label={t('documents.add')} icon="add" onPress={() => router.push({ pathname: '/documents/new', params: tripId ? { tripId } : {} })} testID="documents-add" />
+        <Button label={t('documents.add')} icon="add" onPress={() => (canAddDocument(isPremium, data?.total ?? 0) ? router.push({ pathname: '/documents/new', params: tripId ? { tripId } : {} }) : explainLimit('documents'))} testID="documents-add" />
         {tripId ? (
           <Row gap={2}>
             <Chip label={t('documents.thisTrip')} selected={scope === 'trip'} onPress={() => setScope('trip')} />

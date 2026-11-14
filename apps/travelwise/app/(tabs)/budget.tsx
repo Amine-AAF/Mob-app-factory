@@ -2,6 +2,7 @@ import { Button, Card, EmptyState, ProgressBar, Row, Screen, Stack, Text } from 
 import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
+import { AdBanner } from '@/components/AdBanner';
 import { useTripsOverview } from '@/features/trips/useTrips';
 import { fmt } from '@/i18n';
 import { budgetRatio } from '@/utils/money';
@@ -39,6 +40,7 @@ export default function BudgetScreen() {
           );
         })}
       </Stack>
+      <AdBanner screen="budget-tab" />
     </Screen>
   );
 }
