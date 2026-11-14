@@ -130,6 +130,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "imagecraft",
+      "path": "apps/imagecraft",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }

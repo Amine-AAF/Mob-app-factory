@@ -1,0 +1,46 @@
+{
+  "id": "imagecraft",
+  "name": "ImageCraft",
+  "storeName": "ImageCraft - Photo Editor",
+  "slug": "imagecraft",
+  "scheme": "imagecraft",
+  "packageId": "com.mobileappsfactory.imagecraft",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "photography",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["pt", "de", "ar"],
+  "brand": { "primary": "#5B3DF5", "accent": "#FF5C8A", "splashBackground": "#0E0B1F" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "imagecraft_premium_monthly", "period": "monthly", "indicativePriceUsd": 2.99 },
+        { "productId": "imagecraft_premium_annual", "period": "annual", "indicativePriceUsd": 14.99 },
+        { "productId": "imagecraft_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 24.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner", "rewarded", "interstitial"], "graceSessions": 1 }
+  },
+  "features": {
+    "imageEditor": true,
+    "crop": true,
+    "imageResizer": true,
+    "imageCompressor": true,
+    "imageConverter": true,
+    "socialPresets": true,
+    "filters": true,
+    "textOverlay": true,
+    "watermark": true,
+    "collage": true,
+    "batchProcessing": true,
+    "projects": true,
+    "saveToGallery": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
