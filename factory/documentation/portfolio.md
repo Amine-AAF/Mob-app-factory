@@ -18,6 +18,7 @@ Dernière mise à jour : 2026-11-13.
 | AutoCare | `apps/autocare` | `com.mobileappsfactory.autocare` | auto-vehicles | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 MVP complet codé et testé — reste pnpm install/lockfile, assets, CI, config externe, tests appareil | ✅ | [autocare.md](../tracking/autocare.md) |
 | BookNest | `apps/booknest` | `com.mobileappsfactory.booknest` ⚠ placeholder | books | hybrid (sub + banner) | en, fr, es | development | 🟡 Code terminé — reste tests appareil + config externe | ✅ | [booknest.md](../tracking/booknest.md) |
 | ImageCraft | `apps/imagecraft` | `com.mobileappsfactory.imagecraft` | photography | hybrid (sub + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code terminé + tests unitaires ; module Kotlin à valider sur appareil | ✅ | [imagecraft.md](../tracking/imagecraft.md) |
+| MealWise | `apps/mealwise` | `com.mealwise.app` ⚠ placeholder | food-drink | hybrid (sub mensuel/annuel/à vie + bannière) | en, fr, es | development | ✅ Terminée (code) — reste config externe, CI matrice + tests sur appareil | ✅ | [mealwise.md](../tracking/mealwise.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
