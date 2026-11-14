@@ -1,8 +1,9 @@
 import { createTestDatabase } from '@factory/testing';
 
-import { eraseUserData, initDatabase, type Repositories } from '@/database';
+import { initDatabase, type Repositories } from '@/database';
 import { SCHEMA_VERSION, USER_TABLES } from '@/database/migrations';
 import { NOTE_MAX_LENGTH } from '@/database/repositories/libraryRepository';
+import { deleteAllUserData } from '@/services/backup';
 import { clock } from '@/services/clock';
 
 let db: Awaited<ReturnType<typeof createTestDatabase>>;
@@ -102,7 +103,7 @@ describe('database', () => {
     await repos.library.setFavorite('gen-001', true);
     await repos.library.saveNote('gen-001', 'note');
     await repos.activity.increment('answers_saved');
-    await eraseUserData(db);
+    await deleteAllUserData(db);
     for (const table of USER_TABLES) {
       expect(await db.getAllAsync(`SELECT * FROM ${table}`, [])).toEqual([]);
     }

@@ -296,7 +296,12 @@
     "themeDark": "Dark",
     "analytics": "Share anonymous usage statistics",
     "analyticsHint": "Only anonymous events such as \"quiz completed\". Your answers and notes never leave your device.",
-    "version": "Version {{version}}"
+    "version": "Version {{version}}",
+    "account": "Profile & data",
+    "profile": "Target job and goal",
+    "profileHint": "Change your job, level, goal or available time",
+    "premium": "Premium",
+    "dataHint": "Back up, restore, export or delete your data"
   },
   "empty": {
     "nothingYet": "Nothing here yet"
@@ -637,5 +642,43 @@
       "mock": "Simulate a real interview"
     },
     "restart": "Start a new plan"
+  },
+  "data": {
+    "title": "Your data",
+    "intro": "Everything you write in InterviewReady (answers, notes, progress) is stored only on this phone. No account, no cloud copy. Keep a backup if you change phones.",
+    "backup": "Back up my data",
+    "backupDesc": "Creates a file with your progress, favorites, notes and answers. Save it somewhere safe; you choose where it goes.",
+    "exportAnswers": "Export my answers",
+    "exportAnswersDesc": "A readable document with your Answer Builder answers and mock interview answers, to review or print before an interview.",
+    "answersTitle": "My interview answers",
+    "exported": "File ready. Choose where to save or share it.",
+    "import": "Restore a backup",
+    "importDesc": "Replaces the data on this phone with the content of a backup file.",
+    "importConfirmTitle": "Restore this backup?",
+    "importConfirmBody": "Your current data on this phone will be replaced. This cannot be undone.",
+    "imported_one": "Backup restored ({{count}} item).",
+    "imported_other": "Backup restored ({{count}} items).",
+    "importInvalid": "This file is not a valid InterviewReady backup.",
+    "importNewer": "This backup comes from a newer version of the app. Update InterviewReady, then try again.",
+    "delete": "Delete all my data",
+    "deleteDesc": "Erases your progress, favorites, notes, answers, mock interviews and plans from this phone. Your Google Play purchases are not affected.",
+    "deleteConfirmTitle": "Delete all your data?",
+    "deleteConfirmBody": "Everything will be erased from this phone. This cannot be undone. Make a backup first if you want to keep it.",
+    "deleteConfirm": "Delete everything"
+  },
+  "stats": {
+    "title": "Advanced statistics",
+    "lockedBody": "See your activity over time, your quiz accuracy by category and the trend of your mock interviews with Premium.",
+    "activityTitle_one": "Activity over the last {{count}} day",
+    "activityTitle_other": "Activity over the last {{count}} days",
+    "activitySummary": "{{total}} activities on {{days}} active days",
+    "accuracyTitle": "Quiz accuracy by category (weakest first)",
+    "accuracyEmpty": "Answer a few quizzes to see your strengths and weaknesses.",
+    "practiseWeakest": "Practise {{category}}",
+    "mockTitle": "Mock interview self-assessment",
+    "mockSummary_one": "{{count}} rated session",
+    "mockSummary_other": "{{count}} rated sessions",
+    "mockImprovement": "change since your first sessions: {{value}}",
+    "mockEmpty": "Complete and rate a mock interview to see your trend."
   }
 }

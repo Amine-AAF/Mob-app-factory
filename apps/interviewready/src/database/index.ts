@@ -1,6 +1,6 @@
 import { migrate, type SqlDatabase } from '@factory/storage';
 
-import { USER_TABLES, migrations } from './migrations';
+import { migrations } from './migrations';
 import { createActivityRepository } from './repositories/activityRepository';
 import { createLibraryRepository } from './repositories/libraryRepository';
 import { createPracticeRepository } from './repositories/practiceRepository';
@@ -36,12 +36,6 @@ export function createRepositories(db: SqlDatabase): Repositories {
   };
 }
 
-/** "Delete all my data": erases every user table (children first). Content is bundled and unaffected. */
-export async function eraseUserData(db: SqlDatabase): Promise<void> {
-  await db.withTransactionAsync(async () => {
-    for (const table of [...USER_TABLES].reverse()) await db.execAsync(`DELETE FROM ${table}`);
-  });
-}
 
 let current: Repositories | null = null;
 

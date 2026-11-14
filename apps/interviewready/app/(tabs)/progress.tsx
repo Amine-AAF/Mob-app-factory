@@ -3,6 +3,7 @@ import { router } from 'expo-router';
 import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { AdvancedStats } from '@/components/AdvancedStats';
 import { ProgressCard } from '@/components/content';
 import { allQuestionCores } from '@/content';
 import { repos } from '@/database';
@@ -53,6 +54,8 @@ export default function ProgressScreen() {
       </Row>
 
       <ProgressCard title={role ? t(`roles.${role}`) : t('home.allQuestions')} studied={progress.studied} total={progress.total} />
+
+      <AdvancedStats />
 
       <SectionHeader title={t('progress.byCategory')} />
       {progress.byCategory.map((c) => (

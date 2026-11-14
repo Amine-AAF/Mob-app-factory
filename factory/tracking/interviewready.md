@@ -56,9 +56,19 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
     questions du jour ordonnées par priorité métier et niveau, quiz quotidien, révision tous les 4 jours, simulation
     hebdomadaire ; suivi des tâches et progression, accès depuis l'accueil et l'onglet Pratique.
 
+- **Phase 5 — Progression et données**
+  - Statistiques avancées (Premium) : activité sur 14 jours, réussite aux quiz par catégorie (les plus faibles en
+    premier, avec raccourci d'entraînement), évolution de l'auto-évaluation des simulations ; aperçu honnête sans
+    fausses données pour l'offre gratuite.
+  - Vos données : sauvegarde JSON versionnée de toutes les tables utilisateur (`@factory/storage`), restauration
+    atomique avec contrôle de l'application et du schéma, export lisible (Markdown) des réponses de l'assistant et des
+    simulations, suppression complète avec retour à l'onboarding. Les fichiers passent par la feuille de partage
+    Android : l'application n'envoie rien elle-même.
+  - Réglages : modification du profil (onboarding pré-rempli), accès Premium, accès aux données.
+
 ## Fonctionnalités en cours
 
-- Aucune (prochaine étape : phase 5).
+- Aucune (prochaine étape : phase 6).
 
 ## Bibliothèque de questions : terminée (500/500)
 
@@ -70,8 +80,8 @@ gratuites) par métier, au moins la moitié de la bibliothèque gratuite.
 ## Fonctionnalités restantes
 
 - Contenu : passe d'harmonisation terminologique FR/ES.
-- Phase 5 : statistiques avancées, export/sauvegarde des données, suppression des données dans Réglages.
-- Phase 6 : AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), finalisation des offres Premium.
+- Phase 6 : AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), publicités récompensées
+  (simulations bonus), application des limites Premium côté service (plans de 30/60 jours).
 - Phase 7 : tests complets, export Android, dossier `store/`, politique de confidentialité.
 
 ## Décompte du contenu
@@ -124,6 +134,7 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-14 | Écrans MVP : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 73/73 (logique de recherche, question du jour, progression, actions, routage, composant) |
 | 2026-11-14 | `npx expo export --platform android` | ✅ bundle Hermes de 7,6 Mo généré (aucun test sur appareil réel à ce stade) |
 | 2026-11-14 | Phase 4 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 91/91 · bundle Hermes 7,8 Mo |
+| 2026-11-14 | Phase 5 : `tsc`, `eslint`, `jest`, export Android | ✅ 0 erreur · 0 problème · 99/99 (dont aller-retour sauvegarde/restauration de toutes les tables) · bundle 7,9 Mo |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication

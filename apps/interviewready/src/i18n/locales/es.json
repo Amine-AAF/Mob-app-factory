@@ -296,7 +296,12 @@
     "themeDark": "Oscuro",
     "analytics": "Compartir estadísticas de uso anónimas",
     "analyticsHint": "Solo eventos anónimos como «cuestionario completado». Tus respuestas y notas nunca salen de tu dispositivo.",
-    "version": "Versión {{version}}"
+    "version": "Versión {{version}}",
+    "account": "Perfil y datos",
+    "profile": "Puesto objetivo y meta",
+    "profileHint": "Cambia tu puesto, nivel, objetivo o tiempo disponible",
+    "premium": "Premium",
+    "dataHint": "Haz copia, restaura, exporta o elimina tus datos"
   },
   "empty": {
     "nothingYet": "Aún no hay nada"
@@ -637,5 +642,43 @@
       "mock": "Simula una entrevista real"
     },
     "restart": "Empezar un nuevo plan"
+  },
+  "data": {
+    "title": "Tus datos",
+    "intro": "Todo lo que escribes en InterviewReady (respuestas, notas, progreso) se guarda solo en este teléfono. Sin cuenta y sin copia en la nube. Guarda una copia de seguridad si cambias de teléfono.",
+    "backup": "Hacer copia de seguridad",
+    "backupDesc": "Crea un archivo con tu progreso, favoritos, notas y respuestas. Guárdalo en un lugar seguro; tú eliges dónde.",
+    "exportAnswers": "Exportar mis respuestas",
+    "exportAnswersDesc": "Un documento legible con tus respuestas del asistente y de tus simulaciones, para repasarlo o imprimirlo antes de una entrevista.",
+    "answersTitle": "Mis respuestas de entrevista",
+    "exported": "Archivo listo. Elige dónde guardarlo o compartirlo.",
+    "import": "Restaurar una copia",
+    "importDesc": "Sustituye los datos de este teléfono por el contenido de un archivo de copia de seguridad.",
+    "importConfirmTitle": "¿Restaurar esta copia?",
+    "importConfirmBody": "Se sustituirán tus datos actuales en este teléfono. Esta acción no se puede deshacer.",
+    "imported_one": "Copia restaurada ({{count}} elemento).",
+    "imported_other": "Copia restaurada ({{count}} elementos).",
+    "importInvalid": "Este archivo no es una copia de seguridad válida de InterviewReady.",
+    "importNewer": "Esta copia proviene de una versión más reciente de la aplicación. Actualiza InterviewReady y vuelve a intentarlo.",
+    "delete": "Eliminar todos mis datos",
+    "deleteDesc": "Borra de este teléfono tu progreso, favoritos, notas, respuestas, simulaciones y planes. Tus compras en Google Play no se ven afectadas.",
+    "deleteConfirmTitle": "¿Eliminar todos tus datos?",
+    "deleteConfirmBody": "Se borrará todo de este teléfono. Esta acción no se puede deshacer. Haz antes una copia si quieres conservarlos.",
+    "deleteConfirm": "Eliminar todo"
+  },
+  "stats": {
+    "title": "Estadísticas avanzadas",
+    "lockedBody": "Con Premium puedes ver tu actividad a lo largo del tiempo, tus aciertos por categoría y la evolución de tus simulaciones.",
+    "activityTitle_one": "Actividad de {{count}} día",
+    "activityTitle_other": "Actividad de los últimos {{count}} días",
+    "activitySummary": "{{total}} actividades en {{days}} días activos",
+    "accuracyTitle": "Aciertos en cuestionarios por categoría (los más débiles primero)",
+    "accuracyEmpty": "Responde algunos cuestionarios para ver tus puntos fuertes y débiles.",
+    "practiseWeakest": "Practicar {{category}}",
+    "mockTitle": "Autoevaluación de las simulaciones",
+    "mockSummary_one": "{{count}} sesión puntuada",
+    "mockSummary_other": "{{count}} sesiones puntuadas",
+    "mockImprovement": "cambio desde tus primeras sesiones: {{value}}",
+    "mockEmpty": "Termina y puntúa una simulación para ver tu evolución."
   }
 }

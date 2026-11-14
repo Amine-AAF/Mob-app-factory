@@ -296,7 +296,12 @@
     "themeDark": "Sombre",
     "analytics": "Partager des statistiques d'utilisation anonymes",
     "analyticsHint": "Uniquement des événements anonymes comme « quiz terminé ». Vos réponses et vos notes ne quittent jamais votre appareil.",
-    "version": "Version {{version}}"
+    "version": "Version {{version}}",
+    "account": "Profil et données",
+    "profile": "Métier visé et objectif",
+    "profileHint": "Modifier votre métier, votre niveau, votre objectif ou votre temps disponible",
+    "premium": "Premium",
+    "dataHint": "Sauvegarder, restaurer, exporter ou supprimer vos données"
   },
   "empty": {
     "nothingYet": "Rien pour l'instant"
@@ -637,5 +642,43 @@
       "mock": "Simuler un vrai entretien"
     },
     "restart": "Commencer un nouveau plan"
+  },
+  "data": {
+    "title": "Vos données",
+    "intro": "Tout ce que vous rédigez dans InterviewReady (réponses, notes, progression) est stocké uniquement sur ce téléphone. Pas de compte, pas de copie dans le cloud. Gardez une sauvegarde si vous changez de téléphone.",
+    "backup": "Sauvegarder mes données",
+    "backupDesc": "Crée un fichier avec votre progression, vos favoris, vos notes et vos réponses. Conservez-le en lieu sûr ; c'est vous qui choisissez où il va.",
+    "exportAnswers": "Exporter mes réponses",
+    "exportAnswersDesc": "Un document lisible avec vos réponses de l'assistant et de vos simulations, à relire ou imprimer avant un entretien.",
+    "answersTitle": "Mes réponses d'entretien",
+    "exported": "Fichier prêt. Choisissez où l'enregistrer ou le partager.",
+    "import": "Restaurer une sauvegarde",
+    "importDesc": "Remplace les données de ce téléphone par le contenu d'un fichier de sauvegarde.",
+    "importConfirmTitle": "Restaurer cette sauvegarde ?",
+    "importConfirmBody": "Vos données actuelles sur ce téléphone seront remplacées. Cette action est irréversible.",
+    "imported_one": "Sauvegarde restaurée ({{count}} élément).",
+    "imported_other": "Sauvegarde restaurée ({{count}} éléments).",
+    "importInvalid": "Ce fichier n'est pas une sauvegarde InterviewReady valide.",
+    "importNewer": "Cette sauvegarde provient d'une version plus récente de l'application. Mettez InterviewReady à jour, puis réessayez.",
+    "delete": "Supprimer toutes mes données",
+    "deleteDesc": "Efface de ce téléphone votre progression, vos favoris, vos notes, vos réponses, vos simulations et vos plans. Vos achats Google Play ne sont pas concernés.",
+    "deleteConfirmTitle": "Supprimer toutes vos données ?",
+    "deleteConfirmBody": "Tout sera effacé de ce téléphone. Cette action est irréversible. Faites une sauvegarde avant si vous souhaitez la conserver.",
+    "deleteConfirm": "Tout supprimer"
+  },
+  "stats": {
+    "title": "Statistiques avancées",
+    "lockedBody": "Suivez votre activité dans le temps, votre réussite aux quiz par catégorie et l'évolution de vos simulations avec Premium.",
+    "activityTitle_one": "Activité sur {{count}} jour",
+    "activityTitle_other": "Activité sur les {{count}} derniers jours",
+    "activitySummary": "{{total}} activités sur {{days}} jours actifs",
+    "accuracyTitle": "Réussite aux quiz par catégorie (les plus faibles en premier)",
+    "accuracyEmpty": "Répondez à quelques quiz pour voir vos points forts et vos points faibles.",
+    "practiseWeakest": "S'entraîner en {{category}}",
+    "mockTitle": "Auto-évaluation des simulations",
+    "mockSummary_one": "{{count}} session notée",
+    "mockSummary_other": "{{count}} sessions notées",
+    "mockImprovement": "évolution depuis vos premières sessions : {{value}}",
+    "mockEmpty": "Terminez et notez une simulation pour voir votre évolution."
   }
 }

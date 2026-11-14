@@ -22,10 +22,12 @@ export default function Onboarding() {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const [step, setStep] = useState(0);
-  const [role, setRole] = useState<JobRoleId | null>(null);
-  const [level, setLevel] = useState<Difficulty>('beginner');
-  const [goal, setGoal] = useState<PreparationGoal>('new-job');
-  const [days, setDays] = useState<number | null>(14);
+  // Re-opened from Settings: start from the saved profile.
+  const saved = useSession((s) => s.profile);
+  const [role, setRole] = useState<JobRoleId | null>(saved?.jobRole ?? null);
+  const [level, setLevel] = useState<Difficulty>(saved?.level ?? 'beginner');
+  const [goal, setGoal] = useState<PreparationGoal>(saved?.goal ?? 'new-job');
+  const [days, setDays] = useState<number | null>(saved ? saved.daysAvailable : 14);
   const [saving, setSaving] = useState(false);
 
   const current = STEPS[step]!;

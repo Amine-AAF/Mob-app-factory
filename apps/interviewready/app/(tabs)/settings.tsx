@@ -1,4 +1,5 @@
-import { Card, Chip, Row, Screen, SectionHeader, Stack, Text, useTheme, type ThemePreference } from '@factory/design-system';
+import { Card, Chip, ListRow, Row, Screen, SectionHeader, Stack, Text, useTheme, type ThemePreference } from '@factory/design-system';
+import { router } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Switch } from 'react-native';
 
@@ -66,6 +67,11 @@ export default function SettingsScreen() {
           />
         </Row>
       </Card>
+
+      <SectionHeader title={t('settings.account')} />
+      <ListRow title={t('settings.profile')} subtitle={t('settings.profileHint')} icon="person-circle-outline" onPress={() => router.push('/onboarding')} testID="settings-profile" />
+      <ListRow title={t('settings.premium')} icon="diamond-outline" onPress={() => router.push({ pathname: '/paywall', params: { source: 'settings' } })} />
+      <ListRow title={t('data.title')} subtitle={t('settings.dataHint')} icon="server-outline" onPress={() => router.push('/data')} testID="settings-data" />
 
       <Text variant="caption" tone="subtle" center>
         {t('settings.version', { version: appManifest.version })}

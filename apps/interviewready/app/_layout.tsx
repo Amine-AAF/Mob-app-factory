@@ -42,6 +42,7 @@ function Navigator() {
         <Stack.Screen name="builder/edit" options={{ title: '' }} />
         <Stack.Screen name="flashcards" options={{ title: '' }} />
         <Stack.Screen name="path" options={{ title: '' }} />
+        <Stack.Screen name="data" options={{ title: '' }} />
         <Stack.Screen name="paywall" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
       </Stack>
     </>
