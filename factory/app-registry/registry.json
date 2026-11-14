@@ -78,6 +78,19 @@
           "es-ES"
         ]
       }
+    },
+    {
+      "id": "learnsphere",
+      "path": "apps/learnsphere",
+      "owner": "factory-core",
+      "playConsole": {
+        "developerAccount": "TO_CONFIGURE",
+        "listingLanguages": [
+          "en-US",
+          "fr-FR",
+          "es-ES"
+        ]
+      }
     }
   ]
 }

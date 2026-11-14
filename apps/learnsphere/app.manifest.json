@@ -1,0 +1,47 @@
+{
+  "id": "learnsphere",
+  "name": "LearnSphere",
+  "storeName": "LearnSphere: Study Planner",
+  "slug": "learnsphere",
+  "scheme": "learnsphere",
+  "packageId": "com.mobileappsfactory.learnsphere",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "category": "education",
+  "defaultLocale": "en",
+  "locales": ["en", "fr", "es"],
+  "plannedLocales": ["de", "pt"],
+  "brand": { "primary": "#1F6F8B", "accent": "#F2A541", "splashBackground": "#0B1A22" },
+  "monetization": {
+    "model": "hybrid",
+    "subscriptions": {
+      "provider": "revenuecat",
+      "entitlementId": "premium",
+      "offeringId": "default",
+      "plans": [
+        { "productId": "learnsphere_premium_monthly", "period": "monthly", "indicativePriceUsd": 3.99 },
+        { "productId": "learnsphere_premium_annual", "period": "annual", "indicativePriceUsd": 19.99 },
+        { "productId": "learnsphere_premium_lifetime", "period": "lifetime", "indicativePriceUsd": 34.99 }
+      ]
+    },
+    "ads": { "provider": "admob", "placements": ["banner"], "graceSessions": 3 }
+  },
+  "features": {
+    "subjects": true,
+    "notes": true,
+    "pdfImport": true,
+    "flashcards": true,
+    "spacedRepetition": true,
+    "quizzes": true,
+    "planner": true,
+    "focusMode": true,
+    "examsDeadlines": true,
+    "analytics": true,
+    "templates": true,
+    "goalsGamification": true,
+    "notifications": true,
+    "backupRestore": true
+  },
+  "build": { "minSdkVersion": 24, "targetSdkVersion": 36, "easProjectIdEnv": "EAS_PROJECT_ID" },
+  "releaseStatus": "development"
+}
