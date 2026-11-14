@@ -22,6 +22,7 @@ Dernière mise à jour : 2026-11-13.
 | PlantCare | `apps/plantcare` | `com.mobileappsfactory.plantcare` | lifestyle | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 Code complet — reste revue botanique, tests appareil, config stores | ✅ | [plantcare.md](../tracking/plantcare.md) |
 | SafeVault | `apps/safevault` | `com.safevault.app` ⚠ placeholder | tools | subscription (sans pub) | en, fr, es | development | 🟡 Code complet + tests verts — module natif à valider sur appareil, audit indépendant requis | ✅ | [safevault.md](../tracking/safevault.md) |
 | SpendWise | `apps/spendwise` | `com.mobileappsfactory.spendwise` | finance | hybrid (sub mensuel/annuel/à vie + banner/rewarded/interstitial limités) | en, fr, es | development | 🟡 Code complet + tests — reste config externe, tests appareil, builds | ✅ | [spendwise.md](../tracking/spendwise.md) |
+| Eventora | `apps/eventora` (branche `feat/eventora`) | `com.mobileappsfactory.eventora` | productivity (events) | hybrid (sub mensuel/annuel/à vie + banner) | en, fr, es | development | 🟡 Code complet (v1) — reste config externe, jobs CI, tests sur appareil | ✅ | [eventora.md](../tracking/eventora.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).

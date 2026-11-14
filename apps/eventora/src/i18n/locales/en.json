@@ -1,0 +1,437 @@
+{
+  "tabs": { "home": "Home", "events": "My Events", "guests": "Guests", "tasks": "Tasks", "settings": "Settings" },
+  "common": {
+    "all": "All", "back": "Back", "cancel": "Cancel", "close": "Close", "confirm": "Confirm", "continue": "Continue", "delete": "Delete",
+    "deleteTitle": "Delete “{{what}}”?", "deleteBody": "This can't be undone.", "edit": "Edit", "more": "More", "noResults": "No results.",
+    "notNow": "Not now", "off": "Off", "on": "On", "pickDate": "Pick a date", "pickTime": "Pick a time", "remove": "Remove", "save": "Save",
+    "saved": "Saved", "search": "Search", "seeAll": "See all", "done": "Done", "choose": "Choose"
+  },
+  "calendar": { "previous": "Previous month", "next": "Next month", "today": "Today", "inDays_one": "In {{count}} day", "inDays_other": "In {{count}} days", "hour": "Hour", "minute": "Minutes" },
+  "ads": { "label": "Advertisement" },
+  "onboarding": {
+    "title": "Plan every event in one place",
+    "subtitle": "Weddings, birthdays, conferences, family dinners: Eventora keeps guests, budget, tasks and the programme together.",
+    "features": {
+      "plan": "Events with a dedicated dashboard and templates",
+      "guests": "Guest list, families, companions and RSVPs",
+      "invite": "Elegant invitations to share from your phone",
+      "budget": "Budget, expenses and vendors, currency-safe",
+      "seating": "Seating plan, timeline and reports"
+    },
+    "start": "Get started",
+    "prefsTitle": "Your preferences",
+    "privacyTitle": "Your data stays with you",
+    "privacy": {
+      "local": "Everything is stored on this phone. No account, no server.",
+      "noAccount": "Works offline. Nothing is uploaded automatically.",
+      "share": "You decide what to share, through Android's share menu.",
+      "contacts": "Eventora never reads your address book."
+    },
+    "remindersBody": "Reminders help with deadlines, payments and RSVPs. They never show guest names or contact details. You can change this any time.",
+    "enableReminders": "Enable reminders",
+    "later": "Maybe later"
+  },
+  "home": {
+    "greeting": "Your events",
+    "emptyTitle": "Let's plan something",
+    "emptyBody": "Create your first event or start from one of the 20 planning templates.",
+    "nextEvent": "Next event",
+    "kpi": {
+      "upcoming": "Upcoming events", "preparing": "In preparation", "guests": "Guests (active events)", "confirmed": "Confirmed · people expected",
+      "tasks": "Tasks to do", "tasksOverdue_one": "{{count}} task overdue", "tasksOverdue_other": "{{count}} tasks overdue", "progress": "Overall preparation"
+    },
+    "budgetUsed": "Budget used",
+    "urgent": "Urgent tasks",
+    "deadlines": "Next deadlines",
+    "otherEvents": "Also coming up",
+    "finished": "Recently completed",
+    "privacyFooter": "Stored on this device only"
+  },
+  "events": {
+    "title": "My events", "new": "New", "create": "Create event", "edit": "Edit event",
+    "filter": { "active": "Active", "past": "Past", "cancelled": "Cancelled", "all": "All" },
+    "searchPlaceholder": "Name or venue",
+    "emptyTitle": "No events here", "emptyBody": "Create an event or pick a template to get a ready-made checklist.",
+    "guestLine_one": "{{count}} guest · {{confirmed}} confirmed", "guestLine_other": "{{count}} guests · {{confirmed}} confirmed",
+    "notFound": "This event no longer exists.",
+    "fromTemplate": "Template: {{name}}", "templateWillAdd": "{{tasks}} tasks, {{activities}} programme items and budget categories will be added. Everything stays editable.",
+    "useTemplate": "Start from a template",
+    "duplicate": "Duplicate", "duplicateBody": "Copy the configuration (budget categories, tasks, programme, tables, vendors, invitation). Guests are optional.",
+    "duplicateConfig": "Configuration only", "duplicateWithGuests": "With guest list", "copyWord": "copy",
+    "deleteBody": "The event and all of its guests, tasks, expenses, programme and seating plan will be deleted from this phone.",
+    "suggestStatus": "Mark as “{{status}}”?", "suggestStatusTap": "Tap to update the status."
+  },
+  "event": {
+    "name": "Event name", "namePlaceholder": "e.g. Léa & Sam's wedding", "type": "Type", "theme": "Theme", "cover": "Cover image",
+    "addCover": "Add a cover", "changeCover": "Change cover", "removeCover": "Remove cover", "description": "Description",
+    "startDate": "Date", "startTime": "Start time", "endDate": "End date (optional)", "endTime": "End time",
+    "timezone": "Time zone", "timezoneHint": "Times are kept in the event's time zone, even if you travel.",
+    "venue": "Venue", "address": "Address", "expectedGuests": "Expected attendance", "budget": "Initial budget", "currency": "Currency",
+    "notes": "Notes", "status": "Status",
+    "inDays_one": "In {{count}} day", "inDays_other": "In {{count}} days", "today": "Today!", "daysAgo_one": "{{count}} day ago", "daysAgo_other": "{{count}} days ago",
+    "kpi": { "attendance": "Expected / planned", "confirmedPending": "Confirmed · awaiting", "tasksDone": "Tasks done" },
+    "preparation": "Preparation progress", "manage": "Manage"
+  },
+  "eventTypes": {
+    "wedding": "Wedding", "birthday": "Birthday", "engagement": "Engagement", "anniversary": "Anniversary", "baby_shower": "Baby shower",
+    "graduation": "Graduation", "dinner_party": "Dinner party", "family_gathering": "Family gathering", "corporate_event": "Corporate event",
+    "conference": "Conference", "workshop": "Workshop", "business_meeting": "Business meeting", "holiday_party": "Holiday party", "custom": "Custom event"
+  },
+  "eventStatus": { "draft": "Draft", "planning": "Planning", "confirmed": "Confirmed", "in_progress": "In progress", "completed": "Completed", "cancelled": "Cancelled" },
+  "themes": { "wedding": "Wedding", "birthday": "Birthday", "corporate": "Corporate", "family": "Family", "celebration": "Celebration" },
+  "modules": {
+    "guests": "Guests", "guestsValue_one": "{{count}} entry · {{people}} people", "guestsValue_other": "{{count}} entries · {{people}} people",
+    "rsvp": "RSVP", "rsvpValue_one": "{{count}} awaiting reply", "rsvpValue_other": "{{count}} awaiting reply",
+    "invitations": "Invitations", "invitationsValue_one": "{{count}} design", "invitationsValue_other": "{{count}} designs", "create": "Create",
+    "budget": "Budget", "tasks": "Tasks", "tasksValue_one": "{{count}} to do", "tasksValue_other": "{{count}} to do",
+    "timeline": "Programme", "timelineValue_one": "{{count}} activity", "timelineValue_other": "{{count}} activities",
+    "timelineOverlaps_one": "{{count}} overlap", "timelineOverlaps_other": "{{count}} overlaps",
+    "seating": "Seating", "seatingValue": "{{seated}} seated · {{unseated}} to place",
+    "vendors": "Vendors", "vendorsValue_one": "{{count}} vendor", "vendorsValue_other": "{{count}} vendors",
+    "gifts": "Gifts", "giftsValue_one": "{{count}} to thank", "giftsValue_other": "{{count}} to thank",
+    "reports": "Reports", "reportsValue": "PDF, CSV, backup"
+  },
+  "guests": {
+    "title": "Guests", "add": "Add guest", "edit": "Edit guest", "delete": "Delete guest", "import": "Import CSV", "groups": "Groups",
+    "entries": "Entries", "filters": "Filters", "allGroups": "All groups", "noGroup": "No group", "withChildren": "With children only",
+    "sort": "Sort", "sortBy": { "name": "Name", "status": "Status", "recent": "Recently added" },
+    "searchPlaceholder": "Name, e-mail, phone, note", "showing_one": "{{count}} of {{total}} shown", "showing_other": "{{count}} of {{total}} shown",
+    "emptyTitle": "No guests yet", "emptyBody": "Add guests one by one or import a CSV file from a spreadsheet.",
+    "noEventTitle": "No event yet", "noEventBody": "Create an event to start your guest list.",
+    "saveAndAdd": "Save & add another", "freeLimit": "{{count}} / {{limit}} guests on the free plan",
+    "duplicates": {
+      "title": "Possible duplicate", "found_one": "{{count}} possible duplicate", "found_other": "{{count}} possible duplicates",
+      "tap": "Tap to review and merge.", "mergeBody": "“{{a}}” and “{{b}}” look like the same person. Merge them into one entry?",
+      "merge": "Merge", "open": "Open", "possible": "This guest may already be on the list",
+      "reason": { "name": "same name", "email": "same e-mail", "phone": "same phone" }
+    }
+  },
+  "guest": {
+    "name": "Name", "firstName": "First name", "lastName": "Last name", "category": "Category", "group": "Group / family",
+    "plusOnes": "Adult companions", "plusOnesHint": "Partners or friends coming with this guest", "children": "Children coming",
+    "childrenHint": "Kids coming with this guest", "isChild": "This guest is a child", "partyTotal_one": "{{count}} person in total",
+    "partyTotal_other": "{{count}} people in total", "party": "Party", "partyOf_one": "{{count}} person", "partyOf_other": "party of {{count}}",
+    "child": "child", "hasDietary": "dietary needs", "rsvp": "RSVP", "private": "Private details",
+    "privateHint": "Contact details, dietary needs and notes stay on this phone. They're never shown in notifications and only included in exports if you choose to.",
+    "phone": "Phone", "email": "E-mail", "dietary": "Dietary preferences", "dietaryPlaceholder": "e.g. vegetarian, nut allergy", "notes": "Notes", "unnamed": "Unnamed guest"
+  },
+  "guestCategory": { "family": "Family", "friend": "Friend", "colleague": "Colleague", "partner": "Partner", "vip": "VIP", "other": "Other" },
+  "groupKind": { "family": "Family", "friends": "Friends", "colleagues": "Colleagues", "other": "Other" },
+  "groups": {
+    "newName": "New group", "rename": "Rename group", "placeholder": "e.g. The Martin family", "create": "Create group",
+    "emptyTitle": "No groups", "emptyBody": "Groups keep families and households together, also on the seating plan.",
+    "members_one": "{{count}} entry", "members_other": "{{count}} entries", "people": "{{adults}} adults, {{children}} children",
+    "deleteBody": "Guests in this group are kept, without a group."
+  },
+  "rsvp": {
+    "title": "RSVP tracker", "not_invited": "Not invited", "invited": "Invited", "confirmed": "Confirmed", "declined": "Declined", "maybe": "Maybe", "no_response": "No response",
+    "changeTitle": "Change RSVP status", "respondedOn": "Response date", "note": "RSVP note", "history": "RSVP history",
+    "stats": {
+      "contacted": "Invited", "confirmed": "Confirmed", "declined": "Declined", "pending": "Awaiting", "expected": "People expected",
+      "companions": "Companions", "breakdown": "{{adults}} adults · {{children}} children · {{rate}} replied"
+    },
+    "manualNote": "Record replies you receive by phone, message or in person. Eventora doesn't collect answers automatically.",
+    "markInvited_one": "Mark {{count}} as invited", "markInvited_other": "Mark {{count}} as invited", "markInvitedTitle": "Mark as invited",
+    "markInvitedBody_one": "{{count}} guest will be marked as invited.", "markInvitedBody_other": "{{count}} guests will be marked as invited.",
+    "export": "Export", "allAnswered": "Everyone has answered 🎉", "awaiting": "Awaiting reply",
+    "listTitle_one": "{{count}} guest", "listTitle_other": "{{count}} guests"
+  },
+  "rsvpSource": { "manual": "manual", "phone": "phone", "message": "message", "in_person": "in person", "import": "import", "online": "online" },
+  "import": {
+    "privacyTitle": "Read on your phone only", "privacyBody": "The file is read locally and never uploaded. Your address book is not accessed.",
+    "howTo": "Export your list from a spreadsheet as CSV (comma or semicolon). Recognised columns: first name, last name, phone, e-mail, group, category, plus ones, children, dietary, notes, RSVP — in English, French or Spanish.",
+    "pick": "Choose a CSV file", "template": "Get a template", "readError": "The file couldn't be read.", "tooLarge": "The file is larger than 5 MB.",
+    "unrecognizedTitle": "Columns not recognised", "unrecognizedBody": "The first row must contain column names, including at least a name column.",
+    "summary": "{{valid}} valid rows out of {{total}}.", "duplicates_one": "{{count}} row matches an existing guest.", "duplicates_other": "{{count}} rows match existing guests.",
+    "skipDuplicates": "Skip possible duplicates", "issues_one": "{{count}} problem", "issues_other": "{{count}} problems", "issueLine": "Row {{row}}: {{issue}}",
+    "issue": { "missingName": "no name (skipped)", "invalidEmail": "invalid e-mail (removed)", "invalidCount": "invalid number of companions or children (skipped)", "unknownRsvp": "unknown RSVP value (set to Not invited)", "tooLong": "a value is too long (skipped)" },
+    "preview": "Preview", "andMore_one": "and {{count}} more", "andMore_other": "and {{count}} more",
+    "importN_one": "Import {{count}} guest", "importN_other": "Import {{count}} guests", "done_one": "{{count}} guest imported.", "done_other": "{{count}} guests imported."
+  },
+  "invitation": {
+    "defaultMessage": "We would love you to celebrate with us.", "defaultRsvp": "Kindly reply before the date",
+    "templates_one": "{{count}} design", "templates_other": "{{count}} designs", "text": "Text", "title": "Title", "hosts": "Hosted by",
+    "hostsPlaceholder": "e.g. Léa & Sam", "message": "Message", "rsvpLine": "RSVP line", "showDate": "Show date", "showTime": "Show time",
+    "showVenue": "Show venue", "style": "Style", "font": "Typeface", "layout": "Layout", "background": "Background", "foreground": "Text colour",
+    "accent": "Accent", "addImage": "Background image", "changeImage": "Change image", "removeImage": "Remove image",
+    "fonts": { "serif": "Classic", "sans": "Modern", "script": "Script", "condensed": "Condensed", "mono": "Typewriter" },
+    "layouts": { "centered": "Centred", "framed": "Framed", "banner": "Banner", "minimal": "Minimal", "split": "Side bar" },
+    "shareText": "Share text", "sharePdf": "Share PDF", "shareTitle": "Share invitation", "copyText": "Copy text", "copied": "Invitation text copied",
+    "premiumTemplate": "Premium design", "premiumTemplateBody": "You can preview it; sharing it requires Premium.",
+    "imageExportNote": "Image export isn't available yet: share the PDF or the text.",
+    "manualSendNote": "You choose the app (WhatsApp, e-mail, SMS…) and send the invitation yourself. Replies are recorded in the RSVP tracker."
+  },
+  "invitationTemplates": {
+    "ivory_classic": "Ivory classic", "blush_romance": "Blush romance", "emerald_gold": "Emerald & gold", "midnight_vow": "Midnight vow",
+    "botanical": "Botanical", "confetti_pop": "Confetti pop", "neon_night": "Neon night", "balloon_sky": "Balloon sky", "golden_age": "Golden age",
+    "sunshine": "Sunshine", "corporate_slate": "Slate", "executive_navy": "Executive navy", "summit": "Summit", "tech_grid": "Tech grid",
+    "family_table": "Family table", "soft_lullaby": "Soft lullaby", "mint_baby": "Mint", "harvest": "Harvest", "champagne": "Champagne",
+    "winter_glow": "Winter glow", "fiesta": "Fiesta", "graduate": "Graduate", "minimal_white": "Minimal white", "garden_party": "Garden party"
+  },
+  "budget": {
+    "initial": "Initial budget", "estimated": "Estimated", "spent": "Spent", "remaining": "Remaining", "committed": "Committed",
+    "unpaid": "Still to pay: {{amount}}", "noInitial": "Set an initial budget in the event settings to track what's left.",
+    "overBudget": "Over budget by {{amount}}.", "otherCurrencies": "Other currencies",
+    "unconvertedNote": "Not included in totals (no exchange rate entered): {{amounts}}. Add a rate to an expense to convert it.",
+    "byCategory": "By category", "noCategories": "No expenses yet.", "evolution": "Spending over time", "envelopes": "Planned per category",
+    "category": "Category", "planned": "Planned", "setEnvelope": "Set amount", "expenses": "Expenses", "addExpense": "Add expense",
+    "noExpenses": "No expenses yet", "noExpensesBody": "Add quotes and payments to follow your budget.", "notConverted": "not converted"
+  },
+  "budgetCategory": {
+    "venue": "Venue", "catering": "Catering", "decoration": "Decoration", "photography": "Photography", "music": "Music",
+    "entertainment": "Entertainment", "invitations": "Invitations", "transportation": "Transportation", "accommodation": "Accommodation",
+    "flowers": "Flowers", "clothing": "Clothing", "gifts": "Gifts", "other": "Other"
+  },
+  "payment": { "unpaid": "Unpaid", "deposit": "Deposit paid", "paid": "Paid" },
+  "expense": {
+    "title": "Description", "edit": "Edit expense", "delete": "Delete expense", "vendor": "Vendor", "noVendor": "No vendor",
+    "estimated": "Estimated amount", "actual": "Actual amount", "currency": "Currency", "fxRate": "Exchange rate",
+    "fxRateHint": "1 {{from}} = ? {{to}} (leave empty to keep it out of the totals)",
+    "foreignNote": "This expense is in {{from}}. It won't be added to your {{to}} totals unless you enter an exchange rate.",
+    "status": "Payment", "due": "Payment due", "dueOn": "due {{date}}", "paidOn": "Paid on", "notes": "Notes", "receipt": "Receipt or invoice",
+    "receiptHint": "Attach a photo or PDF. It's stored privately in the app.", "attachReceipt": "Attach", "replaceReceipt": "Replace", "openReceipt": "Open PDF"
+  },
+  "tasks": {
+    "title": "Tasks", "add": "Add task", "edit": "Edit task", "delete": "Delete task", "allEvents": "All events",
+    "progress": "Preparation", "progressLine": "{{done}} of {{total}} done ({{percent}})",
+    "view": { "list": "List", "calendar": "Calendar" },
+    "bucket": { "overdue": "Overdue", "today": "Today", "week": "Next 7 days", "later": "Later", "undated": "No date", "done": "Done" },
+    "overdue": "Overdue", "nothingThatDay": "Nothing due that day.", "showDone_one": "Show {{count}} done task", "showDone_other": "Show {{count}} done tasks",
+    "hideDone": "Hide done tasks", "emptyTitle": "No tasks", "emptyBody": "Add tasks or start an event from a template to get a checklist.",
+    "noEventBody": "Create an event to organise its tasks."
+  },
+  "task": {
+    "title": "Task", "titlePlaceholder": "e.g. Book the venue", "status": "Status", "due": "Due date", "priority": "Priority", "category": "Category",
+    "assignee": "Responsible (optional)", "assigneePlaceholder": "Who takes care of it?", "vendor": "Related vendor", "description": "Description", "notes": "Notes"
+  },
+  "taskStatus": { "todo": "To do", "in_progress": "In progress", "completed": "Completed", "cancelled": "Cancelled" },
+  "priority": { "low": "Low", "medium": "Medium", "high": "High" },
+  "taskCategory": { "venue": "Venue", "guests": "Guests", "vendors": "Vendors", "decoration": "Decoration", "food": "Food & drinks", "logistics": "Logistics", "program": "Programme", "admin": "Admin & payments", "other": "Other" },
+  "timeline": {
+    "add": "Add activity", "edit": "Edit activity", "delete": "Delete activity", "activity": "Activity", "start": "Start", "end": "End",
+    "when": "Time", "location": "Place", "owner": "In charge", "description": "Description", "nextDay": "next day", "overlap": "overlap",
+    "startsNextDay": "Starts after midnight", "startsNextDayHint": "For activities on the following night (e.g. 01:00).",
+    "endsNextDay": "Ends after midnight.", "conflict": "Overlaps with", "minutes_one": "{{count}} min", "minutes_other": "{{count}} min",
+    "freeTime": "{{minutes}} min free", "moveUp": "Move earlier", "moveDown": "Move later",
+    "overlapsFound_one": "{{count}} overlap in the programme", "overlapsFound_other": "{{count}} overlaps in the programme",
+    "overlapLine": "{{a}} and {{b}} overlap by {{minutes}} min",
+    "emptyTitle": "No programme yet", "emptyBody": "Add arrival, ceremony, dinner, speeches… Activities after midnight are supported.",
+    "shiftTitle": "Shift the programme", "shiftBody": "Move every activity earlier or later.", "shareText": "Share as text",
+    "zoneNote": "Times in the event's time zone ({{zone}})."
+  },
+  "seating": {
+    "tables": "Tables", "table": "Table", "seated": "Seated", "unseated": "To place", "overloaded": "Overloaded tables",
+    "addTable": "Add table", "auto": "Auto-place", "autoTitle": "Auto-place guests", "autoBody_one": "{{count}} guest will be placed, keeping families together.",
+    "autoBody_other": "{{count}} guests will be placed, keeping families together.", "autoNone": "No guest fits in the free seats.",
+    "clear": "Clear plan", "allSeats": "all seat assignments", "defaultName": "Table {{n}}", "tableName": "Table name", "shape": "Shape", "seats": "Seats",
+    "unseatedList": "Guests to place", "everyoneSeated": "Everyone has a seat.", "tapTable": "Tap a table to seat {{name}}",
+    "groupHint": "Use the people icon on a table to seat the whole “{{group}}” group.", "plan": "Plan",
+    "emptyTitle": "No tables yet", "emptyBody": "Add round, rectangular or head tables, then place your guests.",
+    "free_one": "{{count}} seat free", "free_other": "{{count}} seats free", "over_one": "{{count}} seat over", "over_other": "{{count}} seats over",
+    "fullTitle": "Not enough seats", "fullBody": "This table has {{free}} free seat(s) and this party needs {{needed}}.", "placeAnyway": "Place anyway",
+    "placeGroup": "Seat the whole group", "move": "Move to another table", "unseat": "Remove from table",
+    "deleteTableBody": "Guests at this table go back to the list to place.",
+    "overloadedNote_one": "{{count}} table has more guests than seats.", "overloadedNote_other": "{{count}} tables have more guests than seats.",
+    "notEnoughSeats": "{{missing}} more seats are needed for everyone expected.", "freeLimit": "Free plan: up to {{limit}} round or rectangular tables."
+  },
+  "tableShape": { "round": "Round", "rect": "Rectangular", "head": "Head table", "custom": "Custom" },
+  "vendors": {
+    "add": "Add vendor", "edit": "Edit vendor", "delete": "Delete vendor", "committed": "Committed (selected & contracted)", "none": "No vendors yet",
+    "emptyTitle": "No vendors", "emptyBody": "Track caterers, photographers, venues, DJs… with quotes and status.",
+    "meeting": "meeting {{date}}", "advance": "Move to “{{status}}”", "freeLimit": "Free plan: up to {{limit}} vendors per event.",
+    "deleteBody": "Linked expenses and tasks are kept, without the vendor."
+  },
+  "vendor": {
+    "name": "Name", "category": "Category", "status": "Status", "contactSection": "Contact", "contact": "Contact person", "phone": "Phone", "email": "E-mail",
+    "website": "Website", "address": "Address", "call": "Call", "emailAction": "E-mail", "openSite": "Website", "quoteSection": "Quote",
+    "quote": "Quote details", "quotePlaceholder": "What's included, conditions…", "amount": "Amount", "meeting": "Next appointment",
+    "meetingDate": "Date", "meetingTime": "Time", "notes": "Notes", "linked": "Expenses, tasks & contracts", "nothingLinked": "Nothing linked yet.",
+    "addExpense": "Add expense", "addTask": "Add task", "addContract": "Attach contract", "contractTitle": "Contract {{n}}", "fileAttached": "File attached"
+  },
+  "vendorCategory": { "caterer": "Caterer", "photographer": "Photographer", "venue": "Venue", "florist": "Florist", "decorator": "Decorator", "dj": "DJ", "musician": "Musician", "transport": "Transport", "other": "Other" },
+  "vendorStatus": { "to_contact": "To contact", "contacted": "Contacted", "quoted": "Quoted", "selected": "Selected", "contracted": "Contracted", "cancelled": "Cancelled" },
+  "gifts": {
+    "add": "Add gift", "edit": "Edit gift", "delete": "Delete", "gifts": "Gifts", "contributions": "Contributions", "contributionTotal": "Contributions received",
+    "toThank": "To thank", "thankedCount": "Thanked", "noPayments": "Eventora only keeps a record: no payment is made or received through the app.",
+    "filter": { "all": "All", "toThank": "To thank", "gift": "Gifts", "contribution": "Contributions" },
+    "emptyTitle": "No gifts recorded", "emptyBody": "Note gifts and contributions to keep track of thank-you messages."
+  },
+  "gift": {
+    "kind": "Type", "kinds": { "gift": "Gift", "contribution": "Contribution" }, "fromGuest": "From a guest", "noGuest": "Not on the guest list",
+    "contributor": "From", "from": "From", "description": "Description", "amount": "Amount", "received": "Received on", "thanked": "Thank-you sent", "notes": "Notes"
+  },
+  "templates": {
+    "title": "Templates", "browse": "Browse templates", "subtitle": "{{count}} ready-made plans with checklist, programme and budget split. Everything stays editable.",
+    "contents": "{{tasks}} tasks · {{activities}} activities · {{categories}} budget categories", "mine": "My templates",
+    "mineEmpty": "Save any event as a template from its menu (Premium).", "saveAs": "Save as template", "saved": "Template saved",
+    "items": {
+      "wedding_planning": { "name": "Wedding planning", "desc": "From save-the-dates to thank-you notes, with a full wedding-day programme." },
+      "birthday_party": { "name": "Birthday party", "desc": "An evening party with dinner, cake and dancing." },
+      "kids_birthday": { "name": "Kids' birthday", "desc": "Games, entertainment, cake and party favours." },
+      "engagement_party": { "name": "Engagement party", "desc": "Toast, dinner and speeches with close family and friends." },
+      "baby_shower": { "name": "Baby shower", "desc": "Games, sweets and gifts, with a registry." },
+      "graduation_party": { "name": "Graduation party", "desc": "Celebrate the diploma with speeches and a photo booth." },
+      "corporate_conference": { "name": "Corporate conference", "desc": "Speakers, registration, sessions, breaks and networking." },
+      "business_workshop": { "name": "Business workshop", "desc": "A hands-on day with materials and feedback." },
+      "family_dinner": { "name": "Family dinner", "desc": "A relaxed dinner at home: menu, groceries, table." },
+      "anniversary": { "name": "Anniversary", "desc": "Dinner, speeches and music for a milestone." },
+      "garden_party": { "name": "Garden party", "desc": "An outdoor afternoon with a rain plan." },
+      "networking_event": { "name": "Networking event", "desc": "Registration, short keynote and networking." },
+      "product_launch": { "name": "Product launch", "desc": "Press kit, demo, keynote and guests." },
+      "holiday_party": { "name": "Holiday party", "desc": "Festive dinner, gifts and dancing." },
+      "dinner_party": { "name": "Dinner party", "desc": "An elegant dinner for a few guests." },
+      "family_reunion": { "name": "Family reunion", "desc": "A full day together, with lodging and transport." },
+      "business_meeting": { "name": "Business meeting", "desc": "Agenda, room and equipment." },
+      "retirement_party": { "name": "Retirement party", "desc": "Speeches, gift and dinner for a colleague." },
+      "team_offsite": { "name": "Team offsite", "desc": "Workshops, activities and dinner, with travel." },
+      "custom_event": { "name": "Custom event", "desc": "A simple base to adapt to any occasion." }
+    }
+  },
+  "taskLibrary": {
+    "setBudget": "Set the overall budget", "bookVenue": "Book the venue", "guestList": "Draft the guest list", "officiant": "Confirm the officiant",
+    "saveTheDate": "Send save-the-dates", "chooseCaterer": "Choose the caterer", "bookPhotographer": "Book the photographer", "bookMusic": "Book music / DJ",
+    "giftRegistry": "Set up the gift registry", "honeymoon": "Plan the honeymoon", "sponsorOutreach": "Contact sponsors", "chooseFlorist": "Choose the florist",
+    "weddingRings": "Order the rings", "bookAccommodation": "Book accommodation for guests", "bookSpeakers": "Confirm speakers", "permits": "Get permits and insurance",
+    "marriageLicense": "Prepare the marriage paperwork", "registration": "Open registration", "sendInvitations": "Send the invitations", "chooseOutfit": "Choose outfits",
+    "agenda": "Finalise the agenda", "orderCake": "Order the cake", "planMenu": "Plan the menu", "arrangeTransport": "Arrange transport", "avEquipment": "Book sound & AV equipment",
+    "pressKit": "Prepare the press kit", "giftIdeas": "Choose a gift", "themeDecor": "Pick the theme and decoration", "photoBooth": "Set up a photo corner",
+    "followUpRsvp": "Follow up on missing RSVPs", "confirmVendors": "Confirm all vendors", "prepareDecorations": "Prepare the decorations", "finalizeProgram": "Finalise the programme",
+    "playlist": "Prepare the playlist", "partyFavors": "Prepare party favours", "weatherPlan": "Plan for bad weather", "workshopMaterials": "Prepare workshop materials",
+    "buySupplies": "Buy supplies", "seatingPlan": "Make the seating plan", "dietaryCheck": "Check dietary needs", "checkGuestList": "Check the final guest list",
+    "confirmHeadcount": "Confirm the headcount to the caterer", "prepareSpeeches": "Prepare speeches", "badges": "Print badges", "finalPayments": "Make the final payments",
+    "groceries": "Do the groceries", "cleanHome": "Get the place ready", "feedbackSurvey": "Send a feedback survey", "thankYouNotes": "Send thank-you notes"
+  },
+  "timelineLibrary": {
+    "guestArrival": "Guest arrival", "welcomeDrinks": "Welcome drinks", "ceremony": "Ceremony", "photos": "Photos", "cocktail": "Cocktail hour", "dinner": "Dinner",
+    "speeches": "Speeches", "firstDance": "First dance", "entertainment": "Entertainment", "cakeCutting": "Cake cutting", "dancing": "Dancing", "closing": "Closing",
+    "registration": "Registration", "keynote": "Keynote", "coffeeBreak": "Coffee break", "session": "Session", "lunch": "Lunch", "panel": "Panel discussion",
+    "networking": "Networking", "workshopIntro": "Introduction", "handsOn": "Hands-on session", "wrapUp": "Wrap-up", "games": "Games", "giftsOpening": "Gift opening",
+    "toast": "Toast", "aperitif": "Aperitif", "dessert": "Dessert", "demo": "Demo"
+  },
+  "reports": {
+    "export": "Export", "csv": "Export CSV", "empty": "Nothing to show yet.", "footer": "Generated by Eventora on {{date}}",
+    "includeContacts": "Include contact details", "includeContactsHint": "Phone numbers, e-mails and dietary notes are left out unless you turn this on.",
+    "contactsWarning": "Exports will contain personal details of your guests. Share them only with people who need them.",
+    "backupHint": "A JSON backup of all your events, free, to keep or move to another phone.",
+    "kinds": { "guests": "Guest list", "rsvp": "RSVP statistics", "budget": "Budget", "expenses": "Expenses", "timeline": "Programme", "vendors": "Vendors", "seating": "Seating plan", "gifts": "Gifts & contributions", "tasks": "Tasks", "final": "Final summary" },
+    "desc": {
+      "guests": "Everyone with group, status and party size", "rsvp": "Answers, people expected and who's still to reply", "budget": "Totals and breakdown by category",
+      "expenses": "Every expense with status and vendor", "timeline": "The programme hour by hour", "vendors": "Vendors, status and amounts",
+      "seating": "Tables with who sits where", "gifts": "Gifts, contributions and thank-yous", "tasks": "Checklist with due dates", "final": "Guests, budget, tasks, programme and vendors in one document"
+    }
+  },
+  "share": {
+    "privacyTitle": "Personal data", "privacyBody": "This list contains your guests' names. Share it only with people who need it.",
+    "privacyBodyContacts": "This list contains your guests' names AND contact details. Share it only with people you trust.",
+    "continue": "Share", "failed": "Sharing isn't available right now."
+  },
+  "premium": {
+    "cta": "See Premium",
+    "features": {
+      "unlimitedEvents": { "title": "Unlimited events", "body": "Plan as many events as you like at the same time." },
+      "moreGuests": { "title": "Large guest lists", "body": "Go beyond 150 guests per event." },
+      "premiumInvitations": { "title": "Premium invitations", "body": "Unlock every invitation design." },
+      "advancedSeating": { "title": "Advanced seating plan", "body": "Unlimited tables, head tables and custom layouts." },
+      "pdfExport": { "title": "PDF exports", "body": "Professional PDF reports to print or share." },
+      "csvExport": { "title": "CSV exports", "body": "Open your lists in any spreadsheet." },
+      "advancedBudget": { "title": "Advanced budget", "body": "Category charts and spending over time." },
+      "vendors": { "title": "Vendor manager", "body": "Track every vendor, quote and contract." },
+      "premiumTemplates": { "title": "All templates", "body": "Unlock every planning template." },
+      "customTemplates": { "title": "Your own templates", "body": "Save any event as a reusable template." },
+      "advancedReports": { "title": "Advanced reports", "body": "Final summary, budget, seating and vendor reports in PDF and CSV." },
+      "noAds": { "title": "No ads", "body": "Plan without advertising." }
+    },
+    "limitReached": {
+      "unlimitedEvents": "The free plan includes {{limit}} active events. Complete or cancel one, or go Premium.",
+      "moreGuests": "The free plan includes up to {{limit}} guests per event.",
+      "premiumInvitations": "This design is part of Premium.", "advancedSeating": "The free plan includes up to {{limit}} round or rectangular tables.",
+      "pdfExport": "PDF exports are part of Premium.", "csvExport": "CSV exports are part of Premium.", "advancedBudget": "This view is part of Premium.",
+      "vendors": "The free plan includes up to {{limit}} vendors per event.", "premiumTemplates": "This template is part of Premium.",
+      "customTemplates": "Saving templates is part of Premium.", "advancedReports": "Reports are part of Premium.", "noAds": "Remove ads with Premium."
+    }
+  },
+  "paywall": {
+    "title": "Eventora Premium", "subtitle": "Everything you need for big days and busy calendars.",
+    "benefits": {
+      "events": "Unlimited events", "guests": "Unlimited guests and advanced guest management", "invitations": "{{count}} premium invitation designs",
+      "seating": "Advanced seating plan (head tables, unlimited tables)", "exports": "PDF and CSV exports and advanced reports", "budget": "Advanced budget charts",
+      "vendors": "Full vendor manager", "templates": "{{count}} extra templates and your own templates", "noAds": "No ads"
+    },
+    "plans": { "monthly": "Monthly", "annual": "Yearly", "lifetime": "Lifetime", "unknown": "Plan" },
+    "perMonth": "{{price}} / month", "perYear": "{{price}} / year", "once": "{{price}} once", "save": "Save {{percent}}%", "freeTrial": "Free trial",
+    "subscribe": "Continue", "restore": "Restore purchases", "manage": "Manage subscription", "active": "Premium is active",
+    "activeUntil": "Renews or ends on {{date}}", "success": "Welcome to Premium!", "cancelled": "Purchase cancelled.", "pending": "Your purchase is pending.",
+    "unavailable": "The store isn't available right now. Please try again later.", "notConfigured": "Purchases aren't available in this build.",
+    "restored": "Purchases restored.", "nothingToRestore": "No purchase to restore.",
+    "legal": "Subscriptions renew automatically unless cancelled at least 24 h before the end of the period. Manage or cancel any time in Google Play. Prices are shown by Google Play in your currency.",
+    "terms": "Terms", "privacy": "Privacy"
+  },
+  "settings": {
+    "title": "Settings", "goPremium": "Go Premium", "premiumPitch": "Unlimited events, exports, advanced seating, no ads.", "premiumActive": "Premium",
+    "premiumThanks": "Thank you for supporting Eventora.", "appearance": "Appearance", "language": "Language", "theme": "Theme",
+    "themes": { "system": "System", "light": "Light", "dark": "Dark" }, "colors": "Colours",
+    "palette": { "plum": "Plum", "rose": "Rose", "ocean": "Ocean", "forest": "Forest", "indigo": "Indigo", "graphite": "Graphite" },
+    "defaultCurrency": "Default currency", "general": "General", "notifications": "Notifications", "data": "Backup & data",
+    "dataHint": "Export, restore, delete", "privacy": "Privacy", "offline": "Works offline", "backup": "Backup", "exportJson": "Export a JSON backup"
+  },
+  "notifications": {
+    "channelName": "Event reminders",
+    "taskDue": { "title": "Task due today", "titleNamed": "{{event}}: task due today", "body": "Open Eventora to see what's due." },
+    "deadlineSoon": { "title": "Important deadline coming", "titleNamed": "{{event}}: deadline coming", "body_one": "A high-priority task is due in {{count}} day.", "body_other": "A high-priority task is due in {{count}} days." },
+    "eventUpcoming": { "title": "Your event is coming up", "titleNamed": "{{event}} is coming up", "body_one": "{{count}} day to go. Check the last details.", "body_other": "{{count}} days to go. Check the last details." },
+    "rsvpFollowup": { "title": "Some guests haven't replied", "titleNamed": "{{event}}: RSVPs missing", "body_one": "{{count}} guest is still awaiting an answer.", "body_other": "{{count}} guests are still awaiting an answer." },
+    "paymentDue": { "title": "Payment due soon", "titleNamed": "{{event}}: payment due soon", "body": "A vendor payment is due soon." },
+    "vendorMeeting": { "title": "Vendor appointment", "titleNamed": "{{event}}: vendor appointment", "body": "You have a vendor appointment coming up." },
+    "test": { "title": "Eventora reminders are on", "body": "This is how your reminders will look." }
+  },
+  "notificationsSettings": {
+    "master": "Reminders", "showNames": "Show event names", "showNamesHint": "Off by default: notifications can be seen on the lock screen.",
+    "privacy": "Reminders never show guest names, contact details, dietary information or amounts.",
+    "deniedTitle": "Notifications are blocked", "deniedBody": "Allow notifications for Eventora in Android settings to receive reminders.", "openSettings": "Open settings",
+    "leadDays": "Days before", "hour": "Time of day (hour)", "oneHourBefore": "1 hour before the appointment", "dayBefore": "Day before instead",
+    "test": "Send a test notification", "testSent": "A test notification will appear in a few seconds.",
+    "kinds": {
+      "task_due": { "title": "Task reminders", "hint": "On the due date of each task" },
+      "deadline_soon": { "title": "Upcoming deadlines", "hint": "Ahead of high-priority tasks" },
+      "event_upcoming": { "title": "Event coming up", "hint": "Before each event" },
+      "rsvp_followup": { "title": "RSVP follow-up", "hint": "When guests haven't replied" },
+      "payment_due": { "title": "Payments", "hint": "Before an expense is due" },
+      "vendor_meeting": { "title": "Vendor appointments", "hint": "Before each appointment" }
+    }
+  },
+  "privacy": {
+    "title": "Privacy", "intro": "Eventora is designed to keep your events and your guests' details private.",
+    "sections": {
+      "storage": { "title": "Stored on your phone", "body": "Events, guests, budgets, files and images are stored only on this device, in the app's private storage. There is no Eventora server." },
+      "account": { "title": "No account", "body": "No sign-up, no login. Nothing about you is collected to use the app." },
+      "guests": { "title": "Your guests' data", "body": "Names, contact details and dietary preferences you enter stay on this phone. They're never sent to advertisers or analytics and never appear in notifications." },
+      "contacts": { "title": "Contacts", "body": "Eventora does not request access to your address book. Guests are added by hand or from a CSV file you choose." },
+      "sharing": { "title": "Sharing", "body": "Invitations, lists and reports leave the app only when you share them through Android's share menu. Eventora warns you before sharing lists with personal data." },
+      "notifications": { "title": "Notifications", "body": "Reminders are scheduled on your phone. They don't include guest names, contacts or amounts." },
+      "ads": { "title": "Ads (free version)", "body": "The free version shows a banner on browsing screens only (never on guest, invitation or seating screens). Google AdMob may process device identifiers according to your consent choices. No guest data is ever shared." },
+      "analytics": { "title": "Analytics", "body": "Off by default. If you opt in, only anonymous usage events are counted — never names, contacts, amounts or texts." },
+      "purchases": { "title": "Purchases", "body": "Subscriptions are handled by Google Play. Eventora only receives whether Premium is active." },
+      "rights": { "title": "Your control", "body": "Export a full backup or delete all data at any time in Settings → Backup & data. Uninstalling the app also removes everything." }
+    },
+    "analyticsToggle": "Share anonymous usage statistics", "analyticsHint": "Helps improve Eventora. No personal data.",
+    "adChoices": "Ad privacy choices", "fullPolicy": "Full privacy policy"
+  },
+  "data": {
+    "localTitle": "Your data is on this phone", "localBody": "Back it up regularly, for example before changing phones. Images and documents are not included in the backup file.",
+    "backupBody": "Creates a JSON file with all your events, guests, budgets and settings, to save where you want.", "restore": "Restore a backup",
+    "restoreTitle": "Restore a backup?", "restoreBody": "All current events will be replaced by the content of the backup.", "restoreConfirm": "Choose file and restore",
+    "restored_one": "{{count}} record restored.", "restored_other": "{{count}} records restored.", "restoreFailed": "The backup couldn't be restored.",
+    "errors": { "invalid_json": "This file isn't valid JSON.", "invalid_format": "This file isn't an Eventora backup.", "wrong_app": "This backup belongs to another app.", "newer_schema": "This backup comes from a newer version of Eventora. Update the app first." },
+    "deleteTitle": "Delete all my data", "deleteHint": "Erases every event, guest, file and setting from this phone. Your Google Play subscription is not affected.",
+    "deleteBody": "Everything will be permanently erased from this phone. Export a backup first if you want to keep it.", "deleteConfirm": "Delete everything"
+  },
+  "errors": {
+    "saveFailed": "Couldn't save. Please try again.",
+    "event": { "name": "Please enter a name.", "nameTooLong": "The name is too long.", "startDate": "Please pick a valid date.", "startTime": "Invalid time.", "endDate": "Invalid end date.", "endTime": "Invalid end time.", "timezone": "Unknown time zone.", "endBeforeStart": "The end date is before the start date.", "expectedGuests": "Enter a number of guests.", "budget": "Enter a valid amount.", "currency": "Choose a currency." },
+    "guest": { "name": "Enter a first or last name.", "email": "This e-mail looks invalid.", "plusOnes": "Invalid number.", "children": "Invalid number." },
+    "expense": { "title": "Add a description.", "amount": "Enter a valid amount.", "currency": "Choose a currency.", "fxRate": "Enter a positive rate." },
+    "vendor": { "name": "Enter a name.", "email": "This e-mail looks invalid.", "website": "This address looks invalid.", "amount": "Enter a valid amount." },
+    "gift": { "contributor": "Who is it from?", "description": "Describe the gift.", "amount": "Enter an amount.", "currency": "Choose a currency." },
+    "task": { "title": "Enter a title." }
+  }
+}
