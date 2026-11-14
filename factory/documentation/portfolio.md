@@ -13,7 +13,7 @@ Dernière mise à jour : 2026-11-13.
 | DevSpeak | `apps/devspeak` | `com.devspeak.app` ⚠ placeholder | education | hybrid (sub + banner/rewarded) | en, fr, es | development | ✅ Terminée (code) — reste config externe + tests sur appareil | ✅ | [devspeak.md](../tracking/devspeak.md) |
 | Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Fonctionnelle — 320 défis + quotidien, écrans, monétisation, store/ ; reste : tests appareil, comptes externes | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
 | FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
-| CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
+| CalcWise | `apps/calcwise` | `com.mobileappsfactory.calcwise` | tools | hybrid (sub mensuel/annuel + achat à vie + banner/interstitial/rewarded) | en, fr, es | development | 🟡 Code terminé sur `feat/calcwise` — reste config externe + tests sur appareil | ✅ | [calcwise.md](../tracking/calcwise.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
@@ -133,12 +133,13 @@ Une ligne par modification en cours d'un package ou fichier partagé. Supprimer 
 
 | Zone | Session / app | Sujet | Depuis |
 | --- | --- | --- | --- |
-| — | — | — | — |
+| `.gitlab-ci.yml` | calcwise (`feat/calcwise`) | Ajout des jobs `calcwise-*` (tests, bundle, APK preview manuel, AAB sur tag `calcwise-v*`) — additif | 2026-11-13 |
 
 ## Journal des changements partagés
 
 | Date | Zone | Changement | Apps impactées | Validation |
 | --- | --- | --- | --- | --- |
+| 2026-11-13 | `.gitlab-ci.yml`, `registry.json` | CalcWise : jobs CI `calcwise-*` additifs ; entrée de registre `calcwise` | calcwise uniquement | YAML relu ; jobs DevSpeak inchangés |
 | 2026-11-13 | dépôt | Commit initial `f7a0ebd`, push GitHub, branches `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` | toutes | — |
 | 2026-11-13 | `factory/documentation`, `factory/tracking` | Ajout portfolio.md, parallel-development.md, fichiers de suivi | aucune (docs) | — |
 | 2026-11-13 | `packages/monetization` | Ajouts rétrocompatibles : `ADMOB_TEST_IDS.interstitial`, `resolveInterstitialUnit`, `shouldShowInterstitial` (pauses naturelles, plafonnement), champ optionnel `EntitlementState.activeEntitlements` (rempli par l'adaptateur RevenueCat). Inclus dans `f7a0ebd` | logic-quest (devspeak inchangé) | ✅ 12/12 package, devspeak 126/126 |

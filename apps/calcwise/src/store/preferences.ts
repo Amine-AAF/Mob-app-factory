@@ -12,7 +12,7 @@ import type { AngleMode } from '@/services/MathematicalEngine';
  * Boot-critical, lightweight preferences kept in AsyncStorage (readable before
  * SQLite opens). Calculation history lives in SQLite.
  */
-export type NumberFormatPreference = 'auto' | 'en-US' | 'fr-FR' | 'de-DE' | 'de-CH' | 'en-IN';
+export type NumberFormatPreference = 'auto' | 'en-US' | 'fr-FR' | 'de-DE' | 'de-CH';
 
 export interface PreferencesState {
   hydrated: boolean;

@@ -172,3 +172,54 @@ submit-play-internal:
   script:
     - npx --yes eas-cli@27 submit --platform android --profile production --latest --non-interactive
   rules: *release-rules
+
+# ------------------------------------------------------------------ CalcWise (apps/calcwise)
+# Additive jobs for app #4. Production IDs: CalcWise's own protected variables (see apps/calcwise/store/release.md),
+# including EXPO_PUBLIC_ADMOB_INTERSTITIAL_ID. Nothing is ever submitted to Google Play from CI for CalcWise.
+
+calcwise-tests:
+  <<: *pnpm
+  stage: test
+  needs: [install]
+  script:
+    # Engine, calculators, SQLite (sql.js), i18n completeness, privacy/offline checks, UI tests.
+    - pnpm --filter calcwise run test:ci
+  coverage: '/All files[^|]*\|[^|]*\s+([\d\.]+)/'
+  artifacts:
+    when: always
+    paths: [apps/calcwise/coverage]
+    expire_in: 1 week
+
+calcwise-bundle-validation:
+  <<: *pnpm
+  stage: build
+  needs: [typecheck, lint, registry, calcwise-tests]
+  script:
+    - cd apps/calcwise && npx expo export --platform android --output-dir dist
+    - npx expo config --type public > /dev/null
+
+calcwise-android-preview-apk:
+  <<: *eas
+  needs: [calcwise-bundle-validation]
+  variables: { EAS_PROFILE: preview, EAS_WAIT_FLAG: "--no-wait" }
+  before_script:
+    - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+    - cd apps/calcwise
+  rules:
+    - if: $EXPO_TOKEN == null
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: manual
+      allow_failure: true
+
+calcwise-android-production-aab:
+  <<: *eas
+  needs: [calcwise-bundle-validation]
+  variables: { EAS_PROFILE: production, EAS_WAIT_FLAG: "" }
+  before_script:
+    - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
+    - cd apps/calcwise
+  rules:
+    - if: $EXPO_TOKEN == null
+      when: never
+    - if: $CI_COMMIT_TAG =~ /^calcwise-v\d+\.\d+\.\d+$/
