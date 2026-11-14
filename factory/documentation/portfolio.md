@@ -16,6 +16,7 @@ Dernière mise à jour : 2026-11-13.
 | CalcWise | `apps/calcwise` | `com.mobileappsfactory.calcwise` | tools | hybrid (sub mensuel/annuel + achat à vie + banner/interstitial/rewarded) | en, fr, es | development | 🟡 Code terminé sur `feat/calcwise` — reste config externe + tests sur appareil | ✅ | [calcwise.md](../tracking/calcwise.md) |
 | CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
 | AutoCare | `apps/autocare` | `com.mobileappsfactory.autocare` | auto-vehicles | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 MVP complet codé et testé — reste pnpm install/lockfile, assets, CI, config externe, tests appareil | ✅ | [autocare.md](../tracking/autocare.md) |
+| BookNest | `apps/booknest` | `com.mobileappsfactory.booknest` ⚠ placeholder | books | hybrid (sub + banner) | en, fr, es | development | 🟡 Code terminé — reste tests appareil + config externe | ✅ | [booknest.md](../tracking/booknest.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).

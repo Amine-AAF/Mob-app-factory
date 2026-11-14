@@ -1,0 +1,342 @@
+{
+  "tabs": { "home": "Inicio", "library": "Biblioteca", "discover": "Descubrir", "goals": "Metas", "profile": "Perfil" },
+  "common": {
+    "back": "Atrás", "cancel": "Cancelar", "cannotUndo": "Esta acción no se puede deshacer.", "clear": "Borrar", "close": "Cerrar", "delete": "Eliminar", "done": "Listo",
+    "edit": "Editar", "hide": "Ocultar", "manage": "Gestionar", "more": "Más opciones", "notNow": "Ahora no", "save": "Guardar", "seeAll": "Ver todo", "show": "Mostrar",
+    "today": "Hoy", "wonderful": "Maravilloso", "removeTag": "Quitar la etiqueta {{tag}}"
+  },
+  "status": { "want_to_read": "Por leer", "reading": "Leyendo", "completed": "Leído", "on_hold": "En pausa", "abandoned": "Abandonado" },
+  "formats": { "paperback": "Tapa blanda", "hardcover": "Tapa dura", "ebook": "Libro electrónico", "audiobook": "Audiolibro" },
+  "genres": {
+    "fiction": "Ficción", "classics": "Clásicos", "science_fiction": "Ciencia ficción", "fantasy": "Fantasía", "mystery": "Misterio", "thriller": "Suspense",
+    "romance": "Romántica", "historical_fiction": "Novela histórica", "biography": "Biografía", "history": "Historia", "philosophy": "Filosofía",
+    "science": "Ciencia", "business": "Negocios", "personal_development": "Desarrollo personal", "poetry": "Poesía", "travel": "Viajes",
+    "comics": "Cómics", "children": "Infantil", "essay": "Ensayo"
+  },
+  "home": {
+    "greetingMorning": "Buenos días, lector", "greetingAfternoon": "Buenas tardes, lector", "greetingEvening": "Buenas noches, lector", "greetingNight": "¿Lectura nocturna?",
+    "currentlyReading": "Leyendo ahora", "continueA11y": "Continuar {{title}}", "timerRunning": "Sesión de lectura en curso de {{title}}",
+    "emptyTitle": "Tu nido te espera", "emptyBody": "Añade tu primer libro para empezar tu biblioteca personal.",
+    "nothingInProgress": "Nada en curso", "nothingInProgressBody": "Elige tu próxima lectura en Descubrir.",
+    "alsoReading": "También leyendo", "yearlyGoal": "Este año", "setGoal": "Fijar una meta", "thisWeek": "Esta semana",
+    "sessions_one": "{{count}} sesión", "sessions_other": "{{count}} sesiones", "noSessionsYet": "Aún no hay sesiones cronometradas",
+    "nextGoal": "Próxima meta", "recentReads": "Terminados recientemente", "collections": "Colecciones", "recentQuotes": "Citas recientes"
+  },
+  "library": {
+    "title": "Mi biblioteca", "count_one": "{{count}} libro", "count_other": "{{count}} libros", "addBook": "Añadir un libro", "listView": "Ver como lista", "gridView": "Ver como cuadrícula",
+    "searchPlaceholder": "Título, autor, ISBN…", "filters": "Filtros y orden", "all": "Todos", "favorites": "Favoritos", "archived": "Archivados",
+    "emptyTitle": "Aún no hay libros", "emptyBody": "Toca + para añadir un libro o importa un CSV desde Perfil › Copia de seguridad.", "noResults": "Ningún libro coincide",
+    "noResultsBody": "Prueba otra búsqueda o restablece los filtros.", "resetFilters": "Restablecer filtros", "sortBy": "Ordenar por",
+    "sort": { "recent": "Actualizados recientemente", "added": "Añadidos recientemente", "title": "Título", "author": "Autor", "rating": "Valoración", "progress": "Progreso", "year": "Año de publicación" },
+    "bookA11y": "{{title}} de {{author}}, {{status}}"
+  },
+  "book": {
+    "newTitle": "Nuevo libro", "editTitle": "Editar libro", "title": "Título", "subtitle": "Subtítulo", "originalTitle": "Título original",
+    "originalTitleHint": "Se conserva tal cual, sea cual sea el idioma de la app.", "originalTitleLabel": "Título original: {{title}}", "author": "Autor",
+    "unknownAuthor": "Autor desconocido", "untitled": "Sin título", "genre": "Género", "isbn": "ISBN", "isbnHint": "Opcional. Ayuda a detectar duplicados.",
+    "publisher": "Editorial", "year": "Año de publicación", "pages": "Número de páginas", "pagesHint": "Opcional — necesario para ver un porcentaje de progreso.",
+    "language": "Idioma del libro", "languageHint": "Código de idioma, p. ej. en, fr, es", "format": "Formato", "acquiredOn": "Adquirido el", "price": "Precio de compra",
+    "currency": "Moneda", "description": "Descripción", "notes": "Notas personales", "status": "Estado", "favorite": "Añadir a favoritos", "unfavorite": "Quitar de favoritos",
+    "moreDetails": "Más detalles (ISBN, editorial, precio…)", "lessDetails": "Menos detalles", "chooseCover": "Elegir una portada", "changeCover": "Cambiar portada",
+    "removeCover": "Quitar portada", "coverHint": "Desde tus fotos. Solo se guarda en este dispositivo.",
+    "duplicateTitle": "¿Ya está en tu biblioteca?",
+    "duplicateBody": {
+      "isbn": "“{{title}}” tiene el mismo ISBN.",
+      "title_author": "“{{title}}” tiene el mismo título y autor.",
+      "title": "“{{title}}” tiene el mismo título."
+    },
+    "openExisting": "Abrir el existente", "addAnyway": "Añadir igualmente", "notFound": "Este libro ya no existe.",
+    "progress": "Progreso", "progressUnknown": "Progreso desconocido", "pageOf": "Página {{page}} de {{total}}", "pageOnly": "Página {{page}}",
+    "currentPage": "Página actual", "currentPageOf": "Página actual (de {{total}})", "noPageCount": "Añade el número de páginas para ver un porcentaje.",
+    "addPages_one": "Sumar {{count}} página", "addPages_other": "Sumar {{count}} páginas", "updateProgress": "Actualizar progreso",
+    "startedOn": "Empezado el {{date}}", "finishedOn": "terminado el {{date}}", "notStarted": "Aún sin empezar", "editDates": "Editar fechas",
+    "started": "Fecha de inicio", "finished": "Fecha de fin", "markFinished": "Marcar como leído", "reread": "Volver a leer",
+    "rereadTitle": "¿Volver a leerlo?", "rereadBody": "Tu lectura anterior se queda en el historial; una nueva empieza en la página 0.",
+    "rereadN_one": "Lectura n.º {{count}}", "rereadN_other": "Lectura n.º {{count}}", "readingHistory": "Historial de lectura",
+    "attemptN_one": "Lectura {{count}}", "attemptN_other": "Lectura {{count}}", "details": "Detalles",
+    "archive": "Archivar", "unarchive": "Sacar del archivo", "deleteTitle": "¿Eliminar este libro?",
+    "deleteBody": "Se eliminarán “{{title}}” y sus sesiones, citas y reseña. Las entradas del diario se conservan. Esta acción no se puede deshacer."
+  },
+  "audio": {
+    "position": "Posición (h:mm:ss)", "total": "Duración total", "speed": "Velocidad de reproducción", "speedHint": "Opcional, entre 0,5 y 3,5",
+    "remaining": "Quedan unos {{time}} a tu velocidad", "totalUnknown": "Añade la duración total para ver tu progreso.", "update": "Actualizar posición"
+  },
+  "session": {
+    "timerTitle": "Sesión de lectura", "manualTitle": "Registrar una sesión", "historyTitle": "Sesiones de lectura", "start": "Empezar a leer",
+    "resumeTimer": "Volver al cronómetro", "running": "Leyendo", "paused": "En pausa", "ready": "Cuando quieras", "pause": "Pausar", "resume": "Reanudar",
+    "finish": "Terminar", "discard": "Descartar", "discardTitle": "¿Descartar esta sesión?", "discardBody": "El tiempo no se guardará.",
+    "wrapUp": "Antes de irte", "endPage": "Página alcanzada", "endPageOf": "Página alcanzada (de {{total}})", "startedAtPage": "Empezaste en la página {{page}}",
+    "notes": "Notas de la sesión", "notesPlaceholder": "¿Una idea para recordar? (opcional)", "save": "Guardar sesión",
+    "adjustDuration": "Corregir la duración (h:mm)", "adjustDurationHint": "Déjalo vacío para mantener el tiempo del cronómetro.", "adjust": "Ajustar",
+    "tooShortTitle": "Sesión muy corta", "tooShortBody": "Menos de 30 segundos. ¿Guardarla igualmente?", "keepGoing": "Seguir leyendo", "saveAnyway": "Guardar igualmente",
+    "tooLongTitle": "Sesión larga", "tooLongBody": "El cronómetro marca {{time}}. ¿Siguió corriendo después de que pararas? Puedes corregir la duración.", "saveAsIs": "Guardar tal cual",
+    "elapsedA11y": "Tiempo transcurrido {{time}}", "backgroundHint": "Puedes salir de la app: el tiempo se calcula desde la hora de inicio, aunque tu teléfono suspenda BookNest.",
+    "noBook": "Elige un libro para empezar una sesión.", "logManual": "Registrar una sesión", "date": "Fecha", "startTime": "Inicio (hh:mm)", "endTime": "Fin (hh:mm)",
+    "fromPage": "Desde la página", "toPage": "Hasta la página", "manualHint": "El progreso del libro avanza si la página final supera tu página actual.",
+    "none": "Aún no hay sesiones", "noneBody": "Inicia una sesión cronometrada desde la ficha de un libro o regístrala a mano.", "pagesRange": "pág. {{from}}–{{to}}",
+    "manual": "registrada a mano", "deleteTitle": "¿Eliminar esta sesión?", "longPressDelete": "Mantén pulsado para eliminar"
+  },
+  "review": {
+    "title": "Mi reseña", "write": "Escribir", "rating": "Mi valoración", "ratingLabel_one": "Valorado con {{count}} estrella de 5", "ratingLabel_other": "Valorado con {{count}} estrellas de 5",
+    "setRating_one": "Dar {{count}} estrella", "setRating_other": "Dar {{count}} estrellas", "body": "Lo que me pareció", "pros": "Lo que me gustó", "cons": "Lo que menos me gustó",
+    "readOn": "Leído el", "recommend": "¿Lo recomendaría?", "recommendOptions": { "yes": "Sí", "maybe": "Quizás", "no": "No" },
+    "privateHint": "Privada — solo para ti. Las reseñas nunca se publican.", "delete": "Eliminar reseña",
+    "rankingTitle": "Mi clasificación", "rankingHint": "Tu top personal, a partir de tus valoraciones privadas.", "rankingEmpty": "Aún no hay valoraciones", "rankingEmptyBody": "Valora los libros que termines para crear tu clasificación."
+  },
+  "collections": {
+    "title": "Colecciones", "chooseTitle": "Colecciones", "bookCount_one": "{{count}} libro", "bookCount_other": "{{count}} libros", "suggested": "Sugeridas",
+    "create": "Crear una colección", "newName": "Nombre", "newPlaceholder": "p. ej. Lecturas de verano", "freeLimit": "{{used}} de {{max}} colecciones personalizadas (gratis)",
+    "emptyTitle": "Aún no hay colecciones", "emptyBody": "Agrupa tus libros a tu manera — un libro puede estar en varias colecciones.", "emptyOne": "Colección vacía",
+    "addHint": "Añade libros desde su ficha › Colecciones.", "noneForBook": "No está en ninguna colección.", "rename": "Renombrar", "pin": "Fijar arriba", "unpin": "Desfijar",
+    "deleteTitle": "¿Eliminar esta colección?", "deleteBody": "Los libros se quedan en tu biblioteca.",
+    "presets": {
+      "favorites": "Mis favoritos", "must_read": "Imprescindibles", "classics": "Literatura clásica", "science_fiction": "Ciencia ficción",
+      "personal_development": "Desarrollo personal", "business": "Libros de negocios", "philosophy": "Filosofía", "history": "Historia",
+      "travel": "Libros de viajes", "this_year": "Para leer este año"
+    }
+  },
+  "wishlist": {
+    "title": "Lista de deseos", "editTitle": "Elemento de la lista", "add": "Añadir a la lista de deseos", "search": "Buscar en la lista de deseos", "status": "Estado", "priority": "Prioridad",
+    "price": "Precio estimado", "store": "Tienda", "url": "Enlace (opcional)", "coverOptional": "La portada es opcional.",
+    "statuses": { "want_to_buy": "Por comprar", "want_to_read": "Por leer", "purchased": "Comprado", "added_to_library": "En la biblioteca" },
+    "priorities": { "1": "Alta", "2": "Media", "3": "Baja" },
+    "sort": { "priority": "Prioridad", "recent": "Recientes", "price": "Precio", "title": "Título" },
+    "budget": "Presupuesto para libros", "budgetPending": "Coste estimado de los libros que quieres comprar",
+    "withoutPrice_one": "{{count}} sin precio", "withoutPrice_other": "{{count}} sin precio",
+    "otherCurrencies_one": "{{count}} en otra moneda", "otherCurrencies_other": "{{count}} en otras monedas",
+    "spentThisMonth": "Gastado este mes: {{spent}}", "spentOf": "Gastado este mes: {{spent}} de {{budget}}",
+    "markPurchased": "Marcar como comprado", "addToLibrary": "Pasar a la biblioteca", "openBook": "Abrir el libro", "linkExisting": "Vincular a un libro existente",
+    "duplicateBody": "“{{title}}” parece un libro que ya está en tu biblioteca.", "emptyTitle": "Tu lista de deseos está vacía", "emptyBody": "Anota los libros que te gustaría comprar o leer pronto.",
+    "deleteTitle": "¿Quitar de la lista de deseos?"
+  },
+  "goals": {
+    "title": "Metas de lectura", "intro": "Las metas están para motivarte, no para juzgarte. Cámbialas o ponlas en pausa cuando quieras.", "new": "Nueva meta", "editTitle": "Meta",
+    "emptyTitle": "Aún no hay metas", "emptyBody": "Fija una meta anual o únete a un reto más abajo.",
+    "types": {
+      "books_per_year_one": "Leer {{count}} libro este año", "books_per_year_other": "Leer {{count}} libros este año",
+      "pages_per_month_one": "{{count}} página al mes", "pages_per_month_other": "{{count}} páginas al mes",
+      "minutes_per_day_one": "{{count}} minuto al día", "minutes_per_day_other": "{{count}} minutos al día",
+      "days_per_week_one": "Leer {{count}} día a la semana", "days_per_week_other": "Leer {{count}} días a la semana",
+      "custom_one": "Meta personal ({{count}})", "custom_other": "Meta personal ({{count}})"
+    },
+    "typeNames": { "books_per_year": "Libros al año", "pages_per_month": "Páginas al mes", "minutes_per_day": "Minutos al día", "days_per_week": "Días de lectura a la semana", "custom": "Meta personalizada" },
+    "typeHints": {
+      "books_per_year": "Cuenta los libros que terminas este año.", "pages_per_month": "Cuenta las páginas que avanzas.",
+      "minutes_per_day": "Cuenta tus sesiones de lectura.", "days_per_week": "Cuenta cualquier día con una sesión o avance de páginas.", "custom": "Lo que quieras, actualizado a mano."
+    },
+    "targetHints": {
+      "books_per_year": "Entre 1 y 1000", "pages_per_month": "Entre 1 y 100 000", "minutes_per_day": "Entre 1 y 1440",
+      "days_per_week": "Entre 1 y 7", "custom": "Cualquier número positivo"
+    },
+    "target": "Objetivo", "customTitle": "Nombre (opcional)", "unit": "Unidad", "unitPlaceholder": "p. ej. poemas, capítulos", "endDate": "Fecha de fin (opcional)",
+    "noPressure": "Sin rachas que perder ni penalizaciones: los días sin leer simplemente no cuentan.", "today": "Hoy", "weekOf": "Semana del {{date}}", "until": "Hasta el {{date}}",
+    "remaining_one": "Falta {{count}}", "remaining_other": "Faltan {{count}}", "reached": "Conseguida",
+    "progressA11y": "{{value}} de {{target}}", "compareA11y": "Comparación con periodos anteriores",
+    "pace": { "ahead": "Vas por delante del ritmo — ¡qué bien!", "on_track": "Justo a buen ritmo", "behind": "Unos {{count}} a estas alturas del año — sin presión" },
+    "archive": "Pausar (archivar)", "reactivate": "Reactivar", "history": "Metas anteriores", "archived": "Archivadas", "completedOn": "Conseguida el {{date}}",
+    "celebrateTitle": "¡Meta conseguida!", "celebrateBody_one": "Has conseguido una meta de lectura. Disfruta el momento.", "celebrateBody_other": "Has conseguido {{count}} metas de lectura. Disfruta el momento."
+  },
+  "challenges": {
+    "title": "Retos de lectura", "intro": "Opcionales, editables y al ritmo que prefieras.", "join": "Unirme", "joined": "Unido", "joinA11y": "Unirme a {{name}}",
+    "books_12": { "title": "12 libros en un año", "body": "Más o menos un libro al mes." },
+    "books_24": { "title": "24 libros en un año", "body": "Dos libros al mes, a tu propio ritmo." },
+    "books_50": { "title": "Reto de 50 libros", "body": "Para lectores voraces." },
+    "daily": { "title": "Reto de lectura diaria", "body": "Abre un libro cada día de esta semana — aunque sea una página." },
+    "weekend": { "title": "Reto de lectura de fin de semana", "body": "Lee el sábado y el domingo." }
+  },
+  "quotes": {
+    "title": "Citas y subrayados", "editTitle": "Cita", "add": "Añadir una cita", "search": "Buscar citas", "text": "Cita",
+    "book": "Libro", "noBook": "Sin libro", "thisBook": "Este libro", "author": "Autor", "page": "Página (opcional)", "pageN": "pág. {{page}}", "tags": "Etiquetas",
+    "tagsPlaceholder": "Añade una etiqueta y pulsa Intro", "comment": "Mi comentario", "favorite": "Favorita", "copy": "Copiar", "share": "Compartir",
+    "privateHint": "Las citas que escribes se quedan en privado en este dispositivo.", "emptyTitle": "Aún no hay citas", "emptyBody": "Guarda los pasajes que te conmueven.",
+    "noneForBook": "Aún no hay citas de este libro.", "deleteTitle": "¿Eliminar esta cita?"
+  },
+  "journal": {
+    "title": "Diario de lectura", "editTitle": "Entrada del diario", "add": "Nueva entrada", "search": "Buscar en el diario", "kind": "Tipo de entrada",
+    "kinds": { "impression": "Impresión", "summary": "Resumen", "reflection": "Reflexión", "character": "Personaje favorito", "idea": "Idea clave", "opinion": "Opinión", "note": "Nota de lectura" },
+    "entryTitle": "Título (opcional)", "body": "Tus palabras", "export": "Exportar el diario", "exportTitle": "Mi diario de lectura",
+    "emptyTitle": "Tu diario está vacío", "emptyBody": "Escribe impresiones, resúmenes e ideas mientras lees.", "noneForBook": "No hay entradas del diario para este libro.",
+    "deleteTitle": "¿Eliminar esta entrada?"
+  },
+  "discover": {
+    "title": "Descubrir", "intro": "Ideas sacadas de tu propia biblioteca y tus hábitos — reglas sencillas, sin IA, nada sale de tu teléfono.",
+    "pickOfDay": "Sugerencia del día", "pickOfDayHint": "De tu lista de libros por leer. Mañana, otra nueva.", "surprise": "Sorpréndeme",
+    "forYou": "Para ti", "basedOnGenres": "Según lo que disfrutas: {{genres}}", "unfinished": "Te están esperando", "forgotten": "Olvidados en la lista de deseos",
+    "waitingSince_one": "En tu lista desde hace {{count}} día", "waitingSince_other": "En tu lista desde hace {{count}} días", "similar": "Parecidos en tu biblioteca",
+    "reasons": {
+      "favorite_genre": "Disfrutas de {{about}}", "favorite_author": "Te gustó {{about}}", "similar_genre": "También {{about}}", "similar_author": "También de {{about}}",
+      "forgotten": "Esperando en tu lista de deseos", "unfinished": "En pausa desde hace {{days}} días", "on_hold": "En pausa", "random": "Elegido al azar"
+    },
+    "emptyTitle": "Aún no hay nada que sugerir", "emptyBody": "Añade algunos libros y valora los que termines: aquí aparecerán sugerencias.",
+    "howItWorks": "Las sugerencias usan tus géneros, autores, valoraciones y actividad solo en este dispositivo."
+  },
+  "stats": {
+    "title": "Estadísticas", "allTime": "Desde siempre", "booksRead": "Libros leídos", "withRereads_one": "incluida {{count}} relectura", "withRereads_other": "incluidas {{count}} relecturas",
+    "pagesRead": "Páginas leídas", "noPageData": "No hay avance de páginas registrado", "excludedNoPages_one": "{{count}} libro sin número de páginas no incluido", "excludedNoPages_other": "{{count}} libros sin número de páginas no incluidos",
+    "readingTime": "Tiempo de lectura", "noSessions": "Aún no hay sesiones cronometradas", "fromSessions_one": "en {{count}} sesión", "fromSessions_other": "en {{count}} sesiones",
+    "perMonth": "Libros al mes", "completed": "Leídos", "abandoned": "Abandonados",
+    "honesty": "Las cifras solo usan lo que has registrado: “—” significa que aún no hay datos suficientes.",
+    "genres": "Géneros favoritos", "authors": "Autores más leídos", "booksCount_one": "{{count}} libro", "booksCount_other": "{{count}} libros", "noFinished": "Termina un libro para ver esto.",
+    "shareButton": "Compartir mis estadísticas", "advanced": "Estadísticas avanzadas",
+    "monthly": "Mes a mes · {{year}}", "monthlyA11y": "Gráfico mensual", "metric": { "books": "Libros", "pages": "Páginas", "minutes": "Minutos" },
+    "yearly": "Año a año", "yearLine": "{{books}} libros · {{pages}} pág. · {{time}}",
+    "bestPeriods": "Cuándo lees", "weekdaysA11y": "Tiempo de lectura por día de la semana", "dayparts": { "morning": "Mañana", "afternoon": "Tarde", "evening": "Anochecer", "night": "Noche" },
+    "habits": "Minutos por semana (12 semanas)", "habitsA11y": "Minutos de lectura semanales durante 12 semanas",
+    "records": "Récords personales", "longestStreak": "Racha de lectura más larga", "currentStreak_one": "actual: {{count}} día", "currentStreak_other": "actual: {{count}} días",
+    "days_one": "{{count}} día", "days_other": "{{count}} días", "longestSession": "Sesión más larga", "mostPagesDay": "Más páginas en un día",
+    "fastestBook": "Lectura más rápida", "longestBook": "Libro más largo", "bestMonth": "Mejor mes",
+    "share": {
+      "title": "Mi {{year}} en libros", "books_one": "{{count}} libro leído", "books_other": "{{count}} libros leídos",
+      "pages_one": "{{count}} página", "pages_other": "{{count}} páginas", "time": "{{time}} de lectura", "genre": "Género favorito: {{genre}}", "footer": "— registrado con BookNest"
+    }
+  },
+  "calendar": {
+    "title": "Calendario de lectura", "month": "Mes", "year": "Año", "previous": "Anterior", "next": "Siguiente", "less": "Menos", "more": "Más",
+    "dayA11y": "{{time}} de lectura, {{pages}} páginas", "busiest": "Día más activo: {{date}} ({{time}})", "started": "Empezaste “{{title}}”", "finished": "Terminaste “{{title}}”",
+    "restDay": "Un día tranquilo — los días de descanso también forman parte de la lectura."
+  },
+  "profile": {
+    "title": "Perfil", "readThisYear": "Leídos este año", "inLibrary": "En mi biblioteca", "quotes": "Citas guardadas", "totalTime": "Tiempo total de lectura",
+    "myReading": "Mis lecturas", "count_one": "{{count}} entrada", "count_other": "{{count}} entradas"
+  },
+  "settings": {
+    "title": "Ajustes", "appearance": "Apariencia", "theme": "Tema", "themes": { "system": "Sistema", "light": "Claro", "dark": "Oscuro" },
+    "palette": "Paleta de colores", "palettes": { "library": "Biblioteca", "forest": "Bosque", "ink": "Tinta", "plum": "Ciruela", "sepia": "Sepia" },
+    "language": "Idioma de la app", "deviceLanguage": "Idioma del dispositivo", "currency": "Moneda predeterminada", "haptics": "Respuesta háptica",
+    "notifications": "Recordatorios", "data": "Copia de seguridad, importación y exportación", "dataHint": "Tus datos, tus archivos", "privacy": "Privacidad"
+  },
+  "notifications": {
+    "channelName": "Recordatorios de lectura", "intro": "Avisos suaves, todos desactivados por defecto. Cada uno se puede cambiar o desactivar.",
+    "time": "Hora (hh:mm)", "test": "Enviar un recordatorio de prueba", "tone": "BookNest nunca te regaña por no leer: los días de descanso están bien.",
+    "permissionTitle": "Las notificaciones están desactivadas", "permissionBody": "Permite las notificaciones de BookNest en los ajustes de Android para recibir recordatorios.", "openSettings": "Abrir ajustes",
+    "kinds": {
+      "daily": { "title": "Momento de lectura diario", "hint": "Un recordatorio suave a la hora que elijas." },
+      "weekly_goal": { "title": "Meta semanal", "hint": "Una vez por semana, cuando haya una meta semanal o diaria activa." },
+      "monthly_goal": { "title": "Meta mensual", "hint": "Hacia el día 20, mientras tu meta de páginas siga abierta." },
+      "challenge": { "title": "Reto de lectura", "hint": "Una vez por semana mientras participes en un reto." },
+      "resume_book": { "title": "Retomar un libro", "hint": "Un único aviso si tu libro actual lleva 3 días descansando." },
+      "yearly_goal": { "title": "Meta anual", "hint": "Dos veces al año: en julio y en diciembre." }
+    },
+    "daily": { "title": "¿Unas páginas?", "body": "Tu libro te espera cuando quieras." },
+    "weekly": { "title": "Tu semana de lectura", "body": "Echa un vistazo a tu meta semanal — cada página cuenta." },
+    "monthly": { "title": "Tus lecturas del mes", "body": "Mira cómo va tu meta mensual de páginas." },
+    "challenge": { "title": "Tu reto de lectura", "body": "¿Un buen momento para leer un poco?", "weekendBody": "Es fin de semana — el momento perfecto para un capítulo." },
+    "resume": { "title": "¿Volvemos a “{{title}}”?", "body": "Retoma donde lo dejaste, cuando te apetezca." },
+    "yearly": { "title": "Tu año en libros", "body": "Echa un vistazo a tu meta anual y a lo que llevas leído." }
+  },
+  "transfer": {
+    "backup": "Copia de seguridad", "backupIntro": "Guarda una copia de tu biblioteca, datos de lectura, notas y citas en un archivo que tú conservas (Drive, correo, ordenador…).",
+    "exportBackup": "Exportar copia (JSON)", "exportFullBackup": "Exportar copia con portadas", "restore": "Restaurar una copia",
+    "restoreTitle": "¿Restaurar esta copia?", "backupSummary": "Copia del {{date}}: {{books}} libros, {{sessions}} sesiones, {{quotes}} citas, {{notes}} entradas del diario.",
+    "includesCovers": "Incluye las imágenes de portada.", "merge": "Combinar con mis datos", "replace": "Reemplazar mis datos", "replaceTitle": "¿Reemplazarlo todo?",
+    "replaceBody": "Tu biblioteca actual se eliminará y se sustituirá por la copia. Esta acción no se puede deshacer.", "replaceConfirm": "Sí, reemplazar",
+    "restoreDone": "Restauración completada", "restoredRows_one": "{{count}} elemento restaurado.", "restoredRows_other": "{{count}} elementos restaurados.",
+    "importExport": "Importar y exportar", "importTitle": "Importar un CSV", "importCsv": "Importar libros desde CSV", "exportCsv": "Exportar biblioteca (CSV)", "exportPdf": "Exportar biblioteca (PDF)",
+    "pdfTitle": "Mi biblioteca de BookNest", "pdfGenerated": "Generado el {{date}} · {{count}} libros",
+    "privacyNote": "Las exportaciones se crean en tu teléfono y solo se comparten donde tú elijas. BookNest no tiene servidor.",
+    "dangerZone": "Zona de peligro", "deleteAll": "Eliminar todos mis datos", "deleteAllTitle": "¿Eliminar todos los datos?",
+    "deleteAllBody": "Se borrarán de este teléfono los libros, portadas, sesiones, metas, citas, diario y ajustes. Tu compra Premium no se ve afectada.",
+    "deleteAllConfirm": "Continuar", "deleteAllFinal": "Última comprobación: esto lo borra todo de forma permanente. Exporta antes una copia si podrías necesitarla.",
+    "csvIntro": "Importa libros desde un archivo CSV, por ejemplo una exportación de otra app de lectura o una hoja de cálculo. No se sobrescribe nada: primero verás una vista previa.",
+    "csvColumns": "Columnas reconocidas: Title (obligatoria), Author, ISBN, Pages, Status/Shelf, Rating, Date Read, Date Started, Publisher, Year, Format, Genre, Language, Price, Currency, Notes.",
+    "chooseCsv": "Elegir un archivo CSV", "chooseOther": "Elegir otro archivo",
+    "validRows_one": "{{count}} fila válida", "validRows_other": "{{count}} filas válidas", "invalidRows_one": "{{count}} fila con errores", "invalidRows_other": "{{count}} filas con errores",
+    "duplicateRows_one": "{{count}} posible duplicado", "duplicateRows_other": "{{count}} posibles duplicados",
+    "includeDuplicates": "Importar también los posibles duplicados", "ignoredColumns": "Columnas ignoradas: {{columns}}",
+    "quotaWarning_one": "El plan gratuito tiene espacio para {{count}} libro más: el resto se omitirá.", "quotaWarning_other": "El plan gratuito tiene espacio para {{count}} libros más: el resto se omitirá.",
+    "importN_one": "Importar {{count}} libro", "importN_other": "Importar {{count}} libros", "importDone": "Importación terminada",
+    "imported_one": "{{count}} libro importado.", "imported_other": "{{count}} libros importados.",
+    "skippedDuplicates_one": "{{count}} duplicado omitido.", "skippedDuplicates_other": "{{count}} duplicados omitidos.",
+    "skippedInvalid_one": "{{count}} fila no válida omitida.", "skippedInvalid_other": "{{count}} filas no válidas omitidas.",
+    "skippedLimit_one": "{{count}} libro por encima del límite gratuito omitido.", "skippedLimit_other": "{{count}} libros por encima del límite gratuito omitidos.",
+    "line": "Línea {{line}}",
+    "issues": {
+      "missing_title": "Falta el título — fila omitida.", "invalid_pages": "Número de páginas no reconocido — se deja vacío.", "invalid_year": "Año no reconocido — se deja vacío.",
+      "invalid_rating": "La valoración debe ser de 1 a 5 — ignorada.", "invalid_date": "Fecha no reconocida o en el futuro — ignorada.", "invalid_price": "Precio no reconocido — ignorado.",
+      "finish_before_start": "Fecha de fin anterior a la de inicio — se ignora la de inicio.", "pages_beyond_total": "La página actual supera el número de páginas."
+    },
+    "duplicateReason": { "isbn": "Mismo ISBN que un libro que ya tienes.", "title_author": "Mismo título y autor que un libro que ya tienes.", "title": "Mismo título que un libro que ya tienes." }
+  },
+  "privacy": {
+    "headline": "Tu vida lectora sigue siendo tuya.", "summary": "BookNest funciona sin cuenta y sin servidor. Todo se guarda en este teléfono.",
+    "localOnly": "Guardado solo en este dispositivo.",
+    "points": {
+      "local": { "title": "Local por defecto", "body": "Libros, sesiones, metas, reseñas y ajustes viven en una base de datos en tu teléfono." },
+      "notes": { "title": "Notas y citas privadas", "body": "Nunca se envían a ningún sitio: ni a anunciantes, ni a analíticas, ni en notificaciones." },
+      "ads": { "title": "Anuncios (versión gratuita)", "body": "Pequeños banners solo en pantallas de navegación, nunca mientras lees o escribes. Los anuncios nunca reciben tu contenido de lectura." },
+      "analytics": { "title": "Estadísticas anónimas (opcional)", "body": "Solo si lo permites: eventos de uso anónimos, nunca títulos, notas ni citas." },
+      "permissions": { "title": "Permisos mínimos", "body": "Sin cámara, micrófono, contactos ni ubicación. Las portadas se eligen con el selector de fotos de Android." },
+      "covers": { "title": "Imágenes de portada", "body": "Se guardan como archivos comprimidos en el almacenamiento privado de la app y se eliminan con el libro." },
+      "delete": { "title": "Exporta o elimina cuando quieras", "body": "Perfil › Copia de seguridad te permite exportarlo todo o borrar todos los datos." }
+    },
+    "choices": "Tus opciones", "analytics": "Compartir estadísticas de uso anónimas", "analyticsHint": "Ayuda a mejorar BookNest. Desactivado por defecto.",
+    "adChoices": "Opciones de privacidad de anuncios", "policy": "Política de privacidad", "terms": "Condiciones de uso"
+  },
+  "premium": {
+    "title": "BookNest Premium", "headline": "Tu biblioteca, sin límites", "subtitle": "Apoya una app independiente y desbloquéalo todo.",
+    "active": "Premium está activo", "thanks": "¡Gracias por apoyar BookNest!", "badge": "Premium",
+    "freeUsage": "Plan gratuito · {{books}} / {{max}} libros", "discover": "Ver Premium",
+    "features": {
+      "unlimited_books": "Biblioteca ilimitada (gratis: 100 libros)", "unlimited_collections": "Colecciones ilimitadas", "unlimited_quotes": "Citas ilimitadas",
+      "unlimited_journal": "Diario ilimitado", "unlimited_goals": "Metas ilimitadas, incluidas las personalizadas", "custom_goals": "Metas personalizadas",
+      "advanced_stats": "Estadísticas avanzadas y récords personales", "full_history": "Historial completo y calendario anual", "advanced_journal": "Filtros del diario por tipo y etiqueta, exportación a Markdown",
+      "csv_export": "Exportación a CSV", "pdf_export": "Exportación de tu biblioteca a PDF", "themes": "Paletas de colores", "advanced_backup": "Copias de seguridad con portadas", "no_ads": "Sin anuncios"
+    },
+    "plans": { "monthly": "Mensual", "annual": "Anual", "lifetime": "De por vida", "unknown": "Plan" },
+    "perMonth": "{{price}}/mes", "save": "ahorra un {{percent}} %", "trial": "prueba gratuita", "continue": "Continuar",
+    "legal": "Facturado por Google Play. Las suscripciones se renuevan automáticamente; cancela cuando quieras en Google Play.",
+    "storeUnavailable": "Las compras no están disponibles ahora mismo (sin conexión o tienda no configurada). BookNest sigue funcionando gratis.",
+    "freeForever": "La versión gratuita seguirá siendo gratuita: tus datos nunca quedan bloqueados.", "restore": "Restaurar compras", "restored": "Premium restaurado.",
+    "nothingToRestore": "No se ha encontrado ninguna compra para esta cuenta de Google.", "manage": "Gestionar suscripción",
+    "pendingTitle": "Pago pendiente", "pendingBody": "Premium se desbloqueará en cuanto Google Play confirme el pago.", "purchaseError": "No se pudo completar la compra. No se te ha cobrado nada.",
+    "olderHistory_one": "{{count}} sesión antigua se conserva, pero queda oculta en el plan gratuito.", "olderHistory_other": "{{count}} sesiones antiguas se conservan, pero quedan ocultas en el plan gratuito."
+  },
+  "limits": {
+    "title": "Límite del plan gratuito",
+    "books_one": "El plan gratuito admite hasta {{count}} libro. Todo lo que tienes sigue disponible.", "books_other": "El plan gratuito admite hasta {{count}} libros. Todo lo que tienes sigue disponible.",
+    "customCollections_one": "El plan gratuito incluye {{count}} colección personalizada (las sugeridas son ilimitadas).", "customCollections_other": "El plan gratuito incluye {{count}} colecciones personalizadas (las sugeridas son ilimitadas).",
+    "quotes_one": "El plan gratuito guarda hasta {{count}} cita.", "quotes_other": "El plan gratuito guarda hasta {{count}} citas.",
+    "journalEntries_one": "El plan gratuito guarda hasta {{count}} entrada del diario.", "journalEntries_other": "El plan gratuito guarda hasta {{count}} entradas del diario.",
+    "activeGoals_one": "El plan gratuito permite {{count}} meta activa. Archiva una o pásate a Premium.", "activeGoals_other": "El plan gratuito permite {{count}} metas activas. Archiva una o pásate a Premium."
+  },
+  "errors": {
+    "title": "Vaya…", "generic": "Algo ha fallado. Tus datos están a salvo — inténtalo de nuevo.", "invalidDate": "Usa el formato AAAA-MM-DD.", "invalidTime": "Usa el formato hh:mm.",
+    "invalidDuration": "Usa h:mm o un número de minutos.", "fileTooLarge": "Este archivo es demasiado grande.",
+    "book": { "title": "El título es obligatorio.", "pageCount": "Introduce un número de páginas positivo, no inferior a tu página actual.", "publishedYear": "Introduce un año válido.", "acquiredOn": "Introduce una fecha válida (no futura).", "price": "Introduce un precio válido, p. ej. 12,50." },
+    "progress": {
+      "negative_page": "El valor no puede ser negativo.", "page_beyond_total": "Eso va más allá del final del libro.", "invalid_total": "Revisa la duración o el número de páginas.",
+      "finish_before_start": "La fecha de fin es anterior a la de inicio.", "future_date": "Las fechas no pueden estar en el futuro."
+    },
+    "session": {
+      "end_before_start": "El fin debe ser posterior al inicio.", "invalid_pages": "Revisa las páginas: la final no puede ser anterior a la inicial ni superar el libro.",
+      "too_long": "Una sesión no puede durar más de 24 horas.", "future": "Esta sesión termina en el futuro.", "timer_running": "Ya hay una sesión de lectura en curso. Termínala primero.",
+      "no_timer": "No hay ninguna sesión en curso."
+    },
+    "goal": { "invalid_target": "Elige un objetivo dentro del rango permitido.", "premium_required": "Las metas personalizadas forman parte de Premium.", "invalid_period": "La fecha de fin es anterior al inicio." },
+    "content": {
+      "empty_text": "Escribe algo primero.", "text_too_long": "Este texto es demasiado largo.", "invalid_page": "Introduce un número de página válido.", "invalid_rating": "La valoración va de 1 a 5.",
+      "invalid_url": "Introduce un enlace que empiece por http:// o https://.", "empty_name": "El nombre es obligatorio."
+    },
+    "csv": {
+      "empty": "Este archivo está vacío.", "unterminated_quote": "Este CSV parece dañado (comillas sin cerrar).", "no_header": "No se ha encontrado la fila de encabezado.",
+      "missing_title_column": "No se ha encontrado la columna “Title”.", "too_large": "Demasiadas filas (máx. 20 000)."
+    },
+    "backup": {
+      "invalid_json": "Este archivo no es una copia de seguridad válida.", "invalid_format": "Este archivo no es una copia de seguridad de BookNest.", "wrong_app": "Esta copia de seguridad procede de otra app.",
+      "newer_schema": "Esta copia procede de una versión más reciente de BookNest. Actualiza primero la app."
+    }
+  },
+  "onboarding": {
+    "tagline": "Tu biblioteca personal, tu diario de lectura y un compañero de lectura amable.", "start": "Empezar",
+    "pillars": {
+      "library": { "title": "Cataloga tus libros", "body": "Portadas, colecciones, lista de deseos — miles de libros, al instante." },
+      "track": { "title": "Sigue tus lecturas", "body": "Progreso, sesiones cronometradas, metas y estadísticas honestas." },
+      "remember": { "title": "Recuerda lo que importa", "body": "Citas, entradas del diario y reseñas privadas." },
+      "private": { "title": "Privado y sin conexión", "body": "Sin cuenta ni servidor. Todo se queda en tu teléfono." }
+    },
+    "goalTitle": "¿Una meta para este año?", "goalBody": "Opcional y modificable en cualquier momento. Elige lo que te haga sentir bien.",
+    "booksN_one": "{{count}} libro", "booksN_other": "{{count}} libros", "noGoal": "Sin meta por ahora",
+    "reminderTitle": "Un recordatorio diario de lectura", "reminderBody": "Una notificación suave por la noche. Puedes cambiarla más adelante.",
+    "privacy": "BookNest no necesita cuenta. Tus datos se quedan en este dispositivo.", "finish": "Abrir mi biblioteca"
+  }
+}
