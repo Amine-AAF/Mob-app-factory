@@ -1,7 +1,7 @@
 # InterviewReady — suivi
 
 Dossier : `apps/interviewready` · Package id : `com.mobileappsfactory.interviewready` · Statut manifest : `development` ·
-Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière mise à jour : 2026-11-13
+Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière mise à jour : 2026-11-14
 
 ## Fonctionnalités terminées
 
@@ -21,10 +21,29 @@ Branche : `feat/interviewready` (worktree `../maf-interviewready`) · Dernière 
     longueur de réponse minimale par niveau, parité des traductions, absence de texte provisoire, quiz (options, index, lien).
   - Services : boot offline-first, analytics typée (catalogue d'événements du brief, aucune saisie utilisateur), monetization
     (RevenueCat paresseux, jamais de faux achat).
+- **Phase 3 — Contenu** : 500 questions et 160 quiz en EN/FR/ES (voir le décompte ci-dessous).
+- **Phase 3 — MVP (écrans)**
+  - Onboarding (présentation, métier, niveau, objectif, durée, plan recommandé ; étapes métier et durée facultatives),
+    profil enregistré, relancé si les données sont effacées.
+  - Accueil : question du jour (déterministe selon la date locale et le métier, gratuite, journalisée), reprise,
+    progression, parcours suggéré, quiz rapide, activité récente.
+  - Explorer : recherche, favoris, 10 catégories, 17 métiers. Liste de questions virtualisée avec recherche
+    (insensible aux accents), filtres niveau / sujet / favoris.
+  - Fiche question : intention, réponse modèle (avec avertissement « à adapter ») ou réponse attendue, explication,
+    exemple, conseils, erreurs, relances ; favori (limite gratuite 25), « étudiée », notes privées ; réponse Premium
+    verrouillée avec accès au paywall.
+  - Pratique : quiz (10 questions, filtre par catégorie, explication et lien vers la question), révision des questions
+    difficiles (file SM-2). Simulation, Answer Builder et flashcards affichés « bientôt disponibles » (phase 4).
+  - Progrès : série de jours, questions étudiées, taux de réussite aux quiz, favoris, progression par catégorie,
+    révisions dues, historique des questions du jour.
+  - Paywall : prix uniquement depuis Google Play (RevenueCat), achat, restauration, gestion de l'abonnement ; sans
+    store configuré, message explicite et aucun achat simulé.
+  - Composants : QuestionCard, DifficultyBadge, PremiumBadge, CategoryCard, JobCategoryCard, ProgressCard, AnswerCard,
+    BulletList, SearchField ; services `library.ts` (favoris, études, notes, fin de quiz, analytics anonymes).
 
 ## Fonctionnalités en cours
 
-- Écrans du MVP (onboarding, dashboard, question du jour, exploration, recherche/filtres, favoris, notes).
+- Aucune (prochaine étape : phase 4).
 
 ## Bibliothèque de questions : terminée (500/500)
 
@@ -36,10 +55,9 @@ gratuites) par métier, au moins la moitié de la bibliothèque gratuite.
 ## Fonctionnalités restantes
 
 - Phase 3 contenu : parcours métiers ; passe d'harmonisation terminologique FR/ES.
-- Phase 3 MVP : onboarding, dashboard, question du jour, exploration, recherche/filtres, favoris, notes.
-- Phase 4 : Mock Interview, Answer Builder, flashcards, quiz, learning paths.
-- Phase 5 : statistiques, historique, révision espacée.
-- Phase 6 : paywall, AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), achats intégrés.
+- Phase 4 : Mock Interview, Answer Builder, flashcards, learning paths.
+- Phase 5 : statistiques avancées, export/sauvegarde des données, suppression des données dans Réglages.
+- Phase 6 : AdMob (UMP, garde-fous : pas de pub en simulation/rédaction/exercice), finalisation des offres Premium.
 - Phase 7 : tests complets, export Android, dossier `store/`, politique de confidentialité.
 
 ## Décompte du contenu
@@ -89,6 +107,8 @@ Packages `@factory/*` : app-config, app-core, design-system, localization, stora
 | 2026-11-14 | Lot contenu 4 (AI & Data, HR & Salary) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 35/35 (440 questions × 3 langues validées) |
 | 2026-11-14 | Lot contenu 5 (Job-specific, bibliothèque complète) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 39/39 (500 questions × 3 langues, couverture par sujet et par métier) |
 | 2026-11-14 | Quiz (160 items, moteur, persistance) : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 52/52 |
+| 2026-11-14 | Écrans MVP : `tsc`, `eslint`, `jest` | ✅ 0 erreur · 0 problème · 73/73 (logique de recherche, question du jour, progression, actions, routage, composant) |
+| 2026-11-14 | `npx expo export --platform android` | ✅ bundle Hermes de 7,6 Mo généré (aucun test sur appareil réel à ce stade) |
 | 2026-11-13 | `pnpm registry:check` | ✅ entrée interviewready valide (échecs préexistants de filepilot/calcwise sur `main`, hors périmètre) |
 
 ## Préparation à la publication

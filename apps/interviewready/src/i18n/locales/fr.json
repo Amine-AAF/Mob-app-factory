@@ -216,19 +216,71 @@
   },
   "home": {
     "greeting": "Prêt pour votre prochain entretien ?",
-    "comingSoon": "Votre tableau de bord est en préparation."
+    "preparingFor": "Préparation : {{role}}",
+    "noRole": "Choisissez un métier cible pour obtenir un parcours personnalisé.",
+    "dailyTitle": "Question du jour",
+    "dailyCta": "Travailler cette question",
+    "continueTitle": "Reprendre",
+    "progressTitle": "Progression de la préparation",
+    "allQuestions": "Toutes les questions",
+    "pathTitle": "Parcours d'entretien suggéré",
+    "chooseRoleHint": "Choisissez le métier que vous préparez pour vous concentrer sur les bonnes questions.",
+    "exploreRoles": "Explorer les métiers",
+    "quickQuiz": "Quiz rapide (10 questions)",
+    "recentTitle": "Activité récente",
+    "recentEmpty": "Pas encore d'activité",
+    "recentEmptyHint": "Ouvrez une question pour commencer votre préparation."
   },
   "explore": {
     "title": "Explorer",
-    "subtitle": "Parcourez la bibliothèque de questions par catégorie ou par métier."
+    "subtitle": "Parcourez {{count}} questions par catégorie ou par métier.",
+    "searchPlaceholder": "Rechercher une question, un sujet, une compétence…",
+    "favorites": "Mes favoris",
+    "categories": "Catégories",
+    "roles": "Parcours par métier"
   },
   "practice": {
     "title": "S'entraîner",
-    "subtitle": "Simulations d'entretien, assistant de réponse, flashcards et quiz."
+    "subtitle": "Simulations d'entretien, assistant de réponse, flashcards et quiz.",
+    "soon": "Bientôt disponible",
+    "dueCount_one": "{{count}} à réviser",
+    "dueCount_other": "{{count}} à réviser",
+    "quiz": {
+      "title": "Quiz",
+      "body": "Questions à choix multiples et vrai/faux avec explications."
+    },
+    "review": {
+      "title": "Réviser les questions difficiles",
+      "body": "La révision espacée fait revenir ce que vous avez manqué."
+    },
+    "mock": {
+      "title": "Simulation d'entretien",
+      "body": "Répondez aux questions une par une, puis auto-évaluez-vous."
+    },
+    "builder": {
+      "title": "Assistant de réponse",
+      "body": "Construisez de bonnes réponses étape par étape avec STAR et d'autres structures."
+    },
+    "flashcards": {
+      "title": "Flashcards",
+      "body": "Mémorisation rapide des concepts et des questions clés."
+    }
   },
   "progress": {
     "title": "Progrès",
-    "subtitle": "Suivez ce que vous avez étudié et ce qu'il faut réviser."
+    "subtitle": "Suivez ce que vous avez étudié et ce qu'il faut réviser.",
+    "streak": "Jours consécutifs",
+    "studied": "Étudiées",
+    "quizAccuracy": "Réussite aux quiz",
+    "favorites": "Favoris",
+    "studiedOf": "{{studied}} sur {{total}} étudiées",
+    "byCategory": "Par catégorie",
+    "reviewTitle": "Révision espacée",
+    "reviewDue_one": "{{count}} question de quiz à réviser",
+    "reviewDue_other": "{{count}} questions de quiz à réviser",
+    "reviewHint": "Réviser au bon moment aide à mémoriser.",
+    "dailyHistory": "Questions du jour",
+    "dailyEmpty": "Vos questions du jour apparaîtront ici."
   },
   "settings": {
     "title": "Réglages",
@@ -244,5 +296,114 @@
   },
   "empty": {
     "nothingYet": "Rien pour l'instant"
+  },
+  "onboarding": {
+    "getStarted": "Commencer",
+    "start": "Lancer ma préparation",
+    "progress": "Étape {{step}} sur {{total}}",
+    "introBody": "Une bibliothèque structurée de questions d'entretien avec des réponses modèles, des exercices et un suivi de progression.",
+    "feature": {
+      "library": "500 questions pour 17 métiers, en anglais, français et espagnol",
+      "practice": "Quiz, révision espacée et question du jour",
+      "offline": "Fonctionne hors ligne. Sans compte. Vos réponses restent sur votre téléphone."
+    },
+    "roleTitle": "Pour quel métier vous préparez-vous ?",
+    "roleHint": "Vous pourrez le modifier plus tard ou passer cette étape.",
+    "levelTitle": "Quel est votre niveau d'expérience ?",
+    "goalTitle": "Quel est votre objectif ?",
+    "daysTitle": "De combien de temps disposez-vous ?",
+    "daysHint": "Nombre approximatif de jours avant votre entretien. Facultatif.",
+    "planTitle": "Votre plan recommandé",
+    "planRole": "Un plan centré sur les entretiens de {{role}}.",
+    "planGeneral": "Un plan fondé sur les questions que tout recruteur pose.",
+    "planQuestions_one": "{{count}} question gratuite sélectionnée pour vous",
+    "planQuestions_other": "{{count}} questions gratuites sélectionnées pour vous",
+    "planDaily_one": "Environ {{count}} question par jour",
+    "planDaily_other": "Environ {{count}} questions par jour",
+    "planDailyQuestion": "Une nouvelle question du jour chaque matin",
+    "planDisclaimer": "L'entraînement améliore votre préparation, mais aucune application ne peut garantir une offre d'emploi."
+  },
+  "question": {
+    "notFound": "Question introuvable",
+    "intent": "Ce que le recruteur cherche à savoir",
+    "modelAnswer": "Exemple de réponse",
+    "expectedAnswer": "Réponse attendue",
+    "adaptDisclaimer": "C'est un exemple à adapter avec votre propre expérience, pas un texte à réciter.",
+    "explanation": "Pourquoi cela fonctionne",
+    "example": "Exemple",
+    "tips": "Conseils",
+    "mistakes": "Erreurs fréquentes",
+    "followUps": "Questions de relance possibles",
+    "addFavorite": "Enregistrer",
+    "removeFavorite": "Enregistrée",
+    "favorite": "Favori",
+    "markStudied": "Marquer comme étudiée",
+    "studied": "Étudiée",
+    "favoriteLimitTitle": "Limite de favoris atteinte",
+    "favoriteLimitBody": "L'offre gratuite conserve jusqu'à 25 favoris. Retirez-en un ou passez à Premium pour des favoris illimités.",
+    "lockedTitle": "Réponse Premium",
+    "lockedBody": "La réponse détaillée, l'explication, les conseils et les relances de cette question font partie de Premium.",
+    "notes": "Mes notes",
+    "notesPlaceholder": "Rédigez votre propre réponse, vos exemples ou vos rappels…",
+    "notesPrivate": "Privé : enregistré uniquement sur cet appareil."
+  },
+  "questions": {
+    "title": "Questions",
+    "noResults": "Aucune question trouvée",
+    "noResultsHint": "Essayez d'autres mots ou retirez un filtre.",
+    "noFavorites": "Aucun favori pour le moment",
+    "noFavoritesHint": "Touchez « Enregistrer » sur une question pour la retrouver ici."
+  },
+  "quiz": {
+    "title": "Quiz",
+    "reviewTitle": "Réviser les questions difficiles",
+    "intro_one": "{{count}} question avec une explication après chaque réponse.",
+    "intro_other": "{{count}} questions avec une explication après chaque réponse.",
+    "reviewIntro": "Les questions manquées reviennent ici au bon moment, puis de nouvelles questions.",
+    "freeNote": "L'offre gratuite inclut la plupart des questions de quiz. Premium les débloque toutes.",
+    "progress": "Question {{current}} sur {{total}}",
+    "trueOrFalse": "Vrai ou faux ? ",
+    "true": "Vrai",
+    "false": "Faux",
+    "correct": "Bonne réponse",
+    "incorrect": "Pas tout à fait",
+    "openQuestion": "Étudier la question associée",
+    "seeScore": "Voir mon score",
+    "doneTitle": "Quiz terminé",
+    "percent": "{{percent}} % de bonnes réponses",
+    "srsNote": "Les questions manquées reviendront dans votre file de révision.",
+    "again": "Nouveau quiz",
+    "reviewMistakes": "Revoir mes erreurs",
+    "noItems": "Aucune question disponible pour cette sélection.",
+    "nothingToReview": "Rien à réviser pour le moment. Bravo !"
+  },
+  "paywall": {
+    "title": "InterviewReady Premium",
+    "subtitle": "Tout ce dont vous avez besoin pour une préparation approfondie.",
+    "cta": "Débloquer Premium",
+    "benefit": {
+      "library": "La bibliothèque complète de 500 questions et 160 quiz",
+      "answers": "Les réponses détaillées des questions avancées",
+      "roles": "Tous les parcours métiers",
+      "mocks": "Simulations d'entretien illimitées",
+      "paths": "Plans de préparation personnalisés",
+      "noAds": "Sans publicité"
+    },
+    "period": {
+      "monthly": "Mensuel",
+      "annual": "Annuel",
+      "lifetime": "À vie",
+      "unknown": "Offre"
+    },
+    "save": "Économisez {{percent}} %",
+    "legal": "Le paiement est géré par Google Play. Les abonnements se renouvellent automatiquement, sauf résiliation dans Google Play au moins 24 heures avant le renouvellement.",
+    "unavailable": "Les abonnements Premium ne sont pas encore disponibles dans cette version. Tout le contenu gratuit reste accessible.",
+    "active": "Premium est actif",
+    "pending": "Votre paiement est en attente. Premium sera débloqué dès sa confirmation.",
+    "error": "L'achat n'a pas pu aboutir. Vous n'avez pas été débité.",
+    "restore": "Restaurer mes achats",
+    "restored": "Votre accès Premium a été restauré.",
+    "nothingToRestore": "Aucun achat actif trouvé pour ce compte.",
+    "manage": "Gérer l'abonnement"
   }
 }

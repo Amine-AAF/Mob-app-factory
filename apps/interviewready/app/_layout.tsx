@@ -31,7 +31,12 @@ function Navigator() {
         }}
       >
         <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="onboarding" options={{ headerShown: false, gestureEnabled: false }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="questions" options={{ title: '' }} />
+        <Stack.Screen name="question/[id]" options={{ title: '' }} />
+        <Stack.Screen name="quiz" options={{ title: '', gestureEnabled: false }} />
+        <Stack.Screen name="paywall" options={{ presentation: 'modal', headerShown: false, animation: 'slide_from_bottom' }} />
       </Stack>
     </>
   );

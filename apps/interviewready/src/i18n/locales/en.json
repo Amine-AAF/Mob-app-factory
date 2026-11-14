@@ -216,19 +216,71 @@
   },
   "home": {
     "greeting": "Ready for your next interview?",
-    "comingSoon": "Your dashboard is being prepared."
+    "preparingFor": "Preparing for: {{role}}",
+    "noRole": "Choose a target job to get a personalised path.",
+    "dailyTitle": "Question of the day",
+    "dailyCta": "Practise this question",
+    "continueTitle": "Continue learning",
+    "progressTitle": "Preparation progress",
+    "allQuestions": "All questions",
+    "pathTitle": "Suggested interview path",
+    "chooseRoleHint": "Pick the job you are preparing for to focus on the right questions.",
+    "exploreRoles": "Explore jobs",
+    "quickQuiz": "Quick quiz (10 questions)",
+    "recentTitle": "Recent activity",
+    "recentEmpty": "No activity yet",
+    "recentEmptyHint": "Open a question to start your preparation."
   },
   "explore": {
     "title": "Explore",
-    "subtitle": "Browse the question library by category or job."
+    "subtitle": "Browse {{count}} questions by category or job.",
+    "searchPlaceholder": "Search questions, topics, skills…",
+    "favorites": "My favorites",
+    "categories": "Categories",
+    "roles": "Interview paths by job"
   },
   "practice": {
     "title": "Practice",
-    "subtitle": "Mock interviews, answer builder, flashcards and quizzes."
+    "subtitle": "Mock interviews, answer builder, flashcards and quizzes.",
+    "soon": "Coming soon",
+    "dueCount_one": "{{count}} to review",
+    "dueCount_other": "{{count}} to review",
+    "quiz": {
+      "title": "Quiz",
+      "body": "Multiple choice and true/false questions with explanations."
+    },
+    "review": {
+      "title": "Review difficult questions",
+      "body": "Spaced repetition brings back what you got wrong."
+    },
+    "mock": {
+      "title": "Mock interview",
+      "body": "Answer questions one by one, then assess yourself."
+    },
+    "builder": {
+      "title": "Answer builder",
+      "body": "Build strong answers step by step with STAR and other structures."
+    },
+    "flashcards": {
+      "title": "Flashcards",
+      "body": "Quick recall of key concepts and questions."
+    }
   },
   "progress": {
     "title": "Progress",
-    "subtitle": "Track what you studied and what to review next."
+    "subtitle": "Track what you studied and what to review next.",
+    "streak": "Day streak",
+    "studied": "Studied",
+    "quizAccuracy": "Quiz accuracy",
+    "favorites": "Favorites",
+    "studiedOf": "{{studied}} of {{total}} studied",
+    "byCategory": "By category",
+    "reviewTitle": "Spaced repetition",
+    "reviewDue_one": "{{count}} quiz question to review",
+    "reviewDue_other": "{{count}} quiz questions to review",
+    "reviewHint": "Reviewing at the right time helps you remember.",
+    "dailyHistory": "Questions of the day",
+    "dailyEmpty": "Your daily questions will appear here."
   },
   "settings": {
     "title": "Settings",
@@ -244,5 +296,114 @@
   },
   "empty": {
     "nothingYet": "Nothing here yet"
+  },
+  "onboarding": {
+    "getStarted": "Get started",
+    "start": "Start preparing",
+    "progress": "Step {{step}} of {{total}}",
+    "introBody": "A structured library of interview questions with model answers, practice and progress tracking.",
+    "feature": {
+      "library": "500 questions for 17 jobs, in English, French and Spanish",
+      "practice": "Quizzes, spaced repetition and a daily question",
+      "offline": "Works offline. No account. Your answers stay on your phone."
+    },
+    "roleTitle": "Which job are you preparing for?",
+    "roleHint": "You can change it later or skip this step.",
+    "levelTitle": "What is your experience level?",
+    "goalTitle": "What is your goal?",
+    "daysTitle": "How much time do you have?",
+    "daysHint": "Days until your interview, roughly. Optional.",
+    "planTitle": "Your recommended plan",
+    "planRole": "A plan focused on {{role}} interviews.",
+    "planGeneral": "A plan built on the questions every interviewer asks.",
+    "planQuestions_one": "{{count}} free question selected for you",
+    "planQuestions_other": "{{count}} free questions selected for you",
+    "planDaily_one": "About {{count}} question a day",
+    "planDaily_other": "About {{count}} questions a day",
+    "planDailyQuestion": "A new question of the day every morning",
+    "planDisclaimer": "Practice improves your preparation, but no app can guarantee a job offer."
+  },
+  "question": {
+    "notFound": "Question not found",
+    "intent": "What the interviewer wants to know",
+    "modelAnswer": "Example answer",
+    "expectedAnswer": "Expected answer",
+    "adaptDisclaimer": "This is an example to adapt with your own experience, not a script to recite.",
+    "explanation": "Why it works",
+    "example": "Example",
+    "tips": "Tips",
+    "mistakes": "Common mistakes",
+    "followUps": "Possible follow-up questions",
+    "addFavorite": "Save",
+    "removeFavorite": "Saved",
+    "favorite": "Favorite",
+    "markStudied": "Mark as studied",
+    "studied": "Studied",
+    "favoriteLimitTitle": "Favorites limit reached",
+    "favoriteLimitBody": "The free plan keeps up to 25 favorites. Remove one or upgrade to Premium for unlimited favorites.",
+    "lockedTitle": "Premium answer",
+    "lockedBody": "The detailed answer, explanation, tips and follow-ups for this question are part of Premium.",
+    "notes": "My notes",
+    "notesPlaceholder": "Write your own answer, examples or reminders…",
+    "notesPrivate": "Private: stored only on this device."
+  },
+  "questions": {
+    "title": "Questions",
+    "noResults": "No questions found",
+    "noResultsHint": "Try other words or remove a filter.",
+    "noFavorites": "No favorites yet",
+    "noFavoritesHint": "Tap \"Save\" on a question to find it here."
+  },
+  "quiz": {
+    "title": "Quiz",
+    "reviewTitle": "Review difficult questions",
+    "intro_one": "{{count}} question with an explanation after each answer.",
+    "intro_other": "{{count}} questions with an explanation after each answer.",
+    "reviewIntro": "Questions you missed come back here at the right time, then new ones.",
+    "freeNote": "The free plan includes most quiz questions. Premium unlocks all of them.",
+    "progress": "Question {{current}} of {{total}}",
+    "trueOrFalse": "True or false? ",
+    "true": "True",
+    "false": "False",
+    "correct": "Correct",
+    "incorrect": "Not quite",
+    "openQuestion": "Study the related question",
+    "seeScore": "See my score",
+    "doneTitle": "Quiz complete",
+    "percent": "{{percent}}% correct",
+    "srsNote": "Questions you missed will come back in your review queue.",
+    "again": "New quiz",
+    "reviewMistakes": "Review my mistakes",
+    "noItems": "No questions available for this selection.",
+    "nothingToReview": "Nothing to review right now. Well done!"
+  },
+  "paywall": {
+    "title": "InterviewReady Premium",
+    "subtitle": "Everything you need to prepare in depth.",
+    "cta": "Unlock Premium",
+    "benefit": {
+      "library": "The full library of 500 questions and 160 quizzes",
+      "answers": "Detailed answers for advanced questions",
+      "roles": "Every job path",
+      "mocks": "Unlimited mock interviews",
+      "paths": "Personalised preparation plans",
+      "noAds": "No ads"
+    },
+    "period": {
+      "monthly": "Monthly",
+      "annual": "Yearly",
+      "lifetime": "Lifetime",
+      "unknown": "Plan"
+    },
+    "save": "Save {{percent}}%",
+    "legal": "Payment is handled by Google Play. Subscriptions renew automatically unless cancelled in Google Play at least 24 hours before renewal.",
+    "unavailable": "Premium subscriptions are not available in this version yet. All free content stays available.",
+    "active": "Premium is active",
+    "pending": "Your payment is pending. Premium will unlock once it is confirmed.",
+    "error": "The purchase could not be completed. You have not been charged.",
+    "restore": "Restore purchases",
+    "restored": "Your Premium access has been restored.",
+    "nothingToRestore": "No active purchase was found for this account.",
+    "manage": "Manage subscription"
   }
 }
