@@ -47,7 +47,14 @@ const produced = (uri: string, originalName: string, suffix: string, format: Ima
 
 /* ------------------------------------------------------------------ images */
 
-export function compressSpec(env: ToolEnv, sources: ImageSource[], options: { format: ImageFormat; quality: number; targetBytes?: number }): Spec {
+/** 'original' keeps each image in its own format (batches may mix formats). */
+export type OutputFormatChoice = ImageFormat | 'original';
+
+export function resolveOutputFormat(choice: OutputFormatChoice, source: ImageSource): ImageFormat {
+  return choice === 'original' ? source.header.format : choice;
+}
+
+export function compressSpec(env: ToolEnv, sources: ImageSource[], options: { format: OutputFormatChoice; quality: number; targetBytes?: number }): Spec {
   return {
     type: 'image_compress',
     inputs: sources.map((s) => ({ name: s.name, size: s.size })),
@@ -55,8 +62,15 @@ export function compressSpec(env: ToolEnv, sources: ImageSource[], options: { fo
       const files: ProducedFile[] = [];
       const results: Pick<CompressResult, 'reachedTarget' | 'noGain' | 'downscaled' | 'quality'>[] = [];
       for (const [i, source] of sources.entries()) {
+        const format = resolveOutputFormat(options.format, source);
+        // A target size only makes sense for lossy formats; PNG is always lossless.
+        const targetBytes = format === 'png' ? undefined : options.targetBytes;
         // Batch progress = finished images + fraction of the current one.
-        const out = await compressImage(imageCtx(env, job, (d, t) => job.progress(i + d / t, sources.length)), source, options);
+        const out = await compressImage(imageCtx(env, job, (d, t) => job.progress(i + d / t, sources.length)), source, {
+          format,
+          quality: options.quality,
+          ...(targetBytes ? { targetBytes } : {}),
+        });
         files.push(produced(out.uri, source.name, 'compressed', out.format, out));
         results.push({ reachedTarget: out.reachedTarget, noGain: out.noGain, downscaled: out.downscaled, quality: out.quality });
         job.progress(i + 1, sources.length);

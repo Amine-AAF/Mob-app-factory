@@ -55,6 +55,18 @@ Replace the generated mark with the app's own design when it has one.
 
 Give the app its own mark: create `apps/<id>/brand/mark.mjs` exporting `mark({ bubble, glyph })`
 (and optionally `featureGraphic(...)`), as Logic Quest does. Without it the DevSpeak mark is used.
+## 5b. App-specific native code (only when necessary)
+
+When no maintained Expo/RN library covers a need, write a **local Expo module** instead of
+adding an unvetted dependency. FilePilot is the reference (`apps/filepilot/modules/filepilot-native`):
+
+- `modules/<name>/expo-module.config.json` + `android/build.gradle` + Kotlin `Module` — autolinked
+  from the app's `modules/` folder (no package.json needed). Verify with
+  `npx expo-modules-autolinking resolve --platform android`.
+- `modules/<name>/index.ts` uses `requireOptionalNativeModule`, so Jest/Expo Go get `null` and the app
+  must show the feature as unavailable instead of faking it.
+- Map it in `tsconfig.json` `paths` and `jest.config.js` `moduleNameMapper`.
+- Native code can't be verified without an Android build: mark it 🟡 in the app's status file.
 
 ## 6. CI and builds
 

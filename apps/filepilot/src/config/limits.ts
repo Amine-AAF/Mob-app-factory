@@ -33,6 +33,8 @@ export const FREE_LIMITS = {
   mergeFiles: 3,
   imagesPerPdf: 5,
   pdfToImagesPages: 5,
+  /** Output documents per split. */
+  splitParts: 5,
   /** Visible entries in operation history. */
   historyEntries: 20,
 } as const;
@@ -41,5 +43,6 @@ export const PREMIUM_LIMITS = {
   mergeFiles: 50,
   imagesPerPdf: 100,
   pdfToImagesPages: 500,
+  splitParts: 500,
   batchImages: 50,
 } as const;

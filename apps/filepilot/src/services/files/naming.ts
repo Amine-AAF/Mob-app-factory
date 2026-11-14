@@ -11,7 +11,6 @@ export function baseNameOf(fileName: string): string {
   const raw = dot > 0 ? withoutPath.slice(0, dot) : withoutPath;
   const cleaned = raw
     .normalize('NFC')
-    // eslint-disable-next-line no-control-regex -- control characters are exactly what we strip
     .replace(/[\u0000-\u001f\u007f<>:"/\|?*]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
