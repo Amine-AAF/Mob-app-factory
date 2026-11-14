@@ -9,6 +9,7 @@ import { useSession } from '@/store/session';
 
 import { recordError, setAnalyticsConsent } from './analytics';
 import { cleanTemporaryFiles } from './files';
+import { initReminders } from './reminders';
 
 function waitForHydration(): Promise<void> {
   if (usePreferences.getState().hydrated) return Promise.resolve();
@@ -35,6 +36,7 @@ export async function boot(): Promise<{ i18n: i18n; repos: Repositories }> {
 
   prefs.set({ sessionCount: prefs.sessionCount + 1 });
   setAnalyticsConsent(prefs.analyticsConsent);
+  initReminders();
 
   // Background, best effort: leftovers from interrupted imports/exports.
   setTimeout(() => {

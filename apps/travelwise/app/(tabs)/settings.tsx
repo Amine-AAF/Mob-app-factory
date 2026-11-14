@@ -8,7 +8,9 @@ import { CURRENCY_CODES } from '@/constants/currencies';
 import { repos, wipeAllData } from '@/database';
 import { INTERFACE_LANGUAGES, LANGUAGE_NAMES } from '@/i18n';
 import { recordError, setAnalyticsConsent } from '@/services/analytics';
+import { authenticate, lockAvailability } from '@/services/documentLock';
 import { wipeAllFiles } from '@/services/files';
+import { cancelAllTaskReminders } from '@/services/reminders';
 import { usePreferences } from '@/store/preferences';
 import { notifyDataChanged } from '@/store/session';
 
@@ -20,6 +22,19 @@ export default function SettingsScreen() {
   const prefs = usePreferences();
   const language = (INTERFACE_LANGUAGES as readonly string[]).includes(i18n.language) ? (i18n.language as (typeof INTERFACE_LANGUAGES)[number]) : 'en';
 
+  const toggleLock = async (on: boolean) => {
+    if (!on) {
+      // Turning the lock off also requires the owner to unlock.
+      if (await authenticate(t('documents.unlockPrompt'), t('common.cancel'))) prefs.set({ documentsLock: false });
+      return;
+    }
+    if ((await lockAvailability()) !== 'available') {
+      Alert.alert(t('settings.documentsLockUnavailable'));
+      return;
+    }
+    if (await authenticate(t('documents.unlockPrompt'), t('common.cancel'))) prefs.set({ documentsLock: true });
+  };
+
   const confirmDeleteAll = () =>
     Alert.alert(t('settings.deleteAllTitle'), t('settings.deleteAllMessage'), [
       { text: t('common.cancel'), style: 'cancel' },
@@ -28,6 +43,7 @@ export default function SettingsScreen() {
         style: 'destructive',
         onPress: async () => {
           try {
+            await cancelAllTaskReminders();
             await wipeAllData(repos().db);
             wipeAllFiles();
             notifyDataChanged();
@@ -86,6 +102,16 @@ export default function SettingsScreen() {
               setAnalyticsConsent(v);
             }}
           />
+        </Row>
+        <Divider />
+        <Row style={{ justifyContent: 'space-between' }} gap={3}>
+          <Stack gap={1} style={{ flex: 1 }}>
+            <Text variant="subheading">{t('settings.documentsLock')}</Text>
+            <Text variant="caption" tone="subtle">
+              {t('settings.documentsLockHint')}
+            </Text>
+          </Stack>
+          <Switch value={prefs.documentsLock} accessibilityLabel={t('settings.documentsLock')} onValueChange={toggleLock} testID="settings-documents-lock" />
         </Row>
       </Card>
 

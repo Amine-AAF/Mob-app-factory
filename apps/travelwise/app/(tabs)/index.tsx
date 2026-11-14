@@ -90,11 +90,12 @@ export default function HomeScreen() {
       {hasTrips && buckets ? (
         <>
           <SectionHeader title={t('home.quickActions')} />
-          <Row gap={2}>
+          <Row gap={2} wrap>
             <QuickAction icon="add-circle-outline" label={t('home.actionNewTrip')} onPress={() => router.push('/trip/new')} />
             <QuickAction icon="airplane-outline" label={t('home.actionAllTrips')} onPress={() => router.push('/(tabs)/trips')} />
             <QuickAction icon="wallet-outline" label={t('home.actionBudget')} onPress={() => router.push('/(tabs)/budget')} />
             <QuickAction icon="map-outline" label={t('home.actionPlaces')} onPress={() => router.push('/(tabs)/places')} />
+            <QuickAction icon="folder-open-outline" label={t('home.actionDocuments')} onPress={() => router.push('/documents')} />
           </Row>
 
           {buckets.ongoing.length ? (

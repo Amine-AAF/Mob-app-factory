@@ -2,6 +2,7 @@ import { repos } from '@/database';
 import type { TripInput } from '@/database/repositories/trips';
 import { track } from '@/services/analytics';
 import { deleteLocalFiles } from '@/services/files';
+import { cancelReminders } from '@/services/reminders';
 import { notifyDataChanged } from '@/store/session';
 import type { Id } from '@/types/models';
 
@@ -41,7 +42,9 @@ export async function unarchiveTrip(id: Id) {
 
 /** Permanently deletes a trip, its linked rows (cascade) and its local files. */
 export async function deleteTrip(id: Id) {
+  const notificationIds = await repos().checklists.notificationIds(id);
   const { deleted, fileUris } = await repos().trips.remove(id);
+  if (deleted) await cancelReminders(notificationIds);
   const { failed } = deleteLocalFiles(fileUris);
   notifyDataChanged();
   return { deleted, filesFailed: failed };

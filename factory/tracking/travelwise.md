@@ -64,6 +64,26 @@ Phase 4 — Gestion financière :
   global), taux inverse utilisé si besoin (signalé), historique des 50 dernières conversions, avertissement
   « le taux bancaire peut différer » ; interface `RateProvider` prête pour une API future (`features/currency/rates.ts`).
 
+Phase 5 — Organisation avancée :
+- Travel Documents : import PDF/images (sélecteur Android / Photo Picker, sans permission de stockage), contrôle
+  type + taille (25 Mo) avant copie, copie privée sous nom aléatoire, refus si stockage < 50 Mo restants,
+  métadonnées seules en SQLite (titre, type, voyage, expiration, notes), consultation hors ligne (image dans l'app,
+  PDF via une visionneuse du téléphone), badge expiré/bientôt, suppression définitive (ligne + fichier),
+  fichier manquant signalé. Verrou facultatif biométrie / code du téléphone (BiometricPrompt), 5 min, reverrouillé
+  en arrière-plan ; présenté comme masquage, pas comme chiffrement.
+- Travel Checklist : checklist « Avant le départ » par voyage, tâches perso (échéance, priorité, statut, notes),
+  14 tâches suggérées en/fr/es (5 internationales, ajoutables une seule fois, échéance relative au départ jamais
+  dans le passé), progression, rappels locaux (notification datée, permission demandée seulement à ce moment),
+  annulation à la suppression de la tâche/du voyage/des données ; avertissement visa/passeport « vérifiez auprès
+  des autorités officielles ».
+- Places : CRUD, catégories, favoris, recherche, filtre, coordonnées saisies uniquement (validées), photo
+  facultative, association voyage/jour, ouverture dans une app de cartes (`geo:` puis Google Maps web) ;
+  aucune carte intégrée ni itinéraire GPS.
+- Travel Journal : entrées datées par voyage, titre, ville, texte, notes, jusqu'à 12 photos locales, timeline
+  chronologique groupée par jour ; photos retirées / non enregistrées supprimées.
+- Weather Planner : notes météo manuelles par voyage ou destination (conditions, min/max °C, notes), aucune
+  prévision affichée, suggestions de bagages selon les conditions/températures saisies, ajout à une liste.
+
 ## Fonctionnalités en cours
 
 - —
@@ -74,8 +94,9 @@ Phase 4 — Gestion financière :
   (Phase 5, table `places`), pièce jointe de réservation (Phase 5, documents).
 - Phase 4 (reste) : export CSV des dépenses (Phase 6, Premium), gating Premium « budget détaillé / shared avancées »
   (Phase 6), provider de taux externe (non intégré volontairement : pas d'API payante par défaut).
-- Phase 5 : documents (expo-document-picker + Photo Picker, copie privée, verrou biométrique facultatif),
-  checklist de départ + rappels locaux, lieux (liens geo:/Google Maps), carnet de voyage, notes météo manuelles.
+- Phase 5 (reste) : choisir un lieu enregistré depuis le formulaire d'activité, joindre un document à une
+  réservation depuis l'écran réservation (le schéma et le repository le gèrent déjà), replanifier les rappels
+  après restauration de sauvegarde (`pendingReminders` prêt), provider météo externe (non intégré).
 - Phase 6 : RevenueCat (3 plans), AdMob (bannières/interstitiels/rewarded avec règles d'exclusion), limite free
   `FREE_ACTIVE_TRIPS = 3` à appliquer, exports PDF/CSV.
 - Phase 7 : tests appareil Android, offline, APK preview, AAB, `store/` (fiche, ASO, Data Safety, politique).
@@ -84,7 +105,8 @@ Phase 4 — Gestion financière :
 
 ## Bugs connus
 
-- Section Journal du voyage, onglet Places et tâches avant départ : écrans « bientôt disponible ».
+- Les rappels utilisent l'heure locale du téléphone au moment de la saisie : si le téléphone change de fuseau
+  avant le rappel, la notification se déclenche au même instant absolu (pas à la même heure locale).
 - Le sélecteur de date ouvre le mois courant ou la date minimale : pas de saisie clavier directe d'une date lointaine
   (navigation mois par mois).
 
@@ -94,9 +116,10 @@ Phase 4 — Gestion financière :
   expo-localization, @react-native-async-storage/async-storage, i18next, react-i18next, zustand.
 - Packages : `@factory/app-config`, `app-core` (dates), `design-system`, `localization`, `storage` (migrate, KV, wipe),
   `analytics` ; dev : `@factory/testing` (sql.js).
-- À venir (Phase 5/6) : expo-document-picker (déjà dans le lockfile via FilePilot), expo-image-picker,
-  expo-local-authentication, expo-print, expo-sharing, expo-notifications, react-native-purchases,
-  react-native-google-mobile-ads, `@factory/monetization`, `@factory/notifications`.
+- Phase 5 (versions alignées SDK 58, déjà utilisées par d'autres apps) : expo-document-picker ~58.0.5,
+  expo-image-picker ~58.0.10, expo-local-authentication ~58.0.3, expo-notifications ~58.1.9, expo-sharing ~58.0.23,
+  `@factory/notifications` (permission, canal, gestion premier plan).
+- À venir (Phase 6) : expo-print, react-native-purchases, react-native-google-mobile-ads, `@factory/monetization`.
 
 ## Tests réalisés
 
@@ -135,6 +158,15 @@ Phase 4 — Gestion financière :
     catégorie/jour, devise verrouillée, taux manuels (validation, priorité voyage > récent > inverse), conversion
     arrondie, historique borné à 50.
   - `phase4.ui.test.tsx` : ExpenseCard (devise étrangère + équivalent, clair/sombre), BudgetOverview (reste, dépassement, sans budget).
+2026-11-14 (Phase 5) :
+- `tsc --noEmit` ✅ · ESLint `apps/travelwise` ✅ 0 problème · `jest --ci` ✅ 10 suites, 165/165 tests.
+  - `phase5.test.ts` : contrôle des fichiers (type/taille), métadonnées sans contenu, listes par voyage, réservation
+    détachée à la suppression, expiration, fichiers rendus à la suppression du voyage, nommage sans nom d'origine,
+    verrou (durée, disponibilité), checklist (unique, validations, tri, progression, suggestions fr sans doublon,
+    échéances bornées), rappels (instant local, planification, pas de rappel si fait/passé/refusé, annulation),
+    lieux (coordonnées, filtres, photo remplacée, activité conservée), liens cartes, journal (timeline, photos
+    dédoublonnées/limite, photos retirées), météo (une note par destination, validations, suggestions).
+  - `phase5.ui.test.tsx` : TravelDocumentCard (clair/sombre, expiré), PlaceCard, DocumentsGate (ouvert / verrouillé → déverrouillé).
 - Note : machine très chargée (plusieurs sessions) → `testTimeout: 30000` et un rendu de préchauffage dans `ui.test.tsx`.
 
 ## Préparation à la publication

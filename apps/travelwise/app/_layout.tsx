@@ -5,18 +5,26 @@ import { StatusBar } from 'expo-status-bar';
 import type { i18n as I18n } from 'i18next';
 import { useCallback, useEffect, useState } from 'react';
 import { I18nextProvider } from 'react-i18next';
-import { View } from 'react-native';
+import { AppState, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { brand } from '@/config/brand';
 import { recordError } from '@/services/analytics';
 import { boot } from '@/services/boot';
 import { usePreferences } from '@/store/preferences';
+import { useSession } from '@/store/session';
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 function Navigator() {
   const theme = useTheme();
+  // The optional Documents lock applies again as soon as the app leaves the foreground.
+  useEffect(() => {
+    const sub = AppState.addEventListener('change', (state) => {
+      if (state !== 'active') useSession.getState().setDocumentsUnlockedAt(null);
+    });
+    return () => sub.remove();
+  }, []);
   return (
     <>
       <StatusBar style={theme.scheme === 'dark' ? 'light' : 'dark'} />
@@ -35,6 +43,7 @@ function Navigator() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="trip/new" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
         <Stack.Screen name="trip/[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="place" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
         <Stack.Screen name="converter" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
       </Stack>
     </>

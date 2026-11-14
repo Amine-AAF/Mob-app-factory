@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 
+import { DepartureTasks } from '@/components/DepartureTasks';
 import { PackingListCard } from '@/components/PackingList';
 import { TextField } from '@/components/TextField';
 import { TripScaffold } from '@/components/TripScaffold';
@@ -14,7 +15,7 @@ import { useAsync } from '@/hooks/useAsync';
 import { fmt } from '@/i18n';
 import { recordError } from '@/services/analytics';
 
-/** Trip checklist section: packing lists (Phase 3). Pre-departure tasks arrive in Phase 5. */
+/** Trip checklist section: packing lists, pre-departure tasks with reminders, weather notes. */
 export default function TripChecklistScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { t, i18n } = useTranslation();
@@ -47,7 +48,7 @@ export default function TripChecklistScreen() {
 
   return (
     <TripScaffold tripId={id} section="checklist">
-      {() => (
+      {({ trip }) => (
         <Stack gap={3}>
           <SectionHeader title={t('packing.title')} />
           {total ? (
@@ -84,9 +85,12 @@ export default function TripChecklistScreen() {
           </Card>
 
           <SectionHeader title={t('packing.tasksTitle')} />
-          <Text variant="bodySmall" tone="subtle">
-            {t('packing.tasksSoon')}
-          </Text>
+          <DepartureTasks trip={trip} />
+
+          <SectionHeader title={t('weather.title')} />
+          <Card onPress={() => router.push({ pathname: '/trip/[id]/weather', params: { id } })} accessibilityLabel={t('weather.title')} testID="weather-card">
+            <Text variant="bodySmall">{t('weather.cardHint')}</Text>
+          </Card>
         </Stack>
       )}
     </TripScaffold>

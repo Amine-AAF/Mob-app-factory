@@ -86,6 +86,10 @@ Local SQLite database `travelwise.db` (expo-sqlite), schema in
   rate; the trip currency is therefore locked once a trip has expenses.
 - `currency` (Phase 4): manual rates (`source = manual`, rate date kept), best-rate lookup (trip > most recent >
   inverse), conversion history capped at 50. `RateProvider` (features/currency/rates.ts) is the seam for a future API.
+- `documents`, `checklists`, `places`, `journal`, `weather` (Phase 5): metadata-only documents (file checked
+  before copy), one pre-departure checklist per trip with suggested tasks and reminder instants + notification ids,
+  places with user-typed coordinates and map hand-off links, journal entries with private photo URIs, one weather
+  note per trip or destination with packing suggestions.
 
 Shared balances are computed on the fly (features/shared-expenses/split.ts): each shared expense's trip-currency
 amount is allocated to participants proportionally to their shares with the largest-remainder method, so balances

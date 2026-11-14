@@ -107,6 +107,11 @@ export default function TripOverviewScreen() {
               </Card>
             ) : null}
 
+            <Row gap={2} wrap>
+              <Button label={t('documents.title')} icon="folder-open-outline" variant="secondary" onPress={() => router.push({ pathname: '/documents', params: { tripId: trip.id } })} testID="trip-documents" />
+              <Button label={t('places.addForTrip')} icon="location-outline" variant="secondary" onPress={() => router.push({ pathname: '/place', params: { tripId: trip.id } })} />
+            </Row>
+
             <Stack gap={2}>
               <Button label={t('common.edit')} icon="create-outline" variant="secondary" onPress={() => router.push({ pathname: '/trip/[id]/edit', params: { id: trip.id } })} testID="trip-edit" />
               <Button

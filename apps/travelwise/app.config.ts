@@ -44,6 +44,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       'android.permission.ACCESS_COARSE_LOCATION',
       'android.permission.SYSTEM_ALERT_WINDOW',
       'android.permission.RECORD_AUDIO',
+      // Photos come from the Android Photo Picker; the camera is not used.
+      'android.permission.CAMERA',
     ],
     // Travel documents are sensitive: never include app data in Google cloud backups.
     allowBackup: false,
@@ -61,6 +63,11 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         dark: { image: './assets/images/splash-icon.png', backgroundColor: manifest.brand.splashBackground },
       },
     ],
+    // Task reminders (local notifications only, no push server).
+    ['expo-notifications', { color: manifest.brand.primary }],
+    // Optional Documents lock with the phone's biometrics / screen lock (USE_BIOMETRIC).
+    ['expo-local-authentication', { faceIDPermission: 'TravelWise uses Face ID only to unlock your travel documents.' }],
+    ['expo-image-picker', { photosPermission: false, cameraPermission: false, microphonePermission: false }],
     [
       'expo-build-properties',
       { android: { minSdkVersion: manifest.build.minSdkVersion, targetSdkVersion: manifest.build.targetSdkVersion, compileSdkVersion: manifest.build.targetSdkVersion } },

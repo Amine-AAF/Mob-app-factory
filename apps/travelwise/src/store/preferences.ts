@@ -17,6 +17,8 @@ export interface PreferencesState {
   interfaceLanguage: InterfaceLanguage | null; // null = follow device
   theme: ThemePreference;
   defaultCurrency: CurrencyCode;
+  /** Ask for biometrics / device PIN before showing travel documents (off by default). */
+  documentsLock: boolean;
   /** Opt-in only. */
   analyticsConsent: boolean;
   sessionCount: number;
@@ -32,6 +34,7 @@ const DEFAULTS = {
   theme: 'system' as ThemePreference,
   defaultCurrency: DEFAULT_CURRENCY,
   analyticsConsent: false,
+  documentsLock: false,
   sessionCount: 0,
 };
 
