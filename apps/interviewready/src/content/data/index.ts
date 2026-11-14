@@ -8,6 +8,7 @@ import { pack as frontend } from './frontend';
 import { pack as general } from './general';
 import { pack as hrSalary } from './hr-salary';
 import { pack as java } from './java';
+import { pack as jobSpecific } from './job-specific';
 import { pack as software } from './software';
 
 /**
@@ -19,6 +20,6 @@ import { pack as software } from './software';
  * Add a pack here once its validation passes (src/__tests__/content.test.ts).
  * Writing and translation rules: src/content/CONTENT_BRIEF.md.
  */
-export const questionPacks: QuestionPack[] = [general, behavioral, software, java, frontend, databases, devops, aiData, hrSalary];
+export const questionPacks: QuestionPack[] = [general, behavioral, software, java, frontend, databases, devops, aiData, jobSpecific, hrSalary];
 
 export const quizPacks: QuizPack[] = [];

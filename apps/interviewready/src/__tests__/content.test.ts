@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { contentStats, questionIds, questionPacks, quizPacks } from '@/content';
+import { allQuestionCores, contentStats, questionIds, questionPacks, quizPacks } from '@/content';
 import { CATEGORY_META, JOB_ROLE_META, TOPIC_CATEGORY } from '@/content/taxonomy';
 import { formatIssues, validateQuestionPacks, validateQuizPacks } from '@/content/validation';
 import { CATEGORIES, JOB_ROLES, type QuestionPack, type QuestionText, type QuizPack } from '@/types/content';
@@ -142,6 +142,36 @@ describe('bundled library', () => {
   it('reports consistent statistics', () => {
     const stats = contentStats();
     expect(Object.values(stats.byCategory).reduce((a, b) => a + b, 0)).toBe(stats.questions);
+  });
+
+  it('reaches the v1 target of 500 questions in every category', () => {
+    const stats = contentStats();
+    expect(stats.questions).toBeGreaterThanOrEqual(500);
+    for (const c of CATEGORIES) expect(stats.byCategory[c] ?? 0).toBeGreaterThan(0);
+  });
+
+  it('covers every topic with at least two questions', () => {
+    const cores = allQuestionCores();
+    const thin = CATEGORIES.flatMap((c) => CATEGORY_META[c].topics).filter((topic) => cores.filter((q) => q.topic === topic).length < 2);
+    expect(thin).toEqual([]);
+  });
+
+  it('gives every job role a substantial, role-specific question set', () => {
+    const cores = allQuestionCores();
+    for (const role of JOB_ROLES) {
+      const forRole = cores.filter((q) => q.jobRoles.length === 0 || q.jobRoles.includes(role));
+      const specific = cores.filter((q) => q.jobRoles.includes(role));
+      // Every role gets the shared general/behavioral/HR questions plus its own.
+      expect(forRole.length).toBeGreaterThanOrEqual(150);
+      expect(specific.length).toBeGreaterThanOrEqual(7);
+      // Each role must have free questions so the free tier is usable.
+      expect(specific.some((q) => !q.premium)).toBe(true);
+    }
+  });
+
+  it('keeps a usable free tier (at least half of the library is free)', () => {
+    const stats = contentStats();
+    expect(stats.premium / stats.questions).toBeLessThanOrEqual(0.5);
   });
 
   it('keeps question text out of UI components', () => {
