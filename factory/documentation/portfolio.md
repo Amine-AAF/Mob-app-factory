@@ -4,25 +4,30 @@ Point d'entrée unique pour l'état du portefeuille (objectif : 50+ apps Android
 Règles de coexistence des sessions : [parallel-development.md](parallel-development.md).
 Suivi détaillé par app : [`factory/tracking/`](../tracking/README.md).
 
-Dernière mise à jour : 2026-11-13.
+Dernière mise à jour : 2026-11-14.
 
 ## Inventaire
 
 | App | Dossier | Package id | Catégorie | Monétisation | Locales | Statut manifest | Avancement | Registre | Suivi |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| DevSpeak | `apps/devspeak` | `com.devspeak.app` ⚠ placeholder | education | hybrid (sub + banner/rewarded) | en, fr, es | development | ✅ Terminée (code) — reste config externe + tests sur appareil | ✅ | [devspeak.md](../tracking/devspeak.md) |
-| Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub + remove-ads + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Fonctionnelle — 320 défis + quotidien, écrans, monétisation, store/ ; reste : tests appareil, comptes externes | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
-| FilePilot | `apps/filepilot` | non défini | — | prévue hybrid (RevenueCat + AdMob dans les deps) | — | — | 🟡 Démarrage — seul `package.json` existe | ❌ | [filepilot.md](../tracking/filepilot.md) |
-| CalcWise | `apps/calcwise` | `com.mobileappsfactory.calcwise` | tools | hybrid (sub mensuel/annuel + achat à vie + banner/interstitial/rewarded) | en, fr, es | development | 🟡 Code terminé sur `feat/calcwise` — reste config externe + tests sur appareil | ✅ | [calcwise.md](../tracking/calcwise.md) |
-| CalcWise | `apps/calcwise` | voir manifest | — | — | — | — | 🟡 Démarrage — scaffolding en cours | à vérifier | [calcwise.md](../tracking/calcwise.md) |
-| AutoCare | `apps/autocare` | `com.mobileappsfactory.autocare` | auto-vehicles | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 MVP complet codé et testé — reste pnpm install/lockfile, assets, CI, config externe, tests appareil | ✅ | [autocare.md](../tracking/autocare.md) |
-| BookNest | `apps/booknest` | `com.mobileappsfactory.booknest` ⚠ placeholder | books | hybrid (sub + banner) | en, fr, es | development | 🟡 Code terminé — reste tests appareil + config externe | ✅ | [booknest.md](../tracking/booknest.md) |
-| ImageCraft | `apps/imagecraft` | `com.mobileappsfactory.imagecraft` | photography | hybrid (sub + banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code terminé + tests unitaires ; module Kotlin à valider sur appareil | ✅ | [imagecraft.md](../tracking/imagecraft.md) |
-| MealWise | `apps/mealwise` | `com.mealwise.app` ⚠ placeholder | food-drink | hybrid (sub mensuel/annuel/à vie + bannière) | en, fr, es | development | ✅ Terminée (code) — reste config externe, CI matrice + tests sur appareil | ✅ | [mealwise.md](../tracking/mealwise.md) |
-| PlantCare | `apps/plantcare` | `com.mobileappsfactory.plantcare` | lifestyle | hybrid (sub + lifetime + banner) | en, fr, es | development | 🟡 Code complet — reste revue botanique, tests appareil, config stores | ✅ | [plantcare.md](../tracking/plantcare.md) |
-| SafeVault | `apps/safevault` | `com.safevault.app` ⚠ placeholder | tools | subscription (sans pub) | en, fr, es | development | 🟡 Code complet + tests verts — module natif à valider sur appareil, audit indépendant requis | ✅ | [safevault.md](../tracking/safevault.md) |
-| SpendWise | `apps/spendwise` | `com.mobileappsfactory.spendwise` | finance | hybrid (sub mensuel/annuel/à vie + banner/rewarded/interstitial limités) | en, fr, es | development | 🟡 Code complet + tests — reste config externe, tests appareil, builds | ✅ | [spendwise.md](../tracking/spendwise.md) |
-| Eventora | `apps/eventora` (branche `feat/eventora`) | `com.mobileappsfactory.eventora` | productivity (events) | hybrid (sub mensuel/annuel/à vie + banner) | en, fr, es | development | 🟡 Code complet (v1) — reste config externe, jobs CI, tests sur appareil | ✅ | [eventora.md](../tracking/eventora.md) |
+| DevSpeak | `apps/devspeak` | `com.devspeak.app` ⚠ placeholder | education | hybrid (sub monthly/annual + pub banner/rewarded) | en, fr, es | development | ✅ Terminée (code) — reste config externe + tests sur appareil | ✅ | [devspeak.md](../tracking/devspeak.md) |
+| Logic Quest | `apps/logic-quest` | `com.logicquest.app` ⚠ placeholder | games-puzzle | hybrid (sub monthly/annual/lifetime + pub banner/rewarded/interstitial) | en, fr, es | development | 🟡 Fonctionnelle — 320 défis + quotidien, écrans, monétisation, store/ ; reste : tests appareil, comptes externes | ✅ | [logic-quest.md](../tracking/logic-quest.md) |
+| FilePilot | `apps/filepilot` | `com.filepilot.app` ⚠ placeholder | tools | hybrid (sub monthly/annual/lifetime + pub banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [filepilot.md](../tracking/filepilot.md) |
+| CalcWise | `apps/calcwise` | `com.mobileappsfactory.calcwise` | tools | hybrid (sub monthly/annual/lifetime + pub banner/interstitial/rewarded) | en, fr, es | development | 🟡 Code terminé sur `feat/calcwise` — reste config externe + tests sur appareil | ✅ | [calcwise.md](../tracking/calcwise.md) |
+| HabitFlow | `apps/habitflow` | `com.mobileappsfactory.habitflow` | productivity | hybrid (sub monthly/annual/lifetime + pub banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [habitflow.md](../tracking/habitflow.md) |
+| AutoCare | `apps/autocare` | `com.mobileappsfactory.autocare` | auto-vehicles | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 MVP complet codé et testé — reste pnpm install/lockfile, assets, CI, config externe, tests appareil | ✅ | [autocare.md](../tracking/autocare.md) |
+| LearnSphere | `apps/learnsphere` | `com.mobileappsfactory.learnsphere` | education | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [learnsphere.md](../tracking/learnsphere.md) |
+| BookNest | `apps/booknest` | `com.mobileappsfactory.booknest` | books | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code terminé — reste tests appareil + config externe | ✅ | [booknest.md](../tracking/booknest.md) |
+| ClosetWise | `apps/closetwise` | `com.closetwise.app` ⚠ placeholder | lifestyle | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [closetwise.md](../tracking/closetwise.md) |
+| FitTrack | `apps/fittrack` | `com.mobileappsfactory.fittrack` | health-fitness | hybrid (sub monthly/annual/lifetime + pub banner/interstitial) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [fittrack.md](../tracking/fittrack.md) |
+| ImageCraft | `apps/imagecraft` | `com.mobileappsfactory.imagecraft` | photography | hybrid (sub monthly/annual/lifetime + pub banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code terminé + tests unitaires ; module Kotlin à valider sur appareil | ✅ | [imagecraft.md](../tracking/imagecraft.md) |
+| MealWise | `apps/mealwise` | `com.mealwise.app` ⚠ placeholder | food-drink | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | ✅ Terminée (code) — reste config externe, CI matrice + tests sur appareil | ✅ | [mealwise.md](../tracking/mealwise.md) |
+| PetCare | `apps/petcare` | `com.mobileappsfactory.petcare` | lifestyle | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [petcare.md](../tracking/petcare.md) |
+| PlantCare | `apps/plantcare` | `com.mobileappsfactory.plantcare` | lifestyle | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code complet — reste revue botanique, tests appareil, config stores | ✅ | [plantcare.md](../tracking/plantcare.md) |
+| SafeVault | `apps/safevault` | `com.safevault.app` ⚠ placeholder | tools | subscription (sub monthly/annual/lifetime) | en, fr, es | development | 🟡 Code complet + tests verts — module natif à valider sur appareil, audit indépendant requis | ✅ | [safevault.md](../tracking/safevault.md) |
+| SpendWise | `apps/spendwise` | `com.mobileappsfactory.spendwise` | finance | hybrid (sub monthly/annual/lifetime + pub banner/rewarded/interstitial) | en, fr, es | development | 🟡 Code complet + tests — reste config externe, tests appareil, builds | ✅ | [spendwise.md](../tracking/spendwise.md) |
+| Eventora | `apps/eventora` | `com.mobileappsfactory.eventora` | productivity | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code complet (v1) — reste config externe, jobs CI, tests sur appareil | ✅ | [eventora.md](../tracking/eventora.md) |
+| HomeCare | `apps/homecare` | `com.homecare.app` ⚠ placeholder | house-and-home | hybrid (sub monthly/annual/lifetime + pub banner) | en, fr, es | development | 🟡 Code et tests en place — reste config externe + tests sur appareil | ✅ | [homecare.md](../tracking/homecare.md) |
 
 Légende avancement : ✅ terminé · 🟡 en cours · ⬜ non démarré. « Statut manifest » = champ
 `releaseStatus` (`idea` → `development` → `internal` → `closed-testing` → `production` → `retired`).
@@ -122,19 +127,40 @@ besoin** (FilePilot ou CalcWise), via le protocole de [parallel-development.md �
 | Bundle Android | `cd apps/<id> && npx expo export --platform android` | Avant de déclarer une app « prête » |
 | Appareil | build de dev EAS / `expo run:android` | Voir [release-checklist.md](release-checklist.md) |
 
-### État de référence mesuré le 2026-11-13
+### État de référence mesuré le 2026-11-14
 
-Mesure prise pendant que d'autres sessions modifiaient Logic Quest et FilePilot : leurs échecs
-reflètent un travail en cours, pas une régression.
+Mesure prise sur la branche d'intégration `chore/integrate-apps` (18 apps fusionnées, lockfile régénéré),
+app par app : `tsc --noEmit`, `eslint apps/<id>`, `jest --ci`, puis `npx expo export --platform android`.
 
-| Zone | Typecheck | Lint | Tests |
-| --- | --- | --- | --- |
-| 7 packages testés | ✅ | ✅ | ✅ 59/59 (`notifications` et `testing` sans tests) |
-| devspeak | ✅ | ✅ | ✅ 126/126 |
-| logic-quest | ✅ | ❌ 4 erreurs, 3 avertissements | 🟡 78–79/82 (i18n) |
-| logic-quest (fin de session, même jour) | ✅ | ✅ 0 problème | ✅ 98/98 · bundle Android ✅ · expo-doctor 20/20 |
-| filepilot | ❌ (pas de sources) | — | ❌ (pas de tests) |
-| registre | — | — | ✅ 2 apps valides |
+| Zone | Typecheck | Lint | Tests | Bundle Android |
+| --- | --- | --- | --- | --- |
+| 7 packages testés | ✅ | ✅ | ✅ 59/59 ¹ (`notifications` et `testing` sans tests) | — |
+| devspeak | ✅ | ✅ | ✅ 126/126 ¹ | ✅ |
+| logic-quest | ✅ | ✅ | ✅ 98/98 | ✅ |
+| filepilot | ✅ | ✅ | ✅ 117/117 ¹ | ✅ |
+| calcwise | ✅ | ✅ | ✅ 151/151 | ✅ |
+| habitflow | ✅ | ✅ | ✅ 69/69 | ✅ |
+| autocare | ✅ | ✅ | ✅ 155/155 | ✅ |
+| learnsphere | ✅ | ✅ | ✅ 117/117 | ✅ |
+| booknest | ✅ | ✅ | ✅ 73/73 | ✅ |
+| closetwise | ✅ | ✅ | ✅ 130/130 | ✅ |
+| fittrack | ✅ | ✅ | ✅ 93/93 | ✅ |
+| imagecraft | ✅ | 🟡 3 avertissements | ✅ 122/122 | ✅ |
+| mealwise | ✅ | ✅ | ✅ 161/161 | ✅ |
+| petcare | ✅ | ✅ | ✅ 118/118 ¹ | ✅ |
+| plantcare | ✅ | ✅ | ✅ 75/75 | ✅ |
+| safevault | ✅ | ✅ | ✅ 112/112 ¹ | ✅ |
+| spendwise | ✅ | ✅ | ✅ 96/96 | ✅ |
+| eventora | ✅ | ✅ | ✅ 89/89 | ✅ |
+| homecare | ✅ | ✅ | ✅ 86/86 | ✅ |
+| registre | — | — | ✅ 18 apps valides | — |
+
+Total apps : 1988 tests. ¹ Au moins un test a dépassé le délai Jest de 5 s pendant l'exécution en parallèle
+(machine chargée par d'autres sessions) et n'est passé qu'une fois la suite relancée seule : tests sensibles à la
+charge, pas de régression fonctionnelle. Non mesuré : exécution sur appareil ou émulateur, builds EAS.
+
+Hors intégration (sessions en cours le 2026-11-14) : `interviewready` (`feat/interviewready`) et `travelwise`
+(`feat/travelwise`) — verts sur leur branche (35 et 165 tests), à fusionner quand leurs sessions ont terminé.
 
 ## Verrous sur les zones partagées
 
@@ -148,6 +174,7 @@ Une ligne par modification en cours d'un package ou fichier partagé. Supprimer 
 
 | Date | Zone | Changement | Apps impactées | Validation |
 | --- | --- | --- | --- | --- |
+| 2026-11-14 | `.gitlab-ci.yml`, `registry.json`, `pnpm-lock.yaml`, `portfolio.md` | Branche `chore/integrate-apps` : fusion de 18 branches d'app ; matrices CI integration-tests / bundle-validation / android-development et règles de tag `<app>-v*` étendues à toutes les apps (CalcWise garde ses jobs `calcwise-*`) ; lockfile régénéré ; inventaire régénéré depuis les manifests | toutes | Voir « État de référence mesuré le 2026-11-14 » ; `pnpm registry:check` ✅ 18 apps |
 | 2026-11-13 | `.gitlab-ci.yml`, `registry.json` | CalcWise : jobs CI `calcwise-*` additifs ; entrée de registre `calcwise` | calcwise uniquement | YAML relu ; jobs DevSpeak inchangés |
 | 2026-11-13 | dépôt | Commit initial `f7a0ebd`, push GitHub, branches `feat/logic-quest`, `feat/filepilot`, `feat/calcwise` | toutes | — |
 | 2026-11-13 | `factory/documentation`, `factory/tracking` | Ajout portfolio.md, parallel-development.md, fichiers de suivi | aucune (docs) | — |

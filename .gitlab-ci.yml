@@ -90,7 +90,7 @@ integration-tests:
   needs: [install]
   parallel:
     matrix:
-      - APP: [devspeak, logic-quest]
+      - APP: [devspeak, autocare, booknest, closetwise, eventora, filepilot, fittrack, habitflow, homecare, imagecraft, learnsphere, logic-quest, mealwise, petcare, plantcare, safevault, spendwise]
   script:
     # SQLite (sql.js), content validation, localization, navigation and component tests.
     - pnpm --filter $APP run test:ci
@@ -106,7 +106,7 @@ bundle-validation:
   needs: [typecheck, lint, unit-tests, integration-tests]
   parallel:
     matrix:
-      - APP: [devspeak, logic-quest]
+      - APP: [devspeak, autocare, booknest, closetwise, eventora, filepilot, fittrack, habitflow, homecare, imagecraft, learnsphere, logic-quest, mealwise, petcare, plantcare, safevault, spendwise]
   script:
     # Proves the JS bundle compiles for Android without native tooling.
     - cd apps/$APP && npx expo export --platform android --output-dir dist
@@ -127,7 +127,7 @@ android-development:
   variables: { EAS_PROFILE: development, EAS_WAIT_FLAG: "--no-wait" }
   parallel:
     matrix:
-      - APP: [devspeak, logic-quest]
+      - APP: [devspeak, autocare, booknest, closetwise, eventora, filepilot, fittrack, habitflow, homecare, imagecraft, learnsphere, logic-quest, mealwise, petcare, plantcare, safevault, spendwise]
   before_script:
     - corepack enable && corepack prepare pnpm@${PNPM_VERSION} --activate
     - cd apps/$APP
@@ -138,7 +138,7 @@ android-development:
       when: manual
       allow_failure: true
 
-# Release tags pick the app: devspeak-vX.Y.Z or logic-quest-vX.Y.Z (protected tags only).
+# Release tags pick the app: <app-id>-vX.Y.Z, one rule per app below (protected tags only).
 # rules:variables sets APP before the job is created, so the environment-scoped
 # production variables of that app (scope "production/<app>") are the ones injected.
 .release-rules: &release-rules
@@ -146,8 +146,38 @@ android-development:
     when: never
   - if: $CI_COMMIT_TAG =~ /^devspeak-v\d+\.\d+\.\d+$/
     variables: { APP: devspeak }
+  - if: $CI_COMMIT_TAG =~ /^autocare-v\d+\.\d+\.\d+$/
+    variables: { APP: autocare }
+  - if: $CI_COMMIT_TAG =~ /^booknest-v\d+\.\d+\.\d+$/
+    variables: { APP: booknest }
+  - if: $CI_COMMIT_TAG =~ /^closetwise-v\d+\.\d+\.\d+$/
+    variables: { APP: closetwise }
+  - if: $CI_COMMIT_TAG =~ /^eventora-v\d+\.\d+\.\d+$/
+    variables: { APP: eventora }
+  - if: $CI_COMMIT_TAG =~ /^filepilot-v\d+\.\d+\.\d+$/
+    variables: { APP: filepilot }
+  - if: $CI_COMMIT_TAG =~ /^fittrack-v\d+\.\d+\.\d+$/
+    variables: { APP: fittrack }
+  - if: $CI_COMMIT_TAG =~ /^habitflow-v\d+\.\d+\.\d+$/
+    variables: { APP: habitflow }
+  - if: $CI_COMMIT_TAG =~ /^homecare-v\d+\.\d+\.\d+$/
+    variables: { APP: homecare }
+  - if: $CI_COMMIT_TAG =~ /^imagecraft-v\d+\.\d+\.\d+$/
+    variables: { APP: imagecraft }
+  - if: $CI_COMMIT_TAG =~ /^learnsphere-v\d+\.\d+\.\d+$/
+    variables: { APP: learnsphere }
   - if: $CI_COMMIT_TAG =~ /^logic-quest-v\d+\.\d+\.\d+$/
     variables: { APP: logic-quest }
+  - if: $CI_COMMIT_TAG =~ /^mealwise-v\d+\.\d+\.\d+$/
+    variables: { APP: mealwise }
+  - if: $CI_COMMIT_TAG =~ /^petcare-v\d+\.\d+\.\d+$/
+    variables: { APP: petcare }
+  - if: $CI_COMMIT_TAG =~ /^plantcare-v\d+\.\d+\.\d+$/
+    variables: { APP: plantcare }
+  - if: $CI_COMMIT_TAG =~ /^safevault-v\d+\.\d+\.\d+$/
+    variables: { APP: safevault }
+  - if: $CI_COMMIT_TAG =~ /^spendwise-v\d+\.\d+\.\d+$/
+    variables: { APP: spendwise }
 
 android-production-aab:
   <<: *eas
